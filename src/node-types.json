@@ -1,6 +1,78 @@
 [
   {
-    "type": "command",
+    "type": "configure_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "diagnostics_command",
+          "named": true
+        },
+        {
+          "type": "generic_config_command",
+          "named": true
+        },
+        {
+          "type": "snmp_command",
+          "named": true
+        },
+        {
+          "type": "sys_recovery_command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "create_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "diagnostics_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "generic_config_command",
     "named": true,
     "fields": {},
     "children": {
@@ -23,11 +95,19 @@
       "required": true,
       "types": [
         {
-          "type": "command",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "configure_command",
+          "named": true
+        },
+        {
+          "type": "create_command",
+          "named": true
+        },
+        {
+          "type": "enable_command",
           "named": true
         },
         {
@@ -43,6 +123,25 @@
     "fields": {}
   },
   {
+    "type": "snmp_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -53,6 +152,21 @@
       "types": [
         {
           "type": "section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sys_recovery_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
           "named": true
         }
       ]
@@ -86,8 +200,44 @@
     "named": false
   },
   {
+    "type": "create",
+    "named": false
+  },
+  {
+    "type": "diagnostics",
+    "named": false
+  },
+  {
+    "type": "enable",
+    "named": false
+  },
+  {
+    "type": "privilege",
+    "named": false
+  },
+  {
+    "type": "snmp",
+    "named": false
+  },
+  {
     "type": "string",
     "named": true
+  },
+  {
+    "type": "sys-recovery-level",
+    "named": false
+  },
+  {
+    "type": "sysContact",
+    "named": false
+  },
+  {
+    "type": "sysLocation",
+    "named": false
+  },
+  {
+    "type": "sysName",
+    "named": false
   },
   {
     "type": "word",

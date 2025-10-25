@@ -5,3 +5,12 @@ configure snmp sysName "BasementSwitch"
 configure snmp sysContact "https://www.extremenetworks.com/support/"
 configure diagnostics privilege admin
 configure sys-recovery-level switch reset
+
+#
+# Module vlan configuration.
+#
+configure vlan default delete ports all
+configure vr VR-Default delete ports 1-48
+configure vr VR-Default add ports 1-48
+configure vlan default delete ports 1,3,5-6,8-11,13-16,18-21,23-26,28-31,45-47
+enable jumbo-frame ports all

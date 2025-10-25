@@ -31,7 +31,15 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "command"
+                "name": "configure_command"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "create_command"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "enable_command"
               },
               {
                 "type": "SYMBOL",
@@ -95,7 +103,7 @@
         }
       ]
     },
-    "command": {
+    "configure_command": {
       "type": "SEQ",
       "members": [
         {
@@ -103,7 +111,179 @@
           "value": "configure"
         },
         {
-          "type": "REPEAT1",
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "snmp_command"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "diagnostics_command"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "sys_recovery_command"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "generic_config_command"
+            }
+          ]
+        }
+      ]
+    },
+    "create_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "create"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word_or_string"
+          }
+        }
+      ]
+    },
+    "enable_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "enable"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word_or_string"
+          }
+        }
+      ]
+    },
+    "snmp_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "snmp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "sysName"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "string"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "sysContact"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "string"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "sysLocation"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "string"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "word"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "diagnostics"
+        },
+        {
+          "type": "STRING",
+          "value": "privilege"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        }
+      ]
+    },
+    "sys_recovery_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sys-recovery-level"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        }
+      ]
+    },
+    "generic_config_command": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "word_or_string"
+      }
+    },
+    "other_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        },
+        {
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
             "name": "word_or_string"

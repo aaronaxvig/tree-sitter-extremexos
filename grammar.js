@@ -23,7 +23,12 @@ module.exports = grammar({
     // A section contains an optional header, then commands and/or comments
     section: $ => seq(
       optional($.section_header),
-      repeat1(choice($.command, $.comment))
+      repeat1(choice(
+        $.configure_command,
+        $.create_command,
+        $.enable_command,
+//        $.other_command,
+        $.comment))
     ),
 
     // Optional header defining a region
@@ -33,29 +38,73 @@ module.exports = grammar({
       token(seq('#', '\n'))            // optional empty line
     ),
 
-    // Commands always start with 'configure'
-    command: $ => seq(
+    configure_command: $ => seq(
       'configure',
-      repeat1($.word_or_string)
+      choice(
+        $.snmp_command,
+        $.diagnostics_command,
+        $.sys_recovery_command,
+        $.generic_config_command
+      )
     ),
 
-    // Either a bare word or a quoted string
-    word_or_string: $ => choice(
-      $.string,
+    create_command: $ => seq(
+      'create',
+      repeat($.word_or_string)
+    ),
+
+    enable_command: $ => seq(
+      'enable',
+      repeat($.word_or_string)
+    ),
+
+//    other_command: $ => seq(
+//      $.word,
+//      repeat($.word_or_string)
+//    ),
+
+    // snmp commands
+    snmp_command: $ => seq(
+      'snmp',
+      choice(
+        seq('sysName', $.string),
+        seq('sysContact', $.string),
+        seq('sysLocation', $.string),
+        seq($.word, repeat($.word)) // fallback
+      )
+    ),
+
+    diagnostics_command: $ => seq(
+      'diagnostics',
+      'privilege',
       $.word
     ),
 
-    // Bare words
-    word: $ => /[^\s"']+/,
+    sys_recovery_command: $ => seq(
+      'sys-recovery-level',
+      $.word,
+      $.word
+    ),
 
-    // Quoted strings, with support for escaped characters
+    // fallback for other configure commands
+    generic_config_command: $ => repeat1($.word_or_string),
+
+    // Commands that don’t start with configure
+    other_command: $ => seq(
+      $.word,
+      repeat($.word_or_string)
+    ),
+
+    // Words or quoted strings
+    word_or_string: $ => choice($.string, $.word),
+    word: $ => /[^\s"']+/,
     string: $ => token(seq(
       '"',
       repeat(choice(/[^"\\]+/, /\\./)),
       '"'
     )),
 
-    // Single-line comments
+    // Comments
     comment: $ => token(seq('#', /.*/))
   }
 });
