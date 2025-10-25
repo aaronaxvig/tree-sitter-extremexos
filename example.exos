@@ -1,0 +1,7 @@
+#
+# Module devmgr configuration.
+#
+configure snmp sysName "BasementSwitch"
+configure snmp sysContact "https://www.extremenetworks.com/support/"
+configure diagnostics privilege admin
+configure sys-recovery-level switch reset
