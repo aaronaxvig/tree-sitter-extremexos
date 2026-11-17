@@ -18,3 +18,4 @@ npx tree-sitter parse examples/example.exos
 ```
 
 Corpus tests live in `test/corpus`; representative configuration exports live in `test/fixtures`.
+The root `grammar.js` composes command-family modules from `grammar/`; detailed families can grow there without obscuring the top-level grammar.

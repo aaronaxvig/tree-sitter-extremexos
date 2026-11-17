@@ -154,6 +154,14 @@
               "value": 1,
               "content": {
                 "type": "SYMBOL",
+                "name": "configure_vlan"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
                 "name": "configure_access_list"
               }
             },
@@ -915,14 +923,6 @@
               "content": {
                 "type": "SYMBOL",
                 "name": "configure_upm"
-              }
-            },
-            {
-              "type": "PREC",
-              "value": 1,
-              "content": {
-                "type": "SYMBOL",
-                "name": "configure_vlan"
               }
             },
             {
@@ -3026,27 +3026,6 @@
         }
       ]
     },
-    "configure_vlan": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "vlan"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "configure_vm_tracking": {
       "type": "SEQ",
       "members": [
@@ -3158,6 +3137,593 @@
         {
           "type": "STRING",
           "value": "xml-notification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "configure_vlan_dynamic"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "vlan",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "vlan_reference"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_add"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_delete"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_description"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_dhcp_address_range"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_dhcp_lease_timer"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_dhcp_options"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_ipaddress"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_name"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_netlogin_lease_timer"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_none"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_ports"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_protocol"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_qosprofile"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_router_discovery"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_subvlan_address_range"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_tag"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_udp_profile"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_vlan_translation"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "configure_vlan_action_generic"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_dynamic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dynamic-vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "vlan_reference": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vlan_list"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vlan_id"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        }
+      ]
+    },
+    "vlan_id": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 2,
+        "content": {
+          "type": "PATTERN",
+          "value": "[0-9]+"
+        }
+      }
+    },
+    "vlan_list": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 3,
+        "content": {
+          "type": "PATTERN",
+          "value": "[0-9]+(?:[-,][0-9]+)+"
+        }
+      }
+    },
+    "configure_vlan_action_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "action",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_dhcp_address_range": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dhcp-address-range"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_dhcp_lease_timer": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dhcp-lease-timer"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_dhcp_options": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dhcp-options"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_ipaddress": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipaddress"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_netlogin_lease_timer": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "netlogin-lease-timer"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_none": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "none"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_protocol": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "protocol"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_qosprofile": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "qosprofile"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_router_discovery": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "router-discovery"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_subvlan_address_range": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "subvlan-address-range"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_tag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tag"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_udp_profile": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "udp-profile"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_vlan_translation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan-translation"
         },
         {
           "type": "CHOICE",

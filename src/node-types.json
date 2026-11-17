@@ -2095,6 +2095,404 @@
   {
     "type": "configure_vlan",
     "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "vlan_reference",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_vlan_action_generic",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_add",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_delete",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_description",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_dhcp_address_range",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_dhcp_lease_timer",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_dhcp_options",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_dynamic",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_ipaddress",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_name",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_netlogin_lease_timer",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_none",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_ports",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_protocol",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_qosprofile",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_router_discovery",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_subvlan_address_range",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_tag",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_udp_profile",
+          "named": true
+        },
+        {
+          "type": "configure_vlan_vlan_translation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_action_generic",
+    "named": true,
+    "fields": {
+      "action": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_add",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_delete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_dhcp_address_range",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_dhcp_lease_timer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_dhcp_options",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_dynamic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_ipaddress",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_netlogin_lease_timer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_none",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_ports",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_protocol",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_qosprofile",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_router_discovery",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_subvlan_address_range",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_udp_profile",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_vlan_vlan_translation",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -2398,6 +2796,33 @@
     }
   },
   {
+    "type": "vlan_reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "vlan_id",
+          "named": true
+        },
+        {
+          "type": "vlan_list",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "word_or_string",
     "named": true,
     "fields": {},
@@ -2473,7 +2898,23 @@
     "named": false
   },
   {
+    "type": "description",
+    "named": false
+  },
+  {
     "type": "dhcp",
+    "named": false
+  },
+  {
+    "type": "dhcp-address-range",
+    "named": false
+  },
+  {
+    "type": "dhcp-lease-timer",
+    "named": false
+  },
+  {
+    "type": "dhcp-options",
     "named": false
   },
   {
@@ -2502,6 +2943,10 @@
   },
   {
     "type": "dot1p",
+    "named": false
+  },
+  {
+    "type": "dynamic-vlan",
     "named": false
   },
   {
@@ -2586,6 +3031,10 @@
   },
   {
     "type": "ip-security",
+    "named": false
+  },
+  {
+    "type": "ipaddress",
     "named": false
   },
   {
@@ -2689,6 +3138,10 @@
     "named": false
   },
   {
+    "type": "name",
+    "named": false
+  },
+  {
     "type": "name-server",
     "named": false
   },
@@ -2698,6 +3151,14 @@
   },
   {
     "type": "netlogin",
+    "named": false
+  },
+  {
+    "type": "netlogin-lease-timer",
+    "named": false
+  },
+  {
+    "type": "none",
     "named": false
   },
   {
@@ -2761,6 +3222,10 @@
     "named": false
   },
   {
+    "type": "router-discovery",
+    "named": false
+  },
+  {
     "type": "safe-default-script",
     "named": false
   },
@@ -2821,6 +3286,10 @@
     "named": true
   },
   {
+    "type": "subvlan-address-range",
+    "named": false
+  },
+  {
     "type": "sys-health-check",
     "named": false
   },
@@ -2853,6 +3322,10 @@
     "named": false
   },
   {
+    "type": "tag",
+    "named": false
+  },
+  {
     "type": "tech-support",
     "named": false
   },
@@ -2881,6 +3354,10 @@
     "named": false
   },
   {
+    "type": "udp-profile",
+    "named": false
+  },
+  {
     "type": "unconfigure",
     "named": false
   },
@@ -2891,6 +3368,18 @@
   {
     "type": "vlan",
     "named": false
+  },
+  {
+    "type": "vlan-translation",
+    "named": false
+  },
+  {
+    "type": "vlan_id",
+    "named": true
+  },
+  {
+    "type": "vlan_list",
+    "named": true
   },
   {
     "type": "vm-tracking",

@@ -7,33 +7,8 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-// These topics have stable nodes now and can be fleshed out in place over time.
-const GENERIC_CONFIGURE_TOPICS = [
-  'access-list', 'account', 'banner', 'bfd', 'bootprelay', 'cdp', 'cfm', 'cli',
-  'cos-index', 'debug', 'dhcp', 'diffserv', 'dos-protect', 'dot1p', 'eaps', 'edp',
-  'egress', 'elrp-client', 'elsm', 'erps', 'esrp', 'failsafe-account', 'fdb', 'fip',
-  'flow-redirect', 'forwarding', 'identity-management', 'idletimeout', 'igmp',
-  'inline-power', 'ip', 'ip-fix', 'ip-mtu', 'ip-security', 'iparp', 'ipforwarding',
-  'ipmcforwarding', 'ipmroute', 'iproute', 'ipv6', 'irdp', 'jumbo-frame-size',
-  'l2pt', 'l2vpn', 'lacp', 'ldap', 'lldp', 'log', 'mac-lockdown-timeout',
-  'mac-locking', 'mcast', 'meter', 'mirror', 'mlag', 'mld', 'mrp', 'mstp', 'mvr',
-  'mvrp', 'neighbor-discovery', 'netlogin', 'ntp', 'pim', 'policy', 'ports', 'power',
-  'private-vlan', 'protocol', 'qosprofile', 'qosscheduler', 'radius',
-  'radius-accounting', 'rip', 'ripng', 'safe-default-script', 'security', 'sflow',
-  'sharing', 'snmpv3', 'ssh2', 'sshd2', 'ssl', 'stacking', 'stpd',
-  'sys-health-check', 'syslog', 'tacacs', 'tacacs-accounting', 'tech-support',
-  'telnet', 'time', 'timezone', 'trusted-ports', 'trusted-servers', 'twamp', 'upm',
-  'vlan', 'vm-tracking', 'vman', 'vpls', 'vr', 'web', 'xml-notification',
-];
-
-const configureRuleName = topic => `configure_${topic.replaceAll('-', '_')}`;
-
-const genericConfigureRules = () => Object.fromEntries(
-  GENERIC_CONFIGURE_TOPICS.map(topic => [
-    configureRuleName(topic),
-    $ => seq(topic, optional($._arguments)),
-  ]),
-);
+const configureTopics = require('./grammar/configure-topics');
+const vlan = require('./grammar/vlan');
 
 module.exports = grammar({
   name: "extremexos",
@@ -74,7 +49,8 @@ module.exports = grammar({
         prec(1, $.configure_sntp_client),
         prec(1, $.configure_diagnostics),
         prec(1, $.configure_sys_recovery),
-        ...GENERIC_CONFIGURE_TOPICS.map(topic => prec(1, $[configureRuleName(topic)])),
+        prec(1, $.configure_vlan),
+        ...configureTopics.topics.map(topic => prec(1, $[configureTopics.ruleName(topic)])),
         $.configure_generic,
       ),
       $._newline,
@@ -86,7 +62,8 @@ module.exports = grammar({
       optional($._arguments),
     ),
 
-    ...genericConfigureRules(),
+    ...configureTopics.rules(),
+    ...vlan.rules(),
 
     configure_snmp: $ => seq(
       'snmp',
