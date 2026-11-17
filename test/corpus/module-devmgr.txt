@@ -60,16 +60,16 @@ save configuration
 (source_file
   (command
     (configure_command
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))))
+      (configure_generic
+        (configure_topic)
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (create_command
       (word_or_string
@@ -140,3 +140,53 @@ configure sntp-client secondary timehost2.example.com
       (configure_sntp_client
         (sntp_client_server
           (word))))))
+
+================================================================================
+Known and dynamic configure topics
+================================================================================
+
+configure access-list test
+configure ntp server test
+configure ports 1 description-string "Uplink"
+configure vlan Cameras tag 4
+configure xml-notification test
+configure future-feature value
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_generic
+        (configure_topic)
+        (word_or_string (word)))))
+  (command
+    (configure_command
+      (configure_generic
+        (configure_topic)
+        (word_or_string (word))
+        (word_or_string (word)))))
+  (command
+    (configure_command
+      (configure_generic
+        (configure_topic)
+        (word_or_string (word))
+        (word_or_string (word))
+        (word_or_string (string)))))
+  (command
+    (configure_command
+      (configure_generic
+        (configure_topic)
+        (word_or_string (word))
+        (word_or_string (word))
+        (word_or_string (word)))))
+  (command
+    (configure_command
+      (configure_generic
+        (configure_topic)
+        (word_or_string (word)))))
+  (command
+    (configure_command
+      (configure_generic
+        (word)
+        (word_or_string (word))))))

@@ -48,7 +48,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
@@ -57,6 +57,10 @@
         },
         {
           "type": "configure_dns_client",
+          "named": true
+        },
+        {
+          "type": "configure_generic",
           "named": true
         },
         {
@@ -69,10 +73,6 @@
         },
         {
           "type": "configure_sys_recovery",
-          "named": true
-        },
-        {
-          "type": "word_or_string",
           "named": true
         }
       ]
@@ -107,6 +107,36 @@
         },
         {
           "type": "dns_client_name_server",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_generic",
+    "named": true,
+    "fields": {
+      "topic": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "configure_topic",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
           "named": true
         }
       ]
@@ -213,6 +243,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "configure_topic",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "create_command",
@@ -434,7 +469,39 @@
     }
   },
   {
+    "type": "access-list",
+    "named": false
+  },
+  {
+    "type": "account",
+    "named": false
+  },
+  {
     "type": "add",
+    "named": false
+  },
+  {
+    "type": "banner",
+    "named": false
+  },
+  {
+    "type": "bfd",
+    "named": false
+  },
+  {
+    "type": "bootprelay",
+    "named": false
+  },
+  {
+    "type": "cdp",
+    "named": false
+  },
+  {
+    "type": "cfm",
+    "named": false
+  },
+  {
+    "type": "cli",
     "named": false
   },
   {
@@ -442,7 +509,15 @@
     "named": false
   },
   {
+    "type": "cos-index",
+    "named": false
+  },
+  {
     "type": "create",
+    "named": false
+  },
+  {
+    "type": "debug",
     "named": false
   },
   {
@@ -450,7 +525,15 @@
     "named": false
   },
   {
+    "type": "dhcp",
+    "named": false
+  },
+  {
     "type": "diagnostics",
+    "named": false
+  },
+  {
+    "type": "diffserv",
     "named": false
   },
   {
@@ -466,7 +549,195 @@
     "named": false
   },
   {
+    "type": "dos-protect",
+    "named": false
+  },
+  {
+    "type": "dot1p",
+    "named": false
+  },
+  {
+    "type": "eaps",
+    "named": false
+  },
+  {
+    "type": "edp",
+    "named": false
+  },
+  {
+    "type": "egress",
+    "named": false
+  },
+  {
+    "type": "elrp-client",
+    "named": false
+  },
+  {
+    "type": "elsm",
+    "named": false
+  },
+  {
     "type": "enable",
+    "named": false
+  },
+  {
+    "type": "erps",
+    "named": false
+  },
+  {
+    "type": "esrp",
+    "named": false
+  },
+  {
+    "type": "failsafe-account",
+    "named": false
+  },
+  {
+    "type": "fdb",
+    "named": false
+  },
+  {
+    "type": "fip",
+    "named": false
+  },
+  {
+    "type": "flow-redirect",
+    "named": false
+  },
+  {
+    "type": "forwarding",
+    "named": false
+  },
+  {
+    "type": "identity-management",
+    "named": false
+  },
+  {
+    "type": "idletimeout",
+    "named": false
+  },
+  {
+    "type": "igmp",
+    "named": false
+  },
+  {
+    "type": "inline-power",
+    "named": false
+  },
+  {
+    "type": "ip",
+    "named": false
+  },
+  {
+    "type": "ip-fix",
+    "named": false
+  },
+  {
+    "type": "ip-mtu",
+    "named": false
+  },
+  {
+    "type": "ip-security",
+    "named": false
+  },
+  {
+    "type": "iparp",
+    "named": false
+  },
+  {
+    "type": "ipforwarding",
+    "named": false
+  },
+  {
+    "type": "ipmcforwarding",
+    "named": false
+  },
+  {
+    "type": "ipmroute",
+    "named": false
+  },
+  {
+    "type": "iproute",
+    "named": false
+  },
+  {
+    "type": "ipv6",
+    "named": false
+  },
+  {
+    "type": "irdp",
+    "named": false
+  },
+  {
+    "type": "jumbo-frame-size",
+    "named": false
+  },
+  {
+    "type": "l2pt",
+    "named": false
+  },
+  {
+    "type": "l2vpn",
+    "named": false
+  },
+  {
+    "type": "lacp",
+    "named": false
+  },
+  {
+    "type": "ldap",
+    "named": false
+  },
+  {
+    "type": "lldp",
+    "named": false
+  },
+  {
+    "type": "log",
+    "named": false
+  },
+  {
+    "type": "mac-lockdown-timeout",
+    "named": false
+  },
+  {
+    "type": "mac-locking",
+    "named": false
+  },
+  {
+    "type": "mcast",
+    "named": false
+  },
+  {
+    "type": "meter",
+    "named": false
+  },
+  {
+    "type": "mirror",
+    "named": false
+  },
+  {
+    "type": "mlag",
+    "named": false
+  },
+  {
+    "type": "mld",
+    "named": false
+  },
+  {
+    "type": "mrp",
+    "named": false
+  },
+  {
+    "type": "mstp",
+    "named": false
+  },
+  {
+    "type": "mvr",
+    "named": false
+  },
+  {
+    "type": "mvrp",
     "named": false
   },
   {
@@ -474,11 +745,75 @@
     "named": false
   },
   {
+    "type": "neighbor-discovery",
+    "named": false
+  },
+  {
+    "type": "netlogin",
+    "named": false
+  },
+  {
+    "type": "ntp",
+    "named": false
+  },
+  {
+    "type": "pim",
+    "named": false
+  },
+  {
+    "type": "policy",
+    "named": false
+  },
+  {
+    "type": "ports",
+    "named": false
+  },
+  {
+    "type": "power",
+    "named": false
+  },
+  {
     "type": "primary",
     "named": false
   },
   {
+    "type": "private-vlan",
+    "named": false
+  },
+  {
     "type": "privilege",
+    "named": false
+  },
+  {
+    "type": "protocol",
+    "named": false
+  },
+  {
+    "type": "qosprofile",
+    "named": false
+  },
+  {
+    "type": "qosscheduler",
+    "named": false
+  },
+  {
+    "type": "radius",
+    "named": false
+  },
+  {
+    "type": "radius-accounting",
+    "named": false
+  },
+  {
+    "type": "rip",
+    "named": false
+  },
+  {
+    "type": "ripng",
+    "named": false
+  },
+  {
+    "type": "safe-default-script",
     "named": false
   },
   {
@@ -490,7 +825,23 @@
     "named": true
   },
   {
+    "type": "security",
+    "named": false
+  },
+  {
+    "type": "sflow",
+    "named": false
+  },
+  {
+    "type": "sharing",
+    "named": false
+  },
+  {
     "type": "snmp",
+    "named": false
+  },
+  {
+    "type": "snmpv3",
     "named": false
   },
   {
@@ -498,8 +849,32 @@
     "named": false
   },
   {
+    "type": "ssh2",
+    "named": false
+  },
+  {
+    "type": "sshd2",
+    "named": false
+  },
+  {
+    "type": "ssl",
+    "named": false
+  },
+  {
+    "type": "stacking",
+    "named": false
+  },
+  {
+    "type": "stpd",
+    "named": false
+  },
+  {
     "type": "string",
     "named": true
+  },
+  {
+    "type": "sys-health-check",
+    "named": false
   },
   {
     "type": "sys-recovery-level",
@@ -518,7 +893,67 @@
     "named": false
   },
   {
+    "type": "syslog",
+    "named": false
+  },
+  {
+    "type": "tacacs",
+    "named": false
+  },
+  {
+    "type": "tacacs-accounting",
+    "named": false
+  },
+  {
+    "type": "tech-support",
+    "named": false
+  },
+  {
+    "type": "telnet",
+    "named": false
+  },
+  {
+    "type": "time",
+    "named": false
+  },
+  {
+    "type": "timezone",
+    "named": false
+  },
+  {
+    "type": "trusted-ports",
+    "named": false
+  },
+  {
+    "type": "trusted-servers",
+    "named": false
+  },
+  {
+    "type": "twamp",
+    "named": false
+  },
+  {
     "type": "unconfigure",
+    "named": false
+  },
+  {
+    "type": "upm",
+    "named": false
+  },
+  {
+    "type": "vlan",
+    "named": false
+  },
+  {
+    "type": "vm-tracking",
+    "named": false
+  },
+  {
+    "type": "vman",
+    "named": false
+  },
+  {
+    "type": "vpls",
     "named": false
   },
   {
@@ -526,7 +961,15 @@
     "named": false
   },
   {
+    "type": "web",
+    "named": false
+  },
+  {
     "type": "word",
     "named": true
+  },
+  {
+    "type": "xml-notification",
+    "named": false
   }
 ]

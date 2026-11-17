@@ -110,28 +110,48 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "configure_snmp"
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_snmp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dns_client"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_sntp_client"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_diagnostics"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_sys_recovery"
+              }
             },
             {
               "type": "SYMBOL",
-              "name": "configure_dns_client"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "configure_sntp_client"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "configure_diagnostics"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "configure_sys_recovery"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "name": "configure_generic"
             }
           ]
         },
@@ -140,6 +160,481 @@
           "name": "_newline"
         }
       ]
+    },
+    "configure_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "topic",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "configure_topic"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "word"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_topic": {
+      "type": "PREC",
+      "value": -1,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "access-list"
+          },
+          {
+            "type": "STRING",
+            "value": "account"
+          },
+          {
+            "type": "STRING",
+            "value": "banner"
+          },
+          {
+            "type": "STRING",
+            "value": "bfd"
+          },
+          {
+            "type": "STRING",
+            "value": "bootprelay"
+          },
+          {
+            "type": "STRING",
+            "value": "cdp"
+          },
+          {
+            "type": "STRING",
+            "value": "cfm"
+          },
+          {
+            "type": "STRING",
+            "value": "cli"
+          },
+          {
+            "type": "STRING",
+            "value": "cos-index"
+          },
+          {
+            "type": "STRING",
+            "value": "debug"
+          },
+          {
+            "type": "STRING",
+            "value": "dhcp"
+          },
+          {
+            "type": "STRING",
+            "value": "diagnostics"
+          },
+          {
+            "type": "STRING",
+            "value": "diffserv"
+          },
+          {
+            "type": "STRING",
+            "value": "dns-client"
+          },
+          {
+            "type": "STRING",
+            "value": "dos-protect"
+          },
+          {
+            "type": "STRING",
+            "value": "dot1p"
+          },
+          {
+            "type": "STRING",
+            "value": "eaps"
+          },
+          {
+            "type": "STRING",
+            "value": "edp"
+          },
+          {
+            "type": "STRING",
+            "value": "egress"
+          },
+          {
+            "type": "STRING",
+            "value": "elrp-client"
+          },
+          {
+            "type": "STRING",
+            "value": "elsm"
+          },
+          {
+            "type": "STRING",
+            "value": "erps"
+          },
+          {
+            "type": "STRING",
+            "value": "esrp"
+          },
+          {
+            "type": "STRING",
+            "value": "failsafe-account"
+          },
+          {
+            "type": "STRING",
+            "value": "fdb"
+          },
+          {
+            "type": "STRING",
+            "value": "fip"
+          },
+          {
+            "type": "STRING",
+            "value": "flow-redirect"
+          },
+          {
+            "type": "STRING",
+            "value": "forwarding"
+          },
+          {
+            "type": "STRING",
+            "value": "identity-management"
+          },
+          {
+            "type": "STRING",
+            "value": "idletimeout"
+          },
+          {
+            "type": "STRING",
+            "value": "igmp"
+          },
+          {
+            "type": "STRING",
+            "value": "inline-power"
+          },
+          {
+            "type": "STRING",
+            "value": "ip"
+          },
+          {
+            "type": "STRING",
+            "value": "ip-fix"
+          },
+          {
+            "type": "STRING",
+            "value": "ip-mtu"
+          },
+          {
+            "type": "STRING",
+            "value": "ip-security"
+          },
+          {
+            "type": "STRING",
+            "value": "iparp"
+          },
+          {
+            "type": "STRING",
+            "value": "ipforwarding"
+          },
+          {
+            "type": "STRING",
+            "value": "ipmcforwarding"
+          },
+          {
+            "type": "STRING",
+            "value": "ipmroute"
+          },
+          {
+            "type": "STRING",
+            "value": "iproute"
+          },
+          {
+            "type": "STRING",
+            "value": "ipv6"
+          },
+          {
+            "type": "STRING",
+            "value": "irdp"
+          },
+          {
+            "type": "STRING",
+            "value": "jumbo-frame-size"
+          },
+          {
+            "type": "STRING",
+            "value": "l2pt"
+          },
+          {
+            "type": "STRING",
+            "value": "l2vpn"
+          },
+          {
+            "type": "STRING",
+            "value": "lacp"
+          },
+          {
+            "type": "STRING",
+            "value": "ldap"
+          },
+          {
+            "type": "STRING",
+            "value": "lldp"
+          },
+          {
+            "type": "STRING",
+            "value": "log"
+          },
+          {
+            "type": "STRING",
+            "value": "mac-lockdown-timeout"
+          },
+          {
+            "type": "STRING",
+            "value": "mac-locking"
+          },
+          {
+            "type": "STRING",
+            "value": "mcast"
+          },
+          {
+            "type": "STRING",
+            "value": "meter"
+          },
+          {
+            "type": "STRING",
+            "value": "mirror"
+          },
+          {
+            "type": "STRING",
+            "value": "mlag"
+          },
+          {
+            "type": "STRING",
+            "value": "mld"
+          },
+          {
+            "type": "STRING",
+            "value": "mrp"
+          },
+          {
+            "type": "STRING",
+            "value": "mstp"
+          },
+          {
+            "type": "STRING",
+            "value": "mvr"
+          },
+          {
+            "type": "STRING",
+            "value": "mvrp"
+          },
+          {
+            "type": "STRING",
+            "value": "neighbor-discovery"
+          },
+          {
+            "type": "STRING",
+            "value": "netlogin"
+          },
+          {
+            "type": "STRING",
+            "value": "ntp"
+          },
+          {
+            "type": "STRING",
+            "value": "pim"
+          },
+          {
+            "type": "STRING",
+            "value": "policy"
+          },
+          {
+            "type": "STRING",
+            "value": "ports"
+          },
+          {
+            "type": "STRING",
+            "value": "power"
+          },
+          {
+            "type": "STRING",
+            "value": "private-vlan"
+          },
+          {
+            "type": "STRING",
+            "value": "protocol"
+          },
+          {
+            "type": "STRING",
+            "value": "qosprofile"
+          },
+          {
+            "type": "STRING",
+            "value": "qosscheduler"
+          },
+          {
+            "type": "STRING",
+            "value": "radius"
+          },
+          {
+            "type": "STRING",
+            "value": "radius-accounting"
+          },
+          {
+            "type": "STRING",
+            "value": "rip"
+          },
+          {
+            "type": "STRING",
+            "value": "ripng"
+          },
+          {
+            "type": "STRING",
+            "value": "safe-default-script"
+          },
+          {
+            "type": "STRING",
+            "value": "security"
+          },
+          {
+            "type": "STRING",
+            "value": "sflow"
+          },
+          {
+            "type": "STRING",
+            "value": "sharing"
+          },
+          {
+            "type": "STRING",
+            "value": "snmp"
+          },
+          {
+            "type": "STRING",
+            "value": "snmpv3"
+          },
+          {
+            "type": "STRING",
+            "value": "sntp-client"
+          },
+          {
+            "type": "STRING",
+            "value": "ssh2"
+          },
+          {
+            "type": "STRING",
+            "value": "sshd2"
+          },
+          {
+            "type": "STRING",
+            "value": "ssl"
+          },
+          {
+            "type": "STRING",
+            "value": "stacking"
+          },
+          {
+            "type": "STRING",
+            "value": "stpd"
+          },
+          {
+            "type": "STRING",
+            "value": "sys-health-check"
+          },
+          {
+            "type": "STRING",
+            "value": "sys-recovery-level"
+          },
+          {
+            "type": "STRING",
+            "value": "syslog"
+          },
+          {
+            "type": "STRING",
+            "value": "tacacs"
+          },
+          {
+            "type": "STRING",
+            "value": "tacacs-accounting"
+          },
+          {
+            "type": "STRING",
+            "value": "tech-support"
+          },
+          {
+            "type": "STRING",
+            "value": "telnet"
+          },
+          {
+            "type": "STRING",
+            "value": "time"
+          },
+          {
+            "type": "STRING",
+            "value": "timezone"
+          },
+          {
+            "type": "STRING",
+            "value": "trusted-ports"
+          },
+          {
+            "type": "STRING",
+            "value": "trusted-servers"
+          },
+          {
+            "type": "STRING",
+            "value": "twamp"
+          },
+          {
+            "type": "STRING",
+            "value": "upm"
+          },
+          {
+            "type": "STRING",
+            "value": "vlan"
+          },
+          {
+            "type": "STRING",
+            "value": "vm-tracking"
+          },
+          {
+            "type": "STRING",
+            "value": "vman"
+          },
+          {
+            "type": "STRING",
+            "value": "vpls"
+          },
+          {
+            "type": "STRING",
+            "value": "vr"
+          },
+          {
+            "type": "STRING",
+            "value": "web"
+          },
+          {
+            "type": "STRING",
+            "value": "xml-notification"
+          }
+        ]
+      }
     },
     "configure_snmp": {
       "type": "SEQ",
