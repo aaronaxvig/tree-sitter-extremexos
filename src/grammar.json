@@ -150,6 +150,830 @@
               }
             },
             {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_access_list"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_account"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_banner"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_bfd"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_bootprelay"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_cdp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_cfm"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_cli"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_cos_index"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_debug"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dhcp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_diffserv"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dos_protect"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dot1p"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_eaps"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_edp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_egress"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_elrp_client"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_elsm"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_erps"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_esrp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_failsafe_account"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_fdb"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_fip"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_flow_redirect"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_forwarding"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_identity_management"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_idletimeout"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_igmp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_inline_power"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ip"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ip_fix"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ip_mtu"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ip_security"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_iparp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ipforwarding"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ipmcforwarding"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ipmroute"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_iproute"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ipv6"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_irdp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_jumbo_frame_size"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_l2pt"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_l2vpn"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_lacp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ldap"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_lldp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_log"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mac_lockdown_timeout"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mac_locking"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mcast"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_meter"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mirror"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mlag"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mld"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mrp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mstp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mvr"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_mvrp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_neighbor_discovery"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_netlogin"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ntp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_pim"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_policy"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ports"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_power"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_private_vlan"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_protocol"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_qosprofile"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_qosscheduler"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_radius"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_radius_accounting"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_rip"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ripng"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_safe_default_script"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_security"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_sflow"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_sharing"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_snmpv3"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ssh2"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_sshd2"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_ssl"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_stacking"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_stpd"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_sys_health_check"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_syslog"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_tacacs"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_tacacs_accounting"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_tech_support"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_telnet"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_time"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_timezone"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_trusted_ports"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_trusted_servers"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_twamp"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_upm"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vlan"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vm_tracking"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vman"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vpls"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vr"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_web"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_xml_notification"
+              }
+            },
+            {
               "type": "SYMBOL",
               "name": "configure_generic"
             }
@@ -166,19 +990,10 @@
       "members": [
         {
           "type": "FIELD",
-          "name": "topic",
+          "name": "target",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "configure_topic"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "word"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "word"
           }
         },
         {
@@ -195,446 +1010,2168 @@
         }
       ]
     },
-    "configure_topic": {
-      "type": "PREC",
-      "value": -1,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "access-list"
-          },
-          {
-            "type": "STRING",
-            "value": "account"
-          },
-          {
-            "type": "STRING",
-            "value": "banner"
-          },
-          {
-            "type": "STRING",
-            "value": "bfd"
-          },
-          {
-            "type": "STRING",
-            "value": "bootprelay"
-          },
-          {
-            "type": "STRING",
-            "value": "cdp"
-          },
-          {
-            "type": "STRING",
-            "value": "cfm"
-          },
-          {
-            "type": "STRING",
-            "value": "cli"
-          },
-          {
-            "type": "STRING",
-            "value": "cos-index"
-          },
-          {
-            "type": "STRING",
-            "value": "debug"
-          },
-          {
-            "type": "STRING",
-            "value": "dhcp"
-          },
-          {
-            "type": "STRING",
-            "value": "diagnostics"
-          },
-          {
-            "type": "STRING",
-            "value": "diffserv"
-          },
-          {
-            "type": "STRING",
-            "value": "dns-client"
-          },
-          {
-            "type": "STRING",
-            "value": "dos-protect"
-          },
-          {
-            "type": "STRING",
-            "value": "dot1p"
-          },
-          {
-            "type": "STRING",
-            "value": "eaps"
-          },
-          {
-            "type": "STRING",
-            "value": "edp"
-          },
-          {
-            "type": "STRING",
-            "value": "egress"
-          },
-          {
-            "type": "STRING",
-            "value": "elrp-client"
-          },
-          {
-            "type": "STRING",
-            "value": "elsm"
-          },
-          {
-            "type": "STRING",
-            "value": "erps"
-          },
-          {
-            "type": "STRING",
-            "value": "esrp"
-          },
-          {
-            "type": "STRING",
-            "value": "failsafe-account"
-          },
-          {
-            "type": "STRING",
-            "value": "fdb"
-          },
-          {
-            "type": "STRING",
-            "value": "fip"
-          },
-          {
-            "type": "STRING",
-            "value": "flow-redirect"
-          },
-          {
-            "type": "STRING",
-            "value": "forwarding"
-          },
-          {
-            "type": "STRING",
-            "value": "identity-management"
-          },
-          {
-            "type": "STRING",
-            "value": "idletimeout"
-          },
-          {
-            "type": "STRING",
-            "value": "igmp"
-          },
-          {
-            "type": "STRING",
-            "value": "inline-power"
-          },
-          {
-            "type": "STRING",
-            "value": "ip"
-          },
-          {
-            "type": "STRING",
-            "value": "ip-fix"
-          },
-          {
-            "type": "STRING",
-            "value": "ip-mtu"
-          },
-          {
-            "type": "STRING",
-            "value": "ip-security"
-          },
-          {
-            "type": "STRING",
-            "value": "iparp"
-          },
-          {
-            "type": "STRING",
-            "value": "ipforwarding"
-          },
-          {
-            "type": "STRING",
-            "value": "ipmcforwarding"
-          },
-          {
-            "type": "STRING",
-            "value": "ipmroute"
-          },
-          {
-            "type": "STRING",
-            "value": "iproute"
-          },
-          {
-            "type": "STRING",
-            "value": "ipv6"
-          },
-          {
-            "type": "STRING",
-            "value": "irdp"
-          },
-          {
-            "type": "STRING",
-            "value": "jumbo-frame-size"
-          },
-          {
-            "type": "STRING",
-            "value": "l2pt"
-          },
-          {
-            "type": "STRING",
-            "value": "l2vpn"
-          },
-          {
-            "type": "STRING",
-            "value": "lacp"
-          },
-          {
-            "type": "STRING",
-            "value": "ldap"
-          },
-          {
-            "type": "STRING",
-            "value": "lldp"
-          },
-          {
-            "type": "STRING",
-            "value": "log"
-          },
-          {
-            "type": "STRING",
-            "value": "mac-lockdown-timeout"
-          },
-          {
-            "type": "STRING",
-            "value": "mac-locking"
-          },
-          {
-            "type": "STRING",
-            "value": "mcast"
-          },
-          {
-            "type": "STRING",
-            "value": "meter"
-          },
-          {
-            "type": "STRING",
-            "value": "mirror"
-          },
-          {
-            "type": "STRING",
-            "value": "mlag"
-          },
-          {
-            "type": "STRING",
-            "value": "mld"
-          },
-          {
-            "type": "STRING",
-            "value": "mrp"
-          },
-          {
-            "type": "STRING",
-            "value": "mstp"
-          },
-          {
-            "type": "STRING",
-            "value": "mvr"
-          },
-          {
-            "type": "STRING",
-            "value": "mvrp"
-          },
-          {
-            "type": "STRING",
-            "value": "neighbor-discovery"
-          },
-          {
-            "type": "STRING",
-            "value": "netlogin"
-          },
-          {
-            "type": "STRING",
-            "value": "ntp"
-          },
-          {
-            "type": "STRING",
-            "value": "pim"
-          },
-          {
-            "type": "STRING",
-            "value": "policy"
-          },
-          {
-            "type": "STRING",
-            "value": "ports"
-          },
-          {
-            "type": "STRING",
-            "value": "power"
-          },
-          {
-            "type": "STRING",
-            "value": "private-vlan"
-          },
-          {
-            "type": "STRING",
-            "value": "protocol"
-          },
-          {
-            "type": "STRING",
-            "value": "qosprofile"
-          },
-          {
-            "type": "STRING",
-            "value": "qosscheduler"
-          },
-          {
-            "type": "STRING",
-            "value": "radius"
-          },
-          {
-            "type": "STRING",
-            "value": "radius-accounting"
-          },
-          {
-            "type": "STRING",
-            "value": "rip"
-          },
-          {
-            "type": "STRING",
-            "value": "ripng"
-          },
-          {
-            "type": "STRING",
-            "value": "safe-default-script"
-          },
-          {
-            "type": "STRING",
-            "value": "security"
-          },
-          {
-            "type": "STRING",
-            "value": "sflow"
-          },
-          {
-            "type": "STRING",
-            "value": "sharing"
-          },
-          {
-            "type": "STRING",
-            "value": "snmp"
-          },
-          {
-            "type": "STRING",
-            "value": "snmpv3"
-          },
-          {
-            "type": "STRING",
-            "value": "sntp-client"
-          },
-          {
-            "type": "STRING",
-            "value": "ssh2"
-          },
-          {
-            "type": "STRING",
-            "value": "sshd2"
-          },
-          {
-            "type": "STRING",
-            "value": "ssl"
-          },
-          {
-            "type": "STRING",
-            "value": "stacking"
-          },
-          {
-            "type": "STRING",
-            "value": "stpd"
-          },
-          {
-            "type": "STRING",
-            "value": "sys-health-check"
-          },
-          {
-            "type": "STRING",
-            "value": "sys-recovery-level"
-          },
-          {
-            "type": "STRING",
-            "value": "syslog"
-          },
-          {
-            "type": "STRING",
-            "value": "tacacs"
-          },
-          {
-            "type": "STRING",
-            "value": "tacacs-accounting"
-          },
-          {
-            "type": "STRING",
-            "value": "tech-support"
-          },
-          {
-            "type": "STRING",
-            "value": "telnet"
-          },
-          {
-            "type": "STRING",
-            "value": "time"
-          },
-          {
-            "type": "STRING",
-            "value": "timezone"
-          },
-          {
-            "type": "STRING",
-            "value": "trusted-ports"
-          },
-          {
-            "type": "STRING",
-            "value": "trusted-servers"
-          },
-          {
-            "type": "STRING",
-            "value": "twamp"
-          },
-          {
-            "type": "STRING",
-            "value": "upm"
-          },
-          {
-            "type": "STRING",
-            "value": "vlan"
-          },
-          {
-            "type": "STRING",
-            "value": "vm-tracking"
-          },
-          {
-            "type": "STRING",
-            "value": "vman"
-          },
-          {
-            "type": "STRING",
-            "value": "vpls"
-          },
-          {
-            "type": "STRING",
-            "value": "vr"
-          },
-          {
-            "type": "STRING",
-            "value": "web"
-          },
-          {
-            "type": "STRING",
-            "value": "xml-notification"
-          }
-        ]
-      }
+    "configure_access_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "access-list"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_account": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "account"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_banner": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "banner"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_bfd": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bfd"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_bootprelay": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bootprelay"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_cdp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "cdp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_cfm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "cfm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_cli": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "cli"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_cos_index": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "cos-index"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_debug": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "debug"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dhcp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dhcp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_diffserv": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "diffserv"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dos-protect"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dot1p": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dot1p"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_eaps": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "eaps"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_edp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "edp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_egress": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "egress"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elrp_client": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elrp-client"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elsm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elsm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_erps": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "erps"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_esrp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "esrp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_failsafe_account": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "failsafe-account"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_fdb": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "fdb"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_fip": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "fip"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_flow_redirect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "flow-redirect"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_forwarding": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "forwarding"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_identity_management": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "identity-management"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_idletimeout": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "idletimeout"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_igmp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "igmp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_inline_power": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "inline-power"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ip": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ip"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ip_fix": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ip-fix"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ip_mtu": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ip-mtu"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ip_security": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ip-security"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_iparp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "iparp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ipforwarding": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipforwarding"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ipmcforwarding": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipmcforwarding"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ipmroute": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipmroute"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_iproute": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "iproute"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ipv6": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipv6"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_irdp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "irdp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_jumbo_frame_size": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "jumbo-frame-size"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_l2pt": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "l2pt"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_l2vpn": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "l2vpn"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lacp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lacp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ldap": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ldap"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_log": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "log"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mac_lockdown_timeout": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mac-lockdown-timeout"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mac_locking": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mac-locking"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mcast": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mcast"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_meter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "meter"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mirror": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mirror"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mlag": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mlag"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mld": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mld"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mrp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mrp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mstp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mstp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mvr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mvr"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_mvrp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mvrp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_neighbor_discovery": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "neighbor-discovery"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_netlogin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "netlogin"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ntp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ntp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_pim": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pim"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_policy": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "policy"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_power": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "power"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_private_vlan": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "private-vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_protocol": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "protocol"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_qosprofile": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "qosprofile"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_qosscheduler": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "qosscheduler"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_radius": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "radius"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_radius_accounting": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "radius-accounting"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_rip": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "rip"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ripng": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ripng"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_safe_default_script": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "safe-default-script"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_security": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "security"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_sflow": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sflow"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_sharing": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sharing"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_snmpv3": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "snmpv3"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ssh2": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ssh2"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_sshd2": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sshd2"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_ssl": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ssl"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_stacking": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "stacking"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_stpd": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "stpd"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_sys_health_check": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sys-health-check"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_syslog": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "syslog"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_tacacs": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tacacs"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_tacacs_accounting": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tacacs-accounting"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_tech_support": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tech-support"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_telnet": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "telnet"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_time": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "time"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_timezone": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "timezone"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_trusted_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "trusted-ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_trusted_servers": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "trusted-servers"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "twamp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_upm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "upm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vm_tracking": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vm-tracking"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vman": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vman"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vpls": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vpls"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vr"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_web": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "web"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_xml_notification": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "xml-notification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "configure_snmp": {
       "type": "SEQ",

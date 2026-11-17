@@ -60,8 +60,7 @@ save configuration
 (source_file
   (command
     (configure_command
-      (configure_generic
-        (configure_topic)
+      (configure_vlan
         (word_or_string
           (word))
         (word_or_string
@@ -157,36 +156,42 @@ configure future-feature value
 (source_file
   (command
     (configure_command
-      (configure_generic
-        (configure_topic)
-        (word_or_string (word)))))
+      (configure_access_list
+        (word_or_string
+          (word)))))
   (command
     (configure_command
-      (configure_generic
-        (configure_topic)
-        (word_or_string (word))
-        (word_or_string (word)))))
+      (configure_ntp
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
-      (configure_generic
-        (configure_topic)
-        (word_or_string (word))
-        (word_or_string (word))
-        (word_or_string (string)))))
+      (configure_ports
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
-      (configure_generic
-        (configure_topic)
-        (word_or_string (word))
-        (word_or_string (word))
-        (word_or_string (word)))))
+      (configure_vlan
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
-      (configure_generic
-        (configure_topic)
-        (word_or_string (word)))))
+      (configure_xml_notification
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_generic
         (word)
-        (word_or_string (word))))))
+        (word_or_string
+          (word))))))
