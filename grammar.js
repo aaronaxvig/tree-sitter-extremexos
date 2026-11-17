@@ -1,5 +1,5 @@
 /**
- * @file Configuration syntax for Extreme switches running EXOS
+ * @file Configuration syntax for Extreme Networks switches running ExtremeXOS
  * @author Aaron Axvig <aaron@axvigs.com>
  * @license MIT
  */
@@ -10,101 +10,70 @@
 module.exports = grammar({
   name: "extremexos",
 
-  extras: $ => [/\s/], // whitespace
-
-  conflicts: $ => [
-    [$.section]
-  ],
+  // Newlines terminate EXOS commands and therefore cannot be extras.
+  extras: _ => [/[\t \f]/],
 
   rules: {
-    // Top-level: a sequence of sections
-    source_file: $ => repeat($.section),
+    source_file: $ => repeat(choice(
+      $.section_header,
+      $.command,
+      $.comment,
+      $._newline,
+    )),
 
-    // A section contains an optional header, then commands and/or comments
-    section: $ => seq(
-      optional($.section_header),
-      repeat1(choice(
-        $.configure_command,
-        $.create_command,
-        $.enable_command,
-//        $.other_command,
-        $.comment))
-    ),
+    // EXOS exports use a three-comment banner before each configuration module.
+    section_header: _ => token(prec(2, seq(
+      '#', /\r?\n/,
+      '#', /[^\r\n]*Module[^\r\n]*configuration\.[^\r\n]*/, /\r?\n/,
+      '#', /\r?\n/,
+    ))),
 
-    // Optional header defining a region
-    section_header: $ => seq(
-      token(seq('#', '\n')),           // optional empty line
-      token(seq('#', /.*Module.*configuration.*\n/)), // header line
-      token(seq('#', '\n'))            // optional empty line
+    command: $ => choice(
+      $.configure_command,
+      $.create_command,
+      $.enable_command,
+      $.disable_command,
+      $.unconfigure_command,
+      $.delete_command,
+      $.generic_command,
     ),
 
     configure_command: $ => seq(
       'configure',
-      choice(
-        $.snmp_command,
-        $.diagnostics_command,
-        $.sys_recovery_command,
-        $.generic_config_command
-      )
+      choice($.configure_snmp, $.configure_diagnostics, $.configure_sys_recovery, $._arguments),
+      $._newline,
     ),
 
-    create_command: $ => seq(
-      'create',
-      repeat($.word_or_string)
-    ),
-
-    enable_command: $ => seq(
-      'enable',
-      repeat($.word_or_string)
-    ),
-
-//    other_command: $ => seq(
-//      $.word,
-//      repeat($.word_or_string)
-//    ),
-
-    // snmp commands
-    snmp_command: $ => seq(
+    configure_snmp: $ => seq(
       'snmp',
       choice(
-        seq('sysName', $.string),
-        seq('sysContact', $.string),
-        seq('sysLocation', $.string),
-        seq($.word, repeat($.word)) // fallback
-      )
+        $.configure_snmp_sys_name,
+        $.configure_snmp_sys_contact,
+        $.configure_snmp_sys_location,
+        $._arguments,
+      ),
     ),
 
-    diagnostics_command: $ => seq(
-      'diagnostics',
-      'privilege',
-      $.word
-    ),
+    configure_snmp_sys_name: $ => seq('sysName', $.word_or_string),
+    configure_snmp_sys_contact: $ => seq('sysContact', $.word_or_string),
+    configure_snmp_sys_location: $ => seq('sysLocation', $.word_or_string),
+    configure_diagnostics: $ => seq('diagnostics', 'privilege', $.word),
+    configure_sys_recovery: $ => seq('sys-recovery-level', $.word, $.word),
 
-    sys_recovery_command: $ => seq(
-      'sys-recovery-level',
-      $.word,
-      $.word
-    ),
+    create_command: $ => seq('create', optional($._arguments), $._newline),
+    enable_command: $ => seq('enable', optional($._arguments), $._newline),
+    disable_command: $ => seq('disable', optional($._arguments), $._newline),
+    unconfigure_command: $ => seq('unconfigure', optional($._arguments), $._newline),
+    delete_command: $ => seq('delete', optional($._arguments), $._newline),
 
-    // fallback for other configure commands
-    generic_config_command: $ => repeat1($.word_or_string),
-
-    // Commands that don’t start with configure
-    other_command: $ => seq(
-      $.word,
-      repeat($.word_or_string)
-    ),
-
-    // Words or quoted strings
+    // Retain unknown EXOS commands losslessly while the detailed grammar grows.
+    generic_command: $ => seq($.word, optional($._arguments), $._newline),
+    _arguments: $ => repeat1($.word_or_string),
     word_or_string: $ => choice($.string, $.word),
-    word: $ => /[^\s"']+/,
-    string: $ => token(seq(
-      '"',
-      repeat(choice(/[^"\\]+/, /\\./)),
-      '"'
-    )),
+    word: _ => /[^\s"']+/,
+    string: _ => token(seq('"', repeat(choice(/[^"\\\r\n]+/, /\\./)), '"')),
 
-    // Comments
-    comment: $ => token(seq('#', /.*/))
-  }
+    comment: $ => seq(token(seq('#', /[^\r\n]*/)), $._newline),
+    _newline: _ => /\r?\n/,
+  },
 });

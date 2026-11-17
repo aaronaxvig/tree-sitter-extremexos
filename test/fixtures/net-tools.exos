@@ -1,0 +1,26 @@
+#
+# Module msdp configuration.
+#
+
+#
+# Module netDb configuration.
+#
+
+#
+# Module netLogin configuration.
+#
+
+#
+# Module netTools configuration.
+#
+configure dns-client add name-server 192.0.2.141 vr VR-Mgmt
+configure dns-client add name-server 192.0.2.142 vr VR-Mgmt
+configure dns-client add name-server 192.0.2.141 vr VR-Default
+configure dns-client add name-server 192.0.2.142 vr VR-Default
+configure dns-client add domain-suffix example.com
+configure sntp-client primary timehost.example.com vr VR-Default
+enable sntp-client
+
+#
+# Module nodealias configuration.
+#

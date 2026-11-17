@@ -1,8 +1,8 @@
 {
   "name": "tree-sitter-extremexos",
   "version": "0.1.0",
-  "description": "Configuration syntax for Extreme switches running EXOS",
-  "repository": "https://github.com/tree-sitter/tree-sitter-extremexos",
+  "description": "Tree-sitter grammar for Extreme Networks ExtremeXOS configurations",
+  "repository": "https://github.com/aaronaxvig/tree-sitter-extremexos",
   "license": "MIT",
   "author": {
     "name": "Aaron Axvig",
@@ -18,6 +18,7 @@
   ],
   "files": [
     "grammar.js",
+    "examples/**",
     "tree-sitter.json",
     "binding.gyp",
     "prebuilds/**",
@@ -47,6 +48,7 @@
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
-    "test": "node --test bindings/node/*_test.js"
+    "generate": "tree-sitter generate --abi 14",
+    "test": "tree-sitter test && node --test bindings/node/*_test.js"
   }
 }

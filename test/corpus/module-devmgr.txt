@@ -1,0 +1,107 @@
+================================================================================
+Module header and comments
+================================================================================
+
+#
+# Module devmgr configuration.
+#
+# ordinary comment
+
+---
+
+(source_file
+  (section_header)
+  (comment))
+
+================================================================================
+SNMP values may be quoted or unquoted
+================================================================================
+
+configure snmp sysName "Example Switch"
+configure snmp sysName ExampleSwitch
+configure snmp sysContact "https://www.extremenetworks.com/support/"
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_snmp
+        (configure_snmp_sys_name
+          (word_or_string
+            (string))))))
+  (command
+    (configure_command
+      (configure_snmp
+        (configure_snmp_sys_name
+          (word_or_string
+            (word))))))
+  (command
+    (configure_command
+      (configure_snmp
+        (configure_snmp_sys_contact
+          (word_or_string
+            (string)))))))
+
+================================================================================
+Commands remain on separate lines
+================================================================================
+
+configure vlan default delete ports all
+create vlan "Cameras"
+enable jumbo-frame ports all
+disable telnet
+unconfigure switch all
+delete vlan Cameras
+save configuration
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
+  (command
+    (create_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))))
+  (command
+    (enable_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
+  (command
+    (disable_command
+      (word_or_string
+        (word))))
+  (command
+    (unconfigure_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
+  (command
+    (delete_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
+  (command
+    (generic_command
+      (word)
+      (word_or_string
+        (word)))))

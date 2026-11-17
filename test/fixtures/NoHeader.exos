@@ -1,0 +1,5 @@
+enable jumbo-frame ports all
+create vlan "Cameras"
+configure vlan Cameras tag 4
+create vlan "DMZ"
+configure vlan DMZ tag 3

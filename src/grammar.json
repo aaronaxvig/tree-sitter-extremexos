@@ -5,101 +5,97 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "section"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "section_header"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "command"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_newline"
+          }
+        ]
       }
     },
-    "section": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
+    "section_header": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 2,
+        "content": {
+          "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "section_header"
+              "type": "STRING",
+              "value": "#"
             },
             {
-              "type": "BLANK"
+              "type": "PATTERN",
+              "value": "\\r?\\n"
+            },
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[^\\r\\n]*Module[^\\r\\n]*configuration\\.[^\\r\\n]*"
+            },
+            {
+              "type": "PATTERN",
+              "value": "\\r?\\n"
+            },
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "PATTERN",
+              "value": "\\r?\\n"
             }
           ]
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "configure_command"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "create_command"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "enable_command"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              }
-            ]
-          }
         }
-      ]
+      }
     },
-    "section_header": {
-      "type": "SEQ",
+    "command": {
+      "type": "CHOICE",
       "members": [
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "#"
-              },
-              {
-                "type": "STRING",
-                "value": "\n"
-              }
-            ]
-          }
+          "type": "SYMBOL",
+          "name": "configure_command"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "#"
-              },
-              {
-                "type": "PATTERN",
-                "value": ".*Module.*configuration.*\\n"
-              }
-            ]
-          }
+          "type": "SYMBOL",
+          "name": "create_command"
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "#"
-              },
-              {
-                "type": "STRING",
-                "value": "\n"
-              }
-            ]
-          }
+          "type": "SYMBOL",
+          "name": "enable_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "disable_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unconfigure_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "delete_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "generic_command"
         }
       ]
     },
@@ -115,57 +111,29 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "snmp_command"
+              "name": "configure_snmp"
             },
             {
               "type": "SYMBOL",
-              "name": "diagnostics_command"
+              "name": "configure_diagnostics"
             },
             {
               "type": "SYMBOL",
-              "name": "sys_recovery_command"
+              "name": "configure_sys_recovery"
             },
             {
               "type": "SYMBOL",
-              "name": "generic_config_command"
+              "name": "_arguments"
             }
           ]
-        }
-      ]
-    },
-    "create_command": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "create"
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "word_or_string"
-          }
+          "type": "SYMBOL",
+          "name": "_newline"
         }
       ]
     },
-    "enable_command": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "enable"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "word_or_string"
-          }
-        }
-      ]
-    },
-    "snmp_command": {
+    "configure_snmp": {
       "type": "SEQ",
       "members": [
         {
@@ -176,65 +144,65 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "sysName"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "string"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "configure_snmp_sys_name"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "sysContact"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "string"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "configure_snmp_sys_contact"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "sysLocation"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "string"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "configure_snmp_sys_location"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "word"
-                },
-                {
-                  "type": "REPEAT",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "word"
-                  }
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "_arguments"
             }
           ]
         }
       ]
     },
-    "diagnostics_command": {
+    "configure_snmp_sys_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sysName"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word_or_string"
+        }
+      ]
+    },
+    "configure_snmp_sys_contact": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sysContact"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word_or_string"
+        }
+      ]
+    },
+    "configure_snmp_sys_location": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sysLocation"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "word_or_string"
+        }
+      ]
+    },
+    "configure_diagnostics": {
       "type": "SEQ",
       "members": [
         {
@@ -251,7 +219,7 @@
         }
       ]
     },
-    "sys_recovery_command": {
+    "configure_sys_recovery": {
       "type": "SEQ",
       "members": [
         {
@@ -268,14 +236,132 @@
         }
       ]
     },
-    "generic_config_command": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SYMBOL",
-        "name": "word_or_string"
-      }
+    "create_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "create"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
     },
-    "other_command": {
+    "enable_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "enable"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "disable_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "disable"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "unconfigure_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "unconfigure"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "delete_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "generic_command": {
       "type": "SEQ",
       "members": [
         {
@@ -283,13 +369,29 @@
           "name": "word"
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "word_or_string"
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
         }
       ]
+    },
+    "_arguments": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "word_or_string"
+      }
     },
     "word_or_string": {
       "type": "CHOICE",
@@ -324,7 +426,7 @@
               "members": [
                 {
                   "type": "PATTERN",
-                  "value": "[^\"\\\\]+"
+                  "value": "[^\"\\\\\\r\\n]+"
                 },
                 {
                   "type": "PATTERN",
@@ -341,33 +443,42 @@
       }
     },
     "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "#"
-          },
-          {
-            "type": "PATTERN",
-            "value": ".*"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "#"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^\\r\\n]*"
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
+    },
+    "_newline": {
+      "type": "PATTERN",
+      "value": "\\r?\\n"
     }
   },
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": "[\\t \\f]"
     }
   ],
-  "conflicts": [
-    [
-      "section"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],

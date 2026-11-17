@@ -1,0 +1,19 @@
+
+#
+# Module telnetd configuration.
+#
+disable telnet
+
+#
+# Module tftpd configuration.
+#
+
+#
+# Module thttpd configuration.
+#
+configure ssl certificate hash-algorithm sha512 
+
+#
+# Module twamp configuration.
+#
+
