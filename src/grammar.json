@@ -3184,8 +3184,12 @@
                       "type": "CHOICE",
                       "members": [
                         {
-                          "type": "SYMBOL",
-                          "name": "configure_vlan_add"
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_vlan_add"
+                          }
                         },
                         {
                           "type": "SYMBOL",
@@ -3336,16 +3340,221 @@
         }
       }
     },
-    "configure_vlan_action_generic": {
+    "configure_vlan_add": {
       "type": "SEQ",
       "members": [
         {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vlan_add_ports"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vlan_add_secondary_ipaddress"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_vlan_add_subvlan"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "configure_vlan_add_generic"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_add_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
           "type": "FIELD",
-          "name": "action",
+          "name": "ports",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "all"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "port_list"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "configure_vlan_port_options"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "port_list": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[0-9]+(?::[0-9]+)?(?:-[0-9]+(?::[0-9]+)?)?(?:,[0-9]+(?::[0-9]+)?(?:-[0-9]+(?::[0-9]+)?)?)*"
+      }
+    },
+    "configure_vlan_port_options": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "mode",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "private-vlan"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "tagged"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "untagged"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_vlan_stpd_option"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "tag",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "vlan_id"
+                  }
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_vlan_stpd_option"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "tag",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "vlan_id"
+                  }
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "tag",
           "content": {
             "type": "SYMBOL",
-            "name": "word"
+            "name": "vlan_id"
           }
+        }
+      ]
+    },
+    "_vlan_stpd_option": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "stpd"
+            },
+            {
+              "type": "FIELD",
+              "name": "stpd",
+              "content": {
+                "type": "SYMBOL",
+                "name": "word_or_string"
+              }
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "stpd",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string"
+          }
+        }
+      ]
+    },
+    "configure_vlan_add_secondary_ipaddress": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "secondary-ipaddress"
         },
         {
           "type": "CHOICE",
@@ -3361,12 +3570,58 @@
         }
       ]
     },
-    "configure_vlan_add": {
+    "configure_vlan_add_subvlan": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "add"
+          "value": "subvlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_add_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_vlan_action_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "action",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
         },
         {
           "type": "CHOICE",

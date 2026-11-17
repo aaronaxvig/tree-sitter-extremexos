@@ -253,3 +253,111 @@ configure vlan "Example" qp1
           (string))
         (configure_vlan_action_generic
           (word))))))
+
+================================================================================
+Add VLAN ports and related configuration
+================================================================================
+
+configure vlan "Example" add ports all
+configure vlan "Example" add ports all private-vlan
+configure vlan "Example" add ports 1,3-5 untagged
+configure vlan "Example" add ports all tagged
+configure vlan "Example" add ports all tagged stpd "s0"
+configure vlan "Example" add ports all tagged 100
+configure vlan "Example" add ports all tagged "s0" 100
+configure vlan "Example" add secondary-ipaddress 192.0.2.10/24
+configure vlan "Example" add subvlan "Child"
+configure vlan "Example" add future-option value
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports)))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (configure_vlan_port_options))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (port_list)
+            (configure_vlan_port_options))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (configure_vlan_port_options))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (configure_vlan_port_options
+              (word_or_string
+                (string))))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (configure_vlan_port_options
+              (vlan_id)))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (configure_vlan_port_options
+              (string)
+              (vlan_id)))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_secondary_ipaddress
+            (word_or_string
+              (word)))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_subvlan
+            (word_or_string
+              (string)))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_generic
+            (word)
+            (word_or_string
+              (word))))))))
