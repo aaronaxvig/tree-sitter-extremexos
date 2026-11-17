@@ -2,7 +2,7 @@
 
 A [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for configuration files exported by Extreme Networks switches running ExtremeXOS.
 
-The grammar currently provides named nodes for module headers, comments, common command verbs, and selected `configure snmp`, diagnostics, and system-recovery commands. Unknown commands are preserved as generic commands so complete configuration exports can still be parsed.
+The grammar currently provides named nodes for module headers, comments, common command verbs, and selected SNMP, DNS client, SNTP client, diagnostics, and system-recovery configuration commands. Unknown commands are preserved as generic commands so complete configuration exports can still be parsed.
 
 ## Development
 

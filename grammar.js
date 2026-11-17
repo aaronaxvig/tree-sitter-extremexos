@@ -40,7 +40,14 @@ module.exports = grammar({
 
     configure_command: $ => seq(
       'configure',
-      choice($.configure_snmp, $.configure_diagnostics, $.configure_sys_recovery, $._arguments),
+      choice(
+        $.configure_snmp,
+        $.configure_dns_client,
+        $.configure_sntp_client,
+        $.configure_diagnostics,
+        $.configure_sys_recovery,
+        $._arguments,
+      ),
       $._newline,
     ),
 
@@ -57,6 +64,36 @@ module.exports = grammar({
     configure_snmp_sys_name: $ => seq('sysName', $.word_or_string),
     configure_snmp_sys_contact: $ => seq('sysContact', $.word_or_string),
     configure_snmp_sys_location: $ => seq('sysLocation', $.word_or_string),
+
+    configure_dns_client: $ => seq(
+      'dns-client',
+      choice($.dns_client_name_server, $.dns_client_domain_suffix),
+    ),
+
+    dns_client_name_server: $ => seq(
+      'add',
+      'name-server',
+      field('address', $.word),
+      optional(seq('vr', field('virtual_router', $.word))),
+    ),
+
+    dns_client_domain_suffix: $ => seq(
+      'add',
+      'domain-suffix',
+      field('domain', $.word),
+    ),
+
+    configure_sntp_client: $ => seq(
+      'sntp-client',
+      $.sntp_client_server,
+    ),
+
+    sntp_client_server: $ => seq(
+      field('role', choice('primary', 'secondary')),
+      field('hostname', $.word),
+      optional(seq('vr', field('virtual_router', $.word))),
+    ),
+
     configure_diagnostics: $ => seq('diagnostics', 'privilege', $.word),
     configure_sys_recovery: $ => seq('sys-recovery-level', $.word, $.word),
 

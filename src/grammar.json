@@ -115,6 +115,14 @@
             },
             {
               "type": "SYMBOL",
+              "name": "configure_dns_client"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "configure_sntp_client"
+            },
+            {
+              "type": "SYMBOL",
               "name": "configure_diagnostics"
             },
             {
@@ -199,6 +207,163 @@
         {
           "type": "SYMBOL",
           "name": "word_or_string"
+        }
+      ]
+    },
+    "configure_dns_client": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dns-client"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "dns_client_name_server"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "dns_client_domain_suffix"
+            }
+          ]
+        }
+      ]
+    },
+    "dns_client_name_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "STRING",
+          "value": "name-server"
+        },
+        {
+          "type": "FIELD",
+          "name": "address",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "vr"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "virtual_router",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "dns_client_domain_suffix": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "STRING",
+          "value": "domain-suffix"
+        },
+        {
+          "type": "FIELD",
+          "name": "domain",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
+        }
+      ]
+    },
+    "configure_sntp_client": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sntp-client"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "sntp_client_server"
+        }
+      ]
+    },
+    "sntp_client_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "role",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "primary"
+              },
+              {
+                "type": "STRING",
+                "value": "secondary"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "hostname",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "vr"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "virtual_router",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },

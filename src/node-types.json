@@ -56,7 +56,15 @@
           "named": true
         },
         {
+          "type": "configure_dns_client",
+          "named": true
+        },
+        {
           "type": "configure_snmp",
+          "named": true
+        },
+        {
+          "type": "configure_sntp_client",
           "named": true
         },
         {
@@ -80,6 +88,25 @@
       "types": [
         {
           "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "dns_client_domain_suffix",
+          "named": true
+        },
+        {
+          "type": "dns_client_name_server",
           "named": true
         }
       ]
@@ -158,6 +185,21 @@
     }
   },
   {
+    "type": "configure_sntp_client",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "sntp_client_server",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "configure_sys_recovery",
     "named": true,
     "fields": {},
@@ -218,6 +260,48 @@
     }
   },
   {
+    "type": "dns_client_domain_suffix",
+    "named": true,
+    "fields": {
+      "domain": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "dns_client_name_server",
+    "named": true,
+    "fields": {
+      "address": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "virtual_router": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "enable_command",
     "named": true,
     "fields": {},
@@ -249,6 +333,46 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "sntp_client_server",
+    "named": true,
+    "fields": {
+      "hostname": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "role": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primary",
+            "named": false
+          },
+          {
+            "type": "secondary",
+            "named": false
+          }
+        ]
+      },
+      "virtual_router": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -310,6 +434,10 @@
     }
   },
   {
+    "type": "add",
+    "named": false
+  },
+  {
     "type": "configure",
     "named": false
   },
@@ -330,11 +458,31 @@
     "named": false
   },
   {
+    "type": "dns-client",
+    "named": false
+  },
+  {
+    "type": "domain-suffix",
+    "named": false
+  },
+  {
     "type": "enable",
     "named": false
   },
   {
+    "type": "name-server",
+    "named": false
+  },
+  {
+    "type": "primary",
+    "named": false
+  },
+  {
     "type": "privilege",
+    "named": false
+  },
+  {
+    "type": "secondary",
     "named": false
   },
   {
@@ -343,6 +491,10 @@
   },
   {
     "type": "snmp",
+    "named": false
+  },
+  {
+    "type": "sntp-client",
     "named": false
   },
   {
@@ -367,6 +519,10 @@
   },
   {
     "type": "unconfigure",
+    "named": false
+  },
+  {
+    "type": "vr",
     "named": false
   },
   {
