@@ -774,9 +774,36 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
+        {
+          "type": "configure_dns_client_delete_generic",
+          "named": true
+        },
+        {
+          "type": "dns_client_domain_suffix",
+          "named": true
+        },
+        {
+          "type": "dns_client_name_server",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client_delete_generic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
+          "named": true
+        },
         {
           "type": "word_or_string",
           "named": true

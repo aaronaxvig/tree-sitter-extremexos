@@ -3319,6 +3319,40 @@
           "type": "CHOICE",
           "members": [
             {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "dns_client_name_server"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "dns_client_domain_suffix"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "configure_dns_client_delete_generic"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dns_client_add_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SYMBOL",
               "name": "_arguments"
             },
@@ -3329,7 +3363,7 @@
         }
       ]
     },
-    "configure_dns_client_add_generic": {
+    "configure_dns_client_delete_generic": {
       "type": "SEQ",
       "members": [
         {

@@ -112,6 +112,9 @@ configure dns-client add name-server 192.0.2.141 vr VR-Mgmt
 configure dns-client add domain-suffix example.com
 configure dns-client default-domain example.com
 configure dns-client delete name-server 192.0.2.141
+configure dns-client delete name-server 192.0.2.142 vr VR-Default
+configure dns-client delete domain-suffix example.com
+configure dns-client delete future-option value
 configure dns-client add future-option value
 configure dns-client future-option value
 configure sntp-client primary timehost.example.com vr VR-Default
@@ -143,10 +146,29 @@ configure sntp-client secondary timehost2.example.com
     (configure_command
       (configure_dns_client
         (configure_dns_client_delete
-          (word_or_string
-            (word))
-          (word_or_string
+          (dns_client_name_server
             (word))))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_delete
+          (dns_client_name_server
+            (word)
+            (word))))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_delete
+          (dns_client_domain_suffix
+            (word))))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_delete
+          (configure_dns_client_delete_generic
+            (word)
+            (word_or_string
+              (word)))))))
   (command
     (configure_command
       (configure_dns_client

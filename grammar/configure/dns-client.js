@@ -34,8 +34,17 @@ const rules = () => ({
     optional($._arguments),
   ),
 
-  configure_dns_client_delete: $ => seq('delete', optional($._arguments)),
+  configure_dns_client_delete: $ => seq(
+    'delete',
+    choice(
+      prec(1, $.dns_client_name_server),
+      prec(1, $.dns_client_domain_suffix),
+      $.configure_dns_client_delete_generic,
+    ),
+  ),
+
   configure_dns_client_add_generic: $ => seq($.word, optional($._arguments)),
+  configure_dns_client_delete_generic: $ => seq($.word, optional($._arguments)),
   configure_dns_client_generic: $ => seq($.word, optional($._arguments)),
 });
 
