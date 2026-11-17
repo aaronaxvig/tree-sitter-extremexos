@@ -694,11 +694,110 @@
       "required": true,
       "types": [
         {
+          "type": "configure_dns_client_add",
+          "named": true
+        },
+        {
+          "type": "configure_dns_client_default_domain",
+          "named": true
+        },
+        {
+          "type": "configure_dns_client_delete",
+          "named": true
+        },
+        {
+          "type": "configure_dns_client_generic",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client_add",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "configure_dns_client_add_generic",
+          "named": true
+        },
+        {
           "type": "dns_client_domain_suffix",
           "named": true
         },
         {
           "type": "dns_client_name_server",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client_add_generic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client_default_domain",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client_delete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dns_client_generic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
           "named": true
         }
       ]
@@ -3034,6 +3133,10 @@
   },
   {
     "type": "debug",
+    "named": false
+  },
+  {
+    "type": "default-domain",
     "named": false
   },
   {

@@ -3152,6 +3152,225 @@
         }
       ]
     },
+    "configure_dns_client": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dns-client"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dns_client_add"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dns_client_default_domain"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "configure_dns_client_delete"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "configure_dns_client_generic"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dns_client_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "dns_client_name_server"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "dns_client_domain_suffix"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "configure_dns_client_add_generic"
+            }
+          ]
+        }
+      ]
+    },
+    "dns_client_name_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "name-server"
+        },
+        {
+          "type": "FIELD",
+          "name": "address",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "vr"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "virtual_router",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "dns_client_domain_suffix": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "domain-suffix"
+        },
+        {
+          "type": "FIELD",
+          "name": "domain",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word"
+          }
+        }
+      ]
+    },
+    "configure_dns_client_default_domain": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "default-domain"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dns_client_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dns_client_add_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dns_client_generic": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "word"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "configure_vlan": {
       "type": "SEQ",
       "members": [
@@ -4060,95 +4279,6 @@
         {
           "type": "SYMBOL",
           "name": "word_or_string"
-        }
-      ]
-    },
-    "configure_dns_client": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "dns-client"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "dns_client_name_server"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "dns_client_domain_suffix"
-            }
-          ]
-        }
-      ]
-    },
-    "dns_client_name_server": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "add"
-        },
-        {
-          "type": "STRING",
-          "value": "name-server"
-        },
-        {
-          "type": "FIELD",
-          "name": "address",
-          "content": {
-            "type": "SYMBOL",
-            "name": "word"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "vr"
-                },
-                {
-                  "type": "FIELD",
-                  "name": "virtual_router",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "word"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "dns_client_domain_suffix": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "add"
-        },
-        {
-          "type": "STRING",
-          "value": "domain-suffix"
-        },
-        {
-          "type": "FIELD",
-          "name": "domain",
-          "content": {
-            "type": "SYMBOL",
-            "name": "word"
-          }
         }
       ]
     },

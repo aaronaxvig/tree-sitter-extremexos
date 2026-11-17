@@ -7,8 +7,9 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const configureTopics = require('./grammar/configure-topics');
-const vlan = require('./grammar/vlan');
+const configureTopics = require('./grammar/configure/topics');
+const dnsClient = require('./grammar/configure/dns-client');
+const vlan = require('./grammar/configure/vlan');
 
 module.exports = grammar({
   name: "extremexos",
@@ -63,6 +64,7 @@ module.exports = grammar({
     ),
 
     ...configureTopics.rules(),
+    ...dnsClient.rules(),
     ...vlan.rules(),
 
     configure_snmp: $ => seq(
@@ -78,24 +80,6 @@ module.exports = grammar({
     configure_snmp_sys_name: $ => seq('sysName', $.word_or_string),
     configure_snmp_sys_contact: $ => seq('sysContact', $.word_or_string),
     configure_snmp_sys_location: $ => seq('sysLocation', $.word_or_string),
-
-    configure_dns_client: $ => seq(
-      'dns-client',
-      choice($.dns_client_name_server, $.dns_client_domain_suffix),
-    ),
-
-    dns_client_name_server: $ => seq(
-      'add',
-      'name-server',
-      field('address', $.word),
-      optional(seq('vr', field('virtual_router', $.word))),
-    ),
-
-    dns_client_domain_suffix: $ => seq(
-      'add',
-      'domain-suffix',
-      field('domain', $.word),
-    ),
 
     configure_sntp_client: $ => seq(
       'sntp-client',

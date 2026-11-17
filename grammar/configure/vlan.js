@@ -24,7 +24,6 @@ const rules = () => ({
   ),
 
   configure_vlan_dynamic: $ => seq('dynamic-vlan', optional($._arguments)),
-
   vlan_reference: $ => choice($.string, $.vlan_list, $.vlan_id, $.word),
   vlan_id: _ => token(prec(2, /[0-9]+/)),
   vlan_list: _ => token(prec(3, /[0-9]+(?:[-,][0-9]+)+/)),
@@ -58,8 +57,8 @@ const rules = () => ({
   ),
 
   _vlan_stpd_option: $ => choice(
-      seq('stpd', field('stpd', $.word_or_string)),
-      field('stpd', $.string),
+    seq('stpd', field('stpd', $.word_or_string)),
+    field('stpd', $.string),
   ),
 
   configure_vlan_add_secondary_ipaddress: $ => seq(
