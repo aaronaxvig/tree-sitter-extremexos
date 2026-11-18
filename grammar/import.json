@@ -52,6 +52,9 @@
     "vi",
     "xsh"
   ],
+  "excluded_verbs": {
+    "jerry": "Hidden debug command"
+  },
   "detailed": {
     "clear": [
       "elsm",

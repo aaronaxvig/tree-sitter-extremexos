@@ -111,8 +111,8 @@ def import_topics(directory, verbs):
 def keyword_files(topics):
     index = [GENERATED.rstrip(), "module.exports = {"]
     for verb, words in sorted(topics.items()):
-        listing = ",\n".join(f"  {json.dumps(word)}" for word in sorted(words))
-        yield Path(verb, "keywords.js"), GENERATED + f"module.exports = [\n{listing},\n];\n"
+        listing = "".join(f"  {json.dumps(word)},\n" for word in sorted(words))
+        yield Path(verb, "keywords.js"), GENERATED + f"module.exports = [\n{listing}];\n"
         index.append(f'  {json.dumps(verb)}: require("./{verb}/keywords"),')
     yield Path("keywords.js"), "\n".join([*index, "};", ""])
 

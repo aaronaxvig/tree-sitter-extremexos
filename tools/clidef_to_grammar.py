@@ -77,7 +77,7 @@ END = State(True)
 DEAD_END = State(False)
 
 
-def command_graph(tree):
+def command_graph(tree, omitted_flags=()):
     """Build shared continuations from the CLI tree and its group markers."""
     closers = {}
     parents = {child: node for node in tree.iter() for child in node}
@@ -106,8 +106,13 @@ def command_graph(tree):
     def combine(states):
         return merge(tuple(dict.fromkeys(state for state in states if state is not DEAD_END)))
 
+    def omitted(node):
+        return omitted_flags and any(flag.text in omitted_flags for flag in node.findall("flags"))
+
     @cache
     def walk(node, groups=()):
+        if omitted(node):
+            return DEAD_END
         name = node.findtext("name", "")
         prefix = []
         if node.tag == "key":
@@ -162,6 +167,8 @@ def command_graph(tree):
         if len(operands) > 1:
             if branches[:len(operands)] != operands or any(map(has_continuation, operands[:-1])):
                 raise ValueError(f"Ambiguous sibling operands after {name!r}")
+            if any(map(omitted, operands[:-1])):
+                return DEAD_END
             prefix.extend(Token.operand(operand) for operand in operands[:-1])
             branches = branches[len(operands) - 1:]
             operands = operands[-1:]
@@ -174,6 +181,8 @@ def command_graph(tree):
             if not operand_actions or (not actions and branches[0] is operand):
                 if operand_actions:
                     alternatives.append(END)
+                if omitted(operand):
+                    return DEAD_END
                 prefix.append(Token.operand(operand))
                 branches.remove(operand)
 
@@ -193,6 +202,8 @@ def command_graph(tree):
         return continuation
 
     start = walk(tree)
+    if start is DEAD_END and omitted_flags:
+        return start
     if start.can_end or not start.transitions:
         raise ValueError("The command tree must define at least one nonempty command")
     return start

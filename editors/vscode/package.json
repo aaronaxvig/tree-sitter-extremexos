@@ -2,7 +2,7 @@
   "name": "extremexos",
   "displayName": "ExtremeXOS",
   "description": "Syntax highlighting for ExtremeXOS configuration files and Markdown code fences.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "aaronaxvig",
   "license": "MIT",
   "engines": {
@@ -17,8 +17,13 @@
     "directory": "editors/vscode"
   },
   "scripts": {
+    "test": "node --test scripts/test-highlighting.js",
     "generate": "node scripts/generate-grammar.js",
     "vscode:prepublish": "npm run generate"
+  },
+  "devDependencies": {
+    "vscode-oniguruma": "1.7.0",
+    "vscode-textmate": "9.3.2"
   },
   "contributes": {
     "languages": [

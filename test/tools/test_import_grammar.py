@@ -31,8 +31,8 @@ class GrammarImportTest(unittest.TestCase):
             second = Path(directory, "second.xml")
             module(first, "status")
             module(second, "details")
-            families, keywords, errors, _ = load_families([first, second], {"show"})
-            reversed_families, _, _, _ = load_families([second, first], {"show"})
+            families, keywords, errors, _, _ = load_families([first, second])
+            reversed_families, _, _, _, _ = load_families([second, first])
             self.assertEqual(errors, [])
             self.assertEqual(dict(keywords), {"show": {"sample"}})
             files = dict(output_files(families))
@@ -46,7 +46,7 @@ class GrammarImportTest(unittest.TestCase):
             directory = Path(directory)
             source = directory / "input.xml"
             module(source, "status")
-            families, keywords, _, _ = load_families([source], {"show"})
+            families, keywords, _, _, _ = load_families([source])
             output = directory / "grammar"
             write_files(output, families, keywords)
             unrelated = output / "show/helper.js"
@@ -67,7 +67,7 @@ class GrammarImportTest(unittest.TestCase):
 
             for keyword in ("status", "details"):
                 module(source, keyword)
-                families, keywords, errors, _ = load_families([source], {"show"})
+                families, keywords, errors, _, _ = load_families([source])
                 self.assertEqual(errors, [])
                 write_files(output, families, keywords)
                 self.assertIn(f'seq("{keyword}"', family.read_text())
@@ -78,7 +78,7 @@ class GrammarImportTest(unittest.TestCase):
         with TemporaryDirectory() as directory:
             source = Path(directory, "input.xml")
             module(source, "status")
-            families, _, _, _ = load_families([source], {"show"})
+            families, _, _, _, _ = load_families([source])
             families["show", "second"] = families["show", "sample"]
             files = dict(output_files(families))
             first = files[Path("show/sample.js")]
@@ -101,23 +101,21 @@ class GrammarImportTest(unittest.TestCase):
                     <key><name>private</name><flags>debug-only</flags><action id="4"/></key>
                   </key>
                 </cmd_tree></cmd_def>""")
-            verbs = {"cd", "show"}
-            families, keywords, errors, observed = load_families(paths, verbs)
+            families, keywords, errors, observed, public = load_families(paths)
             self.assertEqual(errors, [])
-            for selected, public_status in (({}, "generic"), ({("show", "public")}, "detailed")):
-                rows = coverage_report(observed, verbs, keywords, selected, {})
-                self.assertEqual([(row["command"], row["status"]) for row in rows], [
-                    ("cd", "generic"), ("cd <directory>", "generic"),
-                    ("future status", "skipped"), ("show private", "skipped"),
-                    ("show public", public_status),
-                ])
-                self.assertTrue(all(row["sources"] == ["a.xml", "b.xml"] for row in rows))
-                self.assertEqual(rows[2]["reason"], "unregistered verb")
+            rows = coverage_report(observed, set(keywords), keywords, families, {}, {}, public)
+            self.assertEqual([(row["command"], row["status"]) for row in rows], [
+                ("cd", "covered"), ("cd <directory>", "detailed"),
+                ("future status", "detailed"), ("show private", "excluded"),
+                ("show public", "detailed"),
+            ])
+            self.assertTrue(all(row["sources"] == ["a.xml", "b.xml"] for row in rows))
+            self.assertEqual(rows[3]["reason"], "XML visibility flag")
 
     def test_import_reports_invalid_xml(self):
         with TemporaryDirectory() as directory:
             source = Path(directory, "broken.xml")
             source.write_text("<cmd_def/>")
-            self.assertEqual(load_families([source], {"show"})[2], [
+            self.assertEqual(load_families([source])[2], [
                 "broken.xml: No ExtremeXOS command tree found",
             ])

@@ -19,4 +19,6 @@ The fence aliases `exosconfig` and `extremexos` also work. The editor accepts `l
 
 Run `npx @vscode/vsce package` from this directory. In VS Code, open the Command Palette and choose **Extensions: Install from VSIX...**, then select the generated package.
 
-The TextMate grammar reads the same generated command rules as Tree-sitter. From the repository root, run `python3 -B -m tools.import_grammar /path/to/config/clidef --all` to include every available family in the extension. Then package the extension from this directory. Packaging refreshes the highlighting grammar directly from those rules.
+The TextMate grammar reads the same generated command rules as Tree-sitter. From the repository root, run `python3 -B -m tools.import_grammar /path/to/config/clidef` to include every available family in the extension. Then package the extension from this directory. Packaging refreshes the highlighting grammar directly from those rules.
+
+Run `npm install` and `npm test` in this directory to check script highlighting in standalone files and Markdown fences.

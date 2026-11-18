@@ -71,7 +71,7 @@ function continuation(name) {
 // The generated parser shares continuations. The highlighter follows the
 // same references so optional branches never expand into full command paths.
 const subcommandRules = Object.entries(generated).flatMap(([verb, families]) =>
-  Object.keys(families).map(topic => ({
+  Object.keys(families).filter(topic => topic !== '_operand').map(topic => ({
     begin: `${lineStart}(${escapePattern(verb)})[ \\t]+(${escapePattern(topic)})${wordEnd}`,
     beginCaptures: {1: {name: commandScope}, 2: {name: topicScope}},
     end: '$',
@@ -101,6 +101,12 @@ const grammar = {
     },
     ...subcommandRules,
     ...topicRules,
+    ...verbs.filter(verb => generated[verb]?._operand).map(verb => ({
+      begin: `${lineStart}(${escapePattern(verb)})${wordEnd}`,
+      beginCaptures: {1: {name: commandScope}},
+      end: '$',
+      patterns: [...continuation(rules[topicName(verb, '_operand')](symbols).name), values],
+    })),
     {
       match: `${lineStart}(${alternatives(verbs)})${wordEnd}`,
       captures: {1: {name: commandScope}},

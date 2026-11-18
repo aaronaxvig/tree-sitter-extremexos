@@ -2,7 +2,7 @@
 
 A [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for configuration files and CLI command lists for Extreme Networks switches running ExtremeXOS.
 
-The grammar provides named nodes for module headers, comments, CLI verbs, and their known first-level keywords. Selected command families have detailed syntax rules. Other first-level keywords have named nodes with generic arguments.
+The grammar provides named nodes for module headers, comments, CLI verbs, and their known first-level keywords. The VS Code build uses every public XML family. The default native parser uses detailed rules for selected families. Other first-level keywords have named nodes with generic arguments.
 
 ## Scope
 
@@ -46,7 +46,7 @@ Supply an extracted `config/clidef` directory. The importer merges definitions o
 ```mermaid
 flowchart TD
     XML["Extracted config/clidef/*.xml"] --> Import["python3 -B -m tools.import_grammar"]
-    Config["grammar/import.json<br/>Detailed family selection"] --> Import
+    Config["grammar/import.json<br/>Visibility and native parser selection"] --> Import
     Import --> Keywords["grammar/VERB/keywords.js<br/>First-level keywords"]
     Import --> Details["grammar/VERB/TOPIC.js<br/>Detailed rules indexed by grammar/generated.js"]
     Keywords --> Grammar["grammar.js<br/>Compose the Tree-sitter grammar"]
@@ -68,11 +68,11 @@ git add -N grammar/
 git diff
 ```
 
-[`grammar/import.json`](grammar/import.json) defines which verb and topic pairs receive detailed rules in the standard build. Add pairs there to expand coverage and run the same commands. An unsupported XML definition stops the import before generated files are changed.
+[`grammar/import.json`](grammar/import.json) defines which verb and topic pairs receive detailed rules in the default native parser. Add pairs there to expand coverage and run the same commands. An unsupported XML definition stops the import before generated files are changed.
 
-Pass `--all` to import every available family. VS Code highlighting can be generated or packaged immediately after the import. For a full Tree-sitter build, CLI 0.26.9 includes a [reachability performance fix](https://github.com/tree-sitter/tree-sitter/pull/5584) for large grammars. Keep targeting ABI 14 with `tree-sitter generate --abi 14`.
+The XML importer and VS Code build use every public family by default. Public verbs are discovered from XML, including script commands and options such as `cat -n`. The importer retains `--all` as a compatibility alias. VS Code highlighting can be generated or packaged immediately after the import. For a full Tree-sitter build, CLI 0.26.9 includes a [reachability performance fix](https://github.com/tree-sitter/tree-sitter/pull/5584) for large grammars. Use `EXOS_FULL_PARSER=1 npm run generate` to generate all families locally with ABI 14.
 
-Each import prints coverage counts and names any XML verbs missing from `grammar/import.json`. Add `--coverage coverage.json` to either import command for a sorted list of XML command prefixes with their status, reason, and source filenames. A prefix is a verb alone when it can end there, or a verb and its next keyword or operand. For example, `cd <directory>` receives generic operand handling. A skipped prefix has no corresponding imported rule and may still parse through a fallback. The report measures prefix coverage, not every possible complete command line.
+Each import prints coverage counts for the full XML grammar. Add `--coverage coverage.json` to the import command for a sorted list of XML command prefixes with their status, reason, and source filenames. A prefix is a verb alone when it can end there, or a verb and its next keyword or operand. Bare verbs are counted as covered. Operand-first forms can have detailed continuations, such as `then` following the expression in an `if` command. Excluded prefixes carry an XML visibility flag or an explicit exclusion in the import configuration. A skipped prefix has no corresponding imported rule and may still parse through a fallback. The report measures prefix coverage, not every possible complete command line.
 
 Generated trees expose a named node for each verb and topic and named fields derived from XML operands. If several operand names share the same lexical position, the field is named `argument`. Subcommand keywords are literal tokens within the family node. VS Code follows the same shared continuation rules for highlighting.
 
