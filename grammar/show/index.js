@@ -1,24 +1,27 @@
-const twamp = require('./twamp');
-const lldp = require('./lldp');
-const netlogin = require('./netlogin');
 const topics = require('../topics');
-
-const names = topics.list('show', ['lldp', 'netlogin'], ['twamp']);
+const detailed = {
+  automation: require('./automation'),
+  database: require('./database'),
+  'dos-protect': require('./dos-protect'),
+  elsm: require('./elsm'),
+  keychain: require('./keychain'),
+  lldp: require('./lldp'),
+  netlogin: require('./netlogin'),
+  twamp: require('./twamp'),
+};
+const names = topics.list('show', Object.keys(detailed));
 
 const rules = () => ({
   show_command: $ => seq(
     'show',
     optional(choice(
-      prec(1, $.show_twamp),
       ...topics.branches($, 'show', names),
       $._arguments,
     )),
   ),
 
-  ...twamp.rules(),
   ...topics.rules('show', names),
-  ...lldp.rules(),
-  ...netlogin.rules(),
+  ...Object.assign({}, ...Object.values(detailed).map(family => family.rules())),
 });
 
 module.exports = {rules};

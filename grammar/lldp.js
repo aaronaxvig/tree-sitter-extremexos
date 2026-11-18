@@ -1,6 +1,6 @@
-const ports = $ => field('ports', choice('all', $.word_or_string));
+const {withArguments} = require('./arguments');
 
-const withArguments = ($, ...syntax) => seq(...syntax, optional($._arguments));
+const ports = $ => field('ports', choice('all', $.word_or_string));
 
 const toggle = verb => ({
   [`${verb}_lldp`]: $ => seq(

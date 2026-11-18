@@ -1,15 +1,9 @@
-const value = ($, name) => field(name, $.word_or_string);
+const {argument, options: tail, value, withArguments: finish} = require('./arguments');
+
 const ports = $ => field('ports', choice('all', $.word_or_string));
 const vlan = $ => value($, 'vlan');
 const user = $ => value($, 'user');
 const setting = $ => field('state', choice('on', 'off', $.word_or_string));
-
-const tail = ($, ...branches) => optional(choice(...branches.map(branch => prec(1, branch)), $._arguments));
-
-const finish = ($, ...tokens) => seq(...tokens, optional($._arguments));
-
-const argument = ($, keyword, operand, following = optional($._arguments)) =>
-  seq(keyword, optional(seq(operand, following)));
 
 const words = (...tokens) => tokens.length === 1 ? tokens[0] : choice(...tokens);
 

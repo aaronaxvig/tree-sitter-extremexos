@@ -15,7 +15,11 @@ const show = require('./grammar/show');
 
 const detailedConfigure = {
   'automation': require('./grammar/configure/automation'),
+  'database': require('./grammar/configure/database'),
   'diagnostics': require('./grammar/configure/diagnostics'),
+  'dos-protect': require('./grammar/configure/dos-protect'),
+  'elsm': require('./grammar/configure/elsm'),
+  'keychain': require('./grammar/configure/keychain'),
   'lldp': require('./grammar/configure/lldp'),
   'netlogin': require('./grammar/configure/netlogin'),
   'ntp': require('./grammar/configure/ntp'),
@@ -23,6 +27,8 @@ const detailedConfigure = {
   'dns-client': require('./grammar/configure/dns-client'),
   'sntp-client': require('./grammar/configure/sntp-client'),
   'sys-recovery-level': require('./grammar/configure/sys-recovery-level'),
+  'telnet': require('./grammar/configure/telnet'),
+  'twamp': require('./grammar/configure/twamp'),
   'vlan': require('./grammar/configure/vlan'),
 };
 const detailedTopics = Object.keys(detailedConfigure);

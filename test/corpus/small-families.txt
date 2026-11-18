@@ -1,0 +1,84 @@
+================================================================================
+Edge Automation, TWAMP, and ELSM command branches
+================================================================================
+
+show automation edge devices vni 42
+configure twamp add endpoint ipaddress 192.0.2.1 port 862
+configure twamp reflector sessions 8 timeout 30
+enable twamp reflector
+disable twamp reflector
+configure elsm ports 1:2 hellotime 500 milliseconds
+clear elsm ports 1:2 counters
+enable elsm ports 1:2 auto-restart
+disable elsm ports 1:2 auto-restart
+show elsm ports all
+
+---
+
+(source_file
+  (command (show_command (show_automation (show_automation_edge (show_automation_edge_devices (word_or_string (word)))))))
+  (command (configure_command (configure_twamp (configure_twamp_add (configure_twamp_endpoint (configure_twamp_endpoint_ipaddress (word_or_string (word)) (configure_twamp_endpoint_port (word_or_string (word)))))))))
+  (command (configure_command (configure_twamp (configure_twamp_reflector (configure_twamp_reflector_sessions (word_or_string (word)) (configure_twamp_reflector_timeout (word_or_string (word))))))))
+  (command (enable_command (enable_twamp (enable_twamp_reflector))))
+  (command (disable_command (disable_twamp (disable_twamp_reflector))))
+  (command (configure_command (configure_elsm (configure_elsm_ports (word_or_string (word)) (configure_elsm_ports_hellotime (word_or_string (word)))))))
+  (command (clear_command (clear_elsm (clear_elsm_ports (word_or_string (word))))))
+  (command (enable_command (enable_elsm (enable_elsm_ports (word_or_string (word))))))
+  (command (disable_command (disable_elsm (disable_elsm_ports (word_or_string (word))))))
+  (command (show_command (show_elsm (show_elsm_ports)))))
+
+================================================================================
+Telnet and DoS protection options
+================================================================================
+
+configure telnet access-profile add "Example Rule" after "Previous Rule"
+configure telnet port default
+debug telnetd show access-profile
+configure dos-protect trusted-ports add-ports all
+configure dos-protect type l3-protect notify-threshold default
+enable dos-protect simulated
+show dos-protect detail
+
+---
+
+(source_file
+  (command (configure_command (configure_telnet (configure_telnet_access_profile (configure_telnet_access_profile_add (word_or_string (string)) (word_or_string (string)))))))
+  (command (configure_command (configure_telnet (configure_telnet_port))))
+  (command (debug_command (debug_telnetd (debug_telnetd_show))))
+  (command (configure_command (configure_dos_protect (configure_dos_protect_trusted_ports (configure_dos_protect_trusted_ports_add)))))
+  (command (configure_command (configure_dos_protect (configure_dos_protect_type (configure_dos_protect_l3_protect)))))
+  (command (enable_command (enable_dos_protect)))
+  (command (show_command (show_dos_protect))))
+
+================================================================================
+Keychain and database commands with quoted names and incomplete options
+================================================================================
+
+create keychain "Example Chain"
+configure keychain "Example Chain" key 1 hash-algorithm hmac-sha-256
+configure keychain "Example Chain" add key 1 key-string "placeholder" active-lifetime local start 2030-01-01T00:00:00 duration maximum
+show keychain "Example Chain" detail
+delete keychain "Example Chain"
+create database "Example DB"
+configure database "Example DB" add server 192.0.2.1 port 443
+configure database "Example DB" delete server all
+configure database "Example DB" add server
+configure database "Example DB" future-option "example"
+show database "Example DB"
+delete database "Example DB"
+
+---
+
+(source_file
+  (command (create_command (create_keychain (word_or_string (string)))))
+  (command (configure_command (configure_keychain (word_or_string (string)) (configure_keychain_key (word_or_string (word)) (configure_keychain_hash_algorithm)))))
+  (command (configure_command (configure_keychain (word_or_string (string)) (configure_keychain_add (word_or_string (word)) (configure_keychain_key_string (word_or_string (string)) (configure_keychain_active_lifetime (configure_keychain_active_lifetime_start (word_or_string (word)) (configure_keychain_active_lifetime_duration))))))))
+  (command (show_command (show_keychain (word_or_string (string)))))
+  (command (delete_command (delete_keychain (word_or_string (string)))))
+  (command (create_command (create_database (word_or_string (string)))))
+  (command (configure_command (configure_database (word_or_string (string)) (configure_database_add (configure_database_add_server (word_or_string (word)) (word_or_string (word)))))))
+  (command (configure_command (configure_database (word_or_string (string)) (configure_database_delete (configure_database_delete_server)))))
+  (command (configure_command (configure_database (word_or_string (string)) (configure_database_add (configure_database_add_server)))))
+  (command (configure_command (configure_database (word_or_string (string)) (word_or_string (word)) (word_or_string (string)))))
+  (command (show_command (show_database (word_or_string (string)))))
+  (command (delete_command (delete_database (word_or_string (string))))))

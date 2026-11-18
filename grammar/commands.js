@@ -1,9 +1,9 @@
 const topics = require('./topics');
 const detailed = {
-  clear: {lldp: require('./clear/lldp'), netlogin: require('./clear/netlogin')},
-  create: {netlogin: require('./create/netlogin')},
-  debug: {lldp: require('./debug/lldp'), netlogin: require('./debug/netlogin')},
-  delete: {netlogin: require('./delete/netlogin')},
+  clear: {elsm: require('./clear/elsm'), lldp: require('./clear/lldp'), netlogin: require('./clear/netlogin')},
+  create: {database: require('./create/database'), keychain: require('./create/keychain'), netlogin: require('./create/netlogin')},
+  debug: {lldp: require('./debug/lldp'), netlogin: require('./debug/netlogin'), telnetd: require('./debug/telnetd')},
+  delete: {database: require('./delete/database'), keychain: require('./delete/keychain'), netlogin: require('./delete/netlogin')},
   unconfigure: {lldp: require('./unconfigure/lldp'), netlogin: require('./unconfigure/netlogin')},
 };
 

@@ -1,6 +1,11 @@
 const topics = require('../topics');
-const lldp = require('./lldp');
-const netlogin = require('./netlogin');
+const detailed = {
+  'dos-protect': require('./dos-protect'),
+  elsm: require('./elsm'),
+  twamp: require('./twamp'),
+  lldp: require('./lldp'),
+  netlogin: require('./netlogin'),
+};
 
 // First-level enable families reported by EXOS tab completion.
 const completionTopics = [
@@ -22,7 +27,7 @@ const completionTopics = [
   'xml-notification',
 ];
 
-const names = topics.list('enable', completionTopics);
+const names = topics.list('enable', [...completionTopics, ...Object.keys(detailed)]);
 
 const rules = () => ({
   enable_command: $ => seq(
@@ -39,8 +44,7 @@ const rules = () => ({
   ),
 
   ...topics.rules('enable', names),
-  ...lldp.rules(),
-  ...netlogin.rules(),
+  ...Object.assign({}, ...Object.values(detailed).map(family => family.rules())),
 });
 
 module.exports = {rules};

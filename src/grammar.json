@@ -341,7 +341,39 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "configure_database"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "configure_diagnostics"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_elsm"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_keychain"
                   }
                 },
                 {
@@ -398,6 +430,22 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "configure_sys_recovery"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_telnet"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp"
                   }
                 },
                 {
@@ -509,14 +557,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "configure_dos_protect"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "configure_dot1p"
                   }
                 },
@@ -550,14 +590,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "configure_elrp_client"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "configure_elsm"
                   }
                 },
                 {
@@ -1101,14 +1133,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "configure_telnet"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "configure_time"
                   }
                 },
@@ -1134,14 +1158,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "configure_trusted_servers"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "configure_twamp"
                   }
                 },
                 {
@@ -1237,14 +1253,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "configure_database"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "configure_dns"
                   }
                 },
@@ -1286,14 +1294,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "configure_isis"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "configure_keychain"
                   }
                 },
                 {
@@ -1754,27 +1754,6 @@
         }
       ]
     },
-    "configure_dos_protect": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "dos-protect"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "configure_dot1p": {
       "type": "SEQ",
       "members": [
@@ -1865,27 +1844,6 @@
         {
           "type": "STRING",
           "value": "elrp-client"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "configure_elsm": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "elsm"
         },
         {
           "type": "CHOICE",
@@ -3308,27 +3266,6 @@
         }
       ]
     },
-    "configure_telnet": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "telnet"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "configure_time": {
       "type": "SEQ",
       "members": [
@@ -3398,27 +3335,6 @@
         {
           "type": "STRING",
           "value": "trusted-servers"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "configure_twamp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "twamp"
         },
         {
           "type": "CHOICE",
@@ -3665,27 +3581,6 @@
         }
       ]
     },
-    "configure_database": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "database"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "configure_dns": {
       "type": "SEQ",
       "members": [
@@ -3797,27 +3692,6 @@
         {
           "type": "STRING",
           "value": "isis"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "configure_keychain": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "keychain"
         },
         {
           "type": "CHOICE",
@@ -4451,6 +4325,529 @@
         }
       ]
     },
+    "configure_database": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "database"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_database_max_retry_interval"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "database_name",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "word_or_string"
+                        }
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "PREC",
+                                "value": 1,
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "configure_database_add"
+                                }
+                              },
+                              {
+                                "type": "PREC",
+                                "value": 1,
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "configure_database_delete"
+                                }
+                              },
+                              {
+                                "type": "PREC",
+                                "value": 1,
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "configure_database_server"
+                                }
+                              },
+                              {
+                                "type": "SYMBOL",
+                                "name": "_arguments"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_max_retry_interval": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "max-retry-interval"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "retry_interval",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_database_add_server"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_add_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "server"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "host",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "port"
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SEQ",
+                                    "members": [
+                                      {
+                                        "type": "FIELD",
+                                        "name": "port_number",
+                                        "content": {
+                                          "type": "SYMBOL",
+                                          "name": "word_or_string"
+                                        }
+                                      },
+                                      {
+                                        "type": "CHOICE",
+                                        "members": [
+                                          {
+                                            "type": "CHOICE",
+                                            "members": [
+                                              {
+                                                "type": "PREC",
+                                                "value": 1,
+                                                "content": {
+                                                  "type": "SYMBOL",
+                                                  "name": "configure_database_server_password"
+                                                }
+                                              },
+                                              {
+                                                "type": "SYMBOL",
+                                                "name": "_arguments"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "BLANK"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_database_server_password"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_database_delete_server"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_delete_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "server"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "host",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "server"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "host",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_database_server_password"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_database_server_password": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "password"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "encrypted"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "encrypted_password",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "password",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "word_or_string"
+                        }
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "configure_diagnostics": {
       "type": "SEQ",
       "members": [
@@ -4531,6 +4928,1542 @@
                 {
                   "type": "SYMBOL",
                   "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dos-protect"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_acl_expire_time"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_interval"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_trusted_ports"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_type"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_acl_expire_time": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "acl-expire-time"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "seconds",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "default"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_interval": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "interval"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "interval_seconds",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "default"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_trusted_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "trusted-ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_trusted_ports_add"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_trusted_ports_delete"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "ports"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "ports",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_trusted_ports_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add-ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_trusted_ports_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete-ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_dos_protect_l3_protect"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_dos_protect_l3_protect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "l3-protect"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "alert-threshold"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "level",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "default"
+                                    },
+                                    {
+                                      "type": "SYMBOL",
+                                      "name": "word_or_string"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "notify-threshold"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "level",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "default"
+                                    },
+                                    {
+                                      "type": "SYMBOL",
+                                      "name": "word_or_string"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elsm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elsm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_elsm_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elsm_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_elsm_ports_hellotime"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_elsm_ports_hold_threshold"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_elsm_ports_uptimer_threshold"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elsm_ports_hellotime": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "hellotime"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "hello_time",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "unit",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "milliseconds"
+                                    },
+                                    {
+                                      "type": "STRING",
+                                      "value": "seconds"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elsm_ports_hold_threshold": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "hold-threshold"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "hold_threshold",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_elsm_ports_uptimer_threshold": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "uptimer-threshold"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "uptimer_threshold",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "keychain"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "keychain_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_accept_tolerance"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_add"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_delete"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_key"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_accept_tolerance": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "accept-tolerance"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "seconds",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "key"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "key_id",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "CHOICE",
+                                    "members": [
+                                      {
+                                        "type": "PREC",
+                                        "value": 1,
+                                        "content": {
+                                          "type": "SYMBOL",
+                                          "name": "configure_keychain_key_string"
+                                        }
+                                      },
+                                      {
+                                        "type": "SYMBOL",
+                                        "name": "_arguments"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "key"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "key_id",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_key": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "key"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "key_id",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_active_lifetime"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_hash_algorithm"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_key_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "key-string"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "encrypted"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "encrypted_string",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "text_string",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "word_or_string"
+                        }
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "PREC",
+                                "value": 1,
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "configure_keychain_active_lifetime"
+                                }
+                              },
+                              {
+                                "type": "SYMBOL",
+                                "name": "_arguments"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_active_lifetime": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "active-lifetime"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "local"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "PREC",
+                                "value": 1,
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "configure_keychain_active_lifetime_start"
+                                }
+                              },
+                              {
+                                "type": "SYMBOL",
+                                "name": "_arguments"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_keychain_active_lifetime_start"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_active_lifetime_start": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "start"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "start_time",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_keychain_active_lifetime_duration"
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "end"
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SEQ",
+                                    "members": [
+                                      {
+                                        "type": "FIELD",
+                                        "name": "end_time",
+                                        "content": {
+                                          "type": "SYMBOL",
+                                          "name": "word_or_string"
+                                        }
+                                      },
+                                      {
+                                        "type": "CHOICE",
+                                        "members": [
+                                          {
+                                            "type": "SYMBOL",
+                                            "name": "_arguments"
+                                          },
+                                          {
+                                            "type": "BLANK"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_active_lifetime_duration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "duration"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "duration",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "maximum"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_keychain_hash_algorithm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "hash-algorithm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "algorithm",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "hmac-sha-1"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "hmac-sha-256"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "hmac-sha-384"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "hmac-sha-512"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
                 }
               ]
             },
@@ -15221,6 +17154,807 @@
         }
       ]
     },
+    "configure_telnet": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "telnet"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_telnet_access_profile"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_telnet_port"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_telnet_vr"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_telnet_access_profile": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "access-profile"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_telnet_access_profile_add"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_telnet_access_profile_delete"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "access_profile",
+                        "content": {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "STRING",
+                              "value": "none"
+                            },
+                            {
+                              "type": "SYMBOL",
+                              "name": "word_or_string"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_telnet_access_profile_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "rule",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "position",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "before"
+                                    },
+                                    {
+                                      "type": "STRING",
+                                      "value": "after"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SEQ",
+                                    "members": [
+                                      {
+                                        "type": "FIELD",
+                                        "name": "previous_rule",
+                                        "content": {
+                                          "type": "SYMBOL",
+                                          "name": "word_or_string"
+                                        }
+                                      },
+                                      {
+                                        "type": "CHOICE",
+                                        "members": [
+                                          {
+                                            "type": "SYMBOL",
+                                            "name": "_arguments"
+                                          },
+                                          {
+                                            "type": "BLANK"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "position",
+                                "content": {
+                                  "type": "STRING",
+                                  "value": "first"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_telnet_access_profile_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "rule",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_telnet_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "port",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "default"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_telnet_vr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vr"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "virtual_router",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "default"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "twamp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_add"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_delete"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_reflector"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_endpoint"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_endpoint"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_endpoint": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "endpoint"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_endpoint_ipaddress"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_endpoint_ipaddress": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipaddress"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "src_ip",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_twamp_endpoint_port"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_endpoint_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "src_port",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_reflector": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "reflector"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_reflector_sessions"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_twamp_reflector_timeout"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_reflector_sessions": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sessions"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "total",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_twamp_reflector_timeout"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_twamp_reflector_timeout": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "timeout"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "seconds",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "configure_vlan": {
       "type": "SEQ",
       "members": [
@@ -16211,14 +18945,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "disable_lldp"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "disable_snmp"
                   }
                 },
@@ -16227,7 +18953,31 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "disable_elsm"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_lldp"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "disable_netlogin"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_twamp"
                   }
                 },
                 {
@@ -16420,14 +19170,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "disable_elrp_client"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "disable_elsm"
                   }
                 },
                 {
@@ -17035,14 +19777,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "disable_twamp"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "disable_udp_echo_server"
                   }
                 },
@@ -17171,40 +19905,6 @@
         }
       ]
     },
-    "disable_lldp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "lldp"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "disable_lldp_ports"
-                  }
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_arguments"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "disable_snmp": {
       "type": "SEQ",
       "members": [
@@ -17224,6 +19924,74 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "disable_snmp_traps"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_elsm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elsm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_elsm_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_lldp_ports"
                   }
                 },
                 {
@@ -17322,6 +20090,40 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "disable_netlogin_web_based"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_twamp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "twamp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_twamp_reflector"
                   }
                 },
                 {
@@ -17826,27 +20628,6 @@
         {
           "type": "STRING",
           "value": "elrp-client"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "disable_elsm": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "elsm"
         },
         {
           "type": "CHOICE",
@@ -19437,27 +22218,6 @@
         }
       ]
     },
-    "disable_twamp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "twamp"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "disable_udp_echo_server": {
       "type": "SEQ",
       "members": [
@@ -19765,6 +22525,78 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_elsm_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "auto-restart"
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -20534,6 +23366,27 @@
         {
           "type": "STRING",
           "value": "web-based"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_twamp_reflector": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "reflector"
         },
         {
           "type": "CHOICE",
@@ -21881,8 +24734,38 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "simulated"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -21986,8 +24869,21 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "enable_elsm_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -23412,8 +26308,21 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "enable_twamp_reflector"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -24226,6 +27135,99 @@
         {
           "type": "STRING",
           "value": "vrrp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "enable_elsm_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "auto-restart"
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "enable_twamp_reflector": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "reflector"
         },
         {
           "type": "CHOICE",
@@ -25056,7 +28058,39 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "show_twamp"
+                    "name": "show_automation"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_database"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_dos_protect"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_elsm"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_keychain"
                   }
                 },
                 {
@@ -25073,6 +28107,14 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "show_netlogin"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_twamp"
                   }
                 },
                 {
@@ -25105,14 +28147,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "show_auto_provision"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "show_automation"
                   }
                 },
                 {
@@ -25240,14 +28274,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "show_database"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "show_debug"
                   }
                 },
@@ -25304,14 +28330,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "show_dos_protect"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "show_dot1p"
                   }
                 },
@@ -25353,14 +28371,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "show_elrp"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "show_elsm"
                   }
                 },
                 {
@@ -25577,14 +28587,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "show_isis"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "show_keychain"
                   }
                 },
                 {
@@ -26336,12 +29338,12 @@
         }
       ]
     },
-    "show_twamp": {
+    "show_automation": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "twamp"
+          "value": "automation"
         },
         {
           "type": "CHOICE",
@@ -26354,15 +29356,7 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "show_twamp_endpoint"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "show_twamp_reflector"
+                    "name": "show_automation_edge"
                   }
                 },
                 {
@@ -26378,46 +29372,12 @@
         }
       ]
     },
-    "show_twamp_endpoint": {
+    "show_database": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "endpoint"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "show_twamp_endpoint_ipaddress"
-                  }
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_arguments"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "show_twamp_endpoint_ipaddress": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "ipaddress"
+          "value": "database"
         },
         {
           "type": "CHOICE",
@@ -26427,62 +29387,7 @@
               "members": [
                 {
                   "type": "FIELD",
-                  "name": "src_ip",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "word_or_string"
-                  }
-                },
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "PREC",
-                          "value": 1,
-                          "content": {
-                            "type": "SYMBOL",
-                            "name": "show_twamp_endpoint_ipaddress_port"
-                          }
-                        },
-                        {
-                          "type": "SYMBOL",
-                          "name": "_arguments"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "show_twamp_endpoint_ipaddress_port": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "port"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "FIELD",
-                  "name": "src_port",
+                  "name": "database_name",
                   "content": {
                     "type": "SYMBOL",
                     "name": "word_or_string"
@@ -26509,19 +29414,155 @@
         }
       ]
     },
-    "show_twamp_reflector": {
+    "show_dos_protect": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "reflector"
+          "value": "dos-protect"
         },
         {
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "detail"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_elsm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elsm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_elsm_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_keychain": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "keychain"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "keychain_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "detail"
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -26694,6 +29735,48 @@
         }
       ]
     },
+    "show_twamp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "twamp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_twamp_endpoint"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_twamp_reflector"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "show_access_list": {
       "type": "SEQ",
       "members": [
@@ -26763,27 +29846,6 @@
         {
           "type": "STRING",
           "value": "auto-provision"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "show_automation": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "automation"
         },
         {
           "type": "CHOICE",
@@ -27114,27 +30176,6 @@
         }
       ]
     },
-    "show_database": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "database"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "show_debug": {
       "type": "SEQ",
       "members": [
@@ -27282,27 +30323,6 @@
         }
       ]
     },
-    "show_dos_protect": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "dos-protect"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "show_dot1p": {
       "type": "SEQ",
       "members": [
@@ -27414,27 +30434,6 @@
         {
           "type": "STRING",
           "value": "elrp"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "show_elsm": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "elsm"
         },
         {
           "type": "CHOICE",
@@ -28002,27 +31001,6 @@
         {
           "type": "STRING",
           "value": "isis"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "show_keychain": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "keychain"
         },
         {
           "type": "CHOICE",
@@ -29962,6 +32940,192 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_automation_edge": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "edge"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_automation_edge_database"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_automation_edge_devices"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_automation_edge_database": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "database"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_automation_edge_devices": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "devices"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "vni"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "vni",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_elsm_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -31943,6 +35107,158 @@
         }
       ]
     },
+    "show_twamp_endpoint": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "endpoint"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_twamp_endpoint_ipaddress"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_twamp_endpoint_ipaddress": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ipaddress"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "src_ip",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "show_twamp_endpoint_ipaddress_port"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_twamp_endpoint_ipaddress_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "src_port",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_twamp_reflector": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "reflector"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "cd_command": {
       "type": "SEQ",
       "members": [
@@ -32037,6 +35353,14 @@
             {
               "type": "CHOICE",
               "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "clear_elsm"
+                  }
+                },
                 {
                   "type": "PREC",
                   "value": 1,
@@ -32139,14 +35463,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "clear_elrp"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "clear_elsm"
                   }
                 },
                 {
@@ -32514,6 +35830,48 @@
         }
       ]
     },
+    "clear_elsm": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "elsm"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "clear_elsm_counters"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "clear_elsm_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "clear_lldp": {
       "type": "SEQ",
       "members": [
@@ -32798,27 +36156,6 @@
         {
           "type": "STRING",
           "value": "elrp"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "clear_elsm": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "elsm"
         },
         {
           "type": "CHOICE",
@@ -33750,6 +37087,108 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "clear_elsm_counters": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "counters"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "clear_elsm_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "STRING",
+                                    "value": "auto-restart"
+                                  },
+                                  {
+                                    "type": "STRING",
+                                    "value": "counters"
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -34754,6 +38193,22 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "create_database"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "create_keychain"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "create_netlogin"
                   }
                 },
@@ -34795,14 +38250,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "create_cfm"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "create_database"
                   }
                 },
                 {
@@ -34891,14 +38338,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "create_isis"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "create_keychain"
                   }
                 },
                 {
@@ -35186,6 +38625,90 @@
         }
       ]
     },
+    "create_database": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "database"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "database_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "create_keychain": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "keychain"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "keychain_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "create_netlogin": {
       "type": "SEQ",
       "members": [
@@ -35310,27 +38833,6 @@
         {
           "type": "STRING",
           "value": "cfm"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "create_database": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "database"
         },
         {
           "type": "CHOICE",
@@ -35562,27 +39064,6 @@
         {
           "type": "STRING",
           "value": "isis"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "create_keychain": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "keychain"
         },
         {
           "type": "CHOICE",
@@ -37227,6 +40708,14 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "debug_telnetd"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "debug_aaa"
                   }
                 },
@@ -37827,14 +41316,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "debug_telnetd"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "debug_tftpd"
                   }
                 },
@@ -38080,6 +41561,48 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "debug_netlogin_suppress_auth"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "debug_telnetd": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "telnetd"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "debug_telnetd_configure"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "debug_telnetd_show"
                   }
                 },
                 {
@@ -39655,27 +43178,6 @@
         {
           "type": "STRING",
           "value": "telemetry"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "debug_telnetd": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "telnetd"
         },
         {
           "type": "CHOICE",
@@ -42235,6 +45737,138 @@
         }
       ]
     },
+    "debug_telnetd_configure": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "configure"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "debug-level"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "level",
+                                "content": {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "STRING",
+                                      "value": "off"
+                                    },
+                                    {
+                                      "type": "SYMBOL",
+                                      "name": "word_or_string"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "debug_telnetd_show": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "show"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "access-profile"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "delete_command": {
       "type": "SEQ",
       "members": [
@@ -42248,6 +45882,22 @@
             {
               "type": "CHOICE",
               "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "delete_database"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "delete_keychain"
+                  }
+                },
                 {
                   "type": "PREC",
                   "value": 1,
@@ -42294,14 +45944,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "delete_cfm"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "delete_database"
                   }
                 },
                 {
@@ -42390,14 +46032,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "delete_isis"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "delete_keychain"
                   }
                 },
                 {
@@ -42685,6 +46319,90 @@
         }
       ]
     },
+    "delete_database": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "database"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "database_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "delete_keychain": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "keychain"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "keychain_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "delete_netlogin": {
       "type": "SEQ",
       "members": [
@@ -42809,27 +46527,6 @@
         {
           "type": "STRING",
           "value": "cfm"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "delete_database": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "database"
         },
         {
           "type": "CHOICE",
@@ -43061,27 +46758,6 @@
         {
           "type": "STRING",
           "value": "isis"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "delete_keychain": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "keychain"
         },
         {
           "type": "CHOICE",

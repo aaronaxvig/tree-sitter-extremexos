@@ -469,6 +469,55 @@
       "required": false,
       "types": [
         {
+          "type": "clear_elsm_counters",
+          "named": true
+        },
+        {
+          "type": "clear_elsm_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clear_elsm_counters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clear_elsm_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -2369,7 +2418,234 @@
   {
     "type": "configure_database",
     "named": true,
+    "fields": {
+      "database_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_database_add",
+          "named": true
+        },
+        {
+          "type": "configure_database_delete",
+          "named": true
+        },
+        {
+          "type": "configure_database_max_retry_interval",
+          "named": true
+        },
+        {
+          "type": "configure_database_server",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_add",
+    "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_database_add_server",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_add_server",
+    "named": true,
+    "fields": {
+      "host": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_database_server_password",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_delete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_database_delete_server",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_delete_server",
+    "named": true,
+    "fields": {
+      "host": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_max_retry_interval",
+    "named": true,
+    "fields": {
+      "retry_interval": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_server",
+    "named": true,
+    "fields": {
+      "host": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_database_server_password",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_database_server_password",
+    "named": true,
+    "fields": {
+      "encrypted_password": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "password": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -2629,6 +2905,225 @@
       "required": false,
       "types": [
         {
+          "type": "configure_dos_protect_acl_expire_time",
+          "named": true
+        },
+        {
+          "type": "configure_dos_protect_interval",
+          "named": true
+        },
+        {
+          "type": "configure_dos_protect_trusted_ports",
+          "named": true
+        },
+        {
+          "type": "configure_dos_protect_type",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_acl_expire_time",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_interval",
+    "named": true,
+    "fields": {
+      "interval_seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_l3_protect",
+    "named": true,
+    "fields": {
+      "level": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_trusted_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_dos_protect_trusted_ports_add",
+          "named": true
+        },
+        {
+          "type": "configure_dos_protect_trusted_ports_delete",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_trusted_ports_add",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_trusted_ports_delete",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_dos_protect_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_dos_protect_l3_protect",
+          "named": true
+        },
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -2714,6 +3209,140 @@
     "type": "configure_elsm",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_elsm_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_elsm_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_elsm_ports_hellotime",
+          "named": true
+        },
+        {
+          "type": "configure_elsm_ports_hold_threshold",
+          "named": true
+        },
+        {
+          "type": "configure_elsm_ports_uptimer_threshold",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_elsm_ports_hellotime",
+    "named": true,
+    "fields": {
+      "hello_time": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "unit": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "milliseconds",
+            "named": false
+          },
+          {
+            "type": "seconds",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_elsm_ports_hold_threshold",
+    "named": true,
+    "fields": {
+      "hold_threshold": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_elsm_ports_uptimer_threshold",
+    "named": true,
+    "fields": {
+      "uptimer_threshold": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -3174,11 +3803,325 @@
   {
     "type": "configure_keychain",
     "named": true,
+    "fields": {
+      "keychain_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_keychain_accept_tolerance",
+          "named": true
+        },
+        {
+          "type": "configure_keychain_add",
+          "named": true
+        },
+        {
+          "type": "configure_keychain_delete",
+          "named": true
+        },
+        {
+          "type": "configure_keychain_key",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_accept_tolerance",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_active_lifetime",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "configure_keychain_active_lifetime_start",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_active_lifetime_duration",
+    "named": true,
+    "fields": {
+      "duration": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "maximum",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_active_lifetime_start",
+    "named": true,
+    "fields": {
+      "end_time": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "start_time": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_keychain_active_lifetime_duration",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_add",
+    "named": true,
+    "fields": {
+      "key_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_keychain_key_string",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_delete",
+    "named": true,
+    "fields": {
+      "key_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_hash_algorithm",
+    "named": true,
+    "fields": {
+      "algorithm": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "hmac-sha-1",
+            "named": false
+          },
+          {
+            "type": "hmac-sha-256",
+            "named": false
+          },
+          {
+            "type": "hmac-sha-384",
+            "named": false
+          },
+          {
+            "type": "hmac-sha-512",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_key",
+    "named": true,
+    "fields": {
+      "key_id": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_keychain_active_lifetime",
+          "named": true
+        },
+        {
+          "type": "configure_keychain_hash_algorithm",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_keychain_key_string",
+    "named": true,
+    "fields": {
+      "encrypted_string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "text_string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_keychain_active_lifetime",
+          "named": true
+        },
         {
           "type": "word_or_string",
           "named": true
@@ -8393,6 +9336,200 @@
       "required": false,
       "types": [
         {
+          "type": "configure_telnet_access_profile",
+          "named": true
+        },
+        {
+          "type": "configure_telnet_port",
+          "named": true
+        },
+        {
+          "type": "configure_telnet_vr",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_telnet_access_profile",
+    "named": true,
+    "fields": {
+      "access_profile": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_telnet_access_profile_add",
+          "named": true
+        },
+        {
+          "type": "configure_telnet_access_profile_delete",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_telnet_access_profile_add",
+    "named": true,
+    "fields": {
+      "position": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "after",
+            "named": false
+          },
+          {
+            "type": "before",
+            "named": false
+          },
+          {
+            "type": "first",
+            "named": false
+          }
+        ]
+      },
+      "previous_rule": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "rule": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_telnet_access_profile_delete",
+    "named": true,
+    "fields": {
+      "rule": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_telnet_port",
+    "named": true,
+    "fields": {
+      "port": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_telnet_vr",
+    "named": true,
+    "fields": {
+      "virtual_router": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -8478,6 +9615,210 @@
     "type": "configure_twamp",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_add",
+          "named": true
+        },
+        {
+          "type": "configure_twamp_delete",
+          "named": true
+        },
+        {
+          "type": "configure_twamp_reflector",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_add",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_endpoint",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_delete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_endpoint",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_endpoint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_endpoint_ipaddress",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_endpoint_ipaddress",
+    "named": true,
+    "fields": {
+      "src_ip": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_endpoint_port",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_endpoint_port",
+    "named": true,
+    "fields": {
+      "src_port": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_reflector",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_reflector_sessions",
+          "named": true
+        },
+        {
+          "type": "configure_twamp_reflector_timeout",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_reflector_sessions",
+    "named": true,
+    "fields": {
+      "total": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_twamp_reflector_timeout",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_twamp_reflector_timeout",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -9548,7 +10889,18 @@
   {
     "type": "create_database",
     "named": true,
-    "fields": {},
+    "fields": {
+      "database_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -9728,7 +11080,18 @@
   {
     "type": "create_keychain",
     "named": true,
-    "fields": {},
+    "fields": {
+      "keychain_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -12338,6 +13701,59 @@
       "required": false,
       "types": [
         {
+          "type": "debug_telnetd_configure",
+          "named": true
+        },
+        {
+          "type": "debug_telnetd_show",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_telnetd_configure",
+    "named": true,
+    "fields": {
+      "level": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "off",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_telnetd_show",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -12859,7 +14275,18 @@
   {
     "type": "delete_database",
     "named": true,
-    "fields": {},
+    "fields": {
+      "database_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -13039,7 +14466,18 @@
   {
     "type": "delete_keychain",
     "named": true,
-    "fields": {},
+    "fields": {
+      "keychain_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -14461,6 +15899,36 @@
     "type": "disable_elsm",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "disable_elsm_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_elsm_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -15987,6 +17455,25 @@
       "required": false,
       "types": [
         {
+          "type": "disable_twamp_reflector",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_twamp_reflector",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -17337,6 +18824,36 @@
     "type": "enable_elsm",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_elsm_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_elsm_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -18938,6 +20455,25 @@
   },
   {
     "type": "enable_twamp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_twamp_reflector",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_twamp_reflector",
     "named": true,
     "fields": {},
     "children": {
@@ -20802,6 +22338,74 @@
       "required": false,
       "types": [
         {
+          "type": "show_automation_edge",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_automation_edge",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "show_automation_edge_database",
+          "named": true
+        },
+        {
+          "type": "show_automation_edge_devices",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_automation_edge_database",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_automation_edge_devices",
+    "named": true,
+    "fields": {
+      "vni": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -21687,7 +23291,18 @@
   {
     "type": "show_database",
     "named": true,
-    "fields": {},
+    "fields": {
+      "database_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -21913,6 +23528,40 @@
     "type": "show_elsm",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "show_elsm_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_elsm_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -22332,7 +23981,18 @@
   {
     "type": "show_keychain",
     "named": true,
-    "fields": {},
+    "fields": {
+      "keychain_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -26987,7 +28647,15 @@
     "named": false
   },
   {
+    "type": "accept-tolerance",
+    "named": false
+  },
+  {
     "type": "access-list",
+    "named": false
+  },
+  {
+    "type": "access-profile",
     "named": false
   },
   {
@@ -27003,11 +28671,23 @@
     "named": false
   },
   {
+    "type": "acl-expire-time",
+    "named": false
+  },
+  {
     "type": "actions",
     "named": false
   },
   {
+    "type": "active-lifetime",
+    "named": false
+  },
+  {
     "type": "add",
+    "named": false
+  },
+  {
+    "type": "add-ports",
     "named": false
   },
   {
@@ -27019,11 +28699,19 @@
     "named": false
   },
   {
+    "type": "after",
+    "named": false
+  },
+  {
     "type": "agent",
     "named": false
   },
   {
     "type": "agingtime",
+    "named": false
+  },
+  {
+    "type": "alert-threshold",
     "named": false
   },
   {
@@ -27083,6 +28771,10 @@
     "named": false
   },
   {
+    "type": "auto-restart",
+    "named": false
+  },
+  {
     "type": "automation",
     "named": false
   },
@@ -27108,6 +28800,10 @@
   },
   {
     "type": "baseline",
+    "named": false
+  },
+  {
+    "type": "before",
     "named": false
   },
   {
@@ -27303,6 +28999,10 @@
     "named": false
   },
   {
+    "type": "debug-level",
+    "named": false
+  },
+  {
     "type": "debug-mode",
     "named": false
   },
@@ -27323,6 +29023,10 @@
     "named": false
   },
   {
+    "type": "delete-ports",
+    "named": false
+  },
+  {
     "type": "deny",
     "named": false
   },
@@ -27340,6 +29044,10 @@
   },
   {
     "type": "details",
+    "named": false
+  },
+  {
+    "type": "devices",
     "named": false
   },
   {
@@ -27467,6 +29175,10 @@
     "named": false
   },
   {
+    "type": "duration",
+    "named": false
+  },
+  {
     "type": "dwdm",
     "named": false
   },
@@ -27548,6 +29260,10 @@
   },
   {
     "type": "encrypted",
+    "named": false
+  },
+  {
+    "type": "end",
     "named": false
   },
   {
@@ -27643,6 +29359,10 @@
     "named": false
   },
   {
+    "type": "first",
+    "named": false
+  },
+  {
     "type": "flooding",
     "named": false
   },
@@ -27695,6 +29415,10 @@
     "named": false
   },
   {
+    "type": "hash-algorithm",
+    "named": false
+  },
+  {
     "type": "hclag",
     "named": false
   },
@@ -27703,7 +29427,31 @@
     "named": false
   },
   {
+    "type": "hellotime",
+    "named": false
+  },
+  {
     "type": "history",
+    "named": false
+  },
+  {
+    "type": "hmac-sha-1",
+    "named": false
+  },
+  {
+    "type": "hmac-sha-256",
+    "named": false
+  },
+  {
+    "type": "hmac-sha-384",
+    "named": false
+  },
+  {
+    "type": "hmac-sha-512",
+    "named": false
+  },
+  {
+    "type": "hold-threshold",
     "named": false
   },
   {
@@ -27875,6 +29623,10 @@
     "named": false
   },
   {
+    "type": "key-string",
+    "named": false
+  },
+  {
     "type": "keychain",
     "named": false
   },
@@ -27892,6 +29644,10 @@
   },
   {
     "type": "l2vpn",
+    "named": false
+  },
+  {
+    "type": "l3-protect",
     "named": false
   },
   {
@@ -28039,7 +29795,15 @@
     "named": false
   },
   {
+    "type": "max-retry-interval",
+    "named": false
+  },
+  {
     "type": "max-users",
+    "named": false
+  },
+  {
+    "type": "maximum",
     "named": false
   },
   {
@@ -28064,6 +29828,10 @@
   },
   {
     "type": "meter",
+    "named": false
+  },
+  {
+    "type": "milliseconds",
     "named": false
   },
   {
@@ -28224,6 +29992,10 @@
   },
   {
     "type": "nothing",
+    "named": false
+  },
+  {
+    "type": "notify-threshold",
     "named": false
   },
   {
@@ -28579,6 +30351,10 @@
     "named": false
   },
   {
+    "type": "seconds",
+    "named": false
+  },
+  {
     "type": "section_header",
     "named": true
   },
@@ -28615,6 +30391,10 @@
     "named": false
   },
   {
+    "type": "sessions",
+    "named": false
+  },
+  {
     "type": "sflow",
     "named": false
   },
@@ -28624,6 +30404,10 @@
   },
   {
     "type": "show",
+    "named": false
+  },
+  {
+    "type": "simulated",
     "named": false
   },
   {
@@ -28967,6 +30751,10 @@
     "named": false
   },
   {
+    "type": "type",
+    "named": false
+  },
+  {
     "type": "udp",
     "named": false
   },
@@ -29016,6 +30804,10 @@
   },
   {
     "type": "upper",
+    "named": false
+  },
+  {
+    "type": "uptimer-threshold",
     "named": false
   },
   {
@@ -29116,6 +30908,10 @@
   },
   {
     "type": "vman",
+    "named": false
+  },
+  {
+    "type": "vni",
     "named": false
   },
   {

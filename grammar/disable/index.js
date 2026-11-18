@@ -1,8 +1,11 @@
-const lldp = require('./lldp');
-const netlogin = require('./netlogin');
 const topics = require('../topics');
-
-const names = topics.list('disable', ['lldp', 'snmp', 'netlogin']);
+const detailed = {
+  elsm: require('./elsm'),
+  lldp: require('./lldp'),
+  netlogin: require('./netlogin'),
+  twamp: require('./twamp'),
+};
+const names = topics.list('disable', ['snmp', ...Object.keys(detailed)]);
 
 const rules = () => ({
   disable_command: $ => seq(
@@ -14,8 +17,7 @@ const rules = () => ({
   ),
 
   ...topics.rules('disable', names),
-  ...lldp.rules(),
-  ...netlogin.rules(),
+  ...Object.assign({}, ...Object.values(detailed).map(family => family.rules())),
 });
 
 module.exports = {rules};
