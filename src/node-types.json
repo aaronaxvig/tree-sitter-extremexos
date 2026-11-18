@@ -1,5 +1,225 @@
 [
   {
+    "type": "alias_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat__E",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat__T",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat___number",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat___number_nonblank",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat___show_ends",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat___show_nonprinting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat___show_tabs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat__b",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat__n",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat__v",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "cat__E",
+          "named": true
+        },
+        {
+          "type": "cat__T",
+          "named": true
+        },
+        {
+          "type": "cat___number",
+          "named": true
+        },
+        {
+          "type": "cat___number_nonblank",
+          "named": true
+        },
+        {
+          "type": "cat___show_ends",
+          "named": true
+        },
+        {
+          "type": "cat___show_nonprinting",
+          "named": true
+        },
+        {
+          "type": "cat___show_tabs",
+          "named": true
+        },
+        {
+          "type": "cat__b",
+          "named": true
+        },
+        {
+          "type": "cat__n",
+          "named": true
+        },
+        {
+          "type": "cat__v",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "cd_command",
     "named": true,
     "fields": {},
@@ -1227,6 +1447,14 @@
       "required": true,
       "types": [
         {
+          "type": "alias_command",
+          "named": true
+        },
+        {
+          "type": "cat_command",
+          "named": true
+        },
+        {
           "type": "cd_command",
           "named": true
         },
@@ -1271,7 +1499,23 @@
           "named": true
         },
         {
+          "type": "eject_command",
+          "named": true
+        },
+        {
+          "type": "else_command",
+          "named": true
+        },
+        {
           "type": "enable_command",
+          "named": true
+        },
+        {
+          "type": "endif_command",
+          "named": true
+        },
+        {
+          "type": "endwhile_command",
           "named": true
         },
         {
@@ -1284,6 +1528,10 @@
         },
         {
           "type": "history_command",
+          "named": true
+        },
+        {
+          "type": "if_command",
           "named": true
         },
         {
@@ -1331,6 +1579,10 @@
           "named": true
         },
         {
+          "type": "q_command",
+          "named": true
+        },
+        {
           "type": "quit_command",
           "named": true
         },
@@ -1348,6 +1600,10 @@
         },
         {
           "type": "restart_command",
+          "named": true
+        },
+        {
+          "type": "return_command",
           "named": true
         },
         {
@@ -1375,6 +1631,10 @@
           "named": true
         },
         {
+          "type": "set_command",
+          "named": true
+        },
+        {
           "type": "show_command",
           "named": true
         },
@@ -1384,6 +1644,10 @@
         },
         {
           "type": "start_command",
+          "named": true
+        },
+        {
+          "type": "stop_command",
           "named": true
         },
         {
@@ -1411,6 +1675,10 @@
           "named": true
         },
         {
+          "type": "unalias_command",
+          "named": true
+        },
+        {
           "type": "unconfigure_command",
           "named": true
         },
@@ -1428,6 +1696,22 @@
         },
         {
           "type": "vi_command",
+          "named": true
+        },
+        {
+          "type": "virtual_router_command",
+          "named": true
+        },
+        {
+          "type": "vr_command",
+          "named": true
+        },
+        {
+          "type": "watch_command",
+          "named": true
+        },
+        {
+          "type": "while_command",
           "named": true
         },
         {
@@ -3905,16 +4189,6 @@
         ]
       },
       "num_failures": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "word_or_string",
-            "named": true
-          }
-        ]
-      },
-      "password": {
         "multiple": false,
         "required": false,
         "types": [
@@ -6672,16 +6946,6 @@
         ]
       },
       "encrypted_password": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "word_or_string",
-            "named": true
-          }
-        ]
-      },
-      "password": {
         "multiple": false,
         "required": false,
         "types": [
@@ -12548,6 +12812,55 @@
     }
   },
   {
+    "type": "eject_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "eject_memorycard",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "eject_memorycard",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "else_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "enable_access_list",
     "named": true,
     "fields": {},
@@ -15031,6 +15344,36 @@
     }
   },
   {
+    "type": "endif_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "endwhile_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "exit_command",
     "named": true,
     "fields": {},
@@ -15085,6 +15428,21 @@
   },
   {
     "type": "history_no_line_numbers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_command",
     "named": true,
     "fields": {},
     "children": {
@@ -15777,6 +16135,21 @@
     }
   },
   {
+    "type": "q_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "quit_command",
     "named": true,
     "fields": {},
@@ -16123,6 +16496,21 @@
   },
   {
     "type": "restart_process",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "return_command",
     "named": true,
     "fields": {},
     "children": {
@@ -16574,6 +16962,40 @@
   },
   {
     "type": "scp2_vr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "set_var",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_var",
     "named": true,
     "fields": {},
     "children": {
@@ -19957,6 +20379,40 @@
     }
   },
   {
+    "type": "stop_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "stop_orchestration",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stop_orchestration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "synchronize_command",
     "named": true,
     "fields": {},
@@ -20299,6 +20755,21 @@
   },
   {
     "type": "traceroute_vr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unalias_command",
     "named": true,
     "fields": {},
     "children": {
@@ -21969,6 +22440,66 @@
     }
   },
   {
+    "type": "virtual_router_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "vr_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "watch_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "while_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "word_or_string",
     "named": true,
     "fields": {},
@@ -22004,6 +22535,46 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "--number",
+    "named": false
+  },
+  {
+    "type": "--number-nonblank",
+    "named": false
+  },
+  {
+    "type": "--show-ends",
+    "named": false
+  },
+  {
+    "type": "--show-nonprinting",
+    "named": false
+  },
+  {
+    "type": "--show-tabs",
+    "named": false
+  },
+  {
+    "type": "-E",
+    "named": false
+  },
+  {
+    "type": "-T",
+    "named": false
+  },
+  {
+    "type": "-b",
+    "named": false
+  },
+  {
+    "type": "-n",
+    "named": false
+  },
+  {
+    "type": "-v",
     "named": false
   },
   {
@@ -22100,6 +22671,10 @@
   },
   {
     "type": "alert-threshold",
+    "named": false
+  },
+  {
+    "type": "alias",
     "named": false
   },
   {
@@ -22264,6 +22839,10 @@
   },
   {
     "type": "case",
+    "named": false
+  },
+  {
+    "type": "cat",
     "named": false
   },
   {
@@ -22687,11 +23266,19 @@
     "named": false
   },
   {
+    "type": "eject",
+    "named": false
+  },
+  {
     "type": "elrp",
     "named": false
   },
   {
     "type": "elrp-client",
+    "named": false
+  },
+  {
+    "type": "else",
     "named": false
   },
   {
@@ -22719,7 +23306,15 @@
     "named": false
   },
   {
+    "type": "endif",
+    "named": false
+  },
+  {
     "type": "endpoint",
+    "named": false
+  },
+  {
+    "type": "endwhile",
     "named": false
   },
   {
@@ -22988,6 +23583,10 @@
   },
   {
     "type": "ieee",
+    "named": false
+  },
+  {
+    "type": "if",
     "named": false
   },
   {
@@ -23787,6 +24386,10 @@
     "named": false
   },
   {
+    "type": "q",
+    "named": false
+  },
+  {
     "type": "qosprofile",
     "named": false
   },
@@ -23936,6 +24539,10 @@
   },
   {
     "type": "retransmit-time",
+    "named": false
+  },
+  {
+    "type": "return",
     "named": false
   },
   {
@@ -24204,6 +24811,10 @@
   },
   {
     "type": "stm",
+    "named": false
+  },
+  {
+    "type": "stop",
     "named": false
   },
   {
@@ -24511,6 +25122,10 @@
     "named": false
   },
   {
+    "type": "unalias",
+    "named": false
+  },
+  {
     "type": "unconfigure",
     "named": false
   },
@@ -24711,6 +25326,10 @@
     "named": false
   },
   {
+    "type": "watch",
+    "named": false
+  },
+  {
     "type": "watchdog",
     "named": false
   },
@@ -24720,6 +25339,10 @@
   },
   {
     "type": "web-based",
+    "named": false
+  },
+  {
+    "type": "while",
     "named": false
   },
   {
