@@ -1,4 +1,5 @@
 const topics = require('../topics');
+const lldp = require('./lldp');
 
 // First-level enable families reported by EXOS tab completion.
 const completionTopics = [
@@ -37,6 +38,7 @@ const rules = () => ({
   ),
 
   ...topics.rules('enable', names),
+  ...lldp.rules(),
 });
 
 module.exports = {rules};

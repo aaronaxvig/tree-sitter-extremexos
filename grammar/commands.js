@@ -1,6 +1,11 @@
 const topics = require('./topics');
+const detailed = {
+  clear: {lldp: require('./clear/lldp')},
+  debug: {lldp: require('./debug/lldp')},
+  unconfigure: {lldp: require('./unconfigure/lldp')},
+};
 
-// Top-level EXOS verbs with no detailed command families.
+// Top-level EXOS verbs that share the same command structure.
 const verbs = [
   'cd', 'check', 'clear', 'cp', 'create', 'debug', 'delete',
   'download', 'edit', 'exit', 'history', 'install', 'load', 'logout',
@@ -14,13 +19,15 @@ const verbs = [
 const ruleName = verb => `${verb}_command`;
 
 const rules = () => Object.assign({}, ...verbs.map(verb => {
-  const names = topics.list(verb);
+  const families = detailed[verb] ?? {};
+  const names = topics.list(verb, Object.keys(families));
   return {
     [ruleName(verb)]: $ => seq(
       verb,
       optional(choice(...topics.branches($, verb, names), $._arguments)),
     ),
     ...topics.rules(verb, names),
+    ...Object.assign({}, ...Object.values(families).map(family => family.rules())),
   };
 }));
 

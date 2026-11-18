@@ -724,6 +724,36 @@
       "required": false,
       "types": [
         {
+          "type": "clear_lldp_neighbors",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clear_lldp_neighbors",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -4185,6 +4215,38 @@
         "required": false,
         "types": [
           {
+            "type": "guest-voice",
+            "named": false
+          },
+          {
+            "type": "guest-voice-signaling",
+            "named": false
+          },
+          {
+            "type": "softphone-voice",
+            "named": false
+          },
+          {
+            "type": "streaming-video",
+            "named": false
+          },
+          {
+            "type": "video-conferencing",
+            "named": false
+          },
+          {
+            "type": "video-signaling",
+            "named": false
+          },
+          {
+            "type": "voice",
+            "named": false
+          },
+          {
+            "type": "voice-signaling",
+            "named": false
+          },
+          {
             "type": "word_or_string",
             "named": true
           }
@@ -4442,6 +4504,18 @@
         "required": false,
         "types": [
           {
+            "type": "fcoe",
+            "named": false
+          },
+          {
+            "type": "fip",
+            "named": false
+          },
+          {
+            "type": "iscsi",
+            "named": false
+          },
+          {
             "type": "word_or_string",
             "named": true
           }
@@ -4682,6 +4756,18 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "fcoe",
+            "named": false
+          },
+          {
+            "type": "fip",
+            "named": false
+          },
+          {
+            "type": "iscsi",
+            "named": false
+          },
           {
             "type": "word_or_string",
             "named": true
@@ -5120,6 +5206,38 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "guest-voice",
+            "named": false
+          },
+          {
+            "type": "guest-voice-signaling",
+            "named": false
+          },
+          {
+            "type": "softphone-voice",
+            "named": false
+          },
+          {
+            "type": "streaming-video",
+            "named": false
+          },
+          {
+            "type": "video-conferencing",
+            "named": false
+          },
+          {
+            "type": "video-signaling",
+            "named": false
+          },
+          {
+            "type": "voice",
+            "named": false
+          },
+          {
+            "type": "voice-signaling",
+            "named": false
+          },
           {
             "type": "word_or_string",
             "named": true
@@ -10048,6 +10166,74 @@
       "required": false,
       "types": [
         {
+          "type": "debug_lldp_show",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_lldp_show",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "debug_lldp_show_fabric",
+          "named": true
+        },
+        {
+          "type": "debug_lldp_show_nl_clients",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_lldp_show_fabric",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_lldp_show_nl_clients",
+    "named": true,
+    "fields": {
+      "entry": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -13634,6 +13820,78 @@
       "required": false,
       "types": [
         {
+          "type": "disable_snmp_traps",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_snmp_traps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "disable_snmp_traps_lldp",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_snmp_traps_lldp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "disable_snmp_traps_lldp_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_snmp_traps_lldp_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -15735,6 +15993,54 @@
       "required": false,
       "types": [
         {
+          "type": "enable_lldp_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_lldp_ports",
+    "named": true,
+    "fields": {
+      "mode": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "receive-only",
+            "named": false
+          },
+          {
+            "type": "transmit-only",
+            "named": false
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -16240,6 +16546,78 @@
     "type": "enable_snmp",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_snmp_traps",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_snmp_traps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_snmp_traps_lldp",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_snmp_traps_lldp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_snmp_traps_lldp_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_snmp_traps_lldp_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -19998,6 +20376,147 @@
       "required": false,
       "types": [
         {
+          "type": "show_lldp_dcbx",
+          "named": true
+        },
+        {
+          "type": "show_lldp_detailed",
+          "named": true
+        },
+        {
+          "type": "show_lldp_neighbors",
+          "named": true
+        },
+        {
+          "type": "show_lldp_ports",
+          "named": true
+        },
+        {
+          "type": "show_lldp_statistics",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_lldp_dcbx",
+    "named": true,
+    "fields": {
+      "version": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "baseline",
+            "named": false
+          },
+          {
+            "type": "ieee",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_lldp_detailed",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_lldp_neighbors",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_lldp_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "show_lldp_dcbx",
+          "named": true
+        },
+        {
+          "type": "show_lldp_detailed",
+          "named": true
+        },
+        {
+          "type": "show_lldp_neighbors",
+          "named": true
+        },
+        {
+          "type": "show_lldp_statistics",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_lldp_statistics",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -22696,6 +23215,40 @@
       "required": false,
       "types": [
         {
+          "type": "unconfigure_lldp_ports",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_lldp_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -23748,6 +24301,10 @@
     "named": false
   },
   {
+    "type": "attach",
+    "named": false
+  },
+  {
     "type": "auto",
     "named": false
   },
@@ -23957,6 +24514,14 @@
   },
   {
     "type": "description",
+    "named": false
+  },
+  {
+    "type": "detail",
+    "named": false
+  },
+  {
+    "type": "detailed",
     "named": false
   },
   {
@@ -24180,6 +24745,10 @@
     "named": false
   },
   {
+    "type": "fcoe",
+    "named": false
+  },
+  {
     "type": "fdb",
     "named": false
   },
@@ -24233,6 +24802,14 @@
   },
   {
     "type": "gptp",
+    "named": false
+  },
+  {
+    "type": "guest-voice",
+    "named": false
+  },
+  {
+    "type": "guest-voice-signaling",
     "named": false
   },
   {
@@ -24376,6 +24953,10 @@
     "named": false
   },
   {
+    "type": "iscsi",
+    "named": false
+  },
+  {
     "type": "isis",
     "named": false
   },
@@ -24453,6 +25034,10 @@
   },
   {
     "type": "lldp",
+    "named": false
+  },
+  {
+    "type": "lldp-med",
     "named": false
   },
   {
@@ -24620,6 +25205,10 @@
     "named": false
   },
   {
+    "type": "neighbors",
+    "named": false
+  },
+  {
     "type": "netlogin",
     "named": false
   },
@@ -24633,6 +25222,10 @@
   },
   {
     "type": "network-clock",
+    "named": false
+  },
+  {
+    "type": "nl-clients",
     "named": false
   },
   {
@@ -25016,6 +25609,10 @@
     "named": false
   },
   {
+    "type": "softphone-voice",
+    "named": false
+  },
+  {
     "type": "source",
     "named": false
   },
@@ -25056,6 +25653,10 @@
     "named": false
   },
   {
+    "type": "statistics",
+    "named": false
+  },
+  {
     "type": "stm",
     "named": false
   },
@@ -25069,6 +25670,10 @@
   },
   {
     "type": "stratum",
+    "named": false
+  },
+  {
+    "type": "streaming-video",
     "named": false
   },
   {
@@ -25240,6 +25845,10 @@
     "named": false
   },
   {
+    "type": "traps",
+    "named": false
+  },
+  {
     "type": "trusted",
     "named": false
   },
@@ -25340,6 +25949,14 @@
     "named": false
   },
   {
+    "type": "video-conferencing",
+    "named": false
+  },
+  {
+    "type": "video-signaling",
+    "named": false
+  },
+  {
     "type": "virtual-network",
     "named": false
   },
@@ -25377,6 +25994,14 @@
   },
   {
     "type": "vman",
+    "named": false
+  },
+  {
+    "type": "voice",
+    "named": false
+  },
+  {
+    "type": "voice-signaling",
     "named": false
   },
   {

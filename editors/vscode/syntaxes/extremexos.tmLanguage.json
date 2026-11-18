@@ -8,6 +8,346 @@
       "match": "(?:^|\\G)[ \\t]*#.*$"
     },
     {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-48"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(show)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-54"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(disable)[ \\t]+(snmp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-57"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(enable)[ \\t]+(snmp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-57"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(debug)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-61"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(automation)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-63"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(disable)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-66"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(enable)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-66"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(ntp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-80"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(dns-client)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-83"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(show)[ \\t]+(twamp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-87"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(diagnostics)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-89"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(clear)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-91"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(unconfigure)[ \\t]+(lldp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-55"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(sntp-client)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-93"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(snmp)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-94"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
+      "begin": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(vlan)(?=[ \\t]|$)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "include": "#continuation-103"
+        },
+        {
+          "include": "#values"
+        }
+      ]
+    },
+    {
       "match": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(access-list|account|auto-peering|auto-provision|automation|banner|bfd|bgp|bootprelay|bootrom|cdp|cfm|cli|cos-index|database|debug|dhcp|diagnostics|diffserv|dns|dns-client|dos-protect|dot1p|eaps|edp|egress|elrp-client|elsm|erps|esrp|fabric|failsafe-account|fdb|fip|flow-redirect|flowmon|forwarding|identity-management|idletimeout|igmp|inline-power|instant-port|ip|ip-fix|ip-mtu|ip-security|iparp|ipforwarding|ipmcforwarding|ipmroute|iproute|ipv6|iqagent|irdp|isis|jumbo-frame-size|keychain|l2pt|l2vpn|lacp|ldap|lldp|log|mac-lockdown-timeout|mac-locking|macsec|mcast|meter|mirror|mlag|mld|mpls|mrp|msdp|msrp|mstp|mvr|mvrp|neighbor-discovery|netlogin|network-clock|nodealias|nothing|ntp|ospf|ospfv3|pim|policy|ports|power|private-vlan|process|protocol|qosprofile|qosscheduler|radius|radius-accounting|rip|ripng|safe-default-script|security|sflow|sharing|slot|slot-poll-interval|slpp|snmp|snmpv3|sntp-client|ssh2|sshd2|ssl|stack-ports|stacking|stacking-support|stpd|switch|sys-health-check|sys-recovery-level|syslog|system|tacacs|tacacs-accounting|tech-support|telnet|time|timezone|trusted-ports|trusted-servers|tunnel|twamp|upm|virtual-network|vlan|vm-tracking|vman|vpex|vpls|vr|vrrp|web|xml-notification)(?=[ \\t]|$)",
       "captures": {
         "1": {
@@ -412,19 +752,4889 @@
       }
     },
     {
-      "name": "string.quoted.double.extremexos",
-      "begin": "\"",
-      "end": "\"|$",
+      "include": "#values"
+    }
+  ],
+  "repository": {
+    "values": {
       "patterns": [
         {
-          "name": "constant.character.escape.extremexos",
-          "match": "\\\\."
+          "name": "string.quoted.double.extremexos",
+          "begin": "\"",
+          "end": "\"|$",
+          "patterns": [
+            {
+              "name": "constant.character.escape.extremexos",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "constant.numeric.extremexos",
+          "match": "(?<!\\S)(?:\\d{1,3}(?:\\.\\d{1,3}){3}(?:/\\d{1,2})?|\\d+(?::\\d+)?(?:[-,]\\d+(?::\\d+)?)*)(?!\\S)"
         }
       ]
     },
-    {
-      "name": "constant.numeric.extremexos",
-      "match": "(?<!\\S)(?:\\d{1,3}(?:\\.\\d{1,3}){3}(?:/\\d{1,2})?|\\d+(?::\\d+)?(?:[-,]\\d+(?::\\d+)?)*)(?!\\S)"
+    "continuation-1": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(priority-tagged)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-2": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-1"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-3": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dscp)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-2"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-4": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-3"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-5": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(vlan)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-4"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-6": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(guest-voice)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(guest-voice-signaling)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(softphone-voice)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(streaming-video)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(video-conferencing)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(video-signaling)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(voice)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(voice-signaling)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-5"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-7": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(application)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-6"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-8": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(civic-based)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(coordinate-based)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ecs-elin)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-9": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(policy)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-7"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(location-identification)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-8"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(capabilities)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(power-via-mdi)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-10": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-11": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(vlan)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-10"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-12": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(port-protocol-vlan-id)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-11"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(vlan-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-11"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(port-vlan-id)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-13": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(auto)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(tagged)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(untagged)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-14": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dot1q-framing)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-13"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(call-server)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(file-server)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(poe-conservation-request)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-15": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(with-classification)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-16": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(power-via-mdi)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-15"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(link-aggregation)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(mac-phy)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(max-frame-size)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-17": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(baseline)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ieee)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-18": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(med)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-9"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dot1)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-12"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(avaya-extreme)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-14"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dot3)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-16"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dcbx)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-17"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-19": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(system-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-20": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(system-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-19"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-21": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(system-capabilities)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-20"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-19"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-22": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(port-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-21"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-capabilities)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-20"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-19"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-23": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(vendor-specific)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-18"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(management-address)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-22"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(port-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-21"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-capabilities)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-20"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-19"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(all-tlvs)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-24": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(priority)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-25": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(fcoe)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-24"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(fip)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-24"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(iscsi)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-24"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-24"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-26": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-24"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-27": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-25"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(L4-port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-26"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ethertype)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-26"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(tcp-port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-26"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(udp-port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-26"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-28": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(application)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-27"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-29": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(fcoe)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(fip)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(iscsi)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-30": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-29"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(L4-port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ethertype)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(tcp-port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(udp-port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-31": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(application)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-30"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-32": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(add)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-28"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(delete)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-31"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-33": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(guest-voice)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(guest-voice-signaling)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(softphone-voice)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(streaming-video)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(video-conferencing)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(video-signaling)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(voice)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(voice-signaling)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-34": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(application)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-33"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-35": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(policy)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-34"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(location-identification)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-8"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(capabilities)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(power-via-mdi)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-36": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(call-server)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dot1q-framing)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(file-server)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(poe-conservation-request)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-37": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(link-aggregation)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(mac-phy)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(max-frame-size)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(power-via-mdi)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-38": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dot1)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-12"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(med)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-35"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(avaya-extreme)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-36"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dcbx)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-17"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dot3)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-37"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-39": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(management-address)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-22"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(vendor-specific)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-38"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(port-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-21"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-capabilities)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-20"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-19"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(all-tlvs)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(system-name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-40": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(advertise)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-23"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dcbx)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-32"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(no-advertise)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-39"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-41": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-40"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-40"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-42": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(repeat-count)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-43": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(fast-start)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-42"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-44": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(primary-ip)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(secondary-ip)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-45": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-44"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-46": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(vlan)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-45"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(mac-address)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-44"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-47": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(auto)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-48": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(ports)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-41"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(med)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-43"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(management-address)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-46"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(transmit-delay)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-47"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(reinitialize-delay)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(snmp-notification-interval)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(transmit-hold)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(transmit-interval)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-49": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(detail)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-50": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(baseline)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-49"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ieee)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-49"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(detail)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-51": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(detailed)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-52": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dcbx)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-50"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(neighbors)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-51"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(detailed)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(statistics)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-53": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-52"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-52"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-54": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(ports)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-53"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dcbx)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-50"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(neighbors)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-51"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(detailed)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(statistics)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-55": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(ports)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-10"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-56": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(lldp)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-55"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(lldp-med)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-55"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-57": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(traps)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-56"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-58": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(database)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-59": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(attach)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-58"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-60": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(fabric)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-59"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(nl-clients)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-61": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(show)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-60"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-62": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(connect)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-58"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(disconnect)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-58"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-63": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(edge)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-62"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-64": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(receive-only)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(transmit-only)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-65": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-64"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-64"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-66": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(ports)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-65"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-67": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(vr)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-68": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(burst)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(initial-burst)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(vr)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-69": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-68"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-70": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(burst)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(initial-burst)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(key)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-69"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(vr)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-71": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-70"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-72": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(add)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-71"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(delete)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-73": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(deny)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(permit)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-74": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(deny)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(permit)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-73"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-75": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-74"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-76": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(add)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-75"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(delete)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-75"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-77": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(none)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(stratum)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-78": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(not-trusted)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(trusted)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-79": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-78"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-80": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(peer)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-72"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(restrict-list)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-76"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(server)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-72"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(local-clock)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-77"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(key)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-79"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(vr)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-81": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+([^\\s\"']+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(\"(?:[^\"\\\\\\r\\n]|\\\\.)*\")(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-82": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(name-server)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-81"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(domain-suffix)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-83": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(add)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-82"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(delete)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-82"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(default-domain)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-84": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-85": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-84"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-86": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(ipaddress)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-85"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-87": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(endpoint)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-86"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(reflector)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-88": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(admin)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(user)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-89": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(privilege)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-88"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-90": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(port)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-91": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(neighbors)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-90"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-92": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+([^\\s\"']+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-67"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-93": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(primary)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-92"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(secondary)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-92"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-94": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(sysName)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(sysContact)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(sysLocation)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-95": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dot1d)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(emistp)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(pvst-plus)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-96": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dot1d)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(emistp)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(pvst-plus)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+((?:[^\\s\"']+|\"(?:[^\"\\\\\\r\\n]|\\\\.)*\"))(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-95"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-97": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(stpd)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-96"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(\"(?:[^\"\\\\\\r\\n]|\\\\.)*\")(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-95"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-98": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(stpd)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-96"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+([0-9]+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-97"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(\"(?:[^\"\\\\\\r\\n]|\\\\.)*\")(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-95"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-99": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(private-vlan)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-98"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(tagged)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-98"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(untagged)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-98"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(stpd)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-96"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+([0-9]+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-97"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(\"(?:[^\"\\\\\\r\\n]|\\\\.)*\")(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-95"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-100": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(all)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-99"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+([0-9]+(?::[0-9]+)?(?:-[0-9]+(?::[0-9]+)?)?(?:,[0-9]+(?::[0-9]+)?(?:-[0-9]+(?::[0-9]+)?)?)*)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-99"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-101": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(ports)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-100"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(secondary-ipaddress)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(subvlan)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-102": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(add)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-101"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(delete)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(description)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dhcp-address-range)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dhcp-lease-timer)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(dhcp-options)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ipaddress)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(name)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(netlogin-lease-timer)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(none)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(ports)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(protocol)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(qosprofile)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(router-discovery)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(subvlan-address-range)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(tag)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(udp-profile)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(vlan-translation)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
+    },
+    "continuation-103": {
+      "patterns": [
+        {
+          "begin": "\\G[ \\t]+(dynamic-vlan)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.extremexos"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+(\"(?:[^\"\\\\\\r\\n]|\\\\.)*\")(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-102"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+([0-9]+(?:[-,][0-9]+)+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-102"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+([0-9]+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-102"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        },
+        {
+          "begin": "\\G[ \\t]+([^\\s\"']+)(?=[ \\t]|$)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#values"
+                }
+              ]
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "include": "#continuation-102"
+            },
+            {
+              "include": "#values"
+            }
+          ]
+        }
+      ]
     }
-  ]
+  }
 }

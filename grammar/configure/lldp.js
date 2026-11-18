@@ -1,3 +1,17 @@
+const medApplication = $ => choice(
+  'guest-voice',
+  'guest-voice-signaling',
+  'softphone-voice',
+  'streaming-video',
+  'video-conferencing',
+  'video-signaling',
+  'voice',
+  'voice-signaling',
+  $.word_or_string,
+);
+
+const dcbxApplication = $ => choice('fcoe', 'fip', 'iscsi', $.word_or_string);
+
 function optionalAddresses($, count) {
   let continuation = optional($._arguments);
   for (let index = count; index > 0; index--) {
@@ -330,7 +344,7 @@ const rules = () => ({
   configure_lldp_ports_advertise_vendor_specific_med_policy_application: $ => seq(
     'application',
     optional(seq(
-      field('app_type', $.word_or_string),
+      field('app_type', medApplication($)),
       optional(choice(
         prec(1, $.configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan),
         $._arguments,
@@ -421,7 +435,7 @@ const rules = () => ({
   configure_lldp_ports_dcbx_add_application_name: $ => seq(
     'name',
     optional(seq(
-      field('application_name', $.word_or_string),
+      field('application_name', dcbxApplication($)),
       optional($._configure_lldp_ports_dcbx_add_application_priority_arguments),
     )),
   ),
@@ -473,7 +487,7 @@ const rules = () => ({
 
   configure_lldp_ports_dcbx_delete_application_name: $ => seq(
     'name',
-    optional(seq(field('application_name', $.word_or_string), optional($._arguments))),
+    optional(seq(field('application_name', dcbxApplication($)), optional($._arguments))),
   ),
 
   configure_lldp_ports_dcbx_delete_application_tcp_port: $ => seq(
@@ -604,7 +618,7 @@ const rules = () => ({
 
   configure_lldp_ports_no_advertise_vendor_specific_med_policy_application: $ => seq(
     'application',
-    optional(seq(field('app_type', $.word_or_string), optional($._arguments))),
+    optional(seq(field('app_type', medApplication($)), optional($._arguments))),
   ),
 
   configure_lldp_ports_no_advertise_vendor_specific_med_power_via_mdi: $ => seq('power-via-mdi', optional($._arguments)),

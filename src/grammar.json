@@ -6719,8 +6719,45 @@
                   "type": "FIELD",
                   "name": "app_type",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "word_or_string"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "guest-voice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "guest-voice-signaling"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "softphone-voice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "streaming-video"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "video-conferencing"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "video-signaling"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "voice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "voice-signaling"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
                   }
                 },
                 {
@@ -7215,8 +7252,25 @@
                   "type": "FIELD",
                   "name": "application_name",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "word_or_string"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "fcoe"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "fip"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "iscsi"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
                   }
                 },
                 {
@@ -7516,8 +7570,25 @@
                   "type": "FIELD",
                   "name": "application_name",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "word_or_string"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "fcoe"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "fip"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "iscsi"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
                   }
                 },
                 {
@@ -8217,8 +8288,45 @@
                   "type": "FIELD",
                   "name": "app_type",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "word_or_string"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "guest-voice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "guest-voice-signaling"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "softphone-voice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "streaming-video"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "video-conferencing"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "video-signaling"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "voice"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "voice-signaling"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
                   }
                 },
                 {
@@ -11032,6 +11140,14 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "disable_snmp"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "disable_access_list"
                   }
                 },
@@ -11712,14 +11828,6 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
-                    "name": "disable_snmp"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
                     "name": "disable_snmpv3"
                   }
                 },
@@ -12018,86 +12126,30 @@
         }
       ]
     },
-    "disable_lldp_ports": {
+    "disable_snmp": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "ports"
+          "value": "snmp"
         },
         {
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
+              "type": "CHOICE",
               "members": [
                 {
-                  "type": "FIELD",
-                  "name": "ports",
+                  "type": "PREC",
+                  "value": 1,
                   "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": "all"
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "word_or_string"
-                      }
-                    ]
+                    "type": "SYMBOL",
+                    "name": "disable_snmp_traps"
                   }
                 },
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "SEQ",
-                          "members": [
-                            {
-                              "type": "FIELD",
-                              "name": "mode",
-                              "content": {
-                                "type": "CHOICE",
-                                "members": [
-                                  {
-                                    "type": "STRING",
-                                    "value": "receive-only"
-                                  },
-                                  {
-                                    "type": "STRING",
-                                    "value": "transmit-only"
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "type": "CHOICE",
-                              "members": [
-                                {
-                                  "type": "SYMBOL",
-                                  "name": "_arguments"
-                                },
-                                {
-                                  "type": "BLANK"
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "SYMBOL",
-                          "name": "_arguments"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
+                  "type": "SYMBOL",
+                  "name": "_arguments"
                 }
               ]
             },
@@ -13893,27 +13945,6 @@
         }
       ]
     },
-    "disable_snmp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "snmp"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "disable_snmpv3": {
       "type": "SEQ",
       "members": [
@@ -14578,6 +14609,224 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SEQ",
+                          "members": [
+                            {
+                              "type": "FIELD",
+                              "name": "mode",
+                              "content": {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "STRING",
+                                    "value": "receive-only"
+                                  },
+                                  {
+                                    "type": "STRING",
+                                    "value": "transmit-only"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "CHOICE",
+                              "members": [
+                                {
+                                  "type": "SYMBOL",
+                                  "name": "_arguments"
+                                },
+                                {
+                                  "type": "BLANK"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_snmp_traps": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "traps"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_snmp_traps_lldp"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_snmp_traps_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "lldp"
+            },
+            {
+              "type": "STRING",
+              "value": "lldp-med"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "disable_snmp_traps_lldp_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "disable_snmp_traps_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -16548,8 +16797,21 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "enable_lldp_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -17073,8 +17335,21 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_arguments"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "enable_snmp_traps"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -18175,6 +18450,224 @@
         }
       ]
     },
+    "enable_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SEQ",
+                          "members": [
+                            {
+                              "type": "FIELD",
+                              "name": "mode",
+                              "content": {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "STRING",
+                                    "value": "receive-only"
+                                  },
+                                  {
+                                    "type": "STRING",
+                                    "value": "transmit-only"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "CHOICE",
+                              "members": [
+                                {
+                                  "type": "SYMBOL",
+                                  "name": "_arguments"
+                                },
+                                {
+                                  "type": "BLANK"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "enable_snmp_traps": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "traps"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "enable_snmp_traps_lldp"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "enable_snmp_traps_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "lldp"
+            },
+            {
+              "type": "STRING",
+              "value": "lldp-med"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "enable_snmp_traps_lldp_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "enable_snmp_traps_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "show_command": {
       "type": "SEQ",
       "members": [
@@ -18194,6 +18687,14 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "show_twamp"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_lldp"
                   }
                 },
                 {
@@ -18754,14 +19255,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "show_licenses"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "show_lldp"
                   }
                 },
                 {
@@ -19659,6 +20152,40 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "show_lldp_ports"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_show_lldp_display"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -21122,27 +21649,6 @@
         {
           "type": "STRING",
           "value": "licenses"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "show_lldp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "lldp"
         },
         {
           "type": "CHOICE",
@@ -22985,6 +23491,274 @@
         }
       ]
     },
+    "show_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_show_lldp_display"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_show_lldp_display": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "show_lldp_detailed"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "show_lldp_statistics"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "show_lldp_neighbors"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "show_lldp_dcbx"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "show_lldp_detailed": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "detailed"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_lldp_statistics": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "statistics"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_lldp_neighbors": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "neighbors"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "detailed"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "show_lldp_dcbx": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dcbx"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "FIELD",
+                        "name": "version",
+                        "content": {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "STRING",
+                              "value": "baseline"
+                            },
+                            {
+                              "type": "STRING",
+                              "value": "ieee"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": "detail"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "detail"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "cd_command": {
       "type": "SEQ",
       "members": [
@@ -23079,6 +23853,14 @@
             {
               "type": "CHOICE",
               "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "clear_lldp"
+                  }
+                },
                 {
                   "type": "PREC",
                   "value": 1,
@@ -23301,14 +24083,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "clear_license_info"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "clear_lldp"
                   }
                 },
                 {
@@ -23541,6 +24315,40 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "clear_vpex"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "clear_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "clear_lldp_neighbors"
                   }
                 },
                 {
@@ -24129,27 +24937,6 @@
         {
           "type": "STRING",
           "value": "license-info"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "clear_lldp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "lldp"
         },
         {
           "type": "CHOICE",
@@ -24766,6 +25553,103 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "clear_lldp_neighbors": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "neighbors"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SYMBOL",
+                            "name": "_arguments"
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "port"
+                      },
+                      {
+                        "type": "CHOICE",
+                        "members": [
+                          {
+                            "type": "SEQ",
+                            "members": [
+                              {
+                                "type": "FIELD",
+                                "name": "ports",
+                                "content": {
+                                  "type": "SYMBOL",
+                                  "name": "word_or_string"
+                                }
+                              },
+                              {
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "SYMBOL",
+                                    "name": "_arguments"
+                                  },
+                                  {
+                                    "type": "BLANK"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "BLANK"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -26381,6 +27265,14 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "debug_lldp"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "debug_aaa"
                   }
                 },
@@ -26718,14 +27610,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "debug_licMgr"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "debug_lldp"
                   }
                 },
                 {
@@ -27110,6 +27994,40 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "debug_xmld"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "debug_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "debug_lldp_show"
                   }
                 },
                 {
@@ -28013,27 +28931,6 @@
         {
           "type": "STRING",
           "value": "licMgr"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "debug_lldp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "lldp"
         },
         {
           "type": "CHOICE",
@@ -29049,6 +29946,140 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "debug_lldp_show": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "show"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "debug_lldp_show_fabric"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "debug_lldp_show_nl_clients"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "debug_lldp_show_fabric": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "fabric"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "attach"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "database"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "debug_lldp_show_nl_clients": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "nl-clients"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "entry",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -34161,6 +35192,14 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "unconfigure_lldp"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "unconfigure_access_list"
                   }
                 },
@@ -34346,14 +35385,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "unconfigure_ldap"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "unconfigure_lldp"
                   }
                 },
                 {
@@ -34730,6 +35761,40 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "unconfigure_xml_notification"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "unconfigure_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "unconfigure_lldp_ports"
                   }
                 },
                 {
@@ -35234,27 +36299,6 @@
         {
           "type": "STRING",
           "value": "ldap"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "unconfigure_lldp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "lldp"
         },
         {
           "type": "CHOICE",
@@ -36249,6 +37293,57 @@
             {
               "type": "SYMBOL",
               "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "unconfigure_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"

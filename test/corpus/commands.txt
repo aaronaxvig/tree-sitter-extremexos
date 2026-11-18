@@ -51,7 +51,7 @@ use image primary
   (command (delete_command (delete_vlan (word_or_string (string)))))
   (command
     (unconfigure_command
-      (unconfigure_lldp (word_or_string (word)) (word_or_string (word)))))
+      (unconfigure_lldp (unconfigure_lldp_ports (word_or_string (word))))))
   (command (use_command (use_image (word_or_string (word))))))
 
 ================================================================================

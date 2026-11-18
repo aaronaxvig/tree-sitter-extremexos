@@ -1,0 +1,37 @@
+================================================================================
+LLDP enable, clear, and reset
+================================================================================
+
+enable lldp ports 1:2-1:6 receive-only
+clear lldp neighbors port 1:2
+clear lldp neighbors all
+unconfigure lldp ports all
+
+---
+
+(source_file
+  (command (enable_command (enable_lldp (enable_lldp_ports (word_or_string (word))))))
+  (command (clear_command (clear_lldp (clear_lldp_neighbors (word_or_string (word))))))
+  (command (clear_command (clear_lldp (clear_lldp_neighbors))))
+  (command (unconfigure_command (unconfigure_lldp (unconfigure_lldp_ports)))))
+
+================================================================================
+LLDP status, traps, and diagnostic branches
+================================================================================
+
+show lldp ports 1:1 neighbors detailed
+show lldp dcbx ieee detail
+enable snmp traps lldp-med ports all
+disable snmp traps lldp ports 2
+debug lldp show nl-clients 0
+show lldp ports all future-option "Example"
+
+---
+
+(source_file
+  (command (show_command (show_lldp (show_lldp_ports (word_or_string (word)) (show_lldp_neighbors)))))
+  (command (show_command (show_lldp (show_lldp_dcbx))))
+  (command (enable_command (enable_snmp (enable_snmp_traps (enable_snmp_traps_lldp (enable_snmp_traps_lldp_ports))))))
+  (command (disable_command (disable_snmp (disable_snmp_traps (disable_snmp_traps_lldp (disable_snmp_traps_lldp_ports (word_or_string (word))))))))
+  (command (debug_command (debug_lldp (debug_lldp_show (debug_lldp_show_nl_clients (word_or_string (word)))))))
+  (command (show_command (show_lldp (show_lldp_ports (word_or_string (word)) (word_or_string (string)))))))

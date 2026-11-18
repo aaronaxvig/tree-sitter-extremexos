@@ -1,7 +1,8 @@
 const twamp = require('./twamp');
+const lldp = require('./lldp');
 const topics = require('../topics');
 
-const names = topics.list('show', [], ['twamp']);
+const names = topics.list('show', ['lldp'], ['twamp']);
 
 const rules = () => ({
   show_command: $ => seq(
@@ -15,6 +16,7 @@ const rules = () => ({
 
   ...twamp.rules(),
   ...topics.rules('show', names),
+  ...lldp.rules(),
 });
 
 module.exports = {rules};
