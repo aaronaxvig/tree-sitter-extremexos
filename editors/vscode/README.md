@@ -26,3 +26,5 @@ Run `npm ci` and `npm test` in this directory to check script highlighting in st
 ## GitHub releases
 
 Pull requests and pushes to `main` check the generated highlighting and run the file and Markdown tests. To prepare a release, update the extension version and lockfile, commit, and push a matching tag (for example, `vscode-v1.0.1` for version `1.0.1`). The workflow packages that commit and attaches the VSIX to a draft GitHub Release. Install the attachment to check it, then publish the draft when ready.
+
+Publishing the GitHub Release triggers the Marketplace job. It downloads the reviewed VSIX from the release and publishes it using GitHub OIDC. In the Marketplace publisher’s Trusted Publishing policy, use owner `aaronaxvig`, repository `tree-sitter-extremexos`, and workflow `vscode.yml`. Leave the environment field empty. The publish step uses vsce 4.1.0 for OIDC support.
