@@ -41,7 +41,23 @@ Run the converter's tests with `python3 -B -m unittest discover -s test/tools`.
 
 ### Regenerate syntax from CLI XML
 
-Supply an extracted `config/clidef` directory to regenerate the first-level keywords and detailed command families. The importer reads the XML on the local machine and merges definitions of the same command from different XML files. It writes detailed files to `grammar/<verb>/<topic>.js` and keyword lists to `grammar/<verb>/keywords.js`.
+Supply an extracted `config/clidef` directory. The importer merges definitions of the same command across XML files and shares continuations between related command forms.
+
+```mermaid
+flowchart TD
+    XML["Extracted config/clidef/*.xml"] --> Import["python3 -B -m tools.import_grammar"]
+    Config["grammar/import.json<br/>Detailed family selection"] --> Import
+    Import --> Keywords["grammar/VERB/keywords.js<br/>First-level keywords"]
+    Import --> Details["grammar/VERB/TOPIC.js<br/>Detailed rules indexed by grammar/generated.js"]
+    Keywords --> Grammar["grammar.js<br/>Compose the Tree-sitter grammar"]
+    Details --> Grammar
+    Grammar --> Generate["npm run generate"]
+    Generate --> Parser["src/parser.c and src/node-types.json<br/>Parser and node types"]
+    Generate --> Rules["src/grammar.json<br/>Tree-sitter rule definitions"]
+    Rules --> Editor["npm --prefix editors/vscode run generate"]
+    Details -.->|Detailed family index| Editor
+    Editor --> TextMate["extremexos.tmLanguage.json<br/>Highlighting for VS Code files and Markdown fences"]
+```
 
 ```sh
 python3 -B -m tools.import_grammar /path/to/config/clidef
