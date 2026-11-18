@@ -24,6 +24,24 @@ npx tree-sitter parse examples/example.exos
 Corpus tests live in `test/corpus`; representative configuration exports live in `test/fixtures`.
 The root `grammar.js` composes command-family modules from `grammar/`; detailed families can grow there without obscuring the top-level grammar.
 
+### Build and release the VS Code extension
+
+From the repository root, build the extension using the checked-in command families:
+
+```sh
+cd editors/vscode
+npm ci
+npm run generate
+npm test
+npm run package
+```
+
+The tests cover standalone files and Markdown fences. Packaging refreshes the TextMate grammar and writes the VSIX to `editors/vscode/`. To use updated XML definitions, follow [Regenerate syntax from CLI XML](#regenerate-syntax-from-cli-xml) before packaging.
+
+Pull requests and pushes to `main` check the generated highlighting and run the file and Markdown tests. To prepare a release, update the extension version and lockfile, commit, and push a matching tag (for example, `vscode-v1.0.1` for version `1.0.1`). The workflow packages that commit and attaches the VSIX to a draft GitHub Release. Install the attachment to check it, then publish the draft when ready.
+
+Publishing the GitHub Release triggers the Marketplace job. It downloads the reviewed VSIX from the release and publishes it using GitHub OIDC. In the Marketplace publisher’s Trusted Publishing policy, use owner `aaronaxvig`, repository `tree-sitter-extremexos`, and workflow `vscode.yml`. Leave the environment field empty. The publish step uses vsce 4.1.0 for OIDC support.
+
 ### Generate a standalone grammar from firmware XML
 
 `tools/clidef_to_grammar.py` reads one extracted `config/clidef/*.xml` file and emits a standalone Tree-sitter grammar. It was tested with `edgeAuto.xml`, `kcm.xml`, and `twamp.xml` from ExtremeXOS 32.7.3.15. The generator follows shared group closers and uses action entries to identify where a command can end. Optional branches share their continuation rules, so the output stays compact with many independent options.
