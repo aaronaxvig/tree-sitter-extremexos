@@ -1,8 +1,10 @@
 const topics = require('./topics');
 const detailed = {
-  clear: {lldp: require('./clear/lldp')},
-  debug: {lldp: require('./debug/lldp')},
-  unconfigure: {lldp: require('./unconfigure/lldp')},
+  clear: {lldp: require('./clear/lldp'), netlogin: require('./clear/netlogin')},
+  create: {netlogin: require('./create/netlogin')},
+  debug: {lldp: require('./debug/lldp'), netlogin: require('./debug/netlogin')},
+  delete: {netlogin: require('./delete/netlogin')},
+  unconfigure: {lldp: require('./unconfigure/lldp'), netlogin: require('./unconfigure/netlogin')},
 };
 
 // Top-level EXOS verbs that share the same command structure.

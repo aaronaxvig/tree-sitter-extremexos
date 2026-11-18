@@ -1,5 +1,6 @@
 const topics = require('../topics');
 const lldp = require('./lldp');
+const netlogin = require('./netlogin');
 
 // First-level enable families reported by EXOS tab completion.
 const completionTopics = [
@@ -39,6 +40,7 @@ const rules = () => ({
 
   ...topics.rules('enable', names),
   ...lldp.rules(),
+  ...netlogin.rules(),
 });
 
 module.exports = {rules};

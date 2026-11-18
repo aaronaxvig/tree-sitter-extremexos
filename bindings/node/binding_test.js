@@ -28,6 +28,25 @@ test("recognizes every imported verb and keyword in incomplete commands", () => 
   }
 });
 
+test("parses NetLogin port timers and session filters into fields", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+  const { rootNode } = parser.parse(
+    'configure netlogin dot1x ports 1:2 timers quiet-period 30 reauthentication on\n' +
+    'show netlogin session summary mac-address 02:00:00:00:00:01 ports 1:2 agent dot1x\n',
+  );
+  assert.equal(rootNode.hasError, false, rootNode.toString());
+  const [port] = rootNode.descendantsOfType("configure_netlogin_dot1x_ports");
+  const [timers] = port.descendantsOfType("configure_netlogin_dot1x_timers");
+  const [session] = rootNode.descendantsOfType("show_netlogin_session");
+  assert.equal(port.childForFieldName("ports").text, "1:2");
+  assert.equal(timers.childForFieldName("quiet_period").text, "30");
+  assert.equal(timers.childForFieldName("state").text, "on");
+  assert.equal(session.childForFieldName("mac_address").text, "02:00:00:00:00:01");
+  assert.equal(session.childForFieldName("ports").text, "1:2");
+  assert.equal(session.childForFieldName("agent").text, "dot1x");
+});
+
 test("parses DNS name server operands into fields", () => {
   const parser = new Parser();
   parser.setLanguage(language);

@@ -904,6 +904,74 @@
       "required": false,
       "types": [
         {
+          "type": "clear_netlogin_state",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clear_netlogin_state",
+    "named": true,
+    "fields": {
+      "agent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dot1x",
+            "named": false
+          },
+          {
+            "type": "mac",
+            "named": false
+          },
+          {
+            "type": "web-based",
+            "named": false
+          }
+        ]
+      },
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -5866,6 +5934,1074 @@
       "required": false,
       "types": [
         {
+          "type": "configure_netlogin_add",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_agingtime",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_allowed_refresh_failures",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_authentication",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_banner",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_base_url",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_delete",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_dot1x",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_dynamic_vlan",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_idle_timeout",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_local_user",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_mac",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_move_fail_action",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_ports",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_redirect_page",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_session_refresh",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_session_timeout",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_trap",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_vlan",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_web_based",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_add",
+    "named": true,
+    "fields": {
+      "tcp_port": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_netlogin_add_mac_list",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_add_mac_list",
+    "named": true,
+    "fields": {
+      "encrypted_password": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "mask": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "netlogin_mac_mask",
+            "named": true
+          }
+        ]
+      },
+      "password": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_agingtime",
+    "named": true,
+    "fields": {
+      "minutes": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_allowed_refresh_failures",
+    "named": true,
+    "fields": {
+      "num_failures": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_authentication",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_netlogin_authentication_failure",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_authentication_protocol_order",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_authentication_service_unavailable",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_authentication_failure",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_authentication_protocol_order",
+    "named": true,
+    "fields": {
+      "protocol": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "NULL",
+            "named": false
+          },
+          {
+            "type": "cep",
+            "named": false
+          },
+          {
+            "type": "dot1x",
+            "named": false
+          },
+          {
+            "type": "mac",
+            "named": false
+          },
+          {
+            "type": "web-based",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_authentication_service_unavailable",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_banner",
+    "named": true,
+    "fields": {
+      "banner": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_base_url",
+    "named": true,
+    "fields": {
+      "base_url": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_delete",
+    "named": true,
+    "fields": {
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "mask": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "netlogin_mac_mask",
+            "named": true
+          }
+        ]
+      },
+      "tcp_port": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_dot1x",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "state": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "off",
+            "named": false
+          },
+          {
+            "type": "on",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_netlogin_dot1x_ports",
+          "named": true
+        },
+        {
+          "type": "configure_netlogin_dot1x_timers",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_dot1x_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_netlogin_dot1x_timers",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_dot1x_timers",
+    "named": true,
+    "fields": {
+      "max_num_reauths": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "quiet_period": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "reauth_period": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "server_timeout": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "state": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "off",
+            "named": false
+          },
+          {
+            "type": "on",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "supp_resp_timeout": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_dynamic_vlan",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "none",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_idle_timeout",
+    "named": true,
+    "fields": {
+      "agent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "convergence-endpoint",
+            "named": false
+          },
+          {
+            "type": "dot1x",
+            "named": false
+          },
+          {
+            "type": "mac",
+            "named": false
+          },
+          {
+            "type": "web-based",
+            "named": false
+          }
+        ]
+      },
+      "timeout": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "configure_netlogin_local_user",
+    "named": true,
+    "fields": {
+      "security_profile": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "user": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_mac",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "reauth_period": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_netlogin_mac_port_timers",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_mac_port_timers",
+    "named": true,
+    "fields": {
+      "delay": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "reauth_period": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "state": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "off",
+            "named": false
+          },
+          {
+            "type": "on",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_move_fail_action",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_ports",
+    "named": true,
+    "fields": {
+      "allowed_users": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_redirect_page",
+    "named": true,
+    "fields": {
+      "redirect_page": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_session_refresh",
+    "named": true,
+    "fields": {
+      "refresh_seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_session_timeout",
+    "named": true,
+    "fields": {
+      "agent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "convergence-endpoint",
+            "named": false
+          },
+          {
+            "type": "dot1x",
+            "named": false
+          },
+          {
+            "type": "mac",
+            "named": false
+          },
+          {
+            "type": "web-based",
+            "named": false
+          }
+        ]
+      },
+      "timeout": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "configure_netlogin_trap",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_vlan",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_netlogin_web_based",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -8763,6 +9899,76 @@
       "required": false,
       "types": [
         {
+          "type": "create_netlogin_local_user",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "create_netlogin_local_user",
+    "named": true,
+    "fields": {
+      "encrypted_password": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "password": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "security_profile": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "user": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -10384,6 +11590,394 @@
       "required": false,
       "types": [
         {
+          "type": "debug_netlogin_clear",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_configure",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_create",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_delete",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_disable",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_enable",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_feature",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_require",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_show",
+          "named": true
+        },
+        {
+          "type": "debug_netlogin_suppress_auth",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_clear",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_configure",
+    "named": true,
+    "fields": {
+      "count": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "second": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_create",
+    "named": true,
+    "fields": {
+      "address_or_ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_delete",
+    "named": true,
+    "fields": {
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_disable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_enable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_feature",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_require",
+    "named": true,
+    "fields": {
+      "state": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "off",
+            "named": false
+          },
+          {
+            "type": "on",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_show",
+    "named": true,
+    "fields": {
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_netlogin_suppress_auth",
+    "named": true,
+    "fields": {
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "state": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "off",
+            "named": false
+          },
+          {
+            "type": "on",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -11611,6 +13205,36 @@
     "type": "delete_netlogin",
     "named": true,
     "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "delete_netlogin_local_user",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete_netlogin_local_user",
+    "named": true,
+    "fields": {
+      "user": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -13513,6 +15137,222 @@
   },
   {
     "type": "disable_netlogin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "disable_netlogin_authentication",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_dot1x",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_logout_privilege",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_mac",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_ports",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_reauthenticate_on_refresh",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_redirect_page",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_session_refresh",
+          "named": true
+        },
+        {
+          "type": "disable_netlogin_web_based",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_authentication",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_dot1x",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_logout_privilege",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_mac",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_reauthenticate_on_refresh",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_redirect_page",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_session_refresh",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "disable_netlogin_web_based",
     "named": true,
     "fields": {},
     "children": {
@@ -16244,6 +18084,233 @@
   },
   {
     "type": "enable_netlogin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_netlogin_authentication",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_dot1x",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_logout_privilege",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_mac",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_ports",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_reauthenticate_on_refresh",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_redirect_page",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_session_refresh",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin_web_based",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_authentication",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_dot1x",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_logout_privilege",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_mac",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_reauthenticate_on_refresh",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_redirect_page",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_session_refresh",
+    "named": true,
+    "fields": {
+      "refresh_minutes": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin_web_based",
     "named": true,
     "fields": {},
     "children": {
@@ -20817,6 +22884,361 @@
       "required": false,
       "types": [
         {
+          "type": "show_netlogin_authentication",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_banner",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_dot1x",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_guest_vlan",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_local_users",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_mac",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_mac_list",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_port",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_session",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_timeout",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_trap",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_vlan",
+          "named": true
+        },
+        {
+          "type": "show_netlogin_web_based",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_authentication",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_banner",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_dot1x",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_guest_vlan",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_local_users",
+    "named": true,
+    "fields": {
+      "user": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_mac",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_mac_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_port",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_session",
+    "named": true,
+    "fields": {
+      "agent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "convergence-endpoint",
+            "named": false
+          },
+          {
+            "type": "dot1x",
+            "named": false
+          },
+          {
+            "type": "mac",
+            "named": false
+          },
+          {
+            "type": "web-based",
+            "named": false
+          }
+        ]
+      },
+      "mac_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_timeout",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_trap",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_vlan",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_netlogin_web_based",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -23429,6 +25851,302 @@
       "required": false,
       "types": [
         {
+          "type": "unconfigure_netlogin_allowed_refresh_failures",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_authentication",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_banner",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_dot1x",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_idle_timeout",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_local_user",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_mac",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_ports",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_session_refresh",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_session_timeout",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_vlan",
+          "named": true
+        },
+        {
+          "type": "unconfigure_netlogin_web_based",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_allowed_refresh_failures",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_authentication",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_banner",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_dot1x",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_idle_timeout",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_local_user",
+    "named": true,
+    "fields": {
+      "user": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_mac",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_session_refresh",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_session_timeout",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_vlan",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unconfigure_netlogin_web_based",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -24253,7 +26971,15 @@
     }
   },
   {
+    "type": "FA-VSA",
+    "named": false
+  },
+  {
     "type": "L4-port",
+    "named": false
+  },
+  {
+    "type": "NULL",
     "named": false
   },
   {
@@ -24277,6 +27003,10 @@
     "named": false
   },
   {
+    "type": "actions",
+    "named": false
+  },
+  {
     "type": "add",
     "named": false
   },
@@ -24289,6 +27019,14 @@
     "named": false
   },
   {
+    "type": "agent",
+    "named": false
+  },
+  {
+    "type": "agingtime",
+    "named": false
+  },
+  {
     "type": "all",
     "named": false
   },
@@ -24297,11 +27035,39 @@
     "named": false
   },
   {
+    "type": "all-traps",
+    "named": false
+  },
+  {
+    "type": "all_cast",
+    "named": false
+  },
+  {
+    "type": "allow",
+    "named": false
+  },
+  {
+    "type": "allowed-refresh-failures",
+    "named": false
+  },
+  {
+    "type": "allowed-users",
+    "named": false
+  },
+  {
     "type": "application",
     "named": false
   },
   {
     "type": "attach",
+    "named": false
+  },
+  {
+    "type": "authenticate",
+    "named": false
+  },
+  {
+    "type": "authentication",
     "named": false
   },
   {
@@ -24337,6 +27103,10 @@
     "named": false
   },
   {
+    "type": "base-url",
+    "named": false
+  },
+  {
     "type": "baseline",
     "named": false
   },
@@ -24365,6 +27135,10 @@
     "named": false
   },
   {
+    "type": "broadcast",
+    "named": false
+  },
+  {
     "type": "burst",
     "named": false
   },
@@ -24381,11 +27155,19 @@
     "named": false
   },
   {
+    "type": "case",
+    "named": false
+  },
+  {
     "type": "cd",
     "named": false
   },
   {
     "type": "cdp",
+    "named": false
+  },
+  {
+    "type": "cep",
     "named": false
   },
   {
@@ -24429,7 +27211,19 @@
     "named": false
   },
   {
+    "type": "client",
+    "named": false
+  },
+  {
+    "type": "clients",
+    "named": false
+  },
+  {
     "type": "clipaging",
+    "named": false
+  },
+  {
+    "type": "colon-separated",
     "named": false
   },
   {
@@ -24453,7 +27247,15 @@
     "named": false
   },
   {
+    "type": "console",
+    "named": false
+  },
+  {
     "type": "continuous",
+    "named": false
+  },
+  {
+    "type": "convergence-endpoint",
     "named": false
   },
   {
@@ -24489,6 +27291,10 @@
     "named": false
   },
   {
+    "type": "database-order",
+    "named": false
+  },
+  {
     "type": "dcbx",
     "named": false
   },
@@ -24501,7 +27307,15 @@
     "named": false
   },
   {
+    "type": "default",
+    "named": false
+  },
+  {
     "type": "default-domain",
+    "named": false
+  },
+  {
+    "type": "delay",
     "named": false
   },
   {
@@ -24522,6 +27336,10 @@
   },
   {
     "type": "detailed",
+    "named": false
+  },
+  {
+    "type": "details",
     "named": false
   },
   {
@@ -24621,6 +27439,18 @@
     "named": false
   },
   {
+    "type": "dot1x",
+    "named": false
+  },
+  {
+    "type": "dot1x-client",
+    "named": false
+  },
+  {
+    "type": "dot1x-clients",
+    "named": false
+  },
+  {
     "type": "dot3",
     "named": false
   },
@@ -24642,6 +27472,26 @@
   },
   {
     "type": "dynamic-vlan",
+    "named": false
+  },
+  {
+    "type": "eap-identity",
+    "named": false
+  },
+  {
+    "type": "eap-ttls",
+    "named": false
+  },
+  {
+    "type": "eapol-start",
+    "named": false
+  },
+  {
+    "type": "eapol-transmit-version",
+    "named": false
+  },
+  {
+    "type": "eapolPktSendDelayInterval",
     "named": false
   },
   {
@@ -24669,6 +27519,10 @@
     "named": false
   },
   {
+    "type": "egress-traffic",
+    "named": false
+  },
+  {
     "type": "elrp",
     "named": false
   },
@@ -24690,6 +27544,10 @@
   },
   {
     "type": "enable",
+    "named": false
+  },
+  {
+    "type": "encrypted",
     "named": false
   },
   {
@@ -24729,11 +27587,19 @@
     "named": false
   },
   {
+    "type": "failed",
+    "named": false
+  },
+  {
     "type": "failover",
     "named": false
   },
   {
     "type": "failsafe-account",
+    "named": false
+  },
+  {
+    "type": "failure",
     "named": false
   },
   {
@@ -24754,6 +27620,10 @@
   },
   {
     "type": "fdbentry",
+    "named": false
+  },
+  {
+    "type": "feature",
     "named": false
   },
   {
@@ -24789,6 +27659,10 @@
     "named": false
   },
   {
+    "type": "format",
+    "named": false
+  },
+  {
     "type": "forwarding",
     "named": false
   },
@@ -24802,6 +27676,10 @@
   },
   {
     "type": "gptp",
+    "named": false
+  },
+  {
+    "type": "guest-vlan",
     "named": false
   },
   {
@@ -24829,11 +27707,27 @@
     "named": false
   },
   {
+    "type": "http",
+    "named": false
+  },
+  {
+    "type": "https",
+    "named": false
+  },
+  {
+    "type": "hyphenated",
+    "named": false
+  },
+  {
     "type": "icmp",
     "named": false
   },
   {
     "type": "identity-management",
+    "named": false
+  },
+  {
+    "type": "idle-timeout",
     "named": false
   },
   {
@@ -24874,6 +27768,10 @@
   },
   {
     "type": "instant-port",
+    "named": false
+  },
+  {
+    "type": "instant-port-mode",
     "named": false
   },
   {
@@ -25045,7 +27943,19 @@
     "named": false
   },
   {
+    "type": "local",
+    "named": false
+  },
+  {
     "type": "local-clock",
+    "named": false
+  },
+  {
+    "type": "local-user",
+    "named": false
+  },
+  {
+    "type": "local-users",
     "named": false
   },
   {
@@ -25061,7 +27971,15 @@
     "named": false
   },
   {
+    "type": "logout-privilege",
+    "named": false
+  },
+  {
     "type": "loopback-mode",
+    "named": false
+  },
+  {
+    "type": "lower",
     "named": false
   },
   {
@@ -25074,6 +27992,18 @@
   },
   {
     "type": "mac-address",
+    "named": false
+  },
+  {
+    "type": "mac-based-vlans",
+    "named": false
+  },
+  {
+    "type": "mac-cache",
+    "named": false
+  },
+  {
+    "type": "mac-list",
     "named": false
   },
   {
@@ -25102,6 +28032,14 @@
   },
   {
     "type": "max-frame-size",
+    "named": false
+  },
+  {
+    "type": "max-reached",
+    "named": false
+  },
+  {
+    "type": "max-users",
     "named": false
   },
   {
@@ -25142,6 +28080,14 @@
   },
   {
     "type": "mld",
+    "named": false
+  },
+  {
+    "type": "mode",
+    "named": false
+  },
+  {
+    "type": "move-fail-action",
     "named": false
   },
   {
@@ -25217,6 +28163,10 @@
     "named": false
   },
   {
+    "type": "netlogin_mac_mask",
+    "named": true
+  },
+  {
     "type": "nettools",
     "named": false
   },
@@ -25229,11 +28179,23 @@
     "named": false
   },
   {
+    "type": "nlvlan",
+    "named": false
+  },
+  {
     "type": "no-advertise",
     "named": false
   },
   {
     "type": "no-line-numbers",
+    "named": false
+  },
+  {
+    "type": "no-restart",
+    "named": false
+  },
+  {
+    "type": "no-traps",
     "named": false
   },
   {
@@ -25277,7 +28239,19 @@
     "named": false
   },
   {
+    "type": "off",
+    "named": false
+  },
+  {
+    "type": "on",
+    "named": false
+  },
+  {
     "type": "openapi",
+    "named": false
+  },
+  {
+    "type": "optional",
     "named": false
   },
   {
@@ -25301,6 +28275,10 @@
     "named": false
   },
   {
+    "type": "password",
+    "named": false
+  },
+  {
     "type": "peer",
     "named": false
   },
@@ -25310,6 +28288,10 @@
   },
   {
     "type": "permit",
+    "named": false
+  },
+  {
+    "type": "pif",
     "named": false
   },
   {
@@ -25337,6 +28319,10 @@
     "named": false
   },
   {
+    "type": "port-based-vlans",
+    "named": false
+  },
+  {
     "type": "port-description",
     "named": false
   },
@@ -25354,6 +28340,10 @@
   },
   {
     "type": "ports",
+    "named": false
+  },
+  {
+    "type": "postAuthHitCount",
     "named": false
   },
   {
@@ -25397,7 +28387,15 @@
     "named": false
   },
   {
+    "type": "protocol-order",
+    "named": false
+  },
+  {
     "type": "provisioning",
+    "named": false
+  },
+  {
+    "type": "proxy-port",
     "named": false
   },
   {
@@ -25429,6 +28427,10 @@
     "named": false
   },
   {
+    "type": "quiet-period",
+    "named": false
+  },
+  {
     "type": "quit",
     "named": false
   },
@@ -25441,11 +28443,31 @@
     "named": false
   },
   {
+    "type": "reauth-max",
+    "named": false
+  },
+  {
+    "type": "reauth-period",
+    "named": false
+  },
+  {
+    "type": "reauthenticate-on-refresh",
+    "named": false
+  },
+  {
+    "type": "reauthentication",
+    "named": false
+  },
+  {
     "type": "reboot",
     "named": false
   },
   {
     "type": "receive-only",
+    "named": false
+  },
+  {
+    "type": "redirect-page",
     "named": false
   },
   {
@@ -25462,6 +28484,14 @@
   },
   {
     "type": "repeat-count",
+    "named": false
+  },
+  {
+    "type": "require",
+    "named": false
+  },
+  {
+    "type": "required",
     "named": false
   },
   {
@@ -25557,11 +28587,31 @@
     "named": false
   },
   {
+    "type": "security-profile",
+    "named": false
+  },
+  {
     "type": "server",
     "named": false
   },
   {
+    "type": "server-timeout",
+    "named": false
+  },
+  {
+    "type": "service-unavailable",
+    "named": false
+  },
+  {
     "type": "session",
+    "named": false
+  },
+  {
+    "type": "session-refresh",
+    "named": false
+  },
+  {
+    "type": "session-timeout",
     "named": false
   },
   {
@@ -25653,6 +28703,10 @@
     "named": false
   },
   {
+    "type": "state",
+    "named": false
+  },
+  {
     "type": "statistics",
     "named": false
   },
@@ -25690,6 +28744,22 @@
   },
   {
     "type": "subvlan-proxy-arp",
+    "named": false
+  },
+  {
+    "type": "success",
+    "named": false
+  },
+  {
+    "type": "summary",
+    "named": false
+  },
+  {
+    "type": "supp-resp-timeout",
+    "named": false
+  },
+  {
+    "type": "suppress-auth",
     "named": false
   },
   {
@@ -25757,6 +28827,10 @@
     "named": false
   },
   {
+    "type": "tag-eapol",
+    "named": false
+  },
+  {
     "type": "tagged",
     "named": false
   },
@@ -25789,6 +28863,10 @@
     "named": false
   },
   {
+    "type": "terminated",
+    "named": false
+  },
+  {
     "type": "tftp",
     "named": false
   },
@@ -25813,6 +28891,10 @@
     "named": false
   },
   {
+    "type": "timers",
+    "named": false
+  },
+  {
     "type": "timezone",
     "named": false
   },
@@ -25822,6 +28904,14 @@
   },
   {
     "type": "tos",
+    "named": false
+  },
+  {
+    "type": "trace-buf",
+    "named": false
+  },
+  {
+    "type": "trace-level",
     "named": false
   },
   {
@@ -25842,6 +28932,10 @@
   },
   {
     "type": "transmit-only",
+    "named": false
+  },
+  {
+    "type": "trap",
     "named": false
   },
   {
@@ -25893,6 +28987,10 @@
     "named": false
   },
   {
+    "type": "unicast",
+    "named": false
+  },
+  {
     "type": "uninstall",
     "named": false
   },
@@ -25905,11 +29003,19 @@
     "named": false
   },
   {
+    "type": "uplink-ports",
+    "named": false
+  },
+  {
     "type": "upload",
     "named": false
   },
   {
     "type": "upm",
+    "named": false
+  },
+  {
+    "type": "upper",
     "named": false
   },
   {
@@ -25925,7 +29031,19 @@
     "named": false
   },
   {
+    "type": "username",
+    "named": false
+  },
+  {
     "type": "usleep",
+    "named": false
+  },
+  {
+    "type": "v1",
+    "named": false
+  },
+  {
+    "type": "v2",
     "named": false
   },
   {
@@ -25977,6 +29095,10 @@
     "named": false
   },
   {
+    "type": "vlan-vsa",
+    "named": false
+  },
+  {
     "type": "vlan_id",
     "named": true
   },
@@ -26009,6 +29131,10 @@
     "named": false
   },
   {
+    "type": "vpif",
+    "named": false
+  },
+  {
     "type": "vpls",
     "named": false
   },
@@ -26034,6 +29160,10 @@
   },
   {
     "type": "web",
+    "named": false
+  },
+  {
+    "type": "web-based",
     "named": false
   },
   {

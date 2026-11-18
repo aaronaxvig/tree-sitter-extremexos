@@ -17,6 +17,7 @@ const detailedConfigure = {
   'automation': require('./grammar/configure/automation'),
   'diagnostics': require('./grammar/configure/diagnostics'),
   'lldp': require('./grammar/configure/lldp'),
+  'netlogin': require('./grammar/configure/netlogin'),
   'ntp': require('./grammar/configure/ntp'),
   'snmp': require('./grammar/configure/snmp'),
   'dns-client': require('./grammar/configure/dns-client'),

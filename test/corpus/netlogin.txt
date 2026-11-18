@@ -1,0 +1,144 @@
+================================================================================
+NetLogin timers, authentication, and port controls
+================================================================================
+
+configure netlogin dot1x ports all timers quiet-period 30 reauth-period 120 reauthentication on
+configure netlogin dot1x eapol-transmit-version v2
+configure netlogin authentication service-unavailable add vlan "Example" ports 1:2 tagged
+configure netlogin authentication protocol-order dot1x mac web-based NULL
+configure netlogin ports 1:2 trap success failed max-reached
+enable netlogin ports 1:2 dot1x mac
+disable netlogin dot1x guest-vlan ports all
+unconfigure netlogin ports all authentication mode
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_dot1x
+          (configure_netlogin_dot1x_ports
+            (configure_netlogin_dot1x_timers
+              (word_or_string
+                (word))
+              (word_or_string
+                (word))))))))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_dot1x))))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_authentication
+          (configure_netlogin_authentication_service_unavailable
+            (word_or_string
+              (string))
+            (word_or_string
+              (word)))))))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_authentication
+          (configure_netlogin_authentication_protocol_order)))))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_ports
+          (word_or_string
+            (word))))))
+  (command
+    (enable_command
+      (enable_netlogin
+        (enable_netlogin_ports
+          (word_or_string
+            (word))))))
+  (command
+    (disable_command
+      (disable_netlogin
+        (disable_netlogin_dot1x))))
+  (command
+    (unconfigure_command
+      (unconfigure_netlogin
+        (unconfigure_netlogin_ports)))))
+
+================================================================================
+NetLogin sessions, local users, and incomplete commands
+================================================================================
+
+show netlogin session summary ports 1:2 agent dot1x
+clear netlogin state vlan "Example" agent mac
+create netlogin local-user "example-user" vlan-vsa tagged "Example" security-profile "Example Profile"
+configure netlogin local-user "example-user" vlan-vsa none
+delete netlogin local-user "example-user"
+debug netlogin show vpif vlan "Example" clients details
+configure netlogin ports all future-option "Example"
+show netlogin session mac-address
+enable netlogin
+configure netlogin dot1x ports all timers quiet-period
+
+---
+
+(source_file
+  (command
+    (show_command
+      (show_netlogin
+        (show_netlogin_session
+          (word_or_string
+            (word))))))
+  (command
+    (clear_command
+      (clear_netlogin
+        (clear_netlogin_state
+          (word_or_string
+            (string))))))
+  (command
+    (create_command
+      (create_netlogin
+        (create_netlogin_local_user
+          (word_or_string
+            (string))
+          (word_or_string
+            (string))
+          (word_or_string
+            (string))))))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_local_user
+          (word_or_string
+            (string))))))
+  (command
+    (delete_command
+      (delete_netlogin
+        (delete_netlogin_local_user
+          (word_or_string
+            (string))))))
+  (command
+    (debug_command
+      (debug_netlogin
+        (debug_netlogin_show
+          (word_or_string
+            (string))))))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_ports
+          (word_or_string
+            (word))
+          (word_or_string
+            (string))))))
+  (command
+    (show_command
+      (show_netlogin
+        (show_netlogin_session))))
+  (command
+    (enable_command
+      (enable_netlogin)))
+  (command
+    (configure_command
+      (configure_netlogin
+        (configure_netlogin_dot1x
+          (configure_netlogin_dot1x_ports
+            (configure_netlogin_dot1x_timers)))))))
