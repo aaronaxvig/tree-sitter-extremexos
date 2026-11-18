@@ -3,6 +3,7 @@
 import argparse
 from collections import defaultdict
 from dataclasses import dataclass
+from functools import cache
 import json
 from pathlib import Path
 import re
@@ -58,10 +59,20 @@ def group_id(node):
     return start, module, number
 
 
-def command_paths(tree):
-    """Follow terminal actions without reading the action implementation table."""
-    paths = set()
+@dataclass(frozen=True, eq=False)
+class State:
+    can_end: bool
+    transitions: tuple[tuple[Token, "State"], ...] = ()
+
+
+END = State(True)
+DEAD_END = State(False)
+
+
+def command_graph(tree):
+    """Build shared continuations from the CLI tree and its group markers."""
     closers = {}
+    parents = {child: node for node in tree.iter() for child in node}
     # Split alternatives repeat the opener ID but share one continuation.
     for node in tree.iter("close"):
         marker = group_id(node)
@@ -69,14 +80,34 @@ def command_paths(tree):
             raise ValueError(f"Duplicate group closer {node.findtext('name')!r}")
         closers[marker] = node
 
-    def walk(node, path=(), groups=()):
+    @cache
+    def merge(states):
+        if not states:
+            return DEAD_END
+        if len(states) == 1:
+            return states[0]
+        edges = defaultdict(list)
+        for state in states:
+            for token, target in state.transitions:
+                edges[token].append(target)
+        return State(
+            any(state.can_end for state in states),
+            tuple((token, combine(targets)) for token, targets in edges.items()),
+        )
+
+    def combine(states):
+        return merge(tuple(dict.fromkeys(state for state in states if state is not DEAD_END)))
+
+    @cache
+    def walk(node, groups=()):
         name = node.findtext("name", "")
+        prefix = []
         if node.tag == "key":
             if not re.fullmatch(r"[^\s\"'#]+", name):
                 raise ValueError(f"Unsupported keyword {name!r}")
-            path += (Token(name),)
+            prefix.append(Token(name))
         elif node.tag == "arg":
-            path += (Token.operand(node),)
+            prefix.append(Token.operand(node))
         elif node.tag == "close":
             if not groups or node is not groups[-1]:
                 raise ValueError(f"Unexpected group closer {name!r}")
@@ -87,8 +118,8 @@ def command_paths(tree):
             raise ValueError(f"Unsupported command tree elements: {', '.join(sorted(unknown))}")
         branches = [child for child in node if child.tag in SYNTAX_TAGS]
         actions = node.findall("action")
-        opener = node.tag == "open"
-        if opener:
+        alternatives = [END] if actions else []
+        if node.tag == "open":
             if actions:
                 raise ValueError(f"Action directly on opener {name!r}")
             marker = group_id(node)
@@ -98,16 +129,21 @@ def command_paths(tree):
             if closer in groups:
                 raise ValueError(f"Group {name!r} reopens before its closer")
             groups += (closer,)
+            closer_only = branches == [closer]
             branches = [child for child in branches if child is not closer]
             if marker[0] == "{":
-                walk(closer, path, groups)
-            if not branches and marker[0] == "[":
+                alternatives.append(walk(closer, groups))
+            elif not branches:
+                # A repeated opener can exist solely to store the shared closer.
+                if closer_only and any(
+                    sibling.tag == "open"
+                    and sibling is not node
+                    and group_id(sibling) == marker
+                    and any(child.tag in SYNTAX_TAGS for child in sibling)
+                    for sibling in parents[node]
+                ):
+                    return DEAD_END
                 raise ValueError(f"Empty required group {name!r}")
-            if not branches:
-                return
-
-        if actions:
-            paths.add(path)
 
         # The CLI can attach a shared operand and its following keywords to
         # the same node. A nested operand already carries its own continuation.
@@ -116,20 +152,26 @@ def command_paths(tree):
             if len(operands) != 1 or any(child.tag in SYNTAX_TAGS | {"action"} for child in operands[0]):
                 raise ValueError(f"Ambiguous sibling operands after {name!r}")
             operand = operands[0]
-            path += (Token.operand(operand),)
+            prefix.append(Token.operand(operand))
             branches.remove(operand)
 
-        for child in branches:
-            walk(child, path, groups)
-        if not branches and not actions:
+        alternatives.extend(walk(child, groups) for child in branches)
+        if not alternatives:
             if not groups:
                 raise ValueError(f"Command branch {name!r} has no terminal action")
-            walk(groups[-1], path, groups)
+            alternatives.append(walk(groups[-1], groups))
 
-    walk(tree)
-    if not paths or () in paths:
+        continuation = combine(alternatives)
+        if continuation is DEAD_END:
+            return DEAD_END
+        for token in reversed(prefix):
+            continuation = State(False, ((token, continuation),))
+        return continuation
+
+    start = walk(tree)
+    if start.can_end or not start.transitions:
         raise ValueError("The command tree must define at least one nonempty command")
-    return paths
+    return start
 
 
 def static_choices(root):
@@ -147,6 +189,42 @@ def static_choices(root):
     return choices
 
 
+def grammar_rules(start, static_types):
+    # Each hidden rule consumes a nonempty continuation. The rule following
+    # a token owns its separator so a shorter form can also end in whitespace.
+    rules = {}
+    states = {}
+
+    def choice(patterns):
+        return patterns[0] if len(patterns) == 1 else f"choice({', '.join(patterns)})"
+
+    def state_rule(state):
+        if state not in states:
+            name = f"_continuation_{len(states) + 1}"
+            states[state] = name
+            rules[name] = choice([transition(token, target) for token, target in state.transitions])
+        return f"$.{states[state]}"
+
+    def transition(token, target):
+        if not target.transitions:
+            tail = "optional($._space)"
+        elif target.can_end:
+            tail = f"optional(seq($._space, optional({state_rule(target)})))"
+        else:
+            tail = f"$._space, {state_rule(target)}"
+        return f"seq({token.rule(static_types)}, {tail})"
+
+    commands = defaultdict(list)
+    for token, target in start.transitions:
+        name = "command_" + identifier(token.name)
+        commands[name].append(transition(token, target))
+    return {
+        "command": choice([f"$.{name}" for name in commands]),
+        **{name: choice(patterns) for name, patterns in commands.items()},
+        **rules,
+    }
+
+
 def generate(source):
     data = source.read_text(encoding="utf-8-sig")
     if re.search(r"<!\s*(?:DOCTYPE|ENTITY)\b", data, re.IGNORECASE):
@@ -156,20 +234,8 @@ def generate(source):
     if root.tag != "cmd_def" or len(trees) != 1 or trees[0].get("name") != "extreme":
         raise ValueError("Expected one ExtremeXOS <cmd_tree name=\"extreme\">")
 
-    static_types = static_choices(root)
-    commands = defaultdict(set)
-    for path in command_paths(trees[0]):
-        name = "command_" + "_".join(identifier(token.name) for token in path if token.operand_type is None)
-        sequence = [token.rule(static_types) for token in path]
-        commands[name].add(f"seq({', $._space, '.join(sequence)}, optional($._space))")
-    rules = []
-    for name, sequences in sorted(commands.items()):
-        pattern = next(iter(sequences)) if len(sequences) == 1 else f"choice({', '.join(sorted(sequences))})"
-        rules.append(f"    {name}: $ => {pattern},")
-
-    references = [f"$.{name}" for name in sorted(commands)]
-    command = "choice(\n      " + ",\n      ".join(references) + ",\n    )" if len(commands) > 1 else references[0]
-    command_rules = "\n".join(rules)
+    rules = grammar_rules(command_graph(trees[0]), static_choices(root))
+    command_rules = "\n".join(f"    {name}: $ => {pattern}," for name, pattern in rules.items())
     return rf"""module.exports = grammar({{
   name: "exos_{identifier(source.stem)}",
   extras: _ => [],
@@ -179,7 +245,6 @@ def generate(source):
       optional(choice($._line, $._space)),
     ),
     _line: $ => seq(optional($._space), choice($.command, $.comment)),
-    command: $ => {command},
 {command_rules}
     _space: _ => /[ \t]+/,
     _newline: _ => /[ \t]*\r?\n/,
@@ -200,7 +265,7 @@ def main():
     options = parser.parse_args()
     try:
         print(generate(options.xml), end="")
-    except (OSError, ET.ParseError, ValueError) as error:
+    except (OSError, ET.ParseError, ValueError, RecursionError) as error:
         parser.exit(1, f"{options.xml}: {error}\n")
 
 
