@@ -1,0 +1,48 @@
+{
+  "name": "extremexos",
+  "displayName": "ExtremeXOS",
+  "description": "Syntax highlighting for ExtremeXOS configuration files and Markdown code fences.",
+  "version": "0.1.0",
+  "publisher": "aaronaxvig",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronaxvig/tree-sitter-extremexos.git",
+    "directory": "editors/vscode"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-grammar.js",
+    "vscode:prepublish": "npm run generate"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "extremexos",
+        "aliases": ["ExtremeXOS", "exos", "exosconfig"],
+        "extensions": [".exos", ".exosconfig", ".extremexos"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "extremexos",
+        "scopeName": "source.extremexos",
+        "path": "./syntaxes/extremexos.tmLanguage.json"
+      },
+      {
+        "scopeName": "extremexos.markdown.injection",
+        "path": "./syntaxes/markdown.tmLanguage.json",
+        "injectTo": ["text.html.markdown"],
+        "embeddedLanguages": {
+          "meta.embedded.block.extremexos": "extremexos"
+        }
+      }
+    ]
+  }
+}
