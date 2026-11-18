@@ -23,15 +23,36 @@ quit
   (command
     (ls_command))
   (command
-    (show_command (word_or_string (word))))
+    (show_command (show_configuration)))
   (command
-    (check_command (word_or_string (word)) (word_or_string (string))))
+    (check_command (check_policy (word_or_string (string)))))
   (command
     (ping_command (word_or_string (word))))
   (command
     (run_command (word_or_string (word))))
   (command
     (quit_command)))
+
+================================================================================
+Imported keywords across command verbs
+================================================================================
+
+clear lldp statistics
+create vlan "Example"
+delete vlan "Example"
+unconfigure lldp ports 1
+use image primary
+
+---
+
+(source_file
+  (command (clear_command (clear_lldp (word_or_string (word)))))
+  (command (create_command (create_vlan (word_or_string (string)))))
+  (command (delete_command (delete_vlan (word_or_string (string)))))
+  (command
+    (unconfigure_command
+      (unconfigure_lldp (word_or_string (word)) (word_or_string (word)))))
+  (command (use_command (use_image (word_or_string (word))))))
 
 ================================================================================
 Unknown verbs and arguments that resemble verbs

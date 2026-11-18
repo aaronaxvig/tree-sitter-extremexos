@@ -3,6 +3,7 @@ const path = require('node:path');
 const {rules} = require('../../../src/grammar.json');
 
 function leadingKeywords(rule) {
+  if (!rule) return [];
   switch (rule.type) {
     case 'STRING':
       return [rule.value];
@@ -13,29 +14,42 @@ function leadingKeywords(rule) {
     case 'SYMBOL':
       return leadingKeywords(rules[rule.name]);
     case 'PREC':
+    case 'PREC_LEFT':
+    case 'PREC_RIGHT':
+    case 'PREC_DYNAMIC':
       return leadingKeywords(rule.content);
     default:
       return [];
   }
 }
 
+const escapePattern = keyword => keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 function alternatives(rule) {
   return [...new Set(leadingKeywords(rule))]
     .sort()
-    .map(keyword => keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .map(escapePattern)
     .join('|');
 }
 
 const lineStart = String.raw`(?:^|\G)[ \t]*`;
 const wordEnd = String.raw`(?=[ \t]|$)`;
 const commandScope = 'keyword.control.extremexos';
-const topicRules = ['configure', 'enable'].map(verb => ({
-  match: `${lineStart}(${verb})[ \\t]+(${alternatives(rules[`${verb}_command`].members[1])})${wordEnd}`,
-  captures: {
-    1: {name: commandScope},
-    2: {name: 'support.function.extremexos'},
-  },
-}));
+const topicRules = rules.command.members.flatMap(command => {
+  const rule = rules[command.name];
+  if (rule?.type !== 'SEQ') return [];
+  const [verb, argumentsRule] = rule.members;
+  if (verb.type !== 'STRING') return [];
+  const topics = alternatives(argumentsRule);
+  if (!topics) return [];
+  return [{
+    match: `${lineStart}(${escapePattern(verb.value)})[ \\t]+(${topics})${wordEnd}`,
+    captures: {
+      1: {name: commandScope},
+      2: {name: 'support.function.extremexos'},
+    },
+  }];
+});
 
 const grammar = {
   $schema: 'https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json',

@@ -8,7 +8,7 @@
       "match": "(?:^|\\G)[ \\t]*#.*$"
     },
     {
-      "match": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(access-list|account|automation|banner|bfd|bootprelay|cdp|cfm|cli|cos-index|debug|dhcp|diagnostics|diffserv|dns-client|dos-protect|dot1p|eaps|edp|egress|elrp-client|elsm|erps|esrp|failsafe-account|fdb|fip|flow-redirect|forwarding|identity-management|idletimeout|igmp|inline-power|ip|ip-fix|ip-mtu|ip-security|iparp|ipforwarding|ipmcforwarding|ipmroute|iproute|ipv6|irdp|jumbo-frame-size|l2pt|l2vpn|lacp|ldap|lldp|log|mac-lockdown-timeout|mac-locking|mcast|meter|mirror|mlag|mld|mrp|mstp|mvr|mvrp|neighbor-discovery|netlogin|ntp|pim|policy|ports|power|private-vlan|protocol|qosprofile|qosscheduler|radius|radius-accounting|rip|ripng|safe-default-script|security|sflow|sharing|snmp|snmpv3|sntp-client|ssh2|sshd2|ssl|stacking|stpd|sys-health-check|sys-recovery-level|syslog|tacacs|tacacs-accounting|tech-support|telnet|time|timezone|trusted-ports|trusted-servers|twamp|upm|vlan|vm-tracking|vman|vpls|vr|web|xml-notification)(?=[ \\t]|$)",
+      "match": "(?:^|\\G)[ \\t]*(configure)[ \\t]+(access-list|account|auto-peering|auto-provision|automation|banner|bfd|bgp|bootprelay|bootrom|cdp|cfm|cli|cos-index|database|debug|dhcp|diagnostics|diffserv|dns|dns-client|dos-protect|dot1p|eaps|edp|egress|elrp-client|elsm|erps|esrp|fabric|failsafe-account|fdb|fip|flow-redirect|flowmon|forwarding|identity-management|idletimeout|igmp|inline-power|instant-port|ip|ip-fix|ip-mtu|ip-security|iparp|ipforwarding|ipmcforwarding|ipmroute|iproute|ipv6|iqagent|irdp|isis|jumbo-frame-size|keychain|l2pt|l2vpn|lacp|ldap|lldp|log|mac-lockdown-timeout|mac-locking|macsec|mcast|meter|mirror|mlag|mld|mpls|mrp|msdp|msrp|mstp|mvr|mvrp|neighbor-discovery|netlogin|network-clock|nodealias|nothing|ntp|ospf|ospfv3|pim|policy|ports|power|private-vlan|process|protocol|qosprofile|qosscheduler|radius|radius-accounting|rip|ripng|safe-default-script|security|sflow|sharing|slot|slot-poll-interval|slpp|snmp|snmpv3|sntp-client|ssh2|sshd2|ssl|stack-ports|stacking|stacking-support|stpd|switch|sys-health-check|sys-recovery-level|syslog|system|tacacs|tacacs-accounting|tech-support|telnet|time|timezone|trusted-ports|trusted-servers|tunnel|twamp|upm|virtual-network|vlan|vm-tracking|vman|vpex|vpls|vr|vrrp|web|xml-notification)(?=[ \\t]|$)",
       "captures": {
         "1": {
           "name": "keyword.control.extremexos"
@@ -19,7 +19,381 @@
       }
     },
     {
-      "match": "(?:^|\\G)[ \\t]*(enable)[ \\t]+(access-list|account|bfd|bootp|bootprelay|cdp|cfm|clear-flow|cli|cli-config-logging|clipaging|cpu-monitoring|dhcp|diffserv|dos-protect|dot1p|eaps|edp|elrp-client|elsm|erps|esrp|ethernet|fdb|fip|flooding|flow-control|icmp|identity-management|idletimeout|igmp|inline-power|ip-fix|ip-option|ip-security|iparp|ipforwarding|ipmcforwarding|iproute|irdp|jumbo-frame|learning|led|license|lldp|log|loopback-mode|mac-lockdown-timeout|mac-locking|mirror|mlag|mld|mvr|mvrp|neighbor-discovery|netlogin|ntp|pim|policy|ports|radius|radius-accounting|rip|ripng|rmon|router-discovery|sflow|sharing|smartredundancy|snmp|snmpv3|sntp-client|ssh2|stacking|stpd|subvlan-proxy-arp|syslog|tacacs|tacacs-accounting|tacacs-authorization|tech-support|telnet|twamp|udp-echo-server|upm|vlan|vm-tracking|vman|watchdog|web|xml-mode|xml-notification)(?=[ \\t]|$)",
+      "match": "(?:^|\\G)[ \\t]*(disable)[ \\t]+(access-list|account|auto-provision|avb|bfd|bgp|bootp|bootprelay|cdp|cfm|clear-flow|cli|cli-config-logging|clipaging|cpu-monitoring|debug-mode|dhcp|diffserv|dns|dos-protect|dot1p|eaps|edp|elrp-client|elsm|erps|esrp|ethernet|fdb|flooding|flow-control|flowmon|icmp|identity-management|idletimeout|igmp|inline-power|ip|ip-fix|ip-security|iparp|ipforwarding|ipmcforwarding|iproute|iqagent|irdp|isis|jumbo-frame|l2forwarding|l2vpn|learning|led|lldp|log|loopback-mode|mac-lockdown-timeout|mac-locking|mirror|mlag|mld|mpls|msdp|msrp|mvr|mvrp|neighbor-discovery|netlogin|network-clock|nodealias|ntp|ospf|ospfv3|pim|policy|ports|radius|radius-accounting|rip|ripng|rmon|router-discovery|sflow|sharing|slot|slpp|smartredundancy|snmp|snmpv3|sntp-client|ssh2|stacking|stacking-support|stpd|subvlan-proxy-arp|switch|sys-health-check|syslog|tacacs|tacacs-accounting|tacacs-authorization|tech-support|telnet|tunnel|twamp|udp-echo-server|upm|virtual-network|virtual-router|vlan|vm-tracking|vman|vpex|vpls|vr|vrrp|watchdog|web|xml-mode|xml-notification)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(enable)[ \\t]+(access-list|account|auto-provision|avb|bfd|bgp|bootp|bootprelay|cdp|cfm|clear-flow|cli|cli-config-logging|clipaging|cpu-monitoring|debug-mode|dhcp|diffserv|dns|dos-protect|dot1p|eaps|edp|elrp-client|elsm|erps|esrp|ethernet|fdb|fip|flooding|flow-control|flowmon|icmp|identity-management|idletimeout|igmp|inline-power|ip|ip-fix|ip-option|ip-security|iparp|ipforwarding|ipmcforwarding|iproute|iqagent|irdp|isis|jumbo-frame|l2forwarding|l2vpn|learning|led|license|lldp|log|loopback-mode|mac-lockdown-timeout|mac-locking|mirror|mlag|mld|mpls|msdp|msrp|mvr|mvrp|neighbor-discovery|netlogin|network-clock|nodealias|ntp|ospf|ospfv3|pim|policy|ports|radius|radius-accounting|rip|ripng|rmon|router-discovery|sflow|sharing|slot|slpp|smartredundancy|snmp|snmpv3|sntp-client|ssh2|stacking|stacking-support|stpd|subvlan-proxy-arp|switch|sys-health-check|syslog|tacacs|tacacs-accounting|tacacs-authorization|tech-support|telnet|tunnel|twamp|udp-echo-server|upm|virtual-network|virtual-router|vlan|vm-tracking|vman|vpex|vpls|vr|vrrp|watchdog|web|xml-mode|xml-notification)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(show)[ \\t]+(access-list|accounts|auto-peering|auto-provision|automation|avb|bandwidth|banner|bfd|bgp|bootprelay|cdp|cfm|checkpoint-data|clear-flow|cli|configuration|cos-index|counters|cpu-monitoring|database|debug|dhcp-client|dhcp-server|diagnostics|diffserv|dns|dns-client|dos-protect|dot1p|dot1q|dwdm|eaps|edp|elrp|elsm|erps|esrp|ethernet|fabric|failsafe-account|fans|fdb|flow-redirect|flowmon|forwarding|heartbeat|identity-management|igmp|inlets|inline-power|instant-port|ip|ip-fix|ip-security|iparp|ipconfig|ipmroute|iproute|ipstats|ipv6|iqagent|isis|keychain|l2pt|l2stats|l2vpn|lacp|ldap|licenses|lldp|log|mac-lockdown-timeout|mac-locking|macsec|management|mcast|memory|memorycard|meter|mirror|mlag|mld|mpls|mrp|msdp|msrp|mvr|mvrp|neighbor-discovery|netlogin|network-clock|node|nodealias|ntp|odometers|ospf|ospfv3|pim|policy|ports|power|private-vlan|process|protocol|qosprofile|qosscheduler|radius|radius-accounting|rip|ripng|rmon|router-discovery|rtmgr|script|security|session|sflow|sharing|slot|slpp|snmp|snmpv3|sntp-client|ssh2|sshd2|ssl|stack-ports|stacking|stacking-support|stpd|switch|system|tacacs|tacacs-accounting|tech-support|telemetry|temperature|time|tunnel|twamp|udp-echo-server|udp-profile|upm|var|version|vid|virtual-network|virtual-router|vlan|vm-tracking|vman|vpex|vpls|vpws|vr|vrrp|wredprofile|xml-notification)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(check)[ \\t]+(policy)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(clear)[ \\t]+(access-list|account|bgp|bootprelay|cdp|counters|cpu-monitoring|debug|dns|eaps|elrp|elsm|esrp|ethernet|fdb|igmp|inline-power|ip|ip-security|iparp|ipmc|ipv6|isis|l2pt|l2stats|lacp|license|license-info|lldp|log|mac-locking|macsec|meter|mld|msdp|msrp|mvrp|neighbor-discovery|netlogin|network-clock|nodealias|ospf|ospfv3|pim|ports|process|rip|ripng|screen|session|slot|snmp|stpd|switch|sys-recovery-level|upm|vlan|vpex)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(create)[ \\t]+(access-list|account|auto-peering|bgp|cfm|database|eaps|erps|esrp|fdb|fdbentry|flow-redirect|flowmon|identity-management|instant-port|ip|isis|keychain|l2pt|l2vpn|ldap|log|macsec|meter|mirror|mlag|mpls|msdp|netlogin|network-clock|ntp|ospf|ospfv3|policy|ports|private-vlan|process|protocol|qosprofile|snmp|sshd2|stpd|tunnel|upm|virtual-network|virtual-router|vlan|vm-tracking|vman|vpls|vr|vrrp|xml-notification)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(debug)[ \\t]+(aaa|acl|auto-peering|bfd|bgp|brm|cfgmgr|cli|configure|create|dcbx|delete|devmgr|dhcpv6|diagnostics|dns|docker|dot1ag|ds|eaps|edp|elrp|ems|epm|erps|ethernet|evpn|fdb|flowmon|gptp|hal|hclag|idmgr|inlets|instant-port|ip|ip-security|ipv6|iqagent|isis|kernel|lacp|licMgr|lldp|macsec|mcmgr|memory|mpls|mrinfo|msgsrv|msrp|mtrace|mvrp|netlogin|nettools|nodealias|nodemgr|ntp|openapi|ospf|ospfv3|otm|packet|performance|pim|poe|policy|ptp|pwmib|rtmgr|show|snmp|ssh2|stm|stp|tech-support|telemetry|telnetd|tftpd|throw|thttpd|unconfigure|upm|usleep|vlan|vm|vm-tracking|vpex|vsm|wred|xmlc|xmld)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(delete)[ \\t]+(access-list|account|auto-peering|bgp|cfm|database|eaps|erps|esrp|fdb|fdbentry|flow-redirect|flowmon|identity-management|instant-port|ip|isis|keychain|l2pt|l2vpn|ldap|log|macsec|meter|mirror|mlag|mpls|msdp|netlogin|network-clock|ntp|ospf|ospfv3|policy|ports|private-vlan|process|protocol|qosprofile|sshd2|stpd|tunnel|upm|var|virtual-network|virtual-router|vlan|vm-tracking|vman|vpls|vr|vrrp|xml-notification)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(download)[ \\t]+(bootrom|image|ssl|url)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(edit)[ \\t]+(policy|script|upm)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(history)[ \\t]+(no-line-numbers)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(install)[ \\t]+(bootrom|firmware|image|instant-port|license)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(load)[ \\t]+(script|var)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(mrinfo)[ \\t]+(from|multiple-response-timeout|timeout|vr)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(mtrace)[ \\t]+(source)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(nslookup)[ \\t]+(ipv4|ipv6)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(ping)[ \\t]+(continuous|count|dont-fragment|interval|ipv4|ipv6|mac|mpls|start-size|tos|ttl|udp|vr)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(reboot)[ \\t]+(all|cancel|node-address|rolling|slot|stack-topology|time)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(refresh)[ \\t]+(access-list|identity-management|igmp|mld|policy)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(reset)[ \\t]+(inline-power)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(restart)[ \\t]+(ports|process)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(run)[ \\t]+(diagnostics|elrp|failover|provisioning|script|tech-support|update|upm|vm-tracking)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(save)[ \\t]+(configuration|debug|primary|secondary|var)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(scp2)[ \\t]+(cipher|compression|mac|port|vr)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(ssh2)[ \\t]+(cipher|compression|mac|port|user|vr)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(start)[ \\t]+(orchestration|process)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(synchronize)[ \\t]+(file|slot|stacking)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(telnet)[ \\t]+(slot|vr)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(terminate)[ \\t]+(process|vpex)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(tftp)[ \\t]+(get|put)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(traceroute)[ \\t]+(ipv4|ipv6|mac|mpls|vr)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(unconfigure)[ \\t]+(access-list|avb|banner|bfd|bootprelay|cfm|cos-index|diffserv|dot1p|eaps|elrp-client|erps|icmp|identity-management|igmp|inline-power|ip-fix|ip-security|iparp|iproute|irdp|isis|l2vpn|ldap|lldp|log|meter|mlag|mld|mpls|mrp|msdp|msrp|mstp|mvrp|neighbor-discovery|netlogin|network-clock|ospf|ospfv3|pim|policy|ports|process|qosprofile|qosscheduler|radius|radius-accounting|rip|ripng|sflow|slot|snmp|sntp-client|ssl|stacking|stacking-support|stpd|switch|tacacs|tacacs-accounting|timezone|trusted-ports|tunnel|upm|vlan|vm-tracking|vman|vpex|vpls|vr|xml-notification)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(uninstall)[ \\t]+(image|license)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(upload)[ \\t]+(configuration|debug|ip-security|log|tech-support)(?=[ \\t]|$)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.extremexos"
+        },
+        "2": {
+          "name": "support.function.extremexos"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\G)[ \\t]*(use)[ \\t]+(configuration|image)(?=[ \\t]|$)",
       "captures": {
         "1": {
           "name": "keyword.control.extremexos"

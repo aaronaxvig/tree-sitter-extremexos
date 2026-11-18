@@ -1,5 +1,7 @@
+const topics = require('../topics');
+
 // First-level enable families reported by EXOS tab completion.
-const topics = [
+const completionTopics = [
   'access-list', 'account', 'bfd', 'bootp', 'bootprelay', 'cdp', 'cfm',
   'clear-flow', 'cli', 'cli-config-logging', 'clipaging', 'cpu-monitoring',
   'dhcp', 'diffserv', 'dos-protect', 'dot1p', 'eaps', 'edp', 'elrp-client',
@@ -18,13 +20,13 @@ const topics = [
   'xml-notification',
 ];
 
-const ruleName = topic => `enable_${topic.replaceAll('-', '_')}`;
+const names = topics.list('enable', completionTopics);
 
 const rules = () => ({
   enable_command: $ => seq(
     'enable',
     optional(choice(
-      ...topics.map(topic => prec(1, $[ruleName(topic)])),
+      ...topics.branches($, 'enable', names),
       $.enable_generic,
     )),
   ),
@@ -34,10 +36,7 @@ const rules = () => ({
     optional($._arguments),
   ),
 
-  ...Object.fromEntries(topics.map(topic => [
-    ruleName(topic),
-    $ => seq(topic, optional($._arguments)),
-  ])),
+  ...topics.rules('enable', names),
 });
 
 module.exports = {rules};

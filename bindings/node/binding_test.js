@@ -5,10 +5,27 @@ const { test } = require("node:test");
 
 const Parser = require("tree-sitter");
 const language = require(".");
+const keywords = require("../../grammar/keywords");
 
 test("can load grammar", () => {
   const parser = new Parser();
   assert.doesNotThrow(() => parser.setLanguage(language));
+});
+
+test("recognizes every imported verb and keyword in incomplete commands", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+
+  for (const [verb, topics] of Object.entries(keywords)) {
+    for (const topic of topics) {
+      const line = `${verb} ${topic}`;
+      const { rootNode } = parser.parse(`${line}\n`);
+      assert.equal(rootNode.hasError, false, line);
+      const command = rootNode.firstNamedChild.firstNamedChild;
+      assert.equal(command.type, `${verb}_command`, line);
+      assert.equal(command.firstNamedChild?.firstChild?.type, topic, line);
+    }
+  }
 });
 
 test("parses DNS name server operands into fields", () => {

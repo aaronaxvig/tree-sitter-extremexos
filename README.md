@@ -2,7 +2,7 @@
 
 A [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for configuration files and CLI command lists for Extreme Networks switches running ExtremeXOS.
 
-The grammar provides named nodes for module headers, comments, and the top-level verbs reported by ExtremeXOS tab completion. Verbs such as `cd`, `show`, and `save` have named nodes with generic arguments. First-level `configure` and `enable` topics have stable `configure_*` and `enable_*` nodes, with more detailed parsing for selected `configure` families.
+The grammar provides named nodes for module headers, comments, CLI verbs, and their known first-level keywords. Selected command families have detailed syntax rules. Other first-level keywords have named nodes with generic arguments.
 
 ## Scope
 
@@ -38,6 +38,17 @@ tree-sitter generate --abi 14
 The generated syntax tree names each command by its leading keyword and gives operands named fields. It uses the `argument` field when several operand labels share the same lexical rule at the same position. The grammar recognizes fixed choices declared by unquoted static custom types. Numeric ranges, dynamic names, and platform capabilities depend on device-level validation. The generator reports unsupported tree structures.
 
 Run the converter's tests with `python3 -B -m unittest discover -s test/tools`.
+
+### Update first-level keywords
+
+The importer reads the CLI XML files in an extracted `config/clidef` directory and writes first-level keyword lists to `grammar/<verb>/keywords.js`. It derives the verb list from the generated parser. The VS Code grammar derives its keyword patterns from the same parser rules.
+
+```sh
+npm run generate
+python3 -B -m tools.import_topics /path/to/config/clidef
+npm run generate
+npm --prefix editors/vscode run generate
+```
 
 ### Add syntax to the main grammar
 

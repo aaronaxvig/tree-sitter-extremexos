@@ -1,3 +1,5 @@
+const shared = require('../topics');
+
 // First-level configure families reported by tab completion.
 const completionTopics = [
   'access-list', 'account', 'banner', 'bfd', 'bootprelay', 'cdp', 'cfm', 'cli',
@@ -19,15 +21,10 @@ const completionTopics = [
 
 const ruleName = topic => topic === 'sys-recovery-level'
   ? 'configure_sys_recovery'
-  : `configure_${topic.replaceAll('-', '_')}`;
+  : shared.ruleName('configure', topic);
 
-const topics = detailed => completionTopics.filter(topic => !detailed.includes(topic));
+const topics = detailed => shared.list('configure', completionTopics, detailed);
 
-const rules = names => Object.fromEntries(
-  names.map(topic => [
-    ruleName(topic),
-    $ => seq(topic, optional($._arguments)),
-  ]),
-);
+const rules = names => shared.rules('configure', names);
 
 module.exports = {topics, ruleName, rules};

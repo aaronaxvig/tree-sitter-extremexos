@@ -9,6 +9,7 @@
 
 const commands = require('./grammar/commands');
 const configureTopics = require('./grammar/configure/topics');
+const disable = require('./grammar/disable');
 const enableTopics = require('./grammar/enable/topics');
 const show = require('./grammar/show');
 
@@ -54,6 +55,7 @@ module.exports = grammar({
 
     command: $ => choice(
       $.configure_command,
+      $.disable_command,
       $.enable_command,
       $.show_command,
       ...commands.verbs.map(verb => $[commands.ruleName(verb)]),
@@ -77,6 +79,7 @@ module.exports = grammar({
     ...configureTopics.rules(otherTopics),
     ...Object.assign({}, ...Object.values(detailedConfigure).map(family => family.rules())),
 
+    ...disable.rules(),
     ...enableTopics.rules(),
     ...show.rules(),
     ...commands.rules(),

@@ -72,10 +72,9 @@ save configuration
             (word))))))
   (command
     (create_command
-      (word_or_string
-        (word))
-      (word_or_string
-        (string))))
+      (create_vlan
+        (word_or_string
+          (string)))))
   (command
     (enable_command
       (enable_jumbo_frame
@@ -85,24 +84,20 @@ save configuration
           (word)))))
   (command
     (disable_command
-      (word_or_string
-        (word))))
+      (disable_telnet)))
   (command
     (unconfigure_command
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))))
+      (unconfigure_switch
+        (word_or_string
+          (word)))))
   (command
     (delete_command
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))))
+      (delete_vlan
+        (word_or_string
+          (word)))))
   (command
     (save_command
-      (word_or_string
-        (word)))))
+      (save_configuration))))
 
 ================================================================================
 DNS and SNTP clients

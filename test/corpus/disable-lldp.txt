@@ -1,0 +1,65 @@
+================================================================================
+Disable LLDP with a port list or all ports
+================================================================================
+
+disable lldp ports 1:2-1:6 receive-only
+disable lldp ports all transmit-only
+disable lldp ports 1
+
+---
+
+(source_file
+  (command
+    (disable_command
+      (disable_lldp
+        (disable_lldp_ports
+          ports: (word_or_string
+            (word))))))
+  (command
+    (disable_command
+      (disable_lldp
+        (disable_lldp_ports))))
+  (command
+    (disable_command
+      (disable_lldp
+        (disable_lldp_ports
+          ports: (word_or_string
+            (word)))))))
+
+================================================================================
+Incomplete and unfamiliar disable commands
+================================================================================
+
+disable lldp
+disable lldp ports
+disable lldp ports all future-option "Example"
+disable lldp-next all
+disable telnet
+
+---
+
+(source_file
+  (command
+    (disable_command
+      (disable_lldp)))
+  (command
+    (disable_command
+      (disable_lldp
+        (disable_lldp_ports))))
+  (command
+    (disable_command
+      (disable_lldp
+        (disable_lldp_ports
+          (word_or_string
+            (word))
+          (word_or_string
+            (string))))))
+  (command
+    (disable_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
+  (command
+    (disable_command
+      (disable_telnet))))

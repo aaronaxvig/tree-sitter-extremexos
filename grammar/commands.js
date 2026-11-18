@@ -1,6 +1,8 @@
-// Top-level EXOS verbs whose operands are still parsed generically.
+const topics = require('./topics');
+
+// Top-level EXOS verbs with no detailed command families.
 const verbs = [
-  'cd', 'check', 'clear', 'cp', 'create', 'debug', 'delete', 'disable',
+  'cd', 'check', 'clear', 'cp', 'create', 'debug', 'delete',
   'download', 'edit', 'exit', 'history', 'install', 'load', 'logout',
   'ls', 'mkdir', 'mrinfo', 'mtrace', 'mv', 'nslookup', 'ping', 'pwd', 'quit',
   'reboot', 'refresh', 'reset', 'restart', 'rm', 'rmdir', 'rtlookup', 'run',
@@ -11,11 +13,15 @@ const verbs = [
 
 const ruleName = verb => `${verb}_command`;
 
-const rules = () => Object.fromEntries(
-  verbs.map(verb => [
-    ruleName(verb),
-    $ => seq(verb, optional($._arguments)),
-  ]),
-);
+const rules = () => Object.assign({}, ...verbs.map(verb => {
+  const names = topics.list(verb);
+  return {
+    [ruleName(verb)]: $ => seq(
+      verb,
+      optional(choice(...topics.branches($, verb, names), $._arguments)),
+    ),
+    ...topics.rules(verb, names),
+  };
+}));
 
 module.exports = {verbs, ruleName, rules};
