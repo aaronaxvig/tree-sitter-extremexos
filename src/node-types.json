@@ -39,11 +39,6 @@
     }
   },
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "configure_access_list",
     "named": true,
     "fields": {},
@@ -169,7 +164,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "configure_access_list",
@@ -691,7 +686,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "configure_dns_client_add",
@@ -718,7 +713,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "configure_dns_client_add_generic",
@@ -775,7 +770,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "configure_dns_client_delete_generic",
@@ -2352,7 +2347,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "configure_vlan_add_generic",
@@ -2398,7 +2393,7 @@
     "fields": {
       "ports": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "all",
@@ -2412,9 +2407,13 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "configure_vlan_port_extra_arguments",
+          "named": true
+        },
         {
           "type": "configure_vlan_port_options",
           "named": true
@@ -2603,9 +2602,42 @@
     }
   },
   {
+    "type": "configure_vlan_port_extra_arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "configure_vlan_port_options",
     "named": true,
     "fields": {
+      "encapsulation": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dot1d",
+            "named": false
+          },
+          {
+            "type": "emistp",
+            "named": false
+          },
+          {
+            "type": "pvst-plus",
+            "named": false
+          }
+        ]
+      },
       "mode": {
         "multiple": false,
         "required": false,
@@ -2911,14 +2943,43 @@
     "fields": {
       "domain": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
+          {
+            "type": "string",
+            "named": true
+          },
           {
             "type": "word",
             "named": true
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "dns_client_extra_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dns_client_extra_arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2927,8 +2988,12 @@
     "fields": {
       "address": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
+          {
+            "type": "string",
+            "named": true
+          },
           {
             "type": "word",
             "named": true
@@ -2940,11 +3005,25 @@
         "required": false,
         "types": [
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "dns_client_extra_arguments",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -3147,6 +3226,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "configure",
     "named": false
   },
@@ -3215,6 +3298,10 @@
     "named": false
   },
   {
+    "type": "dot1d",
+    "named": false
+  },
+  {
     "type": "dot1p",
     "named": false
   },
@@ -3240,6 +3327,10 @@
   },
   {
     "type": "elsm",
+    "named": false
+  },
+  {
+    "type": "emistp",
     "named": false
   },
   {
@@ -3472,6 +3563,10 @@
   },
   {
     "type": "protocol",
+    "named": false
+  },
+  {
+    "type": "pvst-plus",
     "named": false
   },
   {

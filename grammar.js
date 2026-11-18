@@ -8,7 +8,11 @@
 // @ts-check
 
 const configureTopics = require('./grammar/configure/topics');
+const diagnostics = require('./grammar/configure/diagnostics');
 const dnsClient = require('./grammar/configure/dns-client');
+const snmp = require('./grammar/configure/snmp');
+const sntpClient = require('./grammar/configure/sntp-client');
+const sysRecovery = require('./grammar/configure/sys-recovery-level');
 const vlan = require('./grammar/configure/vlan');
 
 module.exports = grammar({
@@ -18,12 +22,16 @@ module.exports = grammar({
   extras: _ => [/[\t \f]/],
 
   rules: {
-    source_file: $ => repeat(choice(
-      $.section_header,
-      $.command,
-      $.comment,
-      $._newline,
-    )),
+    source_file: $ => seq(
+      repeat(choice(
+        $.section_header,
+        seq($._line, $._newline),
+        $._newline,
+      )),
+      optional($._line),
+    ),
+
+    _line: $ => choice($.command, $.comment),
 
     // EXOS exports use a three-comment banner before each configuration module.
     section_header: _ => token(prec(2, seq(
@@ -44,7 +52,7 @@ module.exports = grammar({
 
     configure_command: $ => seq(
       'configure',
-      choice(
+      optional(choice(
         prec(1, $.configure_snmp),
         prec(1, $.configure_dns_client),
         prec(1, $.configure_sntp_client),
@@ -53,8 +61,7 @@ module.exports = grammar({
         prec(1, $.configure_vlan),
         ...configureTopics.topics.map(topic => prec(1, $[configureTopics.ruleName(topic)])),
         $.configure_generic,
-      ),
-      $._newline,
+      )),
     ),
 
     // Unknown future topics and dynamic interactive shortcuts remain lossless.
@@ -64,51 +71,27 @@ module.exports = grammar({
     ),
 
     ...configureTopics.rules(),
+    ...diagnostics.rules(),
     ...dnsClient.rules(),
+    ...snmp.rules(),
+    ...sntpClient.rules(),
+    ...sysRecovery.rules(),
     ...vlan.rules(),
 
-    configure_snmp: $ => seq(
-      'snmp',
-      choice(
-        $.configure_snmp_sys_name,
-        $.configure_snmp_sys_contact,
-        $.configure_snmp_sys_location,
-        $._arguments,
-      ),
-    ),
-
-    configure_snmp_sys_name: $ => seq('sysName', $.word_or_string),
-    configure_snmp_sys_contact: $ => seq('sysContact', $.word_or_string),
-    configure_snmp_sys_location: $ => seq('sysLocation', $.word_or_string),
-
-    configure_sntp_client: $ => seq(
-      'sntp-client',
-      $.sntp_client_server,
-    ),
-
-    sntp_client_server: $ => seq(
-      field('role', choice('primary', 'secondary')),
-      field('hostname', $.word),
-      optional(seq('vr', field('virtual_router', $.word))),
-    ),
-
-    configure_diagnostics: $ => seq('diagnostics', 'privilege', $.word),
-    configure_sys_recovery: $ => seq('sys-recovery-level', $.word, $.word),
-
-    create_command: $ => seq('create', optional($._arguments), $._newline),
-    enable_command: $ => seq('enable', optional($._arguments), $._newline),
-    disable_command: $ => seq('disable', optional($._arguments), $._newline),
-    unconfigure_command: $ => seq('unconfigure', optional($._arguments), $._newline),
-    delete_command: $ => seq('delete', optional($._arguments), $._newline),
+    create_command: $ => seq('create', optional($._arguments)),
+    enable_command: $ => seq('enable', optional($._arguments)),
+    disable_command: $ => seq('disable', optional($._arguments)),
+    unconfigure_command: $ => seq('unconfigure', optional($._arguments)),
+    delete_command: $ => seq('delete', optional($._arguments)),
 
     // Retain unknown EXOS commands losslessly while the detailed grammar grows.
-    generic_command: $ => seq($.word, optional($._arguments), $._newline),
+    generic_command: $ => seq($.word, optional($._arguments)),
     _arguments: $ => repeat1($.word_or_string),
     word_or_string: $ => choice($.string, $.word),
     word: _ => /[^\s"']+/,
     string: _ => token(seq('"', repeat(choice(/[^"\\\r\n]+/, /\\./)), '"')),
 
-    comment: $ => seq(token(seq('#', /[^\r\n]*/)), $._newline),
+    comment: _ => token(prec(1, /#[^\r\n]*/)),
     _newline: _ => /\r?\n/,
   },
 });

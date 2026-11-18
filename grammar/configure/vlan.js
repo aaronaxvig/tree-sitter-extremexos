@@ -10,7 +10,7 @@ const actionRuleName = action => `configure_vlan_${action.replaceAll('-', '_')}`
 const rules = () => ({
   configure_vlan: $ => seq(
     'vlan',
-    choice(
+    optional(choice(
       $.configure_vlan_dynamic,
       seq(
         field('vlan', $.vlan_reference),
@@ -20,7 +20,7 @@ const rules = () => ({
           $.configure_vlan_action_generic,
         )),
       ),
-    ),
+    )),
   ),
 
   configure_vlan_dynamic: $ => seq('dynamic-vlan', optional($._arguments)),
@@ -30,35 +30,51 @@ const rules = () => ({
 
   configure_vlan_add: $ => seq(
     'add',
-    choice(
+    optional(choice(
       prec(1, $.configure_vlan_add_ports),
       prec(1, $.configure_vlan_add_secondary_ipaddress),
       prec(1, $.configure_vlan_add_subvlan),
       $.configure_vlan_add_generic,
-    ),
+    )),
   ),
 
-  configure_vlan_add_ports: $ => seq(
+  configure_vlan_add_ports: $ => prec.right(seq(
     'ports',
-    field('ports', choice('all', $.port_list)),
-    optional($.configure_vlan_port_options),
-  ),
+    optional(choice(
+      seq(
+        field('ports', choice('all', $.port_list)),
+        optional($.configure_vlan_port_options),
+        optional($.configure_vlan_port_extra_arguments),
+      ),
+      $.configure_vlan_port_extra_arguments,
+    )),
+  )),
+
+  configure_vlan_port_extra_arguments: $ => $._arguments,
 
   port_list: _ => token(/[0-9]+(?::[0-9]+)?(?:-[0-9]+(?::[0-9]+)?)?(?:,[0-9]+(?::[0-9]+)?(?:-[0-9]+(?::[0-9]+)?)?)*/),
 
-  configure_vlan_port_options: $ => choice(
+  configure_vlan_port_options: $ => prec.right(choice(
     seq(
       field('mode', choice('private-vlan', 'tagged', 'untagged')),
-      optional($._vlan_stpd_option),
-      optional(field('tag', $.vlan_id)),
+      optional($._vlan_tag_and_stpd),
     ),
-    seq($._vlan_stpd_option, optional(field('tag', $.vlan_id))),
-    field('tag', $.vlan_id),
+    $._vlan_tag_and_stpd,
+  )),
+
+  _vlan_tag_and_stpd: $ => prec.right(choice(
+    seq(field('tag', $.vlan_id), optional($._vlan_stpd_options)),
+    seq($._vlan_stpd_options, optional(field('tag', $.vlan_id))),
+  )),
+
+  _vlan_stpd_options: $ => seq(
+    $._vlan_stpd_option,
+    optional(field('encapsulation', choice('dot1d', 'emistp', 'pvst-plus'))),
   ),
 
   _vlan_stpd_option: $ => choice(
-    seq('stpd', field('stpd', $.word_or_string)),
-    field('stpd', $.string),
+    prec.right(seq('stpd', optional(field('stpd', $.word_or_string)))),
+    prec(1, field('stpd', $.string)),
   ),
 
   configure_vlan_add_secondary_ipaddress: $ => seq(

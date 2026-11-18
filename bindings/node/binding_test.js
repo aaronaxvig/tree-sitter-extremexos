@@ -11,6 +11,53 @@ test("can load grammar", () => {
   assert.doesNotThrow(() => parser.setLanguage(language));
 });
 
+test("parses DNS name server operands into fields", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+  const { rootNode } = parser.parse(
+    "configure dns-client add name-server 192.0.2.53 vr VR-Default\n",
+  );
+
+  assert.equal(rootNode.hasError, false, rootNode.toString());
+  const [server] = rootNode.descendantsOfType("dns_client_name_server");
+  assert.ok(server, rootNode.toString());
+  assert.equal(server.childForFieldName("address").text, "192.0.2.53");
+  assert.equal(server.childForFieldName("virtual_router").text, "VR-Default");
+});
+
+test("parses VLAN port options into fields", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+  const { rootNode } = parser.parse(
+    'configure vlan "Example" add ports 1 tagged 200 stpd s0 dot1d\n',
+  );
+
+  assert.equal(rootNode.hasError, false, rootNode.toString());
+  const [addPorts] = rootNode.descendantsOfType("configure_vlan_add_ports");
+  assert.equal(addPorts.childForFieldName("ports").text, "1");
+  const [options] = addPorts.descendantsOfType("configure_vlan_port_options");
+  assert.equal(options.childForFieldName("mode").text, "tagged");
+  assert.equal(options.childForFieldName("tag").text, "200");
+  assert.equal(options.childForFieldName("stpd").text, "s0");
+  assert.equal(options.childForFieldName("encapsulation").text, "dot1d");
+});
+
+test("accepts LF and CRLF without requiring a final newline", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+
+  for (const newline of ["\n", "\r\n"]) {
+    const { rootNode } = parser.parse(["#", "enable ssh2", "# Last comment"].join(newline));
+    assert.equal(rootNode.hasError, false, rootNode.toString());
+    assert.deepEqual(rootNode.namedChildren.map(node => node.type), ["comment", "command", "comment"]);
+    assert.equal(rootNode.namedChildren[1].firstNamedChild.type, "enable_command");
+  }
+
+  const { rootNode } = parser.parse('configure vlan "Example" add ports all');
+  assert.equal(rootNode.hasError, false, rootNode.toString());
+  assert.equal(rootNode.descendantsOfType("configure_vlan_add_ports").length, 1);
+});
+
 test("fixtures parse without errors", () => {
   const parser = new Parser();
   parser.setLanguage(language);

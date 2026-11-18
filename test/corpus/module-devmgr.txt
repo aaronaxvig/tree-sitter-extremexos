@@ -5,12 +5,14 @@ Module header and comments
 #
 # Module devmgr configuration.
 #
+#
 # ordinary comment
 
 ---
 
 (source_file
   (section_header)
+  (comment)
   (comment))
 
 ================================================================================
@@ -418,3 +420,163 @@ configure vlan "Example" add future-option value
             (word)
             (word_or_string
               (word))))))))
+
+================================================================================
+DNS client keeps partial commands and extra arguments
+================================================================================
+
+configure dns-client
+configure dns-client add
+configure dns-client add name-server
+configure dns-client add name-server 192.0.2.53 vr
+configure dns-client add name-server 192.0.2.53 future-option
+configure dns-client add domain-suffix ""
+configure dns-client delete name-server 192.0.2.53 vr VR-Default future-option "value"
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_dns_client)))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_add))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_add
+          (dns_client_name_server)))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_add
+          (dns_client_name_server
+            (word))))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_add
+          (dns_client_name_server
+            (word)
+            (dns_client_extra_arguments
+              (word_or_string
+                (word))))))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_add
+          (dns_client_domain_suffix
+            (string))))))
+  (command
+    (configure_command
+      (configure_dns_client
+        (configure_dns_client_delete
+          (dns_client_name_server
+            (word)
+            (word)
+            (dns_client_extra_arguments
+              (word_or_string
+                (word))
+              (word_or_string
+                (string)))))))))
+
+================================================================================
+VLAN port STPD options and incomplete commands
+================================================================================
+
+configure vlan "Example" add ports 1 tagged 200 stpd s0 dot1d
+configure vlan "Example" add ports 1 tagged stpd s0 emistp
+configure vlan "Example" add ports 1 untagged stpd s0 pvst-plus
+configure vlan "Example" add ports 1 tagged future-option "value"
+configure vlan "Example" add ports 1 tagged stpd
+configure vlan "Example" add ports
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (port_list)
+            (configure_vlan_port_options
+              (vlan_id)
+              (word_or_string
+                (word))))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (port_list)
+            (configure_vlan_port_options
+              (word_or_string
+                (word))))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (port_list)
+            (configure_vlan_port_options
+              (word_or_string
+                (word))))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (port_list)
+            (configure_vlan_port_options)
+            (configure_vlan_port_extra_arguments
+              (word_or_string
+                (word))
+              (word_or_string
+                (string))))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports
+            (port_list)
+            (configure_vlan_port_options))))))
+  (command
+    (configure_command
+      (configure_vlan
+        (vlan_reference
+          (string))
+        (configure_vlan_add
+          (configure_vlan_add_ports))))))
+
+================================================================================
+Diagnostics and system recovery
+================================================================================
+
+configure diagnostics privilege admin
+configure sys-recovery-level switch reset
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_diagnostics
+        (word))))
+  (command
+    (configure_command
+      (configure_sys_recovery
+        (word)
+        (word)))))

@@ -50,6 +50,6 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "generate": "tree-sitter generate --abi 14",
-    "test": "tree-sitter test && node --test bindings/node/*_test.js"
+    "test": "tree-sitter test && node-gyp rebuild && node --test bindings/node/*_test.js"
   }
 }
