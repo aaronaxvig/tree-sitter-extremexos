@@ -1,0 +1,60 @@
+================================================================================
+NTP peer and server share operations while retaining fields and keyword branches
+================================================================================
+
+configure ntp server add 192.0.2.1 key 5 vr VR-Default
+configure ntp peer delete "time.example.com"
+configure ntp restrict-list add 192.0.2.0 255.255.255.0 permit
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_ntp
+        (configure_ntp_server
+          (configure_ntp_add
+            argument: (word_or_string (word))
+            (configure_ntp_add_key
+              keyid: (word_or_string (word))
+              (configure_ntp_add_key_vr
+                vr_name: (word_or_string (word)))))))))
+  (command
+    (configure_command
+      (configure_ntp
+        (configure_ntp_peer
+          (configure_ntp_delete
+            argument: (word_or_string (string)))))))
+  (command
+    (configure_command
+      (configure_ntp
+        (configure_ntp_restrict_list
+          (configure_ntp_restrict_list_add
+            network: (word_or_string (word))
+            mask: (word_or_string (word))
+            (configure_ntp_restrict_list_permit)))))))
+
+================================================================================
+Partial NTP commands and unknown options retain their context
+================================================================================
+
+configure ntp server add
+configure ntp server future-option "Example"
+configure ntp server-next
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_ntp
+        (configure_ntp_server (configure_ntp_add)))))
+  (command
+    (configure_command
+      (configure_ntp
+        (configure_ntp_server
+          (word_or_string (word))
+          (word_or_string (string))))))
+  (command
+    (configure_command
+      (configure_ntp (word_or_string (word))))))

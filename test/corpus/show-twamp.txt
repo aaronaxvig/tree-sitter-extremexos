@@ -1,0 +1,59 @@
+================================================================================
+TWAMP reflector and endpoint filters
+================================================================================
+
+show twamp reflector
+show twamp endpoint
+show twamp endpoint ipaddress 192.0.2.1 port 5000
+
+---
+
+(source_file
+  (command
+    (show_command
+      (show_twamp (show_twamp_reflector))))
+  (command
+    (show_command
+      (show_twamp (show_twamp_endpoint))))
+  (command
+    (show_command
+      (show_twamp
+        (show_twamp_endpoint
+          (show_twamp_endpoint_ipaddress
+            src_ip: (word_or_string (word))
+            (show_twamp_endpoint_ipaddress_port
+              src_port: (word_or_string (word)))))))))
+
+================================================================================
+Partial TWAMP filters and unknown options retain their context
+================================================================================
+
+show twamp endpoint ipaddress
+show twamp endpoint ipaddress 192.0.2.1 port
+show twamp endpoint future-option "Example"
+show twamp endpoint-next
+
+---
+
+(source_file
+  (command
+    (show_command
+      (show_twamp
+        (show_twamp_endpoint
+          (show_twamp_endpoint_ipaddress)))))
+  (command
+    (show_command
+      (show_twamp
+        (show_twamp_endpoint
+          (show_twamp_endpoint_ipaddress
+            src_ip: (word_or_string (word))
+            (show_twamp_endpoint_ipaddress_port))))))
+  (command
+    (show_command
+      (show_twamp
+        (show_twamp_endpoint
+          (word_or_string (word))
+          (word_or_string (string))))))
+  (command
+    (show_command
+      (show_twamp (word_or_string (word))))))

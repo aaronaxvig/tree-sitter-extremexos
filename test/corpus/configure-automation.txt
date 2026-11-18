@@ -14,14 +14,16 @@ configure automation edge disconnect database Example
         (configure_automation_edge
           (configure_automation_edge_connect
             (configure_automation_edge_database
-              database_name: (word_or_string (string))))))))
+              database_name: (word_or_string
+                (string))))))))
   (command
     (configure_command
       (configure_automation
         (configure_automation_edge
           (configure_automation_edge_disconnect
             (configure_automation_edge_database
-              database_name: (word_or_string (word)))))))))
+              database_name: (word_or_string
+                (word)))))))))
 
 ================================================================================
 Keep unfinished and unknown Edge Automation branches
@@ -40,35 +42,41 @@ configure automation edge disconnect database "Example" future-option value
 
 (source_file
   (command
-    (configure_command (configure_automation)))
+    (configure_command
+      (configure_automation)))
   (command
     (configure_command
       (configure_automation
-        (configure_automation_extra_arguments
-          (word_or_string (word))
-          (word_or_string (string))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
-      (configure_automation (configure_automation_edge))))
+      (configure_automation
+        (configure_automation_edge))))
   (command
     (configure_command
       (configure_automation
         (configure_automation_edge
-          (configure_automation_extra_arguments
-            (word_or_string (word))
-            (word_or_string (string)))))))
+          (word_or_string
+            (word))
+          (word_or_string
+            (string))))))
   (command
     (configure_command
       (configure_automation
-        (configure_automation_edge (configure_automation_edge_connect)))))
+        (configure_automation_edge
+          (configure_automation_edge_connect)))))
   (command
     (configure_command
       (configure_automation
         (configure_automation_edge
           (configure_automation_edge_disconnect
-            (configure_automation_extra_arguments
-              (word_or_string (word))
-              (word_or_string (string))))))))
+            (word_or_string
+              (word))
+            (word_or_string
+              (string)))))))
   (command
     (configure_command
       (configure_automation
@@ -81,7 +89,9 @@ configure automation edge disconnect database "Example" future-option value
         (configure_automation_edge
           (configure_automation_edge_disconnect
             (configure_automation_edge_database
-              database_name: (word_or_string (string))
-              (configure_automation_extra_arguments
-                (word_or_string (word))
-                (word_or_string (word))))))))))
+              database_name: (word_or_string
+                (string))
+              (word_or_string
+                (word))
+              (word_or_string
+                (word)))))))))

@@ -10,8 +10,9 @@
 ## Grammar architecture
 
 - Keep `grammar.js` focused on top-level composition and shared lexical rules.
-- Put detailed `configure` command families in sibling files under `grammar/configure/`, one family per file (for example, `dns-client.js` and `vlan.js`).
-- `grammar/configure/topics.js` contains first-level families that only have generic argument parsing so far.
+- Put detailed command families under `grammar/<verb>/`, one family per file (for example, `grammar/configure/ntp.js` and `grammar/show/twamp.js`).
+- When importing syntax, review the direct Tree-sitter rules and corpus cases for a small batch before adding more families.
+- `grammar/configure/topics.js` registers the first-level families that use generic arguments.
 - Give every known family and subcommand a stable, descriptive named node such as `configure_vlan_add_ports`. Flesh out that node in place as more completion data arrives; avoid changing the public tree shape unnecessarily.
 - When specializing a branch, retain a generic fallback at the deepest incomplete level.
 - Use named fields for meaningful operands such as `vlan`, `ports`, `address`, `domain`, `hostname`, and `virtual_router`.

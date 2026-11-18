@@ -1,5 +1,3 @@
-const firmware = require('../firmware/rules');
-
 // First-level configure families reported by tab completion.
 const completionTopics = [
   'access-list', 'account', 'banner', 'bfd', 'bootprelay', 'cdp', 'cfm', 'cli',
@@ -23,13 +21,12 @@ const ruleName = topic => topic === 'sys-recovery-level'
   ? 'configure_sys_recovery'
   : `configure_${topic.replaceAll('-', '_')}`;
 
-const topics = detailed => [...new Set([...completionTopics, ...firmware.topics('configure')])]
-  .filter(topic => !detailed.includes(topic));
+const topics = detailed => completionTopics.filter(topic => !detailed.includes(topic));
 
 const rules = names => Object.fromEntries(
   names.map(topic => [
     ruleName(topic),
-    $ => seq(topic, optional(firmware.familyArguments($, 'configure', topic))),
+    $ => seq(topic, optional($._arguments)),
   ]),
 );
 

@@ -10,14 +10,15 @@
 const commands = require('./grammar/commands');
 const configureTopics = require('./grammar/configure/topics');
 const enableTopics = require('./grammar/enable/topics');
-const firmware = require('./grammar/firmware/rules');
+const show = require('./grammar/show');
 
 const detailedConfigure = {
   'automation': require('./grammar/configure/automation'),
+  'diagnostics': require('./grammar/configure/diagnostics'),
+  'ntp': require('./grammar/configure/ntp'),
   'snmp': require('./grammar/configure/snmp'),
   'dns-client': require('./grammar/configure/dns-client'),
   'sntp-client': require('./grammar/configure/sntp-client'),
-  'diagnostics': require('./grammar/configure/diagnostics'),
   'sys-recovery-level': require('./grammar/configure/sys-recovery-level'),
   'vlan': require('./grammar/configure/vlan'),
 };
@@ -53,6 +54,7 @@ module.exports = grammar({
     command: $ => choice(
       $.configure_command,
       $.enable_command,
+      $.show_command,
       ...commands.verbs.map(verb => $[commands.ruleName(verb)]),
       $.generic_command,
     ),
@@ -75,8 +77,8 @@ module.exports = grammar({
     ...Object.assign({}, ...Object.values(detailedConfigure).map(family => family.rules())),
 
     ...enableTopics.rules(),
+    ...show.rules(),
     ...commands.rules(),
-    ...firmware.rules(),
 
     // Retain unknown EXOS commands losslessly while the detailed grammar grows.
     generic_command: $ => seq($.word, optional($._arguments)),

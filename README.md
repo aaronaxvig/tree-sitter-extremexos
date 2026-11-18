@@ -39,17 +39,14 @@ The generated syntax tree names each command by its leading keyword and gives op
 
 Run the converter's tests with `python3 -B -m unittest discover -s test/tools`.
 
-### Refresh the firmware syntax in the main grammar
+### Add syntax to the main grammar
 
-The main grammar loads a generated catalog from `grammar/firmware/syntax.json`. Its [source manifest](grammar/firmware/sources.json) lists the firmware modules that passed standalone parser generation. The catalog covers `configure`, `create`, `delete`, `disable`, `enable`, `show`, and `unconfigure`. It skips definitions flagged as debug-only, lawful-intercept, or prompting-only and contains only syntax and operand names.
+Keep each topic in a JavaScript file named for its command, such as [configure NTP](grammar/configure/ntp.js) or [show TWAMP](grammar/show/twamp.js). Use the standalone XML converter to inspect syntax, then review a small batch of direct Tree-sitter rules and corpus cases before adding it to the main parser.
 
-Existing hand-written configuration rules take precedence. Other families get named fields and keyword nodes from the catalog while accepting unfamiliar arguments and unfinished lines.
+Share repeated continuations within the topic. Test complete commands, unfinished commands, and unfamiliar arguments at the deepest recognized branch.
 
 ```sh
-python3 -B -m tools.generate_firmware_syntax /path/to/config/clidef > grammar/firmware/syntax.json.tmp &&
-  mv grammar/firmware/syntax.json.tmp grammar/firmware/syntax.json
 npm run generate
+npm test
 npm --prefix editors/vscode run generate
 ```
-
-Regular parser generation uses the checked-in catalog and requires no firmware files.

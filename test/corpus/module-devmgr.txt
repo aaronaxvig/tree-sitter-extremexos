@@ -72,24 +72,31 @@ save configuration
             (word))))))
   (command
     (create_command
-      (keyword_vlan)
+      (word_or_string
+        (word))
       (word_or_string
         (string))))
   (command
     (enable_command
       (enable_jumbo_frame
-        (keyword_ports)
-        (keyword_all))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (disable_command
-      (keyword_telnet)))
+      (word_or_string
+        (word))))
   (command
     (unconfigure_command
-      (keyword_switch)
-      (keyword_all)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (delete_command
-      (keyword_vlan)
+      (word_or_string
+        (word))
       (word_or_string
         (word))))
   (command
@@ -211,15 +218,16 @@ configure future-feature value
   (command
     (configure_command
       (configure_ntp
-        (keyword_server)
-        (word_or_string
-          (word)))))
+        (configure_ntp_server
+          (word_or_string
+            (word))))))
   (command
     (configure_command
       (configure_ports
         (word_or_string
           (word))
-        (keyword_description_string)
+        (word_or_string
+          (word))
         (word_or_string
           (string)))))
   (command
@@ -555,6 +563,8 @@ Diagnostics and system recovery
 ================================================================================
 
 configure diagnostics privilege admin
+configure diagnostics privilege
+configure diagnostics privilege future-option "Example"
 configure sys-recovery-level switch reset
 
 ---
@@ -563,7 +573,19 @@ configure sys-recovery-level switch reset
   (command
     (configure_command
       (configure_diagnostics
-        (word))))
+        (configure_diagnostics_privilege))))
+  (command
+    (configure_command
+      (configure_diagnostics
+        (configure_diagnostics_privilege))))
+  (command
+    (configure_command
+      (configure_diagnostics
+        (configure_diagnostics_privilege
+          (word_or_string
+            (word))
+          (word_or_string
+            (string))))))
   (command
     (configure_command
       (configure_sys_recovery

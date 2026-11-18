@@ -77,7 +77,7 @@ END = State(True)
 DEAD_END = State(False)
 
 
-def command_graph(tree, *, verbs=None, omitted_flags=()):
+def command_graph(tree):
     """Build shared continuations from the CLI tree and its group markers."""
     closers = {}
     parents = {child: node for node in tree.iter() for child in node}
@@ -109,8 +109,6 @@ def command_graph(tree, *, verbs=None, omitted_flags=()):
     @cache
     def walk(node, groups=()):
         name = node.findtext("name", "")
-        if any(flag.text in omitted_flags for flag in node.findall("flags")):
-            return DEAD_END
         prefix = []
         if node.tag == "key":
             if not re.fullmatch(r"[^\s\"'#]+", name):
@@ -189,18 +187,6 @@ def command_graph(tree, *, verbs=None, omitted_flags=()):
             continuation = State(False, ((token, continuation),))
         return continuation
 
-    if verbs is not None:
-        # Top-level alternatives can start in groups, so filter the resulting
-        # edges as well as the direct keyword children.
-        start = combine(
-            walk(child) for child in tree
-            if child.tag in SYNTAX_TAGS and (child.tag != "key" or child.findtext("name") in verbs)
-        )
-        return State(False, tuple(
-            (token, target) for token, target in start.transitions
-            if token.operand_type is None and token.name in verbs
-        ))
-
     start = walk(tree)
     if start.can_end or not start.transitions:
         raise ValueError("The command tree must define at least one nonempty command")
@@ -273,7 +259,7 @@ def grammar_rules(start, static_types):
     }
 
 
-def read_definition(source):
+def generate(source):
     data = source.read_text(encoding="utf-8-sig")
     if re.search(r"<!\s*(?:DOCTYPE|ENTITY)\b", data, re.IGNORECASE):
         raise ValueError("DTD and entity declarations are unsupported")
@@ -282,12 +268,7 @@ def read_definition(source):
     if root.tag != "cmd_def" or len(trees) != 1 or trees[0].get("name") != "extreme":
         raise ValueError("Expected one ExtremeXOS <cmd_tree name=\"extreme\">")
 
-    return root, trees[0]
-
-
-def generate(source):
-    root, tree = read_definition(source)
-    rules = grammar_rules(command_graph(tree), static_choices(root))
+    rules = grammar_rules(command_graph(trees[0]), static_choices(root))
     command_rules = "\n".join(f"    {name}: $ => {pattern}," for name, pattern in rules.items())
     return rf"""module.exports = grammar({{
   name: "exos_{identifier(source.stem)}",
