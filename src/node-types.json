@@ -1,5 +1,50 @@
 [
   {
+    "type": "cd_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "check_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clear_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "command",
     "named": true,
     "fields": {},
@@ -8,11 +53,31 @@
       "required": true,
       "types": [
         {
+          "type": "cd_command",
+          "named": true
+        },
+        {
+          "type": "check_command",
+          "named": true
+        },
+        {
+          "type": "clear_command",
+          "named": true
+        },
+        {
           "type": "configure_command",
           "named": true
         },
         {
+          "type": "cp_command",
+          "named": true
+        },
+        {
           "type": "create_command",
+          "named": true
+        },
+        {
+          "type": "debug_command",
           "named": true
         },
         {
@@ -24,7 +89,19 @@
           "named": true
         },
         {
+          "type": "download_command",
+          "named": true
+        },
+        {
+          "type": "edit_command",
+          "named": true
+        },
+        {
           "type": "enable_command",
+          "named": true
+        },
+        {
+          "type": "exit_command",
           "named": true
         },
         {
@@ -32,7 +109,155 @@
           "named": true
         },
         {
+          "type": "history_command",
+          "named": true
+        },
+        {
+          "type": "install_command",
+          "named": true
+        },
+        {
+          "type": "load_command",
+          "named": true
+        },
+        {
+          "type": "logout_command",
+          "named": true
+        },
+        {
+          "type": "ls_command",
+          "named": true
+        },
+        {
+          "type": "mkdir_command",
+          "named": true
+        },
+        {
+          "type": "mrinfo_command",
+          "named": true
+        },
+        {
+          "type": "mtrace_command",
+          "named": true
+        },
+        {
+          "type": "mv_command",
+          "named": true
+        },
+        {
+          "type": "nslookup_command",
+          "named": true
+        },
+        {
+          "type": "ping_command",
+          "named": true
+        },
+        {
+          "type": "pwd_command",
+          "named": true
+        },
+        {
+          "type": "quit_command",
+          "named": true
+        },
+        {
+          "type": "reboot_command",
+          "named": true
+        },
+        {
+          "type": "refresh_command",
+          "named": true
+        },
+        {
+          "type": "reset_command",
+          "named": true
+        },
+        {
+          "type": "restart_command",
+          "named": true
+        },
+        {
+          "type": "rm_command",
+          "named": true
+        },
+        {
+          "type": "rmdir_command",
+          "named": true
+        },
+        {
+          "type": "rtlookup_command",
+          "named": true
+        },
+        {
+          "type": "run_command",
+          "named": true
+        },
+        {
+          "type": "save_command",
+          "named": true
+        },
+        {
+          "type": "scp2_command",
+          "named": true
+        },
+        {
+          "type": "show_command",
+          "named": true
+        },
+        {
+          "type": "ssh2_command",
+          "named": true
+        },
+        {
+          "type": "start_command",
+          "named": true
+        },
+        {
+          "type": "synchronize_command",
+          "named": true
+        },
+        {
+          "type": "telnet_command",
+          "named": true
+        },
+        {
+          "type": "terminate_command",
+          "named": true
+        },
+        {
+          "type": "tftp_command",
+          "named": true
+        },
+        {
+          "type": "top_command",
+          "named": true
+        },
+        {
+          "type": "traceroute_command",
+          "named": true
+        },
+        {
           "type": "unconfigure_command",
+          "named": true
+        },
+        {
+          "type": "uninstall_command",
+          "named": true
+        },
+        {
+          "type": "upload_command",
+          "named": true
+        },
+        {
+          "type": "use_command",
+          "named": true
+        },
+        {
+          "type": "vi_command",
+          "named": true
+        },
+        {
+          "type": "xsh_command",
           "named": true
         }
       ]
@@ -2893,7 +3118,37 @@
     }
   },
   {
+    "type": "cp_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "create_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "debug_command",
     "named": true,
     "fields": {},
     "children": {
@@ -3027,7 +3282,52 @@
     }
   },
   {
+    "type": "download_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "edit_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "enable_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exit_command",
     "named": true,
     "fields": {},
     "children": {
@@ -3053,6 +3353,366 @@
           "type": "word",
           "named": true
         },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "history_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "install_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "load_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "logout_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ls_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mkdir_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mrinfo_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mtrace_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mv_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "nslookup_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ping_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pwd_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quit_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reboot_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "refresh_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reset_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "restart_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rm_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rmdir_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rtlookup_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "run_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "save_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scp2_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
         {
           "type": "word_or_string",
           "named": true
@@ -3125,7 +3785,187 @@
     }
   },
   {
+    "type": "ssh2_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "synchronize_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "telnet_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "terminate_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tftp_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "top_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "traceroute_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "unconfigure_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "uninstall_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "upload_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "use_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "vi_command",
     "named": true,
     "fields": {},
     "children": {
@@ -3186,6 +4026,21 @@
     }
   },
   {
+    "type": "xsh_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "access-list",
     "named": false
   },
@@ -3214,11 +4069,23 @@
     "named": false
   },
   {
+    "type": "cd",
+    "named": false
+  },
+  {
     "type": "cdp",
     "named": false
   },
   {
     "type": "cfm",
+    "named": false
+  },
+  {
+    "type": "check",
+    "named": false
+  },
+  {
+    "type": "clear",
     "named": false
   },
   {
@@ -3235,6 +4102,10 @@
   },
   {
     "type": "cos-index",
+    "named": false
+  },
+  {
+    "type": "cp",
     "named": false
   },
   {
@@ -3306,11 +4177,19 @@
     "named": false
   },
   {
+    "type": "download",
+    "named": false
+  },
+  {
     "type": "dynamic-vlan",
     "named": false
   },
   {
     "type": "eaps",
+    "named": false
+  },
+  {
+    "type": "edit",
     "named": false
   },
   {
@@ -3346,6 +4225,10 @@
     "named": false
   },
   {
+    "type": "exit",
+    "named": false
+  },
+  {
     "type": "failsafe-account",
     "named": false
   },
@@ -3366,6 +4249,10 @@
     "named": false
   },
   {
+    "type": "history",
+    "named": false
+  },
+  {
     "type": "identity-management",
     "named": false
   },
@@ -3379,6 +4266,10 @@
   },
   {
     "type": "inline-power",
+    "named": false
+  },
+  {
+    "type": "install",
     "named": false
   },
   {
@@ -3454,7 +4345,19 @@
     "named": false
   },
   {
+    "type": "load",
+    "named": false
+  },
+  {
     "type": "log",
+    "named": false
+  },
+  {
+    "type": "logout",
+    "named": false
+  },
+  {
+    "type": "ls",
     "named": false
   },
   {
@@ -3478,6 +4381,10 @@
     "named": false
   },
   {
+    "type": "mkdir",
+    "named": false
+  },
+  {
     "type": "mlag",
     "named": false
   },
@@ -3486,11 +4393,23 @@
     "named": false
   },
   {
+    "type": "mrinfo",
+    "named": false
+  },
+  {
     "type": "mrp",
     "named": false
   },
   {
     "type": "mstp",
+    "named": false
+  },
+  {
+    "type": "mtrace",
+    "named": false
+  },
+  {
+    "type": "mv",
     "named": false
   },
   {
@@ -3526,11 +4445,19 @@
     "named": false
   },
   {
+    "type": "nslookup",
+    "named": false
+  },
+  {
     "type": "ntp",
     "named": false
   },
   {
     "type": "pim",
+    "named": false
+  },
+  {
+    "type": "ping",
     "named": false
   },
   {
@@ -3570,11 +4497,19 @@
     "named": false
   },
   {
+    "type": "pwd",
+    "named": false
+  },
+  {
     "type": "qosprofile",
     "named": false
   },
   {
     "type": "qosscheduler",
+    "named": false
+  },
+  {
+    "type": "quit",
     "named": false
   },
   {
@@ -3586,6 +4521,22 @@
     "named": false
   },
   {
+    "type": "reboot",
+    "named": false
+  },
+  {
+    "type": "refresh",
+    "named": false
+  },
+  {
+    "type": "reset",
+    "named": false
+  },
+  {
+    "type": "restart",
+    "named": false
+  },
+  {
     "type": "rip",
     "named": false
   },
@@ -3594,11 +4545,35 @@
     "named": false
   },
   {
+    "type": "rm",
+    "named": false
+  },
+  {
+    "type": "rmdir",
+    "named": false
+  },
+  {
     "type": "router-discovery",
     "named": false
   },
   {
+    "type": "rtlookup",
+    "named": false
+  },
+  {
+    "type": "run",
+    "named": false
+  },
+  {
     "type": "safe-default-script",
+    "named": false
+  },
+  {
+    "type": "save",
+    "named": false
+  },
+  {
+    "type": "scp2",
     "named": false
   },
   {
@@ -3623,6 +4598,10 @@
   },
   {
     "type": "sharing",
+    "named": false
+  },
+  {
+    "type": "show",
     "named": false
   },
   {
@@ -3654,6 +4633,10 @@
     "named": false
   },
   {
+    "type": "start",
+    "named": false
+  },
+  {
     "type": "stpd",
     "named": false
   },
@@ -3667,6 +4650,10 @@
   },
   {
     "type": "subvlan-address-range",
+    "named": false
+  },
+  {
+    "type": "synchronize",
     "named": false
   },
   {
@@ -3718,11 +4705,27 @@
     "named": false
   },
   {
+    "type": "terminate",
+    "named": false
+  },
+  {
+    "type": "tftp",
+    "named": false
+  },
+  {
     "type": "time",
     "named": false
   },
   {
     "type": "timezone",
+    "named": false
+  },
+  {
+    "type": "top",
+    "named": false
+  },
+  {
+    "type": "traceroute",
     "named": false
   },
   {
@@ -3746,11 +4749,27 @@
     "named": false
   },
   {
+    "type": "uninstall",
+    "named": false
+  },
+  {
     "type": "untagged",
     "named": false
   },
   {
+    "type": "upload",
+    "named": false
+  },
+  {
     "type": "upm",
+    "named": false
+  },
+  {
+    "type": "use",
+    "named": false
+  },
+  {
+    "type": "vi",
     "named": false
   },
   {
@@ -3795,6 +4814,10 @@
   },
   {
     "type": "xml-notification",
+    "named": false
+  },
+  {
+    "type": "xsh",
     "named": false
   }
 ]

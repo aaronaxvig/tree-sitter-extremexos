@@ -1,0 +1,62 @@
+================================================================================
+Top-level CLI command lists
+================================================================================
+
+# Inspect a saved configuration
+cd "Example Directory"
+pwd
+ls
+show configuration
+check policy "example.pol"
+ping 192.0.2.1
+run example
+quit
+
+---
+
+(source_file
+  (comment)
+  (command
+    (cd_command (word_or_string (string))))
+  (command
+    (pwd_command))
+  (command
+    (ls_command))
+  (command
+    (show_command (word_or_string (word))))
+  (command
+    (check_command (word_or_string (word)) (word_or_string (string))))
+  (command
+    (ping_command (word_or_string (word))))
+  (command
+    (run_command (word_or_string (word))))
+  (command
+    (quit_command)))
+
+================================================================================
+Unknown verbs and arguments that resemble verbs
+================================================================================
+
+showcase "Example"
+ssh2-extra
+future-command show
+show clear
+enable ssh2
+configure ssh2 example
+
+---
+
+(source_file
+  (command
+    (generic_command (word) (word_or_string (string))))
+  (command
+    (generic_command (word)))
+  (command
+    (generic_command (word) (word_or_string (word))))
+  (command
+    (show_command (word_or_string (word))))
+  (command
+    (enable_command (word_or_string (word))))
+  (command
+    (configure_command
+      (configure_ssh2 (word_or_string (word))))))

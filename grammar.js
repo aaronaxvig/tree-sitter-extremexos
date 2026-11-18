@@ -7,6 +7,7 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const commands = require('./grammar/commands');
 const configureTopics = require('./grammar/configure/topics');
 const diagnostics = require('./grammar/configure/diagnostics');
 const dnsClient = require('./grammar/configure/dns-client');
@@ -42,11 +43,7 @@ module.exports = grammar({
 
     command: $ => choice(
       $.configure_command,
-      $.create_command,
-      $.enable_command,
-      $.disable_command,
-      $.unconfigure_command,
-      $.delete_command,
+      ...commands.verbs.map(verb => $[commands.ruleName(verb)]),
       $.generic_command,
     ),
 
@@ -78,11 +75,7 @@ module.exports = grammar({
     ...sysRecovery.rules(),
     ...vlan.rules(),
 
-    create_command: $ => seq('create', optional($._arguments)),
-    enable_command: $ => seq('enable', optional($._arguments)),
-    disable_command: $ => seq('disable', optional($._arguments)),
-    unconfigure_command: $ => seq('unconfigure', optional($._arguments)),
-    delete_command: $ => seq('delete', optional($._arguments)),
+    ...commands.rules(),
 
     // Retain unknown EXOS commands losslessly while the detailed grammar grows.
     generic_command: $ => seq($.word, optional($._arguments)),

@@ -101,8 +101,7 @@ save configuration
       (word_or_string
         (word))))
   (command
-    (generic_command
-      (word)
+    (save_command
       (word_or_string
         (word)))))
 
