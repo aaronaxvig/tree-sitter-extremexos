@@ -18,10 +18,12 @@
   },
   "scripts": {
     "test": "node --test scripts/test-highlighting.js",
+    "package": "vsce package",
     "generate": "node scripts/generate-grammar.js",
     "vscode:prepublish": "npm run generate"
   },
   "devDependencies": {
+    "@vscode/vsce": "3.9.2",
     "vscode-oniguruma": "1.7.0",
     "vscode-textmate": "9.3.2"
   },
