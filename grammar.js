@@ -8,6 +8,7 @@
 // @ts-check
 
 const commands = require('./grammar/commands');
+const automation = require('./grammar/configure/automation');
 const configureTopics = require('./grammar/configure/topics');
 const diagnostics = require('./grammar/configure/diagnostics');
 const dnsClient = require('./grammar/configure/dns-client');
@@ -52,6 +53,7 @@ module.exports = grammar({
     configure_command: $ => seq(
       'configure',
       optional(choice(
+        prec(1, $.configure_automation),
         prec(1, $.configure_snmp),
         prec(1, $.configure_dns_client),
         prec(1, $.configure_sntp_client),
@@ -70,6 +72,7 @@ module.exports = grammar({
     ),
 
     ...configureTopics.rules(),
+    ...automation.rules(),
     ...diagnostics.rules(),
     ...dnsClient.rules(),
     ...snmp.rules(),

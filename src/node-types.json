@@ -294,6 +294,127 @@
     }
   },
   {
+    "type": "configure_automation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_automation_edge",
+          "named": true
+        },
+        {
+          "type": "configure_automation_extra_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_automation_edge",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_automation_edge_connect",
+          "named": true
+        },
+        {
+          "type": "configure_automation_edge_disconnect",
+          "named": true
+        },
+        {
+          "type": "configure_automation_extra_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_automation_edge_connect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_automation_edge_database",
+          "named": true
+        },
+        {
+          "type": "configure_automation_extra_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_automation_edge_database",
+    "named": true,
+    "fields": {
+      "database_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_automation_extra_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_automation_edge_disconnect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_automation_edge_database",
+          "named": true
+        },
+        {
+          "type": "configure_automation_extra_arguments",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_automation_extra_arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "configure_banner",
     "named": true,
     "fields": {},
@@ -397,6 +518,10 @@
         },
         {
           "type": "configure_account",
+          "named": true
+        },
+        {
+          "type": "configure_automation",
           "named": true
         },
         {
@@ -5831,6 +5956,10 @@
     "named": false
   },
   {
+    "type": "automation",
+    "named": false
+  },
+  {
     "type": "banner",
     "named": false
   },
@@ -5891,6 +6020,10 @@
     "named": false
   },
   {
+    "type": "connect",
+    "named": false
+  },
+  {
     "type": "cos-index",
     "named": false
   },
@@ -5904,6 +6037,10 @@
   },
   {
     "type": "create",
+    "named": false
+  },
+  {
+    "type": "database",
     "named": false
   },
   {
@@ -5951,6 +6088,10 @@
     "named": false
   },
   {
+    "type": "disconnect",
+    "named": false
+  },
+  {
     "type": "dns-client",
     "named": false
   },
@@ -5980,6 +6121,10 @@
   },
   {
     "type": "eaps",
+    "named": false
+  },
+  {
+    "type": "edge",
     "named": false
   },
   {

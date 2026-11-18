@@ -332,6 +332,14 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "configure_automation"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "configure_snmp"
                   }
                 },
@@ -3370,6 +3378,196 @@
           ]
         }
       ]
+    },
+    "configure_automation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "automation"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_automation_edge"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "configure_automation_extra_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_automation_edge": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "edge"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_automation_edge_connect"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_automation_edge_disconnect"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "configure_automation_extra_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_automation_edge_connect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "connect"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_automation_edge_database"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "configure_automation_extra_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_automation_edge_disconnect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "disconnect"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_automation_edge_database"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "configure_automation_extra_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_automation_edge_database": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "database"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "database_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "configure_automation_extra_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_automation_extra_arguments": {
+      "type": "SYMBOL",
+      "name": "_arguments"
     },
     "configure_diagnostics": {
       "type": "SEQ",

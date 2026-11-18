@@ -1,0 +1,87 @@
+================================================================================
+Connect and disconnect an Edge Automation database
+================================================================================
+
+configure automation edge connect database "Example Database"
+configure automation edge disconnect database Example
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge
+          (configure_automation_edge_connect
+            (configure_automation_edge_database
+              database_name: (word_or_string (string))))))))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge
+          (configure_automation_edge_disconnect
+            (configure_automation_edge_database
+              database_name: (word_or_string (word)))))))))
+
+================================================================================
+Keep unfinished and unknown Edge Automation branches
+================================================================================
+
+configure automation
+configure automation future-topic "Example"
+configure automation edge
+configure automation edge future-operation "Example"
+configure automation edge connect
+configure automation edge disconnect future-option "Example"
+configure automation edge connect database
+configure automation edge disconnect database "Example" future-option value
+
+---
+
+(source_file
+  (command
+    (configure_command (configure_automation)))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_extra_arguments
+          (word_or_string (word))
+          (word_or_string (string))))))
+  (command
+    (configure_command
+      (configure_automation (configure_automation_edge))))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge
+          (configure_automation_extra_arguments
+            (word_or_string (word))
+            (word_or_string (string)))))))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge (configure_automation_edge_connect)))))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge
+          (configure_automation_edge_disconnect
+            (configure_automation_extra_arguments
+              (word_or_string (word))
+              (word_or_string (string))))))))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge
+          (configure_automation_edge_connect
+            (configure_automation_edge_database))))))
+  (command
+    (configure_command
+      (configure_automation
+        (configure_automation_edge
+          (configure_automation_edge_disconnect
+            (configure_automation_edge_database
+              database_name: (word_or_string (string))
+              (configure_automation_extra_arguments
+                (word_or_string (word))
+                (word_or_string (word))))))))))
