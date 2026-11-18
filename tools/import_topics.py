@@ -108,15 +108,20 @@ def import_topics(directory, verbs):
     return topics
 
 
-def write_keywords(output, topics):
+def keyword_files(topics):
     index = [GENERATED.rstrip(), "module.exports = {"]
     for verb, words in sorted(topics.items()):
-        folder = output / verb
-        folder.mkdir(parents=True, exist_ok=True)
         listing = ",\n".join(f"  {json.dumps(word)}" for word in sorted(words))
-        (folder / "keywords.js").write_text(GENERATED + f"module.exports = [\n{listing},\n];\n")
+        yield Path(verb, "keywords.js"), GENERATED + f"module.exports = [\n{listing},\n];\n"
         index.append(f'  {json.dumps(verb)}: require("./{verb}/keywords"),')
-    (output / "keywords.js").write_text("\n".join([*index, "};", ""]))
+    yield Path("keywords.js"), "\n".join([*index, "};", ""])
+
+
+def write_keywords(output, topics):
+    for relative, content in keyword_files(topics):
+        path = output / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
 
 
 def main():

@@ -46,13 +46,31 @@ use image primary
 ---
 
 (source_file
-  (command (clear_command (clear_lldp (word_or_string (word)))))
-  (command (create_command (create_vlan (word_or_string (string)))))
-  (command (delete_command (delete_vlan (word_or_string (string)))))
+  (command
+    (clear_command
+      (clear_lldp
+        (word_or_string
+          (word)))))
+  (command
+    (create_command
+      (create_vlan
+        (word_or_string
+          (string)))))
+  (command
+    (delete_command
+      (delete_vlan
+        (word_or_string
+          (string)))))
   (command
     (unconfigure_command
-      (unconfigure_lldp (unconfigure_lldp_ports (word_or_string (word))))))
-  (command (use_command (use_image (word_or_string (word))))))
+      (unconfigure_lldp
+        (word_or_string
+          (word)))))
+  (command
+    (use_command
+      (use_image
+        (word_or_string
+          (word))))))
 
 ================================================================================
 Unknown verbs and arguments that resemble verbs

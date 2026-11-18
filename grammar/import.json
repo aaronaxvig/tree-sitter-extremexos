@@ -1,0 +1,133 @@
+{
+  "verbs": [
+    "cd",
+    "check",
+    "clear",
+    "configure",
+    "cp",
+    "create",
+    "debug",
+    "delete",
+    "disable",
+    "download",
+    "edit",
+    "enable",
+    "exit",
+    "history",
+    "install",
+    "load",
+    "logout",
+    "ls",
+    "mkdir",
+    "mrinfo",
+    "mtrace",
+    "mv",
+    "nslookup",
+    "ping",
+    "pwd",
+    "quit",
+    "reboot",
+    "refresh",
+    "reset",
+    "restart",
+    "rm",
+    "rmdir",
+    "rtlookup",
+    "run",
+    "save",
+    "scp2",
+    "show",
+    "ssh2",
+    "start",
+    "synchronize",
+    "telnet",
+    "terminate",
+    "tftp",
+    "top",
+    "traceroute",
+    "unconfigure",
+    "uninstall",
+    "upload",
+    "use",
+    "vi",
+    "xsh"
+  ],
+  "detailed": {
+    "clear": [
+      "elsm",
+      "lldp",
+      "netlogin"
+    ],
+    "configure": [
+      "automation",
+      "database",
+      "diagnostics",
+      "dns-client",
+      "dos-protect",
+      "elsm",
+      "keychain",
+      "lldp",
+      "netlogin",
+      "ntp",
+      "snmp",
+      "sntp-client",
+      "sys-recovery-level",
+      "telnet",
+      "twamp",
+      "vlan"
+    ],
+    "create": [
+      "database",
+      "keychain",
+      "netlogin"
+    ],
+    "debug": [
+      "lldp",
+      "netlogin",
+      "telnetd"
+    ],
+    "delete": [
+      "database",
+      "keychain",
+      "netlogin"
+    ],
+    "disable": [
+      "elsm",
+      "lldp",
+      "netlogin",
+      "snmp",
+      "twamp"
+    ],
+    "enable": [
+      "dos-protect",
+      "elsm",
+      "lldp",
+      "netlogin",
+      "snmp",
+      "twamp"
+    ],
+    "show": [
+      "automation",
+      "database",
+      "dos-protect",
+      "elsm",
+      "keychain",
+      "lldp",
+      "netlogin",
+      "twamp"
+    ],
+    "unconfigure": [
+      "lldp",
+      "netlogin"
+    ]
+  },
+  "supplemental": {
+    "configure": [
+      "fip"
+    ],
+    "enable": [
+      "fip",
+      "ip-option"
+    ]
+  }
+}

@@ -29,21 +29,18 @@ configure snmp sysContact "https://www.extremenetworks.com/support/"
   (command
     (configure_command
       (configure_snmp
-        (configure_snmp_sys_name
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_snmp
-        (configure_snmp_sys_name
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_snmp
-        (configure_snmp_sys_contact
-          (word_or_string
-            (string)))))))
+        (word_or_string
+          (string))))))
 
 ================================================================================
 Commands remain on separate lines
@@ -63,13 +60,8 @@ save configuration
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (word))
-        (configure_vlan_delete
-          (word_or_string
-            (word))
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (create_command
       (create_vlan
@@ -121,74 +113,69 @@ configure sntp-client secondary timehost2.example.com
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (dns_client_name_server
-            (word)
-            (word))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (dns_client_domain_suffix
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_default_domain
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_delete
-          (dns_client_name_server
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_delete
-          (dns_client_name_server
-            (word)
-            (word))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_delete
-          (dns_client_domain_suffix
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_delete
-          (configure_dns_client_delete_generic
-            (word)
-            (word_or_string
-              (word)))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (configure_dns_client_add_generic
-            (word)
-            (word_or_string
-              (word)))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_generic
-          (word)
-          (word_or_string
-            (word))))))
-  (command
-    (configure_command
-      (configure_sntp_client
-        (sntp_client_server
-          (word)
+        (word_or_string
+          (word))
+        (word_or_string
           (word)))))
   (command
     (configure_command
       (configure_sntp_client
-        (sntp_client_server
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_sntp_client
+        (word_or_string
           (word))))))
 
 ================================================================================
@@ -213,9 +200,8 @@ configure future-feature value
   (command
     (configure_command
       (configure_ntp
-        (configure_ntp_server
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_ports
@@ -228,11 +214,10 @@ configure future-feature value
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (word))
-        (configure_vlan_tag
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_xml_notification
@@ -262,48 +247,39 @@ configure vlan "Example" qp1
   (command
     (configure_command
       (configure_vlan
-        (configure_vlan_dynamic
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_description
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (vlan_id))
-        (configure_vlan_tag
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (vlan_list))
-        (configure_vlan_ports
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (string))
-        (configure_vlan_qosprofile
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (string))
-        (configure_vlan_action_generic
-          (word))))))
+        (word_or_string
+          (string))))))
 
 ================================================================================
 Add VLAN ports and related configuration
@@ -326,92 +302,71 @@ configure vlan "Example" add future-option value
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports)))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (configure_vlan_port_options))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (port_list)
-            (configure_vlan_port_options))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (configure_vlan_port_options))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (configure_vlan_port_options
-              (word_or_string
-                (string))))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (configure_vlan_port_options
-              (vlan_id)))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (configure_vlan_port_options
-              (string)
-              (vlan_id)))))))
+        (word_or_string
+          (string))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_secondary_ipaddress
-            (word_or_string
-              (word)))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_subvlan
-            (word_or_string
-              (string)))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_generic
-            (word)
-            (word_or_string
-              (word))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))))))
 
 ================================================================================
 DNS client keeps partial commands and extra arguments
@@ -433,46 +388,38 @@ configure dns-client delete name-server 192.0.2.53 vr VR-Default future-option "
       (configure_dns_client)))
   (command
     (configure_command
-      (configure_dns_client
-        (configure_dns_client_add))))
+      (configure_dns_client)))
+  (command
+    (configure_command
+      (configure_dns_client)))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (dns_client_name_server)))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (dns_client_name_server
-            (word))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (dns_client_name_server
-            (word)
-            (dns_client_extra_arguments
-              (word_or_string
-                (word))))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_dns_client
-        (configure_dns_client_add
-          (dns_client_domain_suffix
-            (string))))))
-  (command
-    (configure_command
-      (configure_dns_client
-        (configure_dns_client_delete
-          (dns_client_name_server
-            (word)
-            (word)
-            (dns_client_extra_arguments
-              (word_or_string
-                (word))
-              (word_or_string
-                (string)))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string))))))
 
 ================================================================================
 VLAN port STPD options and incomplete commands
@@ -491,67 +438,59 @@ configure vlan "Example" add ports
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (port_list)
-            (configure_vlan_port_options
-              (vlan_id)
-              (word_or_string
-                (word))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (port_list)
-            (configure_vlan_port_options
-              (word_or_string
-                (word))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (port_list)
-            (configure_vlan_port_options
-              (word_or_string
-                (word))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (port_list)
-            (configure_vlan_port_options)
-            (configure_vlan_port_extra_arguments
-              (word_or_string
-                (word))
-              (word_or_string
-                (string))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
+        (word_or_string
           (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports
-            (port_list)
-            (configure_vlan_port_options))))))
+        (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_vlan
-        (vlan_reference
-          (string))
-        (configure_vlan_add
-          (configure_vlan_add_ports))))))
+        (word_or_string
+          (string))))))
 
 ================================================================================
 Diagnostics and system recovery
@@ -567,22 +506,17 @@ configure sys-recovery-level switch reset
 (source_file
   (command
     (configure_command
-      (configure_diagnostics
-        (configure_diagnostics_privilege))))
+      (configure_diagnostics)))
+  (command
+    (configure_command
+      (configure_diagnostics)))
   (command
     (configure_command
       (configure_diagnostics
-        (configure_diagnostics_privilege))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
-      (configure_diagnostics
-        (configure_diagnostics_privilege
-          (word_or_string
-            (word))
-          (word_or_string
-            (string))))))
-  (command
-    (configure_command
-      (configure_sys_recovery
-        (word)
-        (word)))))
+      (configure_sys_recovery_level))))

@@ -11,9 +11,8 @@
 
 - Keep `grammar.js` focused on top-level composition and shared lexical rules.
 - Put detailed command families under `grammar/<verb>/`, one family per file (for example, `grammar/configure/ntp.js` and `grammar/show/twamp.js`).
-- When importing syntax, review the direct Tree-sitter rules and corpus cases for a small batch before adding more families.
-- `grammar/configure/topics.js` registers the first-level families that use generic arguments.
-- Give every known family and subcommand a stable, descriptive named node such as `configure_vlan_add_ports`. Flesh out that node in place as more completion data arrives; avoid changing the public tree shape unnecessarily.
+- Generate command families with `python3 -B -m tools.import_grammar /path/to/config/clidef`. Update `grammar/import.json` to select additional detailed families.
+- Review the generated rules and corpus cases with Git. Keep named nodes for verbs and topics, literal tokens for keywords, and XML-derived fields for operands.
 - When specializing a branch, retain a generic fallback at the deepest incomplete level.
 - Use named fields for meaningful operands such as `vlan`, `ports`, `address`, `domain`, `hostname`, and `virtual_router`.
 - Do not copy device-specific completion values into the grammar. Dynamic names shown by tab completion are examples, not keywords.
@@ -41,4 +40,4 @@
 ## Repository workflow
 
 - The default branch is `main` and the remote is `origin`.
-- Keep handwritten grammar changes and regenerated parser output in the same commit.
+- Keep command-family changes and regenerated parser output in the same commit.

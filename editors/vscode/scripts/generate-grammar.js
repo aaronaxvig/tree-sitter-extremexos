@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const {rules} = require('../../../src/grammar.json');
-const {commandPaths} = require('./command-paths');
+const generated = require('../../../grammar/generated');
+const {topicName} = require('../../../grammar/commands');
 
 function leadingKeywords(rule) {
   if (!rule) return [];
@@ -53,53 +54,48 @@ const valuePatterns = [
   },
 ];
 const values = {include: '#values'};
-const families = new Map();
-for (const [verb, topic, ...tokens] of commandPaths(rules)) {
-  const key = `${verb} ${topic}`;
-  if (!families.has(key)) families.set(key, new Map());
-  let children = families.get(key);
-  for (const token of tokens) {
-    const label = JSON.stringify(token);
-    if (!children.has(label)) children.set(label, new Map());
-    children = children.get(label);
-  }
-}
-
+const operand = String.raw`(?:[^\s"']+|"(?:[^"\\\r\n]|\\.)*")`;
 const repository = {values: {patterns: valuePatterns}};
-const continuations = new Map();
-function continuation(children) {
-  const patterns = [];
-  for (const [label, next] of children) {
-    const token = JSON.parse(label);
-    const literal = typeof token === 'string';
-    const pattern = literal ? escapePattern(token) : token.operand;
+const continuations = new Set();
+
+const choices = rule => rule.type === 'CHOICE' ? rule.members : [rule];
+const optionalContent = rule => choices(rule).find(member => member.type !== 'BLANK');
+
+function continuation(name) {
+  if (name === '_arguments') return [];
+  const include = {include: `#${name}`};
+  if (continuations.has(name)) return [include];
+  continuations.add(name);
+  const patterns = choices(rules[name]).flatMap(edge => {
+    const branch = edge.type === 'PREC' ? edge.content : edge;
+    if (branch.type === 'SYMBOL' && branch.name === '_arguments') return [];
+    const [label, following] = branch.members;
+    const token = label.type === 'FIELD' ? label.content : label;
+    const literal = token.type === 'STRING';
+    const pattern = literal ? escapePattern(token.value) : operand;
     const begin = String.raw`\G[ \t]+(${pattern})` + wordEnd;
     const capture = literal ? {name: optionScope} : {patterns: [values]};
-    patterns.push({
+    return [{
       begin,
       beginCaptures: {1: capture},
       end: '$',
-      patterns: next.size ? [continuation(next), values] : [values],
-    });
-  }
-  const signature = JSON.stringify(patterns);
-  if (!continuations.has(signature)) {
-    const name = `continuation-${continuations.size + 1}`;
-    repository[name] = {patterns};
-    continuations.set(signature, {include: `#${name}`});
-  }
-  return continuations.get(signature);
+      patterns: [...continuation(optionalContent(following).name), values],
+    }];
+  });
+  repository[name] = {patterns};
+  return [include];
 }
 
-const subcommandRules = [...families].map(([key, children]) => {
-  const [verb, topic] = key.split(' ');
-  return {
+// The generated parser shares continuations. The highlighter follows the
+// same references so optional branches never expand into full command paths.
+const subcommandRules = Object.entries(generated).flatMap(([verb, families]) =>
+  Object.keys(families).map(topic => ({
     begin: `${lineStart}(${escapePattern(verb)})[ \\t]+(${escapePattern(topic)})${wordEnd}`,
     beginCaptures: {1: {name: commandScope}, 2: {name: topicScope}},
     end: '$',
-    patterns: [continuation(children), values],
-  };
-});
+    patterns: [...continuation(optionalContent(rules[topicName(verb, topic)].members[1]).name), values],
+  })),
+);
 const topicRules = rules.command.members.flatMap(command => {
   const rule = rules[command.name];
   if (rule?.type !== 'SEQ') return [];

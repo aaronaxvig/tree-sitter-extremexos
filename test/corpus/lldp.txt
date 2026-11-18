@@ -10,10 +10,22 @@ unconfigure lldp ports all
 ---
 
 (source_file
-  (command (enable_command (enable_lldp (enable_lldp_ports (word_or_string (word))))))
-  (command (clear_command (clear_lldp (clear_lldp_neighbors (word_or_string (word))))))
-  (command (clear_command (clear_lldp (clear_lldp_neighbors))))
-  (command (unconfigure_command (unconfigure_lldp (unconfigure_lldp_ports)))))
+  (command
+    (enable_command
+      (enable_lldp
+        (word_or_string
+          (word)))))
+  (command
+    (clear_command
+      (clear_lldp
+        (word_or_string
+          (word)))))
+  (command
+    (clear_command
+      (clear_lldp)))
+  (command
+    (unconfigure_command
+      (unconfigure_lldp))))
 
 ================================================================================
 LLDP status, traps, and diagnostic branches
@@ -29,9 +41,31 @@ show lldp ports all future-option "Example"
 ---
 
 (source_file
-  (command (show_command (show_lldp (show_lldp_ports (word_or_string (word)) (show_lldp_neighbors)))))
-  (command (show_command (show_lldp (show_lldp_dcbx))))
-  (command (enable_command (enable_snmp (enable_snmp_traps (enable_snmp_traps_lldp (enable_snmp_traps_lldp_ports))))))
-  (command (disable_command (disable_snmp (disable_snmp_traps (disable_snmp_traps_lldp (disable_snmp_traps_lldp_ports (word_or_string (word))))))))
-  (command (debug_command (debug_lldp (debug_lldp_show (debug_lldp_show_nl_clients (word_or_string (word)))))))
-  (command (show_command (show_lldp (show_lldp_ports (word_or_string (word)) (word_or_string (string)))))))
+  (command
+    (show_command
+      (show_lldp
+        (word_or_string
+          (word)))))
+  (command
+    (show_command
+      (show_lldp)))
+  (command
+    (enable_command
+      (enable_snmp)))
+  (command
+    (disable_command
+      (disable_snmp
+        (word_or_string
+          (word)))))
+  (command
+    (debug_command
+      (debug_lldp
+        (word_or_string
+          (word)))))
+  (command
+    (show_command
+      (show_lldp
+        (word_or_string
+          (word))
+        (word_or_string
+          (string))))))

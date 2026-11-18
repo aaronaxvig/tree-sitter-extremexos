@@ -8,31 +8,6 @@
 // @ts-check
 
 const commands = require('./grammar/commands');
-const configureTopics = require('./grammar/configure/topics');
-const disable = require('./grammar/disable');
-const enableTopics = require('./grammar/enable/topics');
-const show = require('./grammar/show');
-
-const detailedConfigure = {
-  'automation': require('./grammar/configure/automation'),
-  'database': require('./grammar/configure/database'),
-  'diagnostics': require('./grammar/configure/diagnostics'),
-  'dos-protect': require('./grammar/configure/dos-protect'),
-  'elsm': require('./grammar/configure/elsm'),
-  'keychain': require('./grammar/configure/keychain'),
-  'lldp': require('./grammar/configure/lldp'),
-  'netlogin': require('./grammar/configure/netlogin'),
-  'ntp': require('./grammar/configure/ntp'),
-  'snmp': require('./grammar/configure/snmp'),
-  'dns-client': require('./grammar/configure/dns-client'),
-  'sntp-client': require('./grammar/configure/sntp-client'),
-  'sys-recovery-level': require('./grammar/configure/sys-recovery-level'),
-  'telnet': require('./grammar/configure/telnet'),
-  'twamp': require('./grammar/configure/twamp'),
-  'vlan': require('./grammar/configure/vlan'),
-};
-const detailedTopics = Object.keys(detailedConfigure);
-const otherTopics = configureTopics.topics(detailedTopics);
 
 module.exports = grammar({
   name: "extremexos",
@@ -60,35 +35,11 @@ module.exports = grammar({
       '#', /\r?\n/,
     ))),
 
-    command: $ => choice(
-      $.configure_command,
-      $.disable_command,
-      $.enable_command,
-      $.show_command,
-      ...commands.verbs.map(verb => $[commands.ruleName(verb)]),
-      $.generic_command,
-    ),
+    command: $ => choice(...commands.verbs.map(verb => $[commands.ruleName(verb)]), $.generic_command),
 
-    configure_command: $ => seq(
-      'configure',
-      optional(choice(
-        ...[...detailedTopics, ...otherTopics].map(topic => prec(1, $[configureTopics.ruleName(topic)])),
-        $.configure_generic,
-      )),
-    ),
+    configure_generic: $ => seq(field('target', $.word), optional($._arguments)),
+    enable_generic: $ => seq(field('target', $.word_or_string), optional($._arguments)),
 
-    // Unknown future topics and dynamic interactive shortcuts remain lossless.
-    configure_generic: $ => seq(
-      field('target', $.word),
-      optional($._arguments),
-    ),
-
-    ...configureTopics.rules(otherTopics),
-    ...Object.assign({}, ...Object.values(detailedConfigure).map(family => family.rules())),
-
-    ...disable.rules(),
-    ...enableTopics.rules(),
-    ...show.rules(),
     ...commands.rules(),
 
     // Retain unknown EXOS commands losslessly while the detailed grammar grows.

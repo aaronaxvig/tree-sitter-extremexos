@@ -12,19 +12,16 @@ disable lldp ports 1
   (command
     (disable_command
       (disable_lldp
-        (disable_lldp_ports
-          ports: (word_or_string
-            (word))))))
+        port_list: (word_or_string
+          (word)))))
+  (command
+    (disable_command
+      (disable_lldp)))
   (command
     (disable_command
       (disable_lldp
-        (disable_lldp_ports))))
-  (command
-    (disable_command
-      (disable_lldp
-        (disable_lldp_ports
-          ports: (word_or_string
-            (word)))))))
+        port_list: (word_or_string
+          (word))))))
 
 ================================================================================
 Incomplete and unfamiliar disable commands
@@ -44,16 +41,14 @@ disable telnet
       (disable_lldp)))
   (command
     (disable_command
-      (disable_lldp
-        (disable_lldp_ports))))
+      (disable_lldp)))
   (command
     (disable_command
       (disable_lldp
-        (disable_lldp_ports
-          (word_or_string
-            (word))
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (disable_command
       (word_or_string

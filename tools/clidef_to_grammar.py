@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 
 
 SYNTAX_TAGS = {"key", "arg", "open", "close"}
-METADATA_TAGS = {"name", "help", "action", "capability", "flags"}
+METADATA_TAGS = {"name", "help", "action", "capability", "flags", "rel_moved"}
 GROUP_NAME = re.compile(r"([\[{])([^\s]+) ([OC])(\d+)([\]}])")
 SIGNED_TYPES = {"int", "int8_t", "int16_t", "int32_t", "int64_t"}
 UNSIGNED_TYPES = {"uint8_t", "uint16_t", "uint32_t", "uint64_t"}
@@ -166,11 +166,16 @@ def command_graph(tree):
             branches = branches[len(operands) - 1:]
             operands = operands[-1:]
         if operands and len(branches) > 1:
-            if has_continuation(operands[0]):
-                raise ValueError(f"Ambiguous sibling operands after {name!r}")
             operand = operands[0]
-            prefix.append(Token.operand(operand))
-            branches.remove(operand)
+            has_syntax = any(child.tag in SYNTAX_TAGS for child in operand)
+            if has_syntax:
+                raise ValueError(f"Ambiguous sibling operands after {name!r}")
+            operand_actions = operand.findall("action")
+            if not operand_actions or (not actions and branches[0] is operand):
+                if operand_actions:
+                    alternatives.append(END)
+                prefix.append(Token.operand(operand))
+                branches.remove(operand)
 
         alternatives.extend(walk(child, groups) for child in branches)
         if not alternatives:

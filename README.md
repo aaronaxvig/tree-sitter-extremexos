@@ -39,25 +39,19 @@ The generated syntax tree names each command by its leading keyword and gives op
 
 Run the converter's tests with `python3 -B -m unittest discover -s test/tools`.
 
-### Update first-level keywords
+### Regenerate syntax from CLI XML
 
-The importer reads the CLI XML files in an extracted `config/clidef` directory and writes first-level keyword lists to `grammar/<verb>/keywords.js`. It derives the verb list from the generated parser. The VS Code grammar derives its keyword patterns from the same parser rules.
+Supply an extracted `config/clidef` directory to regenerate the first-level keywords and detailed command families. The importer reads the XML on the local machine and merges definitions of the same command from different XML files. It writes detailed files to `grammar/<verb>/<topic>.js` and keyword lists to `grammar/<verb>/keywords.js`.
 
 ```sh
-npm run generate
-python3 -B -m tools.import_topics /path/to/config/clidef
+python3 -B -m tools.import_grammar /path/to/config/clidef
 npm run generate
 npm --prefix editors/vscode run generate
-```
-
-### Add syntax to the main grammar
-
-Keep each topic in a JavaScript file named for its command, such as [configure NTP](grammar/configure/ntp.js) or [show TWAMP](grammar/show/twamp.js). Use the standalone XML converter to inspect syntax, then review a small batch of direct Tree-sitter rules and corpus cases before adding it to the main parser.
-
-Share repeated continuations within the topic. Test complete commands, unfinished commands, and unfamiliar arguments at the deepest recognized branch.
-
-```sh
-npm run generate
 npm test
-npm --prefix editors/vscode run generate
+git add -N grammar/
+git diff
 ```
+
+[`grammar/import.json`](grammar/import.json) defines which verb and topic pairs receive detailed rules in the standard build. Add pairs there to expand coverage and run the same commands. The importer also supports `--all` to emit every available family. Building that larger parser can take substantially longer. An unsupported XML definition stops the import before generated files are changed.
+
+Generated trees expose a named node for each verb and topic and named fields derived from XML operands. If several operand names share the same lexical position, the field is named `argument`. Subcommand keywords are literal tokens within the family node. VS Code follows the same shared continuation rules for highlighting.

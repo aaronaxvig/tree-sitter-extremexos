@@ -17,51 +17,39 @@ unconfigure netlogin ports all authentication mode
   (command
     (configure_command
       (configure_netlogin
-        (configure_netlogin_dot1x
-          (configure_netlogin_dot1x_ports
-            (configure_netlogin_dot1x_timers
-              (word_or_string
-                (word))
-              (word_or_string
-                (word))))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_netlogin)))
   (command
     (configure_command
       (configure_netlogin
-        (configure_netlogin_dot1x))))
+        (word_or_string
+          (string))
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_netlogin)))
   (command
     (configure_command
       (configure_netlogin
-        (configure_netlogin_authentication
-          (configure_netlogin_authentication_service_unavailable
-            (word_or_string
-              (string))
-            (word_or_string
-              (word)))))))
-  (command
-    (configure_command
-      (configure_netlogin
-        (configure_netlogin_authentication
-          (configure_netlogin_authentication_protocol_order)))))
-  (command
-    (configure_command
-      (configure_netlogin
-        (configure_netlogin_ports
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (enable_command
       (enable_netlogin
-        (enable_netlogin_ports
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (disable_command
-      (disable_netlogin
-        (disable_netlogin_dot1x))))
+      (disable_netlogin)))
   (command
     (unconfigure_command
-      (unconfigure_netlogin
-        (unconfigure_netlogin_ports)))))
+      (unconfigure_netlogin))))
 
 ================================================================================
 NetLogin sessions, local users, and incomplete commands
@@ -84,61 +72,50 @@ configure netlogin dot1x ports all timers quiet-period
   (command
     (show_command
       (show_netlogin
-        (show_netlogin_session
-          (word_or_string
-            (word))))))
+        (word_or_string
+          (word)))))
   (command
     (clear_command
       (clear_netlogin
-        (clear_netlogin_state
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string)))))
   (command
     (create_command
       (create_netlogin
-        (create_netlogin_local_user
-          (word_or_string
-            (string))
-          (word_or_string
-            (string))
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string))
+        (word_or_string
+          (string))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_netlogin
-        (configure_netlogin_local_user
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string)))))
   (command
     (delete_command
       (delete_netlogin
-        (delete_netlogin_local_user
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string)))))
   (command
     (debug_command
       (debug_netlogin
-        (debug_netlogin_show
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_netlogin
-        (configure_netlogin_ports
-          (word_or_string
-            (word))
-          (word_or_string
-            (string))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (show_command
-      (show_netlogin
-        (show_netlogin_session))))
+      (show_netlogin)))
   (command
     (enable_command
       (enable_netlogin)))
   (command
     (configure_command
-      (configure_netlogin
-        (configure_netlogin_dot1x
-          (configure_netlogin_dot1x_ports
-            (configure_netlogin_dot1x_timers)))))))
+      (configure_netlogin))))

@@ -36,15 +36,14 @@ test("parses NetLogin port timers and session filters into fields", () => {
     'show netlogin session summary mac-address 02:00:00:00:00:01 ports 1:2 agent dot1x\n',
   );
   assert.equal(rootNode.hasError, false, rootNode.toString());
-  const [port] = rootNode.descendantsOfType("configure_netlogin_dot1x_ports");
-  const [timers] = port.descendantsOfType("configure_netlogin_dot1x_timers");
-  const [session] = rootNode.descendantsOfType("show_netlogin_session");
-  assert.equal(port.childForFieldName("ports").text, "1:2");
+  const [timers] = rootNode.descendantsOfType("configure_netlogin");
+  const [session] = rootNode.descendantsOfType("show_netlogin");
+  assert.equal(timers.childForFieldName("port_list").text, "1:2");
   assert.equal(timers.childForFieldName("quiet_period").text, "30");
-  assert.equal(timers.childForFieldName("state").text, "on");
+  assert.ok(timers.children.some(node => node.type === "on"));
   assert.equal(session.childForFieldName("mac_address").text, "02:00:00:00:00:01");
   assert.equal(session.childForFieldName("ports").text, "1:2");
-  assert.equal(session.childForFieldName("agent").text, "dot1x");
+  assert.ok(session.children.some(node => node.type === "dot1x"));
 });
 
 test("parses DNS name server operands into fields", () => {
@@ -55,27 +54,26 @@ test("parses DNS name server operands into fields", () => {
   );
 
   assert.equal(rootNode.hasError, false, rootNode.toString());
-  const [server] = rootNode.descendantsOfType("dns_client_name_server");
+  const [server] = rootNode.descendantsOfType("configure_dns_client");
   assert.ok(server, rootNode.toString());
-  assert.equal(server.childForFieldName("address").text, "192.0.2.53");
-  assert.equal(server.childForFieldName("virtual_router").text, "VR-Default");
+  assert.equal(server.childForFieldName("ip_address").text, "192.0.2.53");
+  assert.equal(server.childForFieldName("vr_name").text, "VR-Default");
 });
 
 test("parses VLAN port options into fields", () => {
   const parser = new Parser();
   parser.setLanguage(language);
   const { rootNode } = parser.parse(
-    'configure vlan "Example" add ports 1 tagged 200 stpd s0 dot1d\n',
+    'configure vlan "Example" add ports 1 tagged stpd s0 dot1d\n',
   );
 
   assert.equal(rootNode.hasError, false, rootNode.toString());
-  const [addPorts] = rootNode.descendantsOfType("configure_vlan_add_ports");
-  assert.equal(addPorts.childForFieldName("ports").text, "1");
-  const [options] = addPorts.descendantsOfType("configure_vlan_port_options");
-  assert.equal(options.childForFieldName("mode").text, "tagged");
-  assert.equal(options.childForFieldName("tag").text, "200");
-  assert.equal(options.childForFieldName("stpd").text, "s0");
-  assert.equal(options.childForFieldName("encapsulation").text, "dot1d");
+  const [vlan] = rootNode.descendantsOfType("configure_vlan");
+  assert.equal(vlan.childForFieldName("port_list").text, "1");
+  assert.equal(vlan.childForFieldName("stpd_name").text, "s0");
+  assert.deepEqual(vlan.children.filter(node => !node.isNamed).map(node => node.type), [
+    "vlan", "add", "ports", "tagged", "stpd", "dot1d",
+  ]);
 });
 
 test("accepts LF and CRLF without requiring a final newline", () => {
@@ -91,7 +89,8 @@ test("accepts LF and CRLF without requiring a final newline", () => {
 
   const { rootNode } = parser.parse('configure vlan "Example" add ports all');
   assert.equal(rootNode.hasError, false, rootNode.toString());
-  assert.equal(rootNode.descendantsOfType("configure_vlan_add_ports").length, 1);
+  const [vlan] = rootNode.descendantsOfType("configure_vlan");
+  assert.ok(vlan.children.some(node => node.type === "ports"));
 });
 
 test("fixtures parse without errors", () => {

@@ -12,27 +12,24 @@ configure ntp restrict-list add 192.0.2.0 255.255.255.0 permit
   (command
     (configure_command
       (configure_ntp
-        (configure_ntp_server
-          (configure_ntp_add
-            argument: (word_or_string (word))
-            (configure_ntp_add_key
-              keyid: (word_or_string (word))
-              (configure_ntp_add_key_vr
-                vr_name: (word_or_string (word)))))))))
+        argument: (word_or_string
+          (word))
+        keyid: (word_or_string
+          (word))
+        vr_name: (word_or_string
+          (word)))))
   (command
     (configure_command
       (configure_ntp
-        (configure_ntp_peer
-          (configure_ntp_delete
-            argument: (word_or_string (string)))))))
+        argument: (word_or_string
+          (string)))))
   (command
     (configure_command
       (configure_ntp
-        (configure_ntp_restrict_list
-          (configure_ntp_restrict_list_add
-            network: (word_or_string (word))
-            mask: (word_or_string (word))
-            (configure_ntp_restrict_list_permit)))))))
+        network: (word_or_string
+          (word))
+        mask: (word_or_string
+          (word))))))
 
 ================================================================================
 Partial NTP commands and unknown options retain their context
@@ -47,14 +44,16 @@ configure ntp server-next
 (source_file
   (command
     (configure_command
-      (configure_ntp
-        (configure_ntp_server (configure_ntp_add)))))
+      (configure_ntp)))
   (command
     (configure_command
       (configure_ntp
-        (configure_ntp_server
-          (word_or_string (word))
-          (word_or_string (string))))))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (configure_command
-      (configure_ntp (word_or_string (word))))))
+      (configure_ntp
+        (word_or_string
+          (word))))))

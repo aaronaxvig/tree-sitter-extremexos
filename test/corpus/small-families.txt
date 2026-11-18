@@ -16,16 +16,56 @@ show elsm ports all
 ---
 
 (source_file
-  (command (show_command (show_automation (show_automation_edge (show_automation_edge_devices (word_or_string (word)))))))
-  (command (configure_command (configure_twamp (configure_twamp_add (configure_twamp_endpoint (configure_twamp_endpoint_ipaddress (word_or_string (word)) (configure_twamp_endpoint_port (word_or_string (word)))))))))
-  (command (configure_command (configure_twamp (configure_twamp_reflector (configure_twamp_reflector_sessions (word_or_string (word)) (configure_twamp_reflector_timeout (word_or_string (word))))))))
-  (command (enable_command (enable_twamp (enable_twamp_reflector))))
-  (command (disable_command (disable_twamp (disable_twamp_reflector))))
-  (command (configure_command (configure_elsm (configure_elsm_ports (word_or_string (word)) (configure_elsm_ports_hellotime (word_or_string (word)))))))
-  (command (clear_command (clear_elsm (clear_elsm_ports (word_or_string (word))))))
-  (command (enable_command (enable_elsm (enable_elsm_ports (word_or_string (word))))))
-  (command (disable_command (disable_elsm (disable_elsm_ports (word_or_string (word))))))
-  (command (show_command (show_elsm (show_elsm_ports)))))
+  (command
+    (show_command
+      (show_automation
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_twamp
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_twamp
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
+  (command
+    (enable_command
+      (enable_twamp)))
+  (command
+    (disable_command
+      (disable_twamp)))
+  (command
+    (configure_command
+      (configure_elsm
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
+  (command
+    (clear_command
+      (clear_elsm
+        (word_or_string
+          (word)))))
+  (command
+    (enable_command
+      (enable_elsm
+        (word_or_string
+          (word)))))
+  (command
+    (disable_command
+      (disable_elsm
+        (word_or_string
+          (word)))))
+  (command
+    (show_command
+      (show_elsm))))
 
 ================================================================================
 Telnet and DoS protection options
@@ -42,13 +82,31 @@ show dos-protect detail
 ---
 
 (source_file
-  (command (configure_command (configure_telnet (configure_telnet_access_profile (configure_telnet_access_profile_add (word_or_string (string)) (word_or_string (string)))))))
-  (command (configure_command (configure_telnet (configure_telnet_port))))
-  (command (debug_command (debug_telnetd (debug_telnetd_show))))
-  (command (configure_command (configure_dos_protect (configure_dos_protect_trusted_ports (configure_dos_protect_trusted_ports_add)))))
-  (command (configure_command (configure_dos_protect (configure_dos_protect_type (configure_dos_protect_l3_protect)))))
-  (command (enable_command (enable_dos_protect)))
-  (command (show_command (show_dos_protect))))
+  (command
+    (configure_command
+      (configure_telnet
+        (word_or_string
+          (string))
+        (word_or_string
+          (string)))))
+  (command
+    (configure_command
+      (configure_telnet)))
+  (command
+    (debug_command
+      (debug_telnetd)))
+  (command
+    (configure_command
+      (configure_dos_protect)))
+  (command
+    (configure_command
+      (configure_dos_protect)))
+  (command
+    (enable_command
+      (enable_dos_protect)))
+  (command
+    (show_command
+      (show_dos_protect))))
 
 ================================================================================
 Keychain and database commands with quoted names and incomplete options
@@ -70,15 +128,79 @@ delete database "Example DB"
 ---
 
 (source_file
-  (command (create_command (create_keychain (word_or_string (string)))))
-  (command (configure_command (configure_keychain (word_or_string (string)) (configure_keychain_key (word_or_string (word)) (configure_keychain_hash_algorithm)))))
-  (command (configure_command (configure_keychain (word_or_string (string)) (configure_keychain_add (word_or_string (word)) (configure_keychain_key_string (word_or_string (string)) (configure_keychain_active_lifetime (configure_keychain_active_lifetime_start (word_or_string (word)) (configure_keychain_active_lifetime_duration))))))))
-  (command (show_command (show_keychain (word_or_string (string)))))
-  (command (delete_command (delete_keychain (word_or_string (string)))))
-  (command (create_command (create_database (word_or_string (string)))))
-  (command (configure_command (configure_database (word_or_string (string)) (configure_database_add (configure_database_add_server (word_or_string (word)) (word_or_string (word)))))))
-  (command (configure_command (configure_database (word_or_string (string)) (configure_database_delete (configure_database_delete_server)))))
-  (command (configure_command (configure_database (word_or_string (string)) (configure_database_add (configure_database_add_server)))))
-  (command (configure_command (configure_database (word_or_string (string)) (word_or_string (word)) (word_or_string (string)))))
-  (command (show_command (show_database (word_or_string (string)))))
-  (command (delete_command (delete_database (word_or_string (string))))))
+  (command
+    (create_command
+      (create_keychain
+        (word_or_string
+          (string)))))
+  (command
+    (configure_command
+      (configure_keychain
+        (word_or_string
+          (string))
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_keychain
+        (word_or_string
+          (string))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string))
+        (word_or_string
+          (word)))))
+  (command
+    (show_command
+      (show_keychain
+        (word_or_string
+          (string)))))
+  (command
+    (delete_command
+      (delete_keychain
+        (word_or_string
+          (string)))))
+  (command
+    (create_command
+      (create_database
+        (word_or_string
+          (string)))))
+  (command
+    (configure_command
+      (configure_database
+        (word_or_string
+          (string))
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
+  (command
+    (configure_command
+      (configure_database
+        (word_or_string
+          (string)))))
+  (command
+    (configure_command
+      (configure_database
+        (word_or_string
+          (string)))))
+  (command
+    (configure_command
+      (configure_database
+        (word_or_string
+          (string))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
+  (command
+    (show_command
+      (show_database
+        (word_or_string
+          (string)))))
+  (command
+    (delete_command
+      (delete_database
+        (word_or_string
+          (string))))))
