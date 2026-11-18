@@ -1,0 +1,18 @@
+================================================================================
+Full import exposes EDP port and neighbor operands
+================================================================================
+
+show edp ports 1:2 detail
+show edp ports all vlan-id neighbor 123
+
+---
+
+(source_file
+  (command
+    (show_command
+      (show_edp
+        ports: (word_or_string (word)))))
+  (command
+    (show_command
+      (show_edp
+        neighbor_id: (word_or_string (word))))))
