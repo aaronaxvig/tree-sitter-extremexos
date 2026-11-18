@@ -2,7 +2,7 @@
 
 A [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) grammar for configuration files and CLI command lists for Extreme Networks switches running ExtremeXOS.
 
-The grammar provides named nodes for module headers, comments, and the top-level verbs reported by ExtremeXOS tab completion. Verbs such as `cd`, `show`, and `save` have named nodes with generic arguments. First-level `configure` topics have stable `configure_*` nodes, with more detailed parsing for selected command families.
+The grammar provides named nodes for module headers, comments, and the top-level verbs reported by ExtremeXOS tab completion. Verbs such as `cd`, `show`, and `save` have named nodes with generic arguments. First-level `configure` and `enable` topics have stable `configure_*` and `enable_*` nodes, with more detailed parsing for selected `configure` families.
 
 ## Scope
 

@@ -3312,7 +3312,1781 @@
     }
   },
   {
+    "type": "enable_access_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_account",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_bfd",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_bootp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_bootprelay",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_cdp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_cfm",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_clear_flow",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_cli",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_cli_config_logging",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_clipaging",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "enable_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "enable_access_list",
+          "named": true
+        },
+        {
+          "type": "enable_account",
+          "named": true
+        },
+        {
+          "type": "enable_bfd",
+          "named": true
+        },
+        {
+          "type": "enable_bootp",
+          "named": true
+        },
+        {
+          "type": "enable_bootprelay",
+          "named": true
+        },
+        {
+          "type": "enable_cdp",
+          "named": true
+        },
+        {
+          "type": "enable_cfm",
+          "named": true
+        },
+        {
+          "type": "enable_clear_flow",
+          "named": true
+        },
+        {
+          "type": "enable_cli",
+          "named": true
+        },
+        {
+          "type": "enable_cli_config_logging",
+          "named": true
+        },
+        {
+          "type": "enable_clipaging",
+          "named": true
+        },
+        {
+          "type": "enable_cpu_monitoring",
+          "named": true
+        },
+        {
+          "type": "enable_dhcp",
+          "named": true
+        },
+        {
+          "type": "enable_diffserv",
+          "named": true
+        },
+        {
+          "type": "enable_dos_protect",
+          "named": true
+        },
+        {
+          "type": "enable_dot1p",
+          "named": true
+        },
+        {
+          "type": "enable_eaps",
+          "named": true
+        },
+        {
+          "type": "enable_edp",
+          "named": true
+        },
+        {
+          "type": "enable_elrp_client",
+          "named": true
+        },
+        {
+          "type": "enable_elsm",
+          "named": true
+        },
+        {
+          "type": "enable_erps",
+          "named": true
+        },
+        {
+          "type": "enable_esrp",
+          "named": true
+        },
+        {
+          "type": "enable_ethernet",
+          "named": true
+        },
+        {
+          "type": "enable_fdb",
+          "named": true
+        },
+        {
+          "type": "enable_fip",
+          "named": true
+        },
+        {
+          "type": "enable_flooding",
+          "named": true
+        },
+        {
+          "type": "enable_flow_control",
+          "named": true
+        },
+        {
+          "type": "enable_generic",
+          "named": true
+        },
+        {
+          "type": "enable_icmp",
+          "named": true
+        },
+        {
+          "type": "enable_identity_management",
+          "named": true
+        },
+        {
+          "type": "enable_idletimeout",
+          "named": true
+        },
+        {
+          "type": "enable_igmp",
+          "named": true
+        },
+        {
+          "type": "enable_inline_power",
+          "named": true
+        },
+        {
+          "type": "enable_ip_fix",
+          "named": true
+        },
+        {
+          "type": "enable_ip_option",
+          "named": true
+        },
+        {
+          "type": "enable_ip_security",
+          "named": true
+        },
+        {
+          "type": "enable_iparp",
+          "named": true
+        },
+        {
+          "type": "enable_ipforwarding",
+          "named": true
+        },
+        {
+          "type": "enable_ipmcforwarding",
+          "named": true
+        },
+        {
+          "type": "enable_iproute",
+          "named": true
+        },
+        {
+          "type": "enable_irdp",
+          "named": true
+        },
+        {
+          "type": "enable_jumbo_frame",
+          "named": true
+        },
+        {
+          "type": "enable_learning",
+          "named": true
+        },
+        {
+          "type": "enable_led",
+          "named": true
+        },
+        {
+          "type": "enable_license",
+          "named": true
+        },
+        {
+          "type": "enable_lldp",
+          "named": true
+        },
+        {
+          "type": "enable_log",
+          "named": true
+        },
+        {
+          "type": "enable_loopback_mode",
+          "named": true
+        },
+        {
+          "type": "enable_mac_lockdown_timeout",
+          "named": true
+        },
+        {
+          "type": "enable_mac_locking",
+          "named": true
+        },
+        {
+          "type": "enable_mirror",
+          "named": true
+        },
+        {
+          "type": "enable_mlag",
+          "named": true
+        },
+        {
+          "type": "enable_mld",
+          "named": true
+        },
+        {
+          "type": "enable_mvr",
+          "named": true
+        },
+        {
+          "type": "enable_mvrp",
+          "named": true
+        },
+        {
+          "type": "enable_neighbor_discovery",
+          "named": true
+        },
+        {
+          "type": "enable_netlogin",
+          "named": true
+        },
+        {
+          "type": "enable_ntp",
+          "named": true
+        },
+        {
+          "type": "enable_pim",
+          "named": true
+        },
+        {
+          "type": "enable_policy",
+          "named": true
+        },
+        {
+          "type": "enable_ports",
+          "named": true
+        },
+        {
+          "type": "enable_radius",
+          "named": true
+        },
+        {
+          "type": "enable_radius_accounting",
+          "named": true
+        },
+        {
+          "type": "enable_rip",
+          "named": true
+        },
+        {
+          "type": "enable_ripng",
+          "named": true
+        },
+        {
+          "type": "enable_rmon",
+          "named": true
+        },
+        {
+          "type": "enable_router_discovery",
+          "named": true
+        },
+        {
+          "type": "enable_sflow",
+          "named": true
+        },
+        {
+          "type": "enable_sharing",
+          "named": true
+        },
+        {
+          "type": "enable_smartredundancy",
+          "named": true
+        },
+        {
+          "type": "enable_snmp",
+          "named": true
+        },
+        {
+          "type": "enable_snmpv3",
+          "named": true
+        },
+        {
+          "type": "enable_sntp_client",
+          "named": true
+        },
+        {
+          "type": "enable_ssh2",
+          "named": true
+        },
+        {
+          "type": "enable_stacking",
+          "named": true
+        },
+        {
+          "type": "enable_stpd",
+          "named": true
+        },
+        {
+          "type": "enable_subvlan_proxy_arp",
+          "named": true
+        },
+        {
+          "type": "enable_syslog",
+          "named": true
+        },
+        {
+          "type": "enable_tacacs",
+          "named": true
+        },
+        {
+          "type": "enable_tacacs_accounting",
+          "named": true
+        },
+        {
+          "type": "enable_tacacs_authorization",
+          "named": true
+        },
+        {
+          "type": "enable_tech_support",
+          "named": true
+        },
+        {
+          "type": "enable_telnet",
+          "named": true
+        },
+        {
+          "type": "enable_twamp",
+          "named": true
+        },
+        {
+          "type": "enable_udp_echo_server",
+          "named": true
+        },
+        {
+          "type": "enable_upm",
+          "named": true
+        },
+        {
+          "type": "enable_vlan",
+          "named": true
+        },
+        {
+          "type": "enable_vm_tracking",
+          "named": true
+        },
+        {
+          "type": "enable_vman",
+          "named": true
+        },
+        {
+          "type": "enable_watchdog",
+          "named": true
+        },
+        {
+          "type": "enable_web",
+          "named": true
+        },
+        {
+          "type": "enable_xml_mode",
+          "named": true
+        },
+        {
+          "type": "enable_xml_notification",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_cpu_monitoring",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_dhcp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_diffserv",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_dos_protect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_dot1p",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_eaps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_edp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_elrp_client",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_elsm",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_erps",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_esrp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ethernet",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_fdb",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_fip",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_flooding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_flow_control",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_generic",
+    "named": true,
+    "fields": {
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_icmp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_identity_management",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_idletimeout",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_igmp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_inline_power",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ip_fix",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ip_option",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ip_security",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_iparp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ipforwarding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ipmcforwarding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_iproute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_irdp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_jumbo_frame",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_learning",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_led",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_license",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_lldp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_log",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_loopback_mode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mac_lockdown_timeout",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mac_locking",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mirror",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mlag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mld",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mvr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_mvrp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_neighbor_discovery",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_netlogin",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ntp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_pim",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_policy",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ports",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_radius",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_radius_accounting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_rip",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ripng",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_rmon",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_router_discovery",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_sflow",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_sharing",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_smartredundancy",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_snmp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_snmpv3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_sntp_client",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_ssh2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_stacking",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_stpd",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_subvlan_proxy_arp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_syslog",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_tacacs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_tacacs_accounting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_tacacs_authorization",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_tech_support",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_telnet",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_twamp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_udp_echo_server",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_upm",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_vlan",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_vm_tracking",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_vman",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_watchdog",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_web",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_xml_mode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enable_xml_notification",
     "named": true,
     "fields": {},
     "children": {
@@ -4065,6 +5839,10 @@
     "named": false
   },
   {
+    "type": "bootp",
+    "named": false
+  },
+  {
     "type": "bootprelay",
     "named": false
   },
@@ -4089,7 +5867,19 @@
     "named": false
   },
   {
+    "type": "clear-flow",
+    "named": false
+  },
+  {
     "type": "cli",
+    "named": false
+  },
+  {
+    "type": "cli-config-logging",
+    "named": false
+  },
+  {
+    "type": "clipaging",
     "named": false
   },
   {
@@ -4106,6 +5896,10 @@
   },
   {
     "type": "cp",
+    "named": false
+  },
+  {
+    "type": "cpu-monitoring",
     "named": false
   },
   {
@@ -4225,6 +6019,10 @@
     "named": false
   },
   {
+    "type": "ethernet",
+    "named": false
+  },
+  {
     "type": "exit",
     "named": false
   },
@@ -4241,6 +6039,14 @@
     "named": false
   },
   {
+    "type": "flooding",
+    "named": false
+  },
+  {
+    "type": "flow-control",
+    "named": false
+  },
+  {
     "type": "flow-redirect",
     "named": false
   },
@@ -4250,6 +6056,10 @@
   },
   {
     "type": "history",
+    "named": false
+  },
+  {
+    "type": "icmp",
     "named": false
   },
   {
@@ -4282,6 +6092,10 @@
   },
   {
     "type": "ip-mtu",
+    "named": false
+  },
+  {
+    "type": "ip-option",
     "named": false
   },
   {
@@ -4321,6 +6135,10 @@
     "named": false
   },
   {
+    "type": "jumbo-frame",
+    "named": false
+  },
+  {
     "type": "jumbo-frame-size",
     "named": false
   },
@@ -4341,6 +6159,18 @@
     "named": false
   },
   {
+    "type": "learning",
+    "named": false
+  },
+  {
+    "type": "led",
+    "named": false
+  },
+  {
+    "type": "license",
+    "named": false
+  },
+  {
     "type": "lldp",
     "named": false
   },
@@ -4354,6 +6184,10 @@
   },
   {
     "type": "logout",
+    "named": false
+  },
+  {
+    "type": "loopback-mode",
     "named": false
   },
   {
@@ -4553,6 +6387,10 @@
     "named": false
   },
   {
+    "type": "rmon",
+    "named": false
+  },
+  {
     "type": "router-discovery",
     "named": false
   },
@@ -4605,6 +6443,10 @@
     "named": false
   },
   {
+    "type": "smartredundancy",
+    "named": false
+  },
+  {
     "type": "snmp",
     "named": false
   },
@@ -4653,6 +6495,10 @@
     "named": false
   },
   {
+    "type": "subvlan-proxy-arp",
+    "named": false
+  },
+  {
     "type": "synchronize",
     "named": false
   },
@@ -4686,6 +6532,10 @@
   },
   {
     "type": "tacacs-accounting",
+    "named": false
+  },
+  {
+    "type": "tacacs-authorization",
     "named": false
   },
   {
@@ -4738,6 +6588,10 @@
   },
   {
     "type": "twamp",
+    "named": false
+  },
+  {
+    "type": "udp-echo-server",
     "named": false
   },
   {
@@ -4805,12 +6659,20 @@
     "named": false
   },
   {
+    "type": "watchdog",
+    "named": false
+  },
+  {
     "type": "web",
     "named": false
   },
   {
     "type": "word",
     "named": true
+  },
+  {
+    "type": "xml-mode",
+    "named": false
   },
   {
     "type": "xml-notification",

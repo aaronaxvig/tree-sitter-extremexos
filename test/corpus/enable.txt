@@ -1,0 +1,66 @@
+================================================================================
+Known enable topics and generic operands
+================================================================================
+
+enable bootp
+enable bootprelay
+enable cli-config-logging
+enable ip-security
+enable mac-lockdown-timeout
+enable snmp
+enable snmpv3
+enable tacacs-authorization
+enable vlan "Example"
+
+---
+
+(source_file
+  (command
+    (enable_command (enable_bootp)))
+  (command
+    (enable_command (enable_bootprelay)))
+  (command
+    (enable_command (enable_cli_config_logging)))
+  (command
+    (enable_command (enable_ip_security)))
+  (command
+    (enable_command (enable_mac_lockdown_timeout)))
+  (command
+    (enable_command (enable_snmp)))
+  (command
+    (enable_command (enable_snmpv3)))
+  (command
+    (enable_command (enable_tacacs_authorization)))
+  (command
+    (enable_command (enable_vlan (word_or_string (string))))))
+
+================================================================================
+Dynamic, unknown, and unfinished enable targets
+================================================================================
+
+enable "Example"
+enable ExampleVR future-option "value"
+enable ssh2-extra
+enable "ssh2"
+enable
+
+---
+
+(source_file
+  (command
+    (enable_command
+      (enable_generic (word_or_string (string)))))
+  (command
+    (enable_command
+      (enable_generic
+        (word_or_string (word))
+        (word_or_string (word))
+        (word_or_string (string)))))
+  (command
+    (enable_command
+      (enable_generic (word_or_string (word)))))
+  (command
+    (enable_command
+      (enable_generic (word_or_string (string)))))
+  (command
+    (enable_command)))

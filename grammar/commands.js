@@ -1,8 +1,8 @@
 // Top-level EXOS verbs whose operands are still parsed generically.
-// Configure has its own rule for command families.
+// Configure and enable have dedicated family rules.
 const verbs = [
   'cd', 'check', 'clear', 'cp', 'create', 'debug', 'delete', 'disable',
-  'download', 'edit', 'enable', 'exit', 'history', 'install', 'load', 'logout',
+  'download', 'edit', 'exit', 'history', 'install', 'load', 'logout',
   'ls', 'mkdir', 'mrinfo', 'mtrace', 'mv', 'nslookup', 'ping', 'pwd', 'quit',
   'reboot', 'refresh', 'reset', 'restart', 'rm', 'rmdir', 'rtlookup', 'run',
   'save', 'scp2', 'show', 'ssh2', 'start', 'synchronize', 'telnet', 'terminate',

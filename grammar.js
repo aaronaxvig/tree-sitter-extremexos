@@ -11,6 +11,7 @@ const commands = require('./grammar/commands');
 const configureTopics = require('./grammar/configure/topics');
 const diagnostics = require('./grammar/configure/diagnostics');
 const dnsClient = require('./grammar/configure/dns-client');
+const enableTopics = require('./grammar/enable/topics');
 const snmp = require('./grammar/configure/snmp');
 const sntpClient = require('./grammar/configure/sntp-client');
 const sysRecovery = require('./grammar/configure/sys-recovery-level');
@@ -43,6 +44,7 @@ module.exports = grammar({
 
     command: $ => choice(
       $.configure_command,
+      $.enable_command,
       ...commands.verbs.map(verb => $[commands.ruleName(verb)]),
       $.generic_command,
     ),
@@ -75,6 +77,7 @@ module.exports = grammar({
     ...sysRecovery.rules(),
     ...vlan.rules(),
 
+    ...enableTopics.rules(),
     ...commands.rules(),
 
     // Retain unknown EXOS commands losslessly while the detailed grammar grows.

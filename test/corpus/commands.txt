@@ -56,7 +56,7 @@ configure ssh2 example
   (command
     (show_command (word_or_string (word))))
   (command
-    (enable_command (word_or_string (word))))
+    (enable_command (enable_ssh2)))
   (command
     (configure_command
       (configure_ssh2 (word_or_string (word))))))
