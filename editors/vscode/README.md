@@ -19,4 +19,4 @@ The fence aliases `exosconfig` and `extremexos` also work. The editor accepts `l
 
 Run `npx @vscode/vsce package` from this directory. In VS Code, open the Command Palette and choose **Extensions: Install from VSIX...**, then select the generated package.
 
-The TextMate grammar derives verbs, topics, and known subcommand keywords from the generated Tree-sitter grammar. After changing parser rules, run `npm run generate` at the repository root, then run it again in this directory to update the highlighting grammar. Packaging also refreshes the highlighting grammar.
+The TextMate grammar reads the same generated command rules as Tree-sitter. From the repository root, run `python3 -B -m tools.import_grammar /path/to/config/clidef --all` to include every available family in the extension. Then package the extension from this directory. Packaging refreshes the highlighting grammar directly from those rules.

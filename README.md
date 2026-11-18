@@ -54,8 +54,8 @@ flowchart TD
     Grammar --> Generate["npm run generate"]
     Generate --> Parser["src/parser.c and src/node-types.json<br/>Parser and node types"]
     Generate --> Rules["src/grammar.json<br/>Tree-sitter rule definitions"]
-    Rules --> Editor["npm --prefix editors/vscode run generate"]
-    Details -.->|Detailed family index| Editor
+    Keywords --> Editor["npm --prefix editors/vscode run generate"]
+    Details --> Editor
     Editor --> TextMate["extremexos.tmLanguage.json<br/>Highlighting for VS Code files and Markdown fences"]
 ```
 
@@ -68,6 +68,10 @@ git add -N grammar/
 git diff
 ```
 
-[`grammar/import.json`](grammar/import.json) defines which verb and topic pairs receive detailed rules in the standard build. Add pairs there to expand coverage and run the same commands. The importer also supports `--all` to emit every available family. Building that larger parser can take substantially longer. An unsupported XML definition stops the import before generated files are changed.
+[`grammar/import.json`](grammar/import.json) defines which verb and topic pairs receive detailed rules in the standard build. Add pairs there to expand coverage and run the same commands. An unsupported XML definition stops the import before generated files are changed.
+
+Pass `--all` to import every available family. VS Code highlighting can be generated or packaged immediately after the import. For a full Tree-sitter build, CLI 0.26.9 includes a [reachability performance fix](https://github.com/tree-sitter/tree-sitter/pull/5584) for large grammars. Keep targeting ABI 14 with `tree-sitter generate --abi 14`.
+
+Each import prints coverage counts and names any XML verbs missing from `grammar/import.json`. Add `--coverage coverage.json` to either import command for a sorted list of XML command prefixes with their status, reason, and source filenames. A prefix is a verb alone when it can end there, or a verb and its next keyword or operand. For example, `cd <directory>` receives generic operand handling. A skipped prefix has no corresponding imported rule and may still parse through a fallback. The report measures prefix coverage, not every possible complete command line.
 
 Generated trees expose a named node for each verb and topic and named fields derived from XML operands. If several operand names share the same lexical position, the field is named `argument`. Subcommand keywords are literal tokens within the family node. VS Code follows the same shared continuation rules for highlighting.

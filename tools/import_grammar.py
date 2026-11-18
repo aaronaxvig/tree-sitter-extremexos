@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 from xml.etree import ElementTree as ET
 
-from .clidef_to_grammar import DEAD_END, SYNTAX_TAGS, command_graph, identifier, static_choices
+from .clidef_to_grammar import DEAD_END, SYNTAX_TAGS, Token, command_graph, identifier, static_choices
 from .import_topics import GENERATED as KEYWORDS_MARKER
 from .import_topics import KEYWORD, ROOT, keyword_files, literal_topics
 
@@ -33,6 +33,7 @@ def read_module(path):
 def load_families(paths, verbs):
     families = defaultdict(list)
     keywords = defaultdict(set)
+    observed = defaultdict(set)
     errors = []
     for path in sorted(paths):
         try:
@@ -42,17 +43,50 @@ def load_families(paths, verbs):
             continue
         for verb, topic in literal_topics(tree, verbs):
             keywords[verb].add(topic)
+            observed[Token(verb), Token(topic)].add(path.name)
         for verb, branches in graph.transitions:
-            if verb.operand_type is not None or verb.name not in verbs:
-                continue
+            if branches.can_end:
+                observed[verb, None].add(path.name)
             for topic, state in branches.transitions:
-                if topic.operand_type is None and KEYWORD.fullmatch(topic.name):
+                observed[verb, topic].add(path.name)
+                if (
+                    verb.operand_type is None and verb.name in verbs
+                    and topic.operand_type is None and KEYWORD.fullmatch(topic.name)
+                ):
                     families[verb.name, topic.name].append((state, path.name, static))
-    return families, keywords, errors
+    return families, keywords, errors, observed
 
 
-def render_family(verb, topic, sources):
-    """Emit one rule per shared continuation without enumerating command paths."""
+def coverage_report(observed, verbs, keywords, selected, supplemental):
+    """Classify XML command prefixes against the rules emitted for this import."""
+    def spelling(token):
+        return token.name if token.operand_type is None else f"<{token.name}>"
+
+    rows = []
+    for (verb, topic), sources in observed.items():
+        command = spelling(verb)
+        if topic is not None:
+            command += " " + spelling(topic)
+        if verb.operand_type is not None:
+            status, reason = "skipped", "operand in verb position"
+        elif verb.name not in verbs:
+            status, reason = "skipped", "unregistered verb"
+        elif topic is None:
+            status, reason = "generic", "verb without arguments"
+        elif topic.operand_type is not None:
+            status, reason = "generic", "operand after verb"
+        elif (verb.name, topic.name) in selected:
+            status, reason = "detailed", "generated family"
+        elif topic.name in keywords.get(verb.name, ()) or topic.name in supplemental.get(verb.name, ()):
+            status, reason = "generic", "topic with generic arguments"
+        else:
+            status, reason = "skipped", "outside public topic list"
+        rows.append(dict(command=command, status=status, reason=reason, sources=sorted(sources)))
+    return sorted(rows, key=lambda row: (row["command"], row["reason"]))
+
+
+def render_family(verb, topic, sources, emitted):
+    """Emit one rule per distinct continuation, sharing them across families."""
     stem = f"{verb}_{topic.replace('-', '_')}"
     static = {path: choices for _, path, choices in sources}
     rules = {}
@@ -89,14 +123,16 @@ def render_family(verb, topic, sources):
         if None not in edges:
             branches.append("$._arguments")
         digest = hashlib.sha256("\n".join(branches).encode()).hexdigest()[:16]
-        name = f"_{stem}_{digest}"
-        rules[name] = branches
+        name = f"_continue_{digest}"
+        if name not in emitted:
+            rules[name] = branches
+            emitted.add(name)
         return name
 
     continuation = state_rule(tuple((state, path) for state, path, _ in sources))
     lines = [
         MARKER.rstrip(),
-        "const rules = () => ({",
+        "const rules = ({choice, field, optional, prec, seq} = globalThis) => ({",
         f"  {stem}: $ => seq({json.dumps(topic)}, optional($.{continuation})),",
     ]
     for name, branches in sorted(rules.items()):
@@ -112,9 +148,10 @@ def render_family(verb, topic, sources):
 
 def output_files(families):
     by_verb = defaultdict(list)
+    emitted = set()
     for (verb, topic), sources in sorted(families.items()):
         by_verb[verb].append(topic)
-        yield Path(verb, f"{topic}.js"), render_family(verb, topic, sources)
+        yield Path(verb, f"{topic}.js"), render_family(verb, topic, sources, emitted)
     index = [MARKER.rstrip(), "module.exports = {"]
     for verb, topics in sorted(by_verb.items()):
         index.append(f"  {json.dumps(verb)}: {{")
@@ -150,13 +187,15 @@ def main():
     parser.add_argument("directory", type=Path, help="Extracted config/clidef directory")
     parser.add_argument("--output", type=Path, default=ROOT / "grammar")
     parser.add_argument("--all", action="store_true", help="Generate detailed rules for every public family")
+    parser.add_argument("--coverage", type=Path, metavar="FILE", help="Write command prefix coverage and XML sources as JSON")
     options = parser.parse_args()
     paths = list(options.directory.glob("*.xml"))
     if not paths:
         parser.exit(1, f"No CLI XML files found in {options.directory}\n")
     try:
         config = json.loads((ROOT / "grammar/import.json").read_text())
-        families, keywords, errors = load_families(paths, set(config["verbs"]))
+        verbs = set(config["verbs"])
+        families, keywords, errors, observed = load_families(paths, verbs)
         if errors:
             parser.exit(1, "\n".join(errors) + "\n")
         detailed = {(verb, topic) for verb, topics in config["detailed"].items() for topic in topics}
@@ -164,10 +203,20 @@ def main():
             (verb, topic): sources for (verb, topic), sources in families.items()
             if topic in keywords[verb] and (options.all or (verb, topic) in detailed)
         }
+        rows = coverage_report(observed, verbs, keywords, selected, config["supplemental"])
         write_files(options.output, selected, keywords)
+        if options.coverage:
+            options.coverage.write_text(json.dumps(rows, indent=2) + "\n", encoding="utf-8")
     except (OSError, ValueError, RecursionError) as error:
         parser.exit(1, f"{error}\n")
     print(f"Generated {len(selected)} detailed command families from {len(paths)} XML files.")
+    for status in ("detailed", "generic", "skipped"):
+        print(f"{sum(row['status'] == status for row in rows)} {status} XML command prefixes")
+    unknown = sorted({verb.name for verb, _ in observed if verb.operand_type is None and verb.name not in verbs})
+    if unknown:
+        print("Unregistered XML verbs: " + ", ".join(unknown))
+    if not options.coverage:
+        print("Use --coverage FILE for command prefixes, reasons and source XML files.")
     if not options.all:
         for verb, topic in sorted(detailed - selected.keys()):
             print(f"No detailed definition for {verb} {topic} in supplied XML.")

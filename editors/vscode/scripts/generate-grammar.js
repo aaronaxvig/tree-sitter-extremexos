@@ -1,38 +1,25 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const {rules} = require('../../../src/grammar.json');
 const generated = require('../../../grammar/generated');
-const {topicName} = require('../../../grammar/commands');
+const {verbs, topicName, topicsFor} = require('../../../grammar/commands');
 
-function leadingKeywords(rule) {
-  if (!rule) return [];
-  switch (rule.type) {
-    case 'STRING':
-      return [rule.value];
-    case 'SEQ':
-      return leadingKeywords(rule.members[0]);
-    case 'CHOICE':
-      return rule.members.flatMap(leadingKeywords);
-    case 'SYMBOL':
-      return leadingKeywords(rules[rule.name]);
-    case 'PREC':
-    case 'PREC_LEFT':
-    case 'PREC_RIGHT':
-    case 'PREC_DYNAMIC':
-      return leadingKeywords(rule.content);
-    default:
-      return [];
-  }
-}
+// Read the same generated rules through a small adapter for their DSL.
+// Highlighting uses token order and can ignore field names and precedence.
+const dsl = {
+  choice: (...branches) => branches,
+  field: (_name, token) => token,
+  optional: continuation => continuation,
+  prec: (_precedence, branch) => branch,
+  seq: (token, following) => ({token, following}),
+};
+const symbols = new Proxy({}, {get: (_target, name) => ({name})});
+const rules = Object.assign({}, ...Object.values(generated).flatMap(families =>
+  Object.values(families).map(family => family.rules(dsl)),
+));
 
 const escapePattern = keyword => keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-function alternatives(rule) {
-  return [...new Set(leadingKeywords(rule))]
-    .sort()
-    .map(escapePattern)
-    .join('|');
-}
+const alternatives = words => words.map(escapePattern).join('|');
 
 const lineStart = String.raw`(?:^|\G)[ \t]*`;
 const wordEnd = String.raw`(?=[ \t]|$)`;
@@ -58,28 +45,23 @@ const operand = String.raw`(?:[^\s"']+|"(?:[^"\\\r\n]|\\.)*")`;
 const repository = {values: {patterns: valuePatterns}};
 const continuations = new Set();
 
-const choices = rule => rule.type === 'CHOICE' ? rule.members : [rule];
-const optionalContent = rule => choices(rule).find(member => member.type !== 'BLANK');
-
 function continuation(name) {
   if (name === '_arguments') return [];
   const include = {include: `#${name}`};
   if (continuations.has(name)) return [include];
   continuations.add(name);
-  const patterns = choices(rules[name]).flatMap(edge => {
-    const branch = edge.type === 'PREC' ? edge.content : edge;
-    if (branch.type === 'SYMBOL' && branch.name === '_arguments') return [];
-    const [label, following] = branch.members;
-    const token = label.type === 'FIELD' ? label.content : label;
-    const literal = token.type === 'STRING';
-    const pattern = literal ? escapePattern(token.value) : operand;
+  const patterns = [].concat(rules[name](symbols)).flatMap(branch => {
+    if (branch.name === '_arguments') return [];
+    const {token, following} = branch;
+    const literal = typeof token === 'string';
+    const pattern = literal ? escapePattern(token) : operand;
     const begin = String.raw`\G[ \t]+(${pattern})` + wordEnd;
     const capture = literal ? {name: optionScope} : {patterns: [values]};
     return [{
       begin,
       beginCaptures: {1: capture},
       end: '$',
-      patterns: [...continuation(optionalContent(following).name), values],
+      patterns: [...continuation(following.name), values],
     }];
   });
   repository[name] = {patterns};
@@ -93,18 +75,14 @@ const subcommandRules = Object.entries(generated).flatMap(([verb, families]) =>
     begin: `${lineStart}(${escapePattern(verb)})[ \\t]+(${escapePattern(topic)})${wordEnd}`,
     beginCaptures: {1: {name: commandScope}, 2: {name: topicScope}},
     end: '$',
-    patterns: [...continuation(optionalContent(rules[topicName(verb, topic)].members[1]).name), values],
+    patterns: [...continuation(rules[topicName(verb, topic)](symbols).following.name), values],
   })),
 );
-const topicRules = rules.command.members.flatMap(command => {
-  const rule = rules[command.name];
-  if (rule?.type !== 'SEQ') return [];
-  const [verb, argumentsRule] = rule.members;
-  if (verb.type !== 'STRING') return [];
-  const topics = alternatives(argumentsRule);
+const topicRules = verbs.flatMap(verb => {
+  const topics = alternatives(topicsFor(verb));
   if (!topics) return [];
   return [{
-    match: `${lineStart}(${escapePattern(verb.value)})[ \\t]+(${topics})${wordEnd}`,
+    match: `${lineStart}(${escapePattern(verb)})[ \\t]+(${topics})${wordEnd}`,
     captures: {
       1: {name: commandScope},
       2: {name: topicScope},
@@ -124,7 +102,7 @@ const grammar = {
     ...subcommandRules,
     ...topicRules,
     {
-      match: `${lineStart}(${alternatives(rules.command)})${wordEnd}`,
+      match: `${lineStart}(${alternatives(verbs)})${wordEnd}`,
       captures: {1: {name: commandScope}},
     },
     values,

@@ -25,4 +25,4 @@ const rules = () => Object.assign({}, ...verbs.map(verb => {
   };
 }));
 
-module.exports = {verbs, ruleName, topicName, rules};
+module.exports = {verbs, ruleName, topicName, topicsFor, rules};
