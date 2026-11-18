@@ -1,4 +1,6 @@
-// Top-level EXOS verbs whose operands are still parsed generically.
+const firmware = require('./firmware/rules');
+
+// Top-level EXOS verbs that share the argument and fallback rules.
 // Configure and enable have dedicated family rules.
 const verbs = [
   'cd', 'check', 'clear', 'cp', 'create', 'debug', 'delete', 'disable',
@@ -15,7 +17,7 @@ const ruleName = verb => `${verb}_command`;
 const rules = () => Object.fromEntries(
   verbs.map(verb => [
     ruleName(verb),
-    $ => seq(verb, optional($._arguments)),
+    $ => seq(verb, optional(firmware.commandArguments($, verb))),
   ]),
 );
 

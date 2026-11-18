@@ -1,0 +1,56 @@
+================================================================================
+Firmware-derived command syntax and operand fields
+================================================================================
+
+configure time 11 18 2026 10 30 00
+create keychain Example
+show twamp reflector
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_time
+        month: (word_or_string (word))
+        day: (word_or_string (word))
+        year: (word_or_string (word))
+        hour: (word_or_string (word))
+        min: (word_or_string (word))
+        sec: (word_or_string (word)))))
+  (command
+    (create_command
+      (keyword_keychain)
+      keychain_name: (word_or_string (word))))
+  (command
+    (show_command
+      (keyword_twamp)
+      (keyword_reflector))))
+
+================================================================================
+Firmware-derived syntax accepts incomplete and unfamiliar continuations
+================================================================================
+
+configure time 11 18
+show twamp endpoint future-option "Example"
+show twamp endpoint ipaddress
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_time
+        month: (word_or_string (word))
+        day: (word_or_string (word)))))
+  (command
+    (show_command
+      (keyword_twamp)
+      (keyword_endpoint)
+      (word_or_string (word))
+      (word_or_string (string))))
+  (command
+    (show_command
+      (keyword_twamp)
+      (keyword_endpoint)
+      (keyword_ipaddress))))

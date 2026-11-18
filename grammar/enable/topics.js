@@ -1,5 +1,7 @@
+const firmware = require('../firmware/rules');
+
 // First-level enable families reported by EXOS tab completion.
-const topics = [
+const completionTopics = [
   'access-list', 'account', 'bfd', 'bootp', 'bootprelay', 'cdp', 'cfm',
   'clear-flow', 'cli', 'cli-config-logging', 'clipaging', 'cpu-monitoring',
   'dhcp', 'diffserv', 'dos-protect', 'dot1p', 'eaps', 'edp', 'elrp-client',
@@ -18,6 +20,7 @@ const topics = [
   'xml-notification',
 ];
 
+const topics = [...new Set([...completionTopics, ...firmware.topics('enable')])];
 const ruleName = topic => `enable_${topic.replaceAll('-', '_')}`;
 
 const rules = () => ({
@@ -36,7 +39,7 @@ const rules = () => ({
 
   ...Object.fromEntries(topics.map(topic => [
     ruleName(topic),
-    $ => seq(topic, optional($._arguments)),
+    $ => seq(topic, optional(firmware.familyArguments($, 'enable', topic))),
   ])),
 });
 

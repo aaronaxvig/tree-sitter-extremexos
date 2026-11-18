@@ -38,3 +38,18 @@ tree-sitter generate --abi 14
 The generated syntax tree names each command by its leading keyword and gives operands named fields. It uses the `argument` field when several operand labels share the same lexical rule at the same position. The grammar recognizes fixed choices declared by unquoted static custom types. Numeric ranges, dynamic names, and platform capabilities depend on device-level validation. The generator reports unsupported tree structures.
 
 Run the converter's tests with `python3 -B -m unittest discover -s test/tools`.
+
+### Refresh the firmware syntax in the main grammar
+
+The main grammar loads a generated catalog from `grammar/firmware/syntax.json`. Its [source manifest](grammar/firmware/sources.json) lists the firmware modules that passed standalone parser generation. The catalog covers `configure`, `create`, `delete`, `disable`, `enable`, `show`, and `unconfigure`. It skips definitions flagged as debug-only, lawful-intercept, or prompting-only and contains only syntax and operand names.
+
+Existing hand-written configuration rules take precedence. Other families get named fields and keyword nodes from the catalog while accepting unfamiliar arguments and unfinished lines.
+
+```sh
+python3 -B -m tools.generate_firmware_syntax /path/to/config/clidef > grammar/firmware/syntax.json.tmp &&
+  mv grammar/firmware/syntax.json.tmp grammar/firmware/syntax.json
+npm run generate
+npm --prefix editors/vscode run generate
+```
+
+Regular parser generation uses the checked-in catalog and requires no firmware files.

@@ -1,5 +1,7 @@
-// First-level configure families that do not yet have detailed grammars.
-const topics = [
+const firmware = require('../firmware/rules');
+
+// First-level configure families reported by tab completion.
+const completionTopics = [
   'access-list', 'account', 'banner', 'bfd', 'bootprelay', 'cdp', 'cfm', 'cli',
   'cos-index', 'debug', 'dhcp', 'diffserv', 'dos-protect', 'dot1p', 'eaps', 'edp',
   'egress', 'elrp-client', 'elsm', 'erps', 'esrp', 'failsafe-account', 'fdb', 'fip',
@@ -17,12 +19,17 @@ const topics = [
   'vm-tracking', 'vman', 'vpls', 'vr', 'web', 'xml-notification',
 ];
 
-const ruleName = topic => `configure_${topic.replaceAll('-', '_')}`;
+const ruleName = topic => topic === 'sys-recovery-level'
+  ? 'configure_sys_recovery'
+  : `configure_${topic.replaceAll('-', '_')}`;
 
-const rules = () => Object.fromEntries(
-  topics.map(topic => [
+const topics = detailed => [...new Set([...completionTopics, ...firmware.topics('configure')])]
+  .filter(topic => !detailed.includes(topic));
+
+const rules = names => Object.fromEntries(
+  names.map(topic => [
     ruleName(topic),
-    $ => seq(topic, optional($._arguments)),
+    $ => seq(topic, optional(firmware.familyArguments($, 'configure', topic))),
   ]),
 );
 

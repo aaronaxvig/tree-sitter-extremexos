@@ -72,31 +72,24 @@ save configuration
             (word))))))
   (command
     (create_command
-      (word_or_string
-        (word))
+      (keyword_vlan)
       (word_or_string
         (string))))
   (command
     (enable_command
       (enable_jumbo_frame
-        (word_or_string
-          (word))
-        (word_or_string
-          (word)))))
+        (keyword_ports)
+        (keyword_all))))
   (command
     (disable_command
-      (word_or_string
-        (word))))
+      (keyword_telnet)))
   (command
     (unconfigure_command
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))))
+      (keyword_switch)
+      (keyword_all)))
   (command
     (delete_command
-      (word_or_string
-        (word))
+      (keyword_vlan)
       (word_or_string
         (word))))
   (command
@@ -218,8 +211,7 @@ configure future-feature value
   (command
     (configure_command
       (configure_ntp
-        (word_or_string
-          (word))
+        (keyword_server)
         (word_or_string
           (word)))))
   (command
@@ -227,8 +219,7 @@ configure future-feature value
       (configure_ports
         (word_or_string
           (word))
-        (word_or_string
-          (word))
+        (keyword_description_string)
         (word_or_string
           (string)))))
   (command
