@@ -16,6 +16,7 @@
     "url": "https://github.com/aaronaxvig/tree-sitter-extremexos.git",
     "directory": "editors/vscode"
   },
+  "main": "./extension.js",
   "scripts": {
     "test": "node --test scripts/test-highlighting.js",
     "package": "vsce package",
@@ -24,10 +25,14 @@
   },
   "devDependencies": {
     "@vscode/vsce": "3.9.2",
+    "markdown-it": "14.3.2"
+  },
+  "dependencies": {
     "vscode-oniguruma": "1.7.0",
     "vscode-textmate": "9.3.2"
   },
   "contributes": {
+    "markdown.markdownItPlugins": true,
     "languages": [
       {
         "id": "extremexos",

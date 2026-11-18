@@ -51,3 +51,23 @@ test('script commands and operand continuations in EXOS files and Markdown', asy
     }
   }
 });
+
+test('Markdown preview renders EXOS aliases and delegates other fences', async () => {
+  const MarkdownIt = require('markdown-it');
+  const md = new MarkdownIt({highlight: () => 'original highlighter'});
+  const {extendMarkdownIt} = await require('..').activate();
+  assert.equal(extendMarkdownIt(md), md);
+
+  const source = '# <Example> & more\n\n  create vlan "Example"\n';
+  for (const language of ['exos', 'EXOSCONFIG', 'ExtremeXOS', 'language=exos',
+    'language=exosconfig', 'LANGUAGE=EXTREMEXOS']) {
+    const html = md.render('~~~' + language + ' title\n' + source + '~~~');
+    assert.match(html, /<span class="hljs-comment"># &lt;Example&gt; &amp; more<\/span>/);
+    assert.match(html, /<span class="hljs-keyword">create<\/span>/);
+    assert.equal(html.match(/<code[^>]*>([\s\S]*)<\/code>/)[1].replace(/<[^>]+>/g, ''),
+      md.utils.escapeHtml(source));
+  }
+  for (const language of ['js', 'exos-other', '']) {
+    assert.match(md.render('~~~' + language + '\ncreate vlan Example\n~~~'), /original highlighter/);
+  }
+});

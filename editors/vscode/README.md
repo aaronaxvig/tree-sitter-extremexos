@@ -4,7 +4,7 @@ Syntax highlighting for ExtremeXOS configuration exports and CLI command lists. 
 
 ## Markdown
 
-In the Markdown editor, put `exos` directly after the opening fence.
+For highlighting in the Markdown source editor and the built-in preview, put `exos` directly after the opening fence.
 
 ~~~markdown
 ```exos
@@ -15,7 +15,7 @@ enable vlan "Example"
 ```
 ~~~
 
-The fence aliases `exosconfig` and `extremexos` also work. The editor accepts `language=exosconfig` as well. Use the bare `exos` fence for Markdown files shared across editors.
+The fence aliases `exosconfig` and `extremexos` also work. Both views accept `language=exosconfig` as well. Use the bare `exos` fence for Markdown files shared across editors.
 
 ## Installation
 
