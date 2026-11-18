@@ -101,6 +101,73 @@ class CommandPathsTest(unittest.TestCase):
         self.assertLessEqual(len(rules), 18)
         self.assertIn("optional(", rules["command_show"])
 
+    def test_sibling_operands_are_consumed_in_order(self):
+        tree = ET.fromstring("""
+            <cmd_tree>
+              <key><name>configure</name>
+                <arg type="string"><name>&lt;target&gt;</name></arg>
+                <arg type="uint32_t"><name>&lt;interval&gt;</name></arg>
+                <open><name>{sample O1}</name>
+                  <key><name>detail</name></key>
+                  <close><name>{sample C1}</name><action id="0"/></close>
+                </open>
+              </key>
+            </cmd_tree>
+        """)
+        command = (Token("configure"), Token("target", "string"), Token("interval", "uint32_t"))
+        self.assertEqual(set(accepted_paths(command_graph(tree))), {command, (*command, Token("detail"))})
+
+    def test_group_pairing_uses_identifier_and_opener_optionality(self):
+        tree = ET.fromstring("""
+            <cmd_tree>
+              <key><name>show</name>
+                <open><name>{sample O1}</name>
+                  <key><name>detail</name></key>
+                  <close><name>[sample C1]</name><action id="0"/></close>
+                </open>
+              </key>
+            </cmd_tree>
+        """)
+        self.assertEqual(set(accepted_paths(command_graph(tree))), {
+            (Token("show"),),
+            (Token("show"), Token("detail")),
+        })
+
+    def test_required_group_can_terminate_at_action_without_closer(self):
+        tree = ET.fromstring("""
+            <cmd_tree>
+              <key><name>show</name>
+                <open><name>[sample O1]</name>
+                  <key><name>detail</name><action id="0"/></key>
+                </open>
+              </key>
+            </cmd_tree>
+        """)
+        self.assertEqual(set(accepted_paths(command_graph(tree))), {(Token("show"), Token("detail"))})
+        tree.find(".//action/..").remove(tree.find(".//action"))
+        with self.assertRaisesRegex(ValueError, "No matching closer"):
+            command_graph(tree)
+
+    def test_indistinguishable_operands_share_generic_field_and_keep_both_suffixes(self):
+        tree = ET.fromstring("""
+            <cmd_tree>
+              <key><name>show</name>
+                <arg type="vrName"><name>&lt;vr&gt;</name>
+                  <key><name>router</name><action id="0"/></key>
+                </arg>
+              </key>
+              <key><name>show</name>
+                <arg type="vlanName"><name>&lt;vlan&gt;</name>
+                  <key><name>vlan</name><action id="1"/></key>
+                </arg>
+              </key>
+            </cmd_tree>
+        """)
+        rules = "\n".join(grammar_rules(command_graph(tree), {}).values())
+        self.assertEqual(rules.count('field("argument", $.word_or_string)'), 1)
+        self.assertIn('seq("router"', rules)
+        self.assertIn('seq("vlan"', rules)
+
 
 class StaticChoicesTest(unittest.TestCase):
     def test_static_choices_and_dynamic_names(self):

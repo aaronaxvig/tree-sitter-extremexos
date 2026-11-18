@@ -35,6 +35,6 @@ cd "$work"
 tree-sitter generate --abi 14
 ```
 
-The generated syntax tree names each command by its leading keyword and gives operands named fields. The grammar recognizes fixed choices declared by unquoted static custom types. Numeric ranges, dynamic names, and platform capabilities depend on device-level validation. The generator reports unsupported tree structures.
+The generated syntax tree names each command by its leading keyword and gives operands named fields. It uses the `argument` field when several operand labels share the same lexical rule at the same position. The grammar recognizes fixed choices declared by unquoted static custom types. Numeric ranges, dynamic names, and platform capabilities depend on device-level validation. The generator reports unsupported tree structures.
 
 Run the converter's tests with `python3 -B -m unittest discover -s test/tools`.

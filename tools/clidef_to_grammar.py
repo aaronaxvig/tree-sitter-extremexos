@@ -29,18 +29,22 @@ class Token:
             raise ValueError(f"Unsupported operand name {name!r}")
         return cls(name[1:-1], node.get("type", ""))
 
-    def rule(self, static_types):
+    def pattern(self, static_types):
         if self.operand_type is None:
             return json.dumps(self.name)
         if self.operand_type in static_types:
             values = [json.dumps(value) for value in static_types[self.operand_type]]
-            operand = values[0] if len(values) == 1 else f"choice({', '.join(values)})"
-        elif self.operand_type in SIGNED_TYPES:
-            operand = "$.integer"
-        elif self.operand_type in UNSIGNED_TYPES:
-            operand = "$.unsigned_integer"
-        else:
-            operand = "$.word_or_string"
+            return values[0] if len(values) == 1 else f"choice({', '.join(values)})"
+        if self.operand_type in SIGNED_TYPES:
+            return "$.integer"
+        if self.operand_type in UNSIGNED_TYPES:
+            return "$.unsigned_integer"
+        return "$.word_or_string"
+
+    def rule(self, static_types):
+        operand = self.pattern(static_types)
+        if self.operand_type is None:
+            return operand
         return f"field({json.dumps(identifier(self.name))}, {operand})"
 
 
@@ -56,7 +60,11 @@ def group_id(node):
     start, module, marker, number, end = match.groups()
     if end != {"[": "]", "{": "}"}[start] or marker != node.tag[0].upper():
         raise ValueError(f"Mismatched group marker {name!r}")
-    return start, module, number
+    return start, (module, number)
+
+
+def has_continuation(node):
+    return any(child.tag in SYNTAX_TAGS | {"action"} for child in node)
 
 
 @dataclass(frozen=True, eq=False)
@@ -75,7 +83,7 @@ def command_graph(tree):
     parents = {child: node for node in tree.iter() for child in node}
     # Split alternatives repeat the opener ID but share one continuation.
     for node in tree.iter("close"):
-        marker = group_id(node)
+        _, marker = group_id(node)
         if marker in closers:
             raise ValueError(f"Duplicate group closer {node.findtext('name')!r}")
         closers[marker] = node
@@ -122,23 +130,26 @@ def command_graph(tree):
         if node.tag == "open":
             if actions:
                 raise ValueError(f"Action directly on opener {name!r}")
-            marker = group_id(node)
+            delimiter, marker = group_id(node)
             closer = closers.get(marker)
-            if closer is None:
+            if closer is None and delimiter == "{":
                 raise ValueError(f"No matching closer for {name!r}")
-            if closer in groups:
+            # A required group can end at actions in each branch. Keep a
+            # marker on the stack so a branch cannot skip a missing closer.
+            boundary = closer if closer is not None else node
+            if boundary in groups:
                 raise ValueError(f"Group {name!r} reopens before its closer")
-            groups += (closer,)
+            groups += (boundary,)
             closer_only = branches == [closer]
             branches = [child for child in branches if child is not closer]
-            if marker[0] == "{":
+            if delimiter == "{":
                 alternatives.append(walk(closer, groups))
             elif not branches:
                 # A repeated opener can exist solely to store the shared closer.
                 if closer_only and any(
                     sibling.tag == "open"
                     and sibling is not node
-                    and group_id(sibling) == marker
+                    and group_id(sibling) == (delimiter, marker)
                     and any(child.tag in SYNTAX_TAGS for child in sibling)
                     for sibling in parents[node]
                 ):
@@ -148,8 +159,14 @@ def command_graph(tree):
         # The CLI can attach a shared operand and its following keywords to
         # the same node. A nested operand already carries its own continuation.
         operands = [child for child in branches if child.tag == "arg"]
+        if len(operands) > 1:
+            if branches[:len(operands)] != operands or any(map(has_continuation, operands[:-1])):
+                raise ValueError(f"Ambiguous sibling operands after {name!r}")
+            prefix.extend(Token.operand(operand) for operand in operands[:-1])
+            branches = branches[len(operands) - 1:]
+            operands = operands[-1:]
         if operands and len(branches) > 1:
-            if len(operands) != 1 or any(child.tag in SYNTAX_TAGS | {"action"} for child in operands[0]):
+            if has_continuation(operands[0]):
                 raise ValueError(f"Ambiguous sibling operands after {name!r}")
             operand = operands[0]
             prefix.append(Token.operand(operand))
@@ -159,6 +176,8 @@ def command_graph(tree):
         if not alternatives:
             if not groups:
                 raise ValueError(f"Command branch {name!r} has no terminal action")
+            if groups[-1].tag == "open":
+                raise ValueError(f"No matching closer for {groups[-1].findtext('name')!r}")
             alternatives.append(walk(groups[-1], groups))
 
         continuation = combine(alternatives)
@@ -198,26 +217,41 @@ def grammar_rules(start, static_types):
     def choice(patterns):
         return patterns[0] if len(patterns) == 1 else f"choice({', '.join(patterns)})"
 
-    def state_rule(state):
-        if state not in states:
-            name = f"_continuation_{len(states) + 1}"
-            states[state] = name
-            rules[name] = choice([transition(token, target) for token, target in state.transitions])
-        return f"$.{states[state]}"
+    @cache
+    def outgoing(targets):
+        branches = defaultdict(list)
+        for state in targets:
+            for token, target in state.transitions:
+                branches[token.operand_type is None, token.pattern(static_types)].append((token, target))
+        edges = []
+        for tokens in branches.values():
+            token, _ = tokens[0]
+            if token.operand_type is not None and len({identifier(item.name) for item, _ in tokens}) > 1:
+                # The syntax offers no way to choose a field at this position.
+                token = Token("argument", token.operand_type)
+            edges.append((token, tuple(dict.fromkeys(target for _, target in tokens))))
+        return edges
 
-    def transition(token, target):
-        if not target.transitions:
+    def state_rule(targets):
+        if targets not in states:
+            name = f"_continuation_{len(states) + 1}"
+            states[targets] = name
+            rules[name] = choice([transition(token, following) for token, following in outgoing(targets)])
+        return f"$.{states[targets]}"
+
+    def transition(token, targets):
+        if not outgoing(targets):
             tail = "optional($._space)"
-        elif target.can_end:
-            tail = f"optional(seq($._space, optional({state_rule(target)})))"
+        elif any(state.can_end for state in targets):
+            tail = f"optional(seq($._space, optional({state_rule(targets)})))"
         else:
-            tail = f"$._space, {state_rule(target)}"
+            tail = f"$._space, {state_rule(targets)}"
         return f"seq({token.rule(static_types)}, {tail})"
 
     commands = defaultdict(list)
-    for token, target in start.transitions:
+    for token, targets in outgoing((start,)):
         name = "command_" + identifier(token.name)
-        commands[name].append(transition(token, target))
+        commands[name].append(transition(token, targets))
     return {
         "command": choice([f"$.{name}" for name in commands]),
         **{name: choice(patterns) for name, patterns in commands.items()},
