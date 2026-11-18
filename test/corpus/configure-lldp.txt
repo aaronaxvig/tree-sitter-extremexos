@@ -1,0 +1,112 @@
+================================================================================
+LLDP timers and management address
+================================================================================
+
+configure lldp transmit-interval 30
+configure lldp transmit-delay auto
+configure lldp management-address vlan Example secondary-ip 192.0.2.1
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_transmit_interval seconds: (word_or_string (word))))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_transmit_delay (configure_lldp_transmit_delay_auto)))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_management_address
+          (configure_lldp_management_address_vlan
+            vlan: (word_or_string (word))
+            (configure_lldp_management_address_secondary_ip
+              secondary_ip_address: (word_or_string (word)))))))))
+
+================================================================================
+LLDP port announcements and vendor-specific options
+================================================================================
+
+configure lldp ports 1:4-1:8 advertise system-name
+configure lldp ports all no-advertise port-description
+configure lldp ports 1:1 advertise vendor-specific dot1 port-protocol-vlan-id vlan Example
+configure lldp ports 1:6 advertise vendor-specific avaya-extreme file-server 192.0.2.10 192.0.2.11
+
+---
+
+(source_file
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_ports
+          ports: (word_or_string (word))
+          (configure_lldp_ports_advertise
+            (configure_lldp_ports_advertise_system_name))))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_ports
+          (configure_lldp_ports_no_advertise
+            (configure_lldp_ports_no_advertise_port_description))))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_ports
+          ports: (word_or_string (word))
+          (configure_lldp_ports_advertise
+            (configure_lldp_ports_advertise_vendor_specific
+              (configure_lldp_ports_advertise_vendor_specific_dot1
+                (configure_lldp_ports_port_protocol_vlan_id
+                  (configure_lldp_ports_vlan
+                    vlan: (word_or_string (word)))))))))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_ports
+          ports: (word_or_string (word))
+          (configure_lldp_ports_advertise
+            (configure_lldp_ports_advertise_vendor_specific
+              (configure_lldp_ports_advertise_vendor_specific_avaya_extreme
+                (configure_lldp_ports_advertise_vendor_specific_avaya_extreme_file_server
+                  ip_address1: (word_or_string (word))
+                  ip_address2: (word_or_string (word)))))))))))
+
+================================================================================
+Unfinished LLDP commands and unknown options retain their context
+================================================================================
+
+configure lldp
+configure lldp ports
+configure lldp ports all advertise
+configure lldp ports 1:4 advertise vendor-specific future-option "Example"
+configure lldp transmit-interval-next 40
+
+---
+
+(source_file
+  (command
+    (configure_command (configure_lldp)))
+  (command
+    (configure_command (configure_lldp (configure_lldp_ports))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_ports
+          (configure_lldp_ports_advertise)))))
+  (command
+    (configure_command
+      (configure_lldp
+        (configure_lldp_ports
+          ports: (word_or_string (word))
+          (configure_lldp_ports_advertise
+            (configure_lldp_ports_advertise_vendor_specific
+              (word_or_string (word))
+              (word_or_string (string))))))))
+  (command
+    (configure_command
+      (configure_lldp
+        (word_or_string (word))
+        (word_or_string (word))))))

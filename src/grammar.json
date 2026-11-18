@@ -349,6 +349,14 @@
                   "value": 1,
                   "content": {
                     "type": "SYMBOL",
+                    "name": "configure_lldp"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
                     "name": "configure_ntp"
                   }
                 },
@@ -758,14 +766,6 @@
                   "content": {
                     "type": "SYMBOL",
                     "name": "configure_ldap"
-                  }
-                },
-                {
-                  "type": "PREC",
-                  "value": 1,
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "configure_lldp"
                   }
                 },
                 {
@@ -2204,27 +2204,6 @@
         }
       ]
     },
-    "configure_lldp": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "lldp"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_arguments"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
     "configure_log": {
       "type": "SEQ",
       "members": [
@@ -3618,6 +3597,3913 @@
                   "name": "_arguments"
                 }
               ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lldp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_management_address"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_med"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_reinitialize_delay"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_snmp_notification_interval"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_transmit_delay"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_transmit_hold"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_transmit_interval"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_management_address": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "management-address"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_management_address_mac_address"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_management_address_vlan"
+                  }
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "vlan_name",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_configure_lldp_management_address_primary_ip_or_secondary_ip_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_management_address_mac_address": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mac-address"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_management_address_vlan": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "vlan",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_configure_lldp_management_address_primary_ip_or_secondary_ip_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_management_address_primary_ip_or_secondary_ip_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_management_address_primary_ip"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_management_address_secondary_ip"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_management_address_primary_ip": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "primary-ip"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_management_address_secondary_ip": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "secondary-ip"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "secondary_ip_address",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_med": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "med"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_med_fast_start"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_med_fast_start": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "fast-start"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_med_fast_start_repeat_count"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_med_fast_start_repeat_count": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "repeat-count"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "count",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ports"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ports",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "all"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_configure_lldp_port_options"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_port_options": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_advertise"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_dcbx"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_no_advertise"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "advertise"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_all_tlvs"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_management_address"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_port_description"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_system_capabilities"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_system_description"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_system_name"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_all_tlvs": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "all-tlvs"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_management_address": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "management-address"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_port_description_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_port_description_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_port_description"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_capabilities"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_description"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_name"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_port_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port-description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_capabilities_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_system_capabilities_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_capabilities"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_description"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_name"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_system_capabilities": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-capabilities"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_description_or_system_name_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_system_description_or_system_name_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_description"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_name"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_system_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_name_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_system_name_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_system_name"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_system_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_port_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port-description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_capabilities_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_system_capabilities": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-capabilities"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_description_or_system_name_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_system_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_name_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_system_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vendor-specific"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dcbx"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot1"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot3"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_avaya_extreme": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "avaya-extreme"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_call_server"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_dot1q_framing"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_file_server"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_poe_conservation_request"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_call_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "call-server"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ip_address1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "FIELD",
+                          "name": "ip_address2",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "word_or_string"
+                          }
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SEQ",
+                              "members": [
+                                {
+                                  "type": "FIELD",
+                                  "name": "ip_address3",
+                                  "content": {
+                                    "type": "SYMBOL",
+                                    "name": "word_or_string"
+                                  }
+                                },
+                                {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "FIELD",
+                                          "name": "ip_address4",
+                                          "content": {
+                                            "type": "SYMBOL",
+                                            "name": "word_or_string"
+                                          }
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "SEQ",
+                                              "members": [
+                                                {
+                                                  "type": "FIELD",
+                                                  "name": "ip_address5",
+                                                  "content": {
+                                                    "type": "SYMBOL",
+                                                    "name": "word_or_string"
+                                                  }
+                                                },
+                                                {
+                                                  "type": "CHOICE",
+                                                  "members": [
+                                                    {
+                                                      "type": "SEQ",
+                                                      "members": [
+                                                        {
+                                                          "type": "FIELD",
+                                                          "name": "ip_address6",
+                                                          "content": {
+                                                            "type": "SYMBOL",
+                                                            "name": "word_or_string"
+                                                          }
+                                                        },
+                                                        {
+                                                          "type": "CHOICE",
+                                                          "members": [
+                                                            {
+                                                              "type": "SEQ",
+                                                              "members": [
+                                                                {
+                                                                  "type": "FIELD",
+                                                                  "name": "ip_address7",
+                                                                  "content": {
+                                                                    "type": "SYMBOL",
+                                                                    "name": "word_or_string"
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "type": "CHOICE",
+                                                                  "members": [
+                                                                    {
+                                                                      "type": "SEQ",
+                                                                      "members": [
+                                                                        {
+                                                                          "type": "FIELD",
+                                                                          "name": "ip_address8",
+                                                                          "content": {
+                                                                            "type": "SYMBOL",
+                                                                            "name": "word_or_string"
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "type": "CHOICE",
+                                                                          "members": [
+                                                                            {
+                                                                              "type": "SYMBOL",
+                                                                              "name": "_arguments"
+                                                                            },
+                                                                            {
+                                                                              "type": "BLANK"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "type": "BLANK"
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "type": "BLANK"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "BLANK"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "BLANK"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BLANK"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BLANK"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_dot1q_framing": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dot1q-framing"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "auto"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "tagged"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "untagged"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_file_server": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "file-server"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ip_address1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "FIELD",
+                          "name": "ip_address2",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "word_or_string"
+                          }
+                        },
+                        {
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "SEQ",
+                              "members": [
+                                {
+                                  "type": "FIELD",
+                                  "name": "ip_address3",
+                                  "content": {
+                                    "type": "SYMBOL",
+                                    "name": "word_or_string"
+                                  }
+                                },
+                                {
+                                  "type": "CHOICE",
+                                  "members": [
+                                    {
+                                      "type": "SEQ",
+                                      "members": [
+                                        {
+                                          "type": "FIELD",
+                                          "name": "ip_address4",
+                                          "content": {
+                                            "type": "SYMBOL",
+                                            "name": "word_or_string"
+                                          }
+                                        },
+                                        {
+                                          "type": "CHOICE",
+                                          "members": [
+                                            {
+                                              "type": "SYMBOL",
+                                              "name": "_arguments"
+                                            },
+                                            {
+                                              "type": "BLANK"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "BLANK"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BLANK"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_poe_conservation_request": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "poe-conservation-request"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dcbx": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dcbx"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_baseline_or_ieee_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_baseline_or_ieee_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "baseline"
+                },
+                {
+                  "type": "STRING",
+                  "value": "ieee"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot1": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dot1"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_port_protocol_vlan_id_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_port_protocol_vlan_id_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_port_protocol_vlan_id"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_port_vlan_id"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_vlan_name"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_port_protocol_vlan_id": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port-protocol-vlan-id"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_vlan_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_vlan_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_vlan"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_vlan": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_vlan_all"
+                  }
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "vlan",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_vlan_all": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "all"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_port_vlan_id": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port-vlan-id"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_vlan_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan-name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_vlan_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot3": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dot3"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot3_link_aggregation"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot3_mac_phy"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot3_max_frame_size"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot3_link_aggregation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "link-aggregation"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot3_mac_phy": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mac-phy"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot3_max_frame_size": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "max-frame-size"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "power-via-mdi"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi_with_classification"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi_with_classification": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "with-classification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "med"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_capabilities"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_location_identification"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_policy"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_power_via_mdi"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_capabilities": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "capabilities"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_location_identification": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "location-identification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_civic_based"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_coordinate_based"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_ecs_elin"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_location_identification_civic_based": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "civic-based"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ci_value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_location_identification_coordinate_based": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "coordinate-based"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "co_value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_location_identification_ecs_elin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ecs-elin"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "elin",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_policy": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "policy"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_advertise_vendor_specific_med_policy_application"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_policy_application": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "application"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "app_type",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vlan"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "vlan",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dscp"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "dscp_value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "PREC",
+                          "value": 1,
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp_priority_tagged"
+                          }
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp_priority_tagged": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "priority-tagged"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_advertise_vendor_specific_med_power_via_mdi": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "power-via-mdi"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dcbx"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "add"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add_application"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "application"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add_application_l4_port"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add_application_ethertype"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add_application_name"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add_application_tcp_port"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_add_application_udp_port"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application_l4_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "L4-port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_add_application_port_number_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_dcbx_add_application_port_number_arguments": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "port_number",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word_or_string"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_add_application_priority_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_dcbx_add_application_priority_arguments": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "configure_lldp_ports_dcbx_add_application_priority"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_arguments"
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application_priority": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "priority"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "priority_value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application_ethertype": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ethertype"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ethertype_value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_configure_lldp_ports_dcbx_add_application_priority_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "application_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_configure_lldp_ports_dcbx_add_application_priority_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application_tcp_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tcp-port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_add_application_port_number_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_add_application_udp_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "udp-port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_add_application_port_number_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "application"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application_l4_port"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application_all"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application_ethertype"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application_name"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application_tcp_port"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_dcbx_delete_application_udp_port"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application_l4_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "L4-port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_delete_application_port_number_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_ports_dcbx_delete_application_port_number_arguments": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "port_number",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word_or_string"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application_all": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "all"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application_ethertype": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ethertype"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "ethertype_value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "application_name",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application_tcp_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tcp-port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_delete_application_port_number_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_dcbx_delete_application_udp_port": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "udp-port"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_dcbx_delete_application_port_number_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "no-advertise"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_all_tlvs"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_management_address"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_port_description"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_system_capabilities"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_system_description"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_system_name"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_all_tlvs": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "all-tlvs"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_management_address": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "management-address"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_port_description_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_port_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "port-description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_capabilities_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_system_capabilities": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-capabilities"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_description_or_system_name_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_system_description": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-description"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_system_name_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_system_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "system-name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vendor-specific"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_avaya_extreme"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_dcbx"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_dot1"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_dot3"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_med"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_avaya_extreme": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "avaya-extreme"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "call-server"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "dot1q-framing"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "file-server"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "poe-conservation-request"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_dcbx": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dcbx"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_baseline_or_ieee_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_dot1": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dot1"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_ports_port_protocol_vlan_id_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_dot3": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "dot3"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "link-aggregation"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "mac-phy"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "max-frame-size"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "power-via-mdi"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_med": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "med"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_med_capabilities"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_med_location_identification"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_med_policy"
+                  }
+                },
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_med_power_via_mdi"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_med_capabilities": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "capabilities"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_med_location_identification": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "location-identification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "civic-based"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "coordinate-based"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "ecs-elin"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_med_policy": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "policy"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_ports_no_advertise_vendor_specific_med_policy_application"
+                  }
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_arguments"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_med_policy_application": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "application"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "app_type",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_ports_no_advertise_vendor_specific_med_power_via_mdi": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "power-via-mdi"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_reinitialize_delay": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "reinitialize-delay"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_seconds_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_configure_lldp_seconds_arguments": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "seconds",
+          "content": {
+            "type": "SYMBOL",
+            "name": "word_or_string"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_snmp_notification_interval": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "snmp-notification-interval"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_seconds_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_transmit_delay": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "transmit-delay"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "configure_lldp_transmit_delay_auto"
+                  }
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "seconds",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "word_or_string"
+                      }
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "_arguments"
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_transmit_delay_auto": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "auto"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_arguments"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_transmit_hold": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "transmit-hold"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "hold",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "word_or_string"
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_arguments"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "configure_lldp_transmit_interval": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "transmit-interval"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_configure_lldp_seconds_arguments"
             },
             {
               "type": "BLANK"

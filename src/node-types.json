@@ -1724,6 +1724,2327 @@
       "required": false,
       "types": [
         {
+          "type": "configure_lldp_management_address",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_med",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_reinitialize_delay",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_snmp_notification_interval",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_transmit_delay",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_transmit_hold",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_transmit_interval",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_management_address",
+    "named": true,
+    "fields": {
+      "vlan_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_management_address_mac_address",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_management_address_primary_ip",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_management_address_secondary_ip",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_management_address_vlan",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_management_address_mac_address",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_management_address_primary_ip",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_management_address_secondary_ip",
+    "named": true,
+    "fields": {
+      "secondary_ip_address": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_management_address_vlan",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_management_address_primary_ip",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_management_address_secondary_ip",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_med",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_med_fast_start",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_med_fast_start",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_med_fast_start_repeat_count",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_med_fast_start_repeat_count",
+    "named": true,
+    "fields": {
+      "count": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports",
+    "named": true,
+    "fields": {
+      "ports": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "all",
+            "named": false
+          },
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_all_tlvs",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_management_address",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_port_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_system_name",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_all_tlvs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_management_address",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_port_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_port_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_system_capabilities",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_system_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_system_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dcbx",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot1",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot3",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_call_server",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_dot1q_framing",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_file_server",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_poe_conservation_request",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_call_server",
+    "named": true,
+    "fields": {
+      "ip_address1": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address2": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address3": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address4": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address5": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address6": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address7": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address8": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_dot1q_framing",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_file_server",
+    "named": true,
+    "fields": {
+      "ip_address1": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address2": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address3": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      },
+      "ip_address4": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_avaya_extreme_poe_conservation_request",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dcbx",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_port_protocol_vlan_id",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_port_vlan_id",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_vlan_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot3_link_aggregation",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot3_mac_phy",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot3_max_frame_size",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot3_link_aggregation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot3_mac_phy",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot3_max_frame_size",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi_with_classification",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_dot3_power_via_mdi_with_classification",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_policy",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_power_via_mdi",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_capabilities",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_civic_based",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_coordinate_based",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_ecs_elin",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_civic_based",
+    "named": true,
+    "fields": {
+      "ci_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_coordinate_based",
+    "named": true,
+    "fields": {
+      "co_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_location_identification_ecs_elin",
+    "named": true,
+    "fields": {
+      "elin": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_policy",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application",
+    "named": true,
+    "fields": {
+      "app_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp",
+    "named": true,
+    "fields": {
+      "dscp_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp_priority_tagged",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_policy_application_vlan_dscp_priority_tagged",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_advertise_vendor_specific_med_power_via_mdi",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_delete",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_ethertype",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_l4_port",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_name",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_tcp_port",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_udp_port",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application_ethertype",
+    "named": true,
+    "fields": {
+      "ethertype_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_priority",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application_l4_port",
+    "named": true,
+    "fields": {
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_priority",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application_name",
+    "named": true,
+    "fields": {
+      "application_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_priority",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application_priority",
+    "named": true,
+    "fields": {
+      "priority_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application_tcp_port",
+    "named": true,
+    "fields": {
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_priority",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_add_application_udp_port",
+    "named": true,
+    "fields": {
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_add_application_priority",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application_all",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application_ethertype",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application_l4_port",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application_name",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application_tcp_port",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_dcbx_delete_application_udp_port",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application_all",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application_ethertype",
+    "named": true,
+    "fields": {
+      "ethertype_value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application_l4_port",
+    "named": true,
+    "fields": {
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application_name",
+    "named": true,
+    "fields": {
+      "application_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application_tcp_port",
+    "named": true,
+    "fields": {
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_dcbx_delete_application_udp_port",
+    "named": true,
+    "fields": {
+      "port_number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_no_advertise_all_tlvs",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_management_address",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_port_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_system_name",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_all_tlvs",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_management_address",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_port_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_port_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_system_capabilities",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_system_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_system_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_avaya_extreme",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_dcbx",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_dot1",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_dot3",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_med",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_avaya_extreme",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_dcbx",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_dot1",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_port_protocol_vlan_id",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_port_vlan_id",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_vlan_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_dot3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_med",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_med_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_med_location_identification",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_med_policy",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_med_power_via_mdi",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_med_capabilities",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_med_location_identification",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_med_policy",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_no_advertise_vendor_specific_med_policy_application",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_med_policy_application",
+    "named": true,
+    "fields": {
+      "app_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_no_advertise_vendor_specific_med_power_via_mdi",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_port_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_capabilities",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_port_protocol_vlan_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_vlan",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_port_vlan_id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_system_capabilities",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_description",
+          "named": true
+        },
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_system_description",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_system_name",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_system_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_vlan",
+    "named": true,
+    "fields": {
+      "vlan": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_vlan_all",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_vlan_all",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_ports_vlan_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_ports_vlan",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_reinitialize_delay",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_snmp_notification_interval",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_transmit_delay",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "configure_lldp_transmit_delay_auto",
+          "named": true
+        },
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_transmit_delay_auto",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_transmit_hold",
+    "named": true,
+    "fields": {
+      "hold": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "word_or_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "configure_lldp_transmit_interval",
+    "named": true,
+    "fields": {
+      "seconds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "word_or_string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
           "type": "word_or_string",
           "named": true
         }
@@ -6716,6 +9037,10 @@
     }
   },
   {
+    "type": "L4-port",
+    "named": false
+  },
+  {
     "type": "access-list",
     "named": false
   },
@@ -6732,7 +9057,23 @@
     "named": false
   },
   {
+    "type": "advertise",
+    "named": false
+  },
+  {
     "type": "all",
+    "named": false
+  },
+  {
+    "type": "all-tlvs",
+    "named": false
+  },
+  {
+    "type": "application",
+    "named": false
+  },
+  {
+    "type": "auto",
     "named": false
   },
   {
@@ -6740,7 +9081,15 @@
     "named": false
   },
   {
+    "type": "avaya-extreme",
+    "named": false
+  },
+  {
     "type": "banner",
+    "named": false
+  },
+  {
+    "type": "baseline",
     "named": false
   },
   {
@@ -6760,6 +9109,14 @@
     "named": false
   },
   {
+    "type": "call-server",
+    "named": false
+  },
+  {
+    "type": "capabilities",
+    "named": false
+  },
+  {
     "type": "cd",
     "named": false
   },
@@ -6773,6 +9130,10 @@
   },
   {
     "type": "check",
+    "named": false
+  },
+  {
+    "type": "civic-based",
     "named": false
   },
   {
@@ -6808,6 +9169,10 @@
     "named": false
   },
   {
+    "type": "coordinate-based",
+    "named": false
+  },
+  {
     "type": "cos-index",
     "named": false
   },
@@ -6825,6 +9190,10 @@
   },
   {
     "type": "database",
+    "named": false
+  },
+  {
+    "type": "dcbx",
     "named": false
   },
   {
@@ -6892,6 +9261,10 @@
     "named": false
   },
   {
+    "type": "dot1",
+    "named": false
+  },
+  {
     "type": "dot1d",
     "named": false
   },
@@ -6900,7 +9273,19 @@
     "named": false
   },
   {
+    "type": "dot1q-framing",
+    "named": false
+  },
+  {
+    "type": "dot3",
+    "named": false
+  },
+  {
     "type": "download",
+    "named": false
+  },
+  {
+    "type": "dscp",
     "named": false
   },
   {
@@ -6909,6 +9294,10 @@
   },
   {
     "type": "eaps",
+    "named": false
+  },
+  {
+    "type": "ecs-elin",
     "named": false
   },
   {
@@ -6960,6 +9349,10 @@
     "named": false
   },
   {
+    "type": "ethertype",
+    "named": false
+  },
+  {
     "type": "exit",
     "named": false
   },
@@ -6968,7 +9361,15 @@
     "named": false
   },
   {
+    "type": "fast-start",
+    "named": false
+  },
+  {
     "type": "fdb",
+    "named": false
+  },
+  {
+    "type": "file-server",
     "named": false
   },
   {
@@ -7005,6 +9406,10 @@
   },
   {
     "type": "idletimeout",
+    "named": false
+  },
+  {
+    "type": "ieee",
     "named": false
   },
   {
@@ -7116,6 +9521,10 @@
     "named": false
   },
   {
+    "type": "link-aggregation",
+    "named": false
+  },
+  {
     "type": "lldp",
     "named": false
   },
@@ -7125,6 +9534,10 @@
   },
   {
     "type": "local-clock",
+    "named": false
+  },
+  {
+    "type": "location-identification",
     "named": false
   },
   {
@@ -7144,6 +9557,10 @@
     "named": false
   },
   {
+    "type": "mac-address",
+    "named": false
+  },
+  {
     "type": "mac-lockdown-timeout",
     "named": false
   },
@@ -7152,7 +9569,23 @@
     "named": false
   },
   {
+    "type": "mac-phy",
+    "named": false
+  },
+  {
+    "type": "management-address",
+    "named": false
+  },
+  {
+    "type": "max-frame-size",
+    "named": false
+  },
+  {
     "type": "mcast",
+    "named": false
+  },
+  {
+    "type": "med",
     "named": false
   },
   {
@@ -7224,6 +9657,10 @@
     "named": false
   },
   {
+    "type": "no-advertise",
+    "named": false
+  },
+  {
     "type": "none",
     "named": false
   },
@@ -7256,11 +9693,27 @@
     "named": false
   },
   {
+    "type": "poe-conservation-request",
+    "named": false
+  },
+  {
     "type": "policy",
     "named": false
   },
   {
     "type": "port",
+    "named": false
+  },
+  {
+    "type": "port-description",
+    "named": false
+  },
+  {
+    "type": "port-protocol-vlan-id",
+    "named": false
+  },
+  {
+    "type": "port-vlan-id",
     "named": false
   },
   {
@@ -7276,7 +9729,23 @@
     "named": false
   },
   {
+    "type": "power-via-mdi",
+    "named": false
+  },
+  {
     "type": "primary",
+    "named": false
+  },
+  {
+    "type": "primary-ip",
+    "named": false
+  },
+  {
+    "type": "priority",
+    "named": false
+  },
+  {
+    "type": "priority-tagged",
     "named": false
   },
   {
@@ -7329,6 +9798,14 @@
   },
   {
     "type": "refresh",
+    "named": false
+  },
+  {
+    "type": "reinitialize-delay",
+    "named": false
+  },
+  {
+    "type": "repeat-count",
     "named": false
   },
   {
@@ -7392,6 +9869,10 @@
     "named": false
   },
   {
+    "type": "secondary-ip",
+    "named": false
+  },
+  {
     "type": "secondary-ipaddress",
     "named": false
   },
@@ -7425,6 +9906,10 @@
   },
   {
     "type": "snmp",
+    "named": false
+  },
+  {
+    "type": "snmp-notification-interval",
     "named": false
   },
   {
@@ -7508,6 +9993,18 @@
     "named": false
   },
   {
+    "type": "system-capabilities",
+    "named": false
+  },
+  {
+    "type": "system-description",
+    "named": false
+  },
+  {
+    "type": "system-name",
+    "named": false
+  },
+  {
     "type": "tacacs",
     "named": false
   },
@@ -7525,6 +10022,10 @@
   },
   {
     "type": "tagged",
+    "named": false
+  },
+  {
+    "type": "tcp-port",
     "named": false
   },
   {
@@ -7560,6 +10061,18 @@
     "named": false
   },
   {
+    "type": "transmit-delay",
+    "named": false
+  },
+  {
+    "type": "transmit-hold",
+    "named": false
+  },
+  {
+    "type": "transmit-interval",
+    "named": false
+  },
+  {
     "type": "trusted",
     "named": false
   },
@@ -7577,6 +10090,10 @@
   },
   {
     "type": "udp-echo-server",
+    "named": false
+  },
+  {
+    "type": "udp-port",
     "named": false
   },
   {
@@ -7612,11 +10129,19 @@
     "named": false
   },
   {
+    "type": "vendor-specific",
+    "named": false
+  },
+  {
     "type": "vi",
     "named": false
   },
   {
     "type": "vlan",
+    "named": false
+  },
+  {
+    "type": "vlan-name",
     "named": false
   },
   {
@@ -7653,6 +10178,10 @@
   },
   {
     "type": "web",
+    "named": false
+  },
+  {
+    "type": "with-classification",
     "named": false
   },
   {
