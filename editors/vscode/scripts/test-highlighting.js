@@ -26,6 +26,12 @@ test('script commands and operand continuations in EXOS files and Markdown', asy
     ['  watch "show ports" count 2', [['watch', command], ['count', option]]],
     ['endif', [['endif', command]]],
     ['pwd', [['pwd', command]]],
+    ['show edp ports 1:2 detail', [['show', command], ['edp', 'support.function.extremexos'],
+      ['ports', option], ['detail', option]]],
+    ['debug netlogin show vpif vlan "Example" clients details', [['debug', command],
+      ['netlogin', 'support.function.extremexos'], ['vpif', option], ['details', option]]],
+    ['clear lldp neighbors port 1:2', [['clear', command], ['lldp', 'support.function.extremexos'],
+      ['neighbors', option], ['port', option]]],
   ];
   for (const scope of [syntax.scopeName, markdown.scopeName]) {
     const parser = await registry.loadGrammar(scope);

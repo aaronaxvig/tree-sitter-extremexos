@@ -69,19 +69,13 @@ save configuration
           (string)))))
   (command
     (enable_command
-      (enable_jumbo_frame
-        (word_or_string
-          (word))
-        (word_or_string
-          (word)))))
+      (enable_jumbo_frame)))
   (command
     (disable_command
       (disable_telnet)))
   (command
     (unconfigure_command
-      (unconfigure_switch
-        (word_or_string
-          (word)))))
+      (unconfigure_switch)))
   (command
     (delete_command
       (delete_vlan
@@ -89,7 +83,8 @@ save configuration
           (word)))))
   (command
     (save_command
-      (save_configuration))))
+      (word_or_string
+        (word)))))
 
 ================================================================================
 DNS and SNTP clients
@@ -208,8 +203,6 @@ configure future-feature value
         (word_or_string
           (word))
         (word_or_string
-          (word))
-        (word_or_string
           (string)))))
   (command
     (configure_command
@@ -225,8 +218,9 @@ configure future-feature value
           (word)))))
   (command
     (configure_command
-      (configure_generic
-        (word)
+      (configure__operand
+        (word_or_string
+          (word))
         (word_or_string
           (word))))))
 

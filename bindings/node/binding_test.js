@@ -6,13 +6,14 @@ const { test } = require("node:test");
 const Parser = require("tree-sitter");
 const language = require(".");
 const keywords = require("../../grammar/keywords");
+const {native} = require("../../grammar/import.json");
 
 test("can load grammar", () => {
   const parser = new Parser();
   assert.doesNotThrow(() => parser.setLanguage(language));
 });
 
-test("recognizes every imported verb and keyword in incomplete commands", () => {
+test("recognizes configuration topics and preserves operational arguments in incomplete commands", () => {
   const parser = new Parser();
   parser.setLanguage(language);
 
@@ -23,27 +24,45 @@ test("recognizes every imported verb and keyword in incomplete commands", () => 
       assert.equal(rootNode.hasError, false, line);
       const command = rootNode.firstNamedChild.firstNamedChild;
       assert.equal(command.type, `${verb}_command`, line);
-      assert.equal(command.firstNamedChild?.firstChild?.type, topic, line);
+      if (native.verbs.includes(verb)) {
+        assert.equal(command.firstNamedChild?.firstChild?.type, topic, line);
+      } else {
+        assert.equal(command.firstNamedChild?.type, "word_or_string", line);
+        assert.equal(command.firstNamedChild.text, topic, line);
+      }
     }
   }
 });
 
-test("parses NetLogin port timers and session filters into fields", () => {
+test("parses NetLogin port timers into fields", () => {
   const parser = new Parser();
   parser.setLanguage(language);
   const { rootNode } = parser.parse(
-    'configure netlogin dot1x ports 1:2 timers quiet-period 30 reauthentication on\n' +
-    'show netlogin session summary mac-address 02:00:00:00:00:01 ports 1:2 agent dot1x\n',
+    'configure netlogin dot1x ports 1:2 timers quiet-period 30 reauthentication on\n',
   );
   assert.equal(rootNode.hasError, false, rootNode.toString());
   const [timers] = rootNode.descendantsOfType("configure_netlogin");
-  const [session] = rootNode.descendantsOfType("show_netlogin");
   assert.equal(timers.childForFieldName("port_list").text, "1:2");
   assert.equal(timers.childForFieldName("quiet_period").text, "30");
   assert.ok(timers.children.some(node => node.type === "on"));
-  assert.equal(session.childForFieldName("mac_address").text, "02:00:00:00:00:01");
-  assert.equal(session.childForFieldName("ports").text, "1:2");
-  assert.ok(session.children.some(node => node.type === "dot1x"));
+});
+
+test("preserves operational commands as generic arguments", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+  for (const [source, verb, arguments_] of [
+    ['show edp ports 1:2 detail', 'show', ['edp', 'ports', '1:2', 'detail']],
+    ['debug netlogin show vpif vlan "Example" clients details', 'debug',
+      ['netlogin', 'show', 'vpif', 'vlan', '"Example"', 'clients', 'details']],
+    ['clear lldp statistics', 'clear', ['lldp', 'statistics']],
+  ]) {
+    const {rootNode} = parser.parse(source);
+    assert.equal(rootNode.hasError, false, source);
+    const command = rootNode.firstNamedChild.firstNamedChild;
+    assert.equal(command.type, `${verb}_command`);
+    assert.ok(command.namedChildren.every(node => node.type === 'word_or_string'));
+    assert.deepEqual(command.namedChildren.map(node => node.text), arguments_);
+  }
 });
 
 test("parses DNS name server operands into fields", () => {
@@ -74,6 +93,36 @@ test("parses VLAN port options into fields", () => {
   assert.deepEqual(vlan.children.filter(node => !node.isNamed).map(node => node.type), [
     "vlan", "add", "ports", "tagged", "stpd", "dot1d",
   ]);
+});
+
+test("exposes VLAN creation fields and retains unfinished or unknown continuations", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+  for (const suffix of ['', ' tag', ' tag 100', ' future-option "Value"', ' tag 100 future-option "Value"']) {
+    const source = `create vlan "Example" vr VR-Example${suffix}`;
+    const {rootNode} = parser.parse(source);
+    assert.equal(rootNode.hasError, false, source);
+    const [vlan] = rootNode.descendantsOfType('create_vlan');
+    assert.equal(vlan.childForFieldName('argument').text, '"Example"');
+    assert.equal(vlan.childForFieldName('vr_name').text, 'VR-Example');
+    assert.equal(vlan.childForFieldName('tag')?.text, suffix.startsWith(' tag 100') ? '100' : undefined);
+    assert.equal(vlan.text, source.slice('create '.length));
+  }
+});
+
+test("recognizes port option keywords and virtual-router operands", () => {
+  const parser = new Parser();
+  parser.setLanguage(language);
+  const {rootNode} = parser.parse(
+    'configure ports 1:2 display-string "Example"\n' +
+    'configure vr VR-Example add ports 1:2\n',
+  );
+  assert.equal(rootNode.hasError, false, rootNode.toString());
+  const [ports] = rootNode.descendantsOfType('configure_ports');
+  const [router] = rootNode.descendantsOfType('configure_vr');
+  assert.ok(ports.children.some(node => node.type === 'display-string' && !node.isNamed));
+  assert.equal(router.childForFieldName('vr_name').text, 'VR-Example');
+  assert.ok(router.children.some(node => node.type === 'ports' && !node.isNamed));
 });
 
 test("accepts LF and CRLF without requiring a final newline", () => {

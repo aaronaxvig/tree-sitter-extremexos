@@ -16,23 +16,34 @@ enable vlan "Example"
 
 (source_file
   (command
-    (enable_command (enable_bootp)))
+    (enable_command
+      (enable_bootp)))
   (command
-    (enable_command (enable_bootprelay)))
+    (enable_command
+      (enable_bootprelay)))
   (command
-    (enable_command (enable_cli_config_logging)))
+    (enable_command
+      (enable_cli_config_logging)))
   (command
-    (enable_command (enable_ip_security)))
+    (enable_command
+      (enable_ip_security)))
   (command
-    (enable_command (enable_mac_lockdown_timeout)))
+    (enable_command
+      (enable_mac_lockdown_timeout)))
   (command
-    (enable_command (enable_snmp)))
+    (enable_command
+      (enable_snmp)))
   (command
-    (enable_command (enable_snmpv3)))
+    (enable_command
+      (enable_snmpv3)))
   (command
-    (enable_command (enable_tacacs_authorization)))
+    (enable_command
+      (enable_tacacs_authorization)))
   (command
-    (enable_command (enable_vlan (word_or_string (string))))))
+    (enable_command
+      (enable_vlan
+        (word_or_string
+          (string))))))
 
 ================================================================================
 Dynamic, unknown, and unfinished enable targets
@@ -49,18 +60,27 @@ enable
 (source_file
   (command
     (enable_command
-      (enable_generic (word_or_string (string)))))
+      (enable__operand
+        (word_or_string
+          (string)))))
   (command
     (enable_command
-      (enable_generic
-        (word_or_string (word))
-        (word_or_string (word))
-        (word_or_string (string)))))
+      (enable__operand
+        (word_or_string
+          (word))
+        (word_or_string
+          (word))
+        (word_or_string
+          (string)))))
   (command
     (enable_command
-      (enable_generic (word_or_string (word)))))
+      (enable__operand
+        (word_or_string
+          (word)))))
   (command
     (enable_command
-      (enable_generic (word_or_string (string)))))
+      (enable__operand
+        (word_or_string
+          (string)))))
   (command
     (enable_command)))

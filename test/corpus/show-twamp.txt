@@ -11,17 +11,30 @@ show twamp endpoint ipaddress 192.0.2.1 port 5000
 (source_file
   (command
     (show_command
-      (show_twamp)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (show_command
-      (show_twamp)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (show_command
-      (show_twamp
-        src_ip: (word_or_string
-          (word))
-        src_port: (word_or_string
-          (word))))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word)))))
 
 ================================================================================
 Partial TWAMP filters and unknown options retain their context
@@ -37,21 +50,37 @@ show twamp endpoint-next
 (source_file
   (command
     (show_command
-      (show_twamp)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (show_command
-      (show_twamp
-        src_ip: (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (show_command
-      (show_twamp
-        (word_or_string
-          (word))
-        (word_or_string
-          (string)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))))
   (command
     (show_command
-      (show_twamp
-        (word_or_string
-          (word))))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word)))))

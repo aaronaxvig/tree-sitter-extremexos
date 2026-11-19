@@ -18,6 +18,7 @@ main() {
   cd "$work"
   export XDG_CACHE_HOME="$work/cache"
   EXOS_FULL_PARSER=1 "$cli" generate --abi 14
+  node "$root/tools/check_parser_size.js" "$work/src/parser.c"
   "$cli" test
   "$cli" parse --quiet "$root"/examples/example.exos "$root"/test/fixtures/*.exos
 }

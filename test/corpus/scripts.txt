@@ -13,11 +13,19 @@ endif
 (source_file
   (command
     (if_command
-      (word_or_string (string))
-      (word_or_string (word))))
+      (word_or_string
+        (string))
+      (word_or_string
+        (word))))
   (command
     (cat_command
-      (cat__n (word_or_string (string)))))
-  (command (else_command))
-  (command (return_command))
-  (command (endif_command)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))))
+  (command
+    (else_command))
+  (command
+    (return_command))
+  (command
+    (endif_command)))

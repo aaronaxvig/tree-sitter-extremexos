@@ -71,14 +71,34 @@ configure netlogin dot1x ports all timers quiet-period
 (source_file
   (command
     (show_command
-      (show_netlogin
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (clear_command
-      (clear_netlogin
-        (word_or_string
-          (string)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (create_command
       (create_netlogin
@@ -100,9 +120,20 @@ configure netlogin dot1x ports all timers quiet-period
           (string)))))
   (command
     (debug_command
-      (debug_netlogin
-        (word_or_string
-          (string)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (configure_command
       (configure_netlogin
@@ -112,7 +143,12 @@ configure netlogin dot1x ports all timers quiet-period
           (string)))))
   (command
     (show_command
-      (show_netlogin)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (enable_command
       (enable_netlogin)))

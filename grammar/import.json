@@ -55,75 +55,6 @@
   "excluded_verbs": {
     "jerry": "Hidden debug command"
   },
-  "detailed": {
-    "clear": [
-      "elsm",
-      "lldp",
-      "netlogin"
-    ],
-    "configure": [
-      "automation",
-      "database",
-      "diagnostics",
-      "dns-client",
-      "dos-protect",
-      "elsm",
-      "keychain",
-      "lldp",
-      "netlogin",
-      "ntp",
-      "snmp",
-      "sntp-client",
-      "sys-recovery-level",
-      "telnet",
-      "twamp",
-      "vlan"
-    ],
-    "create": [
-      "database",
-      "keychain",
-      "netlogin"
-    ],
-    "debug": [
-      "lldp",
-      "netlogin",
-      "telnetd"
-    ],
-    "delete": [
-      "database",
-      "keychain",
-      "netlogin"
-    ],
-    "disable": [
-      "elsm",
-      "lldp",
-      "netlogin",
-      "snmp",
-      "twamp"
-    ],
-    "enable": [
-      "dos-protect",
-      "elsm",
-      "lldp",
-      "netlogin",
-      "snmp",
-      "twamp"
-    ],
-    "show": [
-      "automation",
-      "database",
-      "dos-protect",
-      "elsm",
-      "keychain",
-      "lldp",
-      "netlogin",
-      "twamp"
-    ],
-    "unconfigure": [
-      "lldp",
-      "netlogin"
-    ]
-  },
   "supplemental": {
     "configure": [
       "fip"
@@ -132,5 +63,16 @@
       "fip",
       "ip-option"
     ]
+  },
+  "native": {
+    "verbs": [
+      "configure",
+      "create",
+      "delete",
+      "disable",
+      "enable",
+      "unconfigure"
+    ],
+    "excluded_families": {}
   }
 }

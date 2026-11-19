@@ -17,12 +17,22 @@ unconfigure lldp ports all
           (word)))))
   (command
     (clear_command
-      (clear_lldp
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (clear_command
-      (clear_lldp)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (unconfigure_command
       (unconfigure_lldp))))
@@ -43,12 +53,26 @@ show lldp ports all future-option "Example"
 (source_file
   (command
     (show_command
-      (show_lldp
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (show_command
-      (show_lldp)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (enable_command
       (enable_snmp)))
@@ -59,13 +83,23 @@ show lldp ports all future-option "Example"
           (word)))))
   (command
     (debug_command
-      (debug_lldp
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (show_command
-      (show_lldp
-        (word_or_string
-          (word))
-        (word_or_string
-          (string))))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string)))))

@@ -1,0 +1,27 @@
+================================================================================
+Configuration profile includes VLAN creation, port options, and virtual routers
+================================================================================
+
+create vlan "Example" vr VR-Example tag 100
+configure ports 1:2 display-string "Example"
+configure vr VR-Example add ports 1:2
+
+---
+
+(source_file
+  (command
+    (create_command
+      (create_vlan
+        (word_or_string (string))
+        (word_or_string (word))
+        (word_or_string (word)))))
+  (command
+    (configure_command
+      (configure_ports
+        (word_or_string (word))
+        (word_or_string (string)))))
+  (command
+    (configure_command
+      (configure_vr
+        (word_or_string (word))
+        (word_or_string (word))))))

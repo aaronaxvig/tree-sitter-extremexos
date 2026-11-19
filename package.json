@@ -26,6 +26,7 @@
     "bindings/node/*",
     "queries/*",
     "src/**",
+    "tools/check_parser_size.js",
     "*.wasm"
   ],
   "dependencies": {
@@ -35,7 +36,7 @@
   "devDependencies": {
     "prebuildify": "^6.0.1",
     "tree-sitter": "^0.22.4",
-    "tree-sitter-cli": "^0.25.10"
+    "tree-sitter-cli": "0.26.9"
   },
   "peerDependencies": {
     "tree-sitter": "^0.22.4"
@@ -49,7 +50,7 @@
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
-    "generate": "tree-sitter generate --abi 14",
-    "test": "tree-sitter test && node-gyp rebuild && node --test bindings/node/*_test.js"
+    "generate": "tree-sitter generate --abi 14 && node tools/check_parser_size.js",
+    "test": "node --test test/tools/*_test.js && node tools/check_parser_size.js && tree-sitter test && node-gyp rebuild && node --test bindings/node/*_test.js"
   }
 }

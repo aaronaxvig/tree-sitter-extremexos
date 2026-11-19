@@ -17,19 +17,31 @@ quit
 (source_file
   (comment)
   (command
-    (cd_command (word_or_string (string))))
+    (cd_command
+      (word_or_string
+        (string))))
   (command
     (pwd_command))
   (command
     (ls_command))
   (command
-    (show_command (show_configuration)))
+    (show_command
+      (word_or_string
+        (word))))
   (command
-    (check_command (check_policy (word_or_string (string)))))
+    (check_command
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))))
   (command
-    (ping_command (word_or_string (word))))
+    (ping_command
+      (word_or_string
+        (word))))
   (command
-    (run_command (word_or_string (word))))
+    (run_command
+      (word_or_string
+        (word))))
   (command
     (quit_command)))
 
@@ -48,9 +60,10 @@ use image primary
 (source_file
   (command
     (clear_command
-      (clear_lldp
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (create_command
       (create_vlan
@@ -68,9 +81,10 @@ use image primary
           (word)))))
   (command
     (use_command
-      (use_image
-        (word_or_string
-          (word))))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word)))))
 
 ================================================================================
 Unknown verbs and arguments that resemble verbs
@@ -87,15 +101,27 @@ configure ssh2 example
 
 (source_file
   (command
-    (generic_command (word) (word_or_string (string))))
+    (generic_command
+      (word)
+      (word_or_string
+        (string))))
   (command
-    (generic_command (word)))
+    (generic_command
+      (word)))
   (command
-    (generic_command (word) (word_or_string (word))))
+    (generic_command
+      (word)
+      (word_or_string
+        (word))))
   (command
-    (show_command (word_or_string (word))))
+    (show_command
+      (word_or_string
+        (word))))
   (command
-    (enable_command (enable_ssh2)))
+    (enable_command
+      (enable_ssh2)))
   (command
     (configure_command
-      (configure_ssh2 (word_or_string (word))))))
+      (configure_ssh2
+        (word_or_string
+          (word))))))

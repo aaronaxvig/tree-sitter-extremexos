@@ -51,10 +51,11 @@ disable telnet
           (string)))))
   (command
     (disable_command
-      (word_or_string
-        (word))
-      (word_or_string
-        (word))))
+      (disable__operand
+        (word_or_string
+          (word))
+        (word_or_string
+          (word)))))
   (command
     (disable_command
       (disable_telnet))))

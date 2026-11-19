@@ -169,11 +169,10 @@ def render_family(verb, topic, sources, emitted):
     return "\n".join(lines)
 
 
-def output_files(families, native_families=()):
+def output_files(families):
     by_verb = defaultdict(list)
     emitted = set()
-    # Emit the native subset first so its shared rules are self-contained.
-    for verb, topic in sorted(families, key=lambda pair: (pair not in native_families, pair)):
+    for verb, topic in sorted(families):
         sources = families[verb, topic]
         by_verb[verb].append(topic)
         yield Path(verb, f"{topic}.js"), render_family(verb, topic, sources, emitted)
@@ -187,10 +186,10 @@ def output_files(families, native_families=()):
     yield Path("generated.js"), "\n".join(index)
 
 
-def write_files(output, families, keywords, native_families=()):
+def write_files(output, families, keywords):
     files = {}
     markers = (MARKER, KEYWORDS_MARKER)
-    for relative, content in chain(output_files(families, native_families), keyword_files(keywords)):
+    for relative, content in chain(output_files(families), keyword_files(keywords)):
         if relative in files:
             raise ValueError(f"Generated paths collide at {relative}")
         files[relative] = content
@@ -224,9 +223,8 @@ def main():
         verbs = set(keywords) | set(config["verbs"])
         if errors:
             parser.exit(1, "\n".join(errors) + "\n")
-        detailed = {(verb, topic) for verb, topics in config["detailed"].items() for topic in topics}
         rows = coverage_report(observed, verbs, keywords, families, config["supplemental"], excluded, public_prefixes)
-        write_files(options.output, families, keywords, detailed)
+        write_files(options.output, families, keywords)
         if options.coverage:
             options.coverage.write_text(json.dumps(rows, indent=2) + "\n", encoding="utf-8")
     except (OSError, ValueError, RecursionError) as error:

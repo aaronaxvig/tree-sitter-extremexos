@@ -18,9 +18,16 @@ show elsm ports all
 (source_file
   (command
     (show_command
-      (show_automation
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (configure_command
       (configure_twamp
@@ -50,9 +57,14 @@ show elsm ports all
           (word)))))
   (command
     (clear_command
-      (clear_elsm
-        (word_or_string
-          (word)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (enable_command
       (enable_elsm
@@ -65,7 +77,12 @@ show elsm ports all
           (word)))))
   (command
     (show_command
-      (show_elsm))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word)))))
 
 ================================================================================
 Telnet and DoS protection options
@@ -94,7 +111,12 @@ show dos-protect detail
       (configure_telnet)))
   (command
     (debug_command
-      (debug_telnetd)))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word))))
   (command
     (configure_command
       (configure_dos_protect)))
@@ -106,7 +128,10 @@ show dos-protect detail
       (enable_dos_protect)))
   (command
     (show_command
-      (show_dos_protect))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (word)))))
 
 ================================================================================
 Keychain and database commands with quoted names and incomplete options
@@ -153,9 +178,12 @@ delete database "Example DB"
           (word)))))
   (command
     (show_command
-      (show_keychain
-        (word_or_string
-          (string)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))
+      (word_or_string
+        (word))))
   (command
     (delete_command
       (delete_keychain
@@ -196,9 +224,10 @@ delete database "Example DB"
           (string)))))
   (command
     (show_command
-      (show_database
-        (word_or_string
-          (string)))))
+      (word_or_string
+        (word))
+      (word_or_string
+        (string))))
   (command
     (delete_command
       (delete_database
