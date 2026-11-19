@@ -2,7 +2,7 @@
   "name": "extremexos",
   "displayName": "ExtremeXOS",
   "description": "Syntax highlighting for ExtremeXOS configuration files and Markdown code fences.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publisher": "aaronaxvig",
   "license": "MIT",
   "engines": {
