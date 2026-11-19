@@ -3,7 +3,7 @@
 ## Project intent
 
 - Target canonical configuration files exported by Extreme Networks ExtremeXOS.
-- Do not try to parse every abbreviation or context-sensitive shortcut accepted by the interactive CLI.
+- Canonical spellings are the current target. The proposed keyword abbreviation support below also covers CLI snippets. Shortcuts that depend on configured object names remain outside the syntax grammar.
 - Parse names syntactically without requiring them to be known. Cross-command checks such as whether a VLAN was created belong in a future semantic-analysis layer, not the Tree-sitter grammar.
 - Preserve unknown commands, future syntax, and unfinished branches through generic fallbacks instead of producing parse errors.
 
@@ -36,6 +36,21 @@ Experiments on 41 families from the EDP, ELSM, LLDP, NTP, and TWAMP XML files te
 - Allowing a command to stop only at XML-declared endings broke 209 of the 210 unfinished prefixes. Combining that restriction with the family-level tail lowered the largest index to 2,973 but also broke 120 of the 213 mid-command cases. Grouping equivalent literal alternatives left the measured table size and action index unchanged.
 
 For another sizing attempt, generate in a temporary directory and inspect the largest action reference with `rg -o --no-filename 'ACTIONS\([0-9]+\)' src/parser.c | tr -cd '0-9\n' | sort -n | tail -1`. With GCC, `cc -Werror=overflow -fsyntax-only -Isrc src/parser.c` catches narrowing before runtime. Once the indices fit, run `tools/test_full_import.sh /path/to/config/clidef` for the full native corpus and fixtures. Compare complete trees for unfinished prefixes and unknown continuations as well, since valid-command tests passed even for variants that broke fallback behavior.
+
+## Future support for keyword abbreviations
+
+Generate abbreviations from the canonical keywords. The eventual scope includes verbs, topics, and keywords deeper in a command. At each position, use the full imported public vocabulary reachable there, including branches omitted from the default native build. Find the shortest prefix that identifies one keyword among those choices and accept every successive prefix through the full spelling. Always accept an exact keyword, even when it begins a longer keyword. Preserve generic fallback for ambiguous or unknown input.
+
+For example, at the start of a command, `c` could mean `clear`, `configure`, or several other verbs. Only `configure` starts with `co`. Both generators should derive the eight spellings from the same prefix calculation:
+
+- In `editors/vscode/scripts/generate-grammar.js`, emit a flat pattern such as `co(?:n|nf|nfi|nfig|nfigu|nfigur|nfigure)?` with the existing end-of-word check. This accepts `conf` and leaves `coffee` unmatched. The generated TextMate rules serve both the editor and the Markdown preview.
+- In Tree-sitter, try a choice of literal spellings at the existing keyword position. Keep the canonical named nodes and operand fields while preserving the spelling and byte ranges in the input. For example, `conf vlan "printers" add ports 1:2` should still produce a `configure_command` containing `configure_vlan`.
+
+Only apply prefix matching in keyword positions. Quoted names stay operands. Where a bare word can be both an operand and a shortened keyword, verify precedence against the target firmware before specializing that branch. Omitting `vlan` from a command because a VLAN named `printers` exists is a separate, device-dependent shortcut. See the [ExtremeXOS User Guide, “Abbreviated Syntax” and “Command Shortcuts”](https://documentation.extremenetworks.com/exos_32.6.1/downloads/EXOS_User_Guide_32.6.1.pdf).
+
+The ABI 14 experiment added only the seven shorter literal spellings of `configure` to the default parser. States stayed at 8,269 and the largest action index stayed at 14,957. Generated C grew from 4,164,409 to 4,167,069 bytes (+2,660). The cost of abbreviating deeper keywords across all families is still unknown.
+
+For the next small test, exercise one complete VLAN branch with abbreviations before and after the quoted name. Compare named nodes, operand fields, source spans, and highlighting against the fully spelled command. Include an ambiguous prefix, a longer unrelated word, an unfinished command, and an exact keyword that prefixes another keyword. Measure the largest action index as well as state count and C size before widening coverage.
 
 ## Fixtures and privacy
 
